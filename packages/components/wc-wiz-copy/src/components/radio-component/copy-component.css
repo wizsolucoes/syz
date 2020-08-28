@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+.copy-content{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 27px;
+  color: #50555a;
+  cursor: pointer;
+  border-bottom: 1px dashed #9ba5ae;
+}
+
+.square{
+ margin-right: 8px;
+}
+
+
+.copy-label{
+  cursor: pointer;
+}

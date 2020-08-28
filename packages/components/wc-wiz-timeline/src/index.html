@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/wc-wiz-timeline.esm.js"></script>
+    <script nomodule src="/build/wc-wiz-timeline.js"></script>
+  </head>
+  <body style="padding: 100px;">
+    <wiz-timeline></wiz-timeline>
+
+    <script>
+      const TimelineComponent = document.querySelector("wiz-timeline");
+
+      TimelineComponent.timelineData = [
+        {
+          Name: "Etapa 1",
+          Current: false,
+          Completed: true,
+        },
+        {
+          Name: "Etapa 2",
+          Current: true,
+          Completed: false,
+        },
+        {
+          Name: "Etapa 3",
+          Current: false,
+          Completed: false,
+        },
+        {
+          Name: "Etapa 4",
+          Current: false,
+          Completed: false,
+        },
+      ];
+    </script>
+  </body>
+</html>

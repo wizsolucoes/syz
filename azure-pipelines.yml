@@ -1,0 +1,219 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  batch: 'true'
+
+resources:
+  repositories:
+    - repository: site
+      type: git
+      name: $SYZ_SITE_REPOSITORY
+      ref: refs/heads/components-docs-integration
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  jobs:
+    - job: Build
+      displayName: 'Test and Build'
+      condition: succeeded()
+      steps:
+        - checkout: self
+        - checkout: site
+        - task: Npm@1
+          displayName: 'Install dependencies'
+          inputs:
+            command: 'install'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Bootstrap'
+          inputs:
+            command: custom
+            verbose: false
+            customCommand: 'run bootstrap'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Test'
+          inputs:
+            command: 'custom'
+            verbose: false
+            customCommand: 'run test'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Build'
+          inputs:
+            command: custom
+            verbose: false
+            customCommand: 'run build'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+- stage: Stage
+  displayName: 'Stage Solution'
+  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))
+  dependsOn: [Build]
+  jobs:
+    - job: Site
+      displayName: 'Publish site to staging'
+      condition: succeeded()
+      steps:
+        - checkout: self
+        - checkout: site
+        - task: Npm@1
+          displayName: 'Install dependencies'
+          inputs:
+            command: 'install'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Bootstrap'
+          inputs:
+            command: custom
+            verbose: false
+            customCommand: 'run bootstrap'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Test'
+          inputs:
+            command: 'custom'
+            verbose: false
+            customCommand: 'run test'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Build'
+          inputs:
+            command: custom
+            verbose: false
+            customCommand: 'run build'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Install site dependencies'
+          inputs:
+            command: ci
+            workingDir: $(Build.SourcesDirectory)/site
+        - script: node docs.js --site-assets-path=$(Build.SourcesDirectory)/site/src/assets
+          displayName: 'Generate site documentation'
+          workingDirectory: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Build site'
+          inputs:
+            command: custom
+            verbose: false
+            customCommand: 'run build'
+            workingDir: $(Build.SourcesDirectory)/site
+        - task: CopyFiles@2
+          displayName: 'Copy site dist to artifact staging directory'
+          inputs:
+            SourceFolder: '$(Build.SourcesDirectory)/site/dist/angular-wiz-repositorio'
+            Contents: '**'
+            TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        - task: ArchiveFiles@2
+          displayName: 'Archive site dist'
+          inputs:
+            rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+            includeRootFolder: false
+        - task: AzureWebApp@1
+          displayName: 'Deploy site to Azure Web App'
+          inputs:
+            azureSubscription: $HML_SITE_AZURE_SUBSCRIPTION
+            appType: webApp
+            appName: $HML_SITE_APP_NAME
+            package: $(System.ArtifactsDirectory)/*.zip
+- stage: Publish
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
+  dependsOn: [Build]
+  jobs:
+    - job: Publish
+      displayName: 'Bump versions and publish' 
+      condition: succeeded() 
+      steps:
+        - checkout: self
+          persistCredentials: 'true'
+        - checkout: site
+        - task: CmdLine@2
+          displayName: Configure Lerna Bot
+          inputs:
+            script: |
+              git config --global user.email "lernabot@wizsolucoes.com.br"
+              git config --global user.name "Lerna bot"
+            workingDirectory: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: CmdLine@2
+          displayName: Checkout $(Build.SourceBranchName)
+          inputs:
+            script: 'git checkout $(Build.SourceBranchName)'
+            workingDirectory: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Install dependencies'
+          inputs:
+            command: 'install'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Bootstrap'
+          inputs:
+            command: custom
+            verbose: false
+            customCommand: 'run bootstrap'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Test'
+          inputs:
+            command: 'custom'
+            verbose: false
+            customCommand: 'run test'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Build'
+          inputs:
+            command: custom
+            verbose: false
+            customCommand: 'run build'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Bump versions'
+          inputs:
+            command: 'custom'
+            verbose: true
+            customCommand: 'run version'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Publish'
+          inputs:
+            command: 'custom'
+            customCommand: 'run release'
+            customEndpoint: 'npmjs'
+            workingDir: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Install site dependencies'
+          inputs:
+            command: ci
+            workingDir: $(Build.SourcesDirectory)/site
+        - script: node docs.js --site-assets-path=$(Build.SourcesDirectory)/site/src/assets
+          displayName: 'Generate site documentation'
+          workingDirectory: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        - task: Npm@1
+          displayName: 'Build site'
+          inputs:
+            command: custom
+            verbose: false
+            customCommand: 'run build'
+            workingDir: $(Build.SourcesDirectory)/site
+        - task: CopyFiles@2
+          displayName: 'Copy site dist to artifact staging directory'
+          inputs:
+            SourceFolder: '$(Build.SourcesDirectory)/site/dist/angular-wiz-repositorio'
+            Contents: '**'
+            TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        - task: ArchiveFiles@2
+          displayName: 'Archive site dist'
+          inputs:
+            rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+            includeRootFolder: false
+        - task: AzureWebApp@1
+          displayName: 'Deploy site to Azure Web App'
+          inputs:
+            azureSubscription: $PRD_SITE_AZURE_SUBSCRIPTION
+            appType: webApp
+            appName: $PRD_SITE_APP_NAME
+            package: $(System.ArtifactsDirectory)/*.zip

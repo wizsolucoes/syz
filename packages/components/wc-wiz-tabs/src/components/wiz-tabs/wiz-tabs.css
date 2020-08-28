@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  color: #9ba5ae;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.wiz-tabs-content {
+  list-style: none;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  padding: 0px;
+}
+
+.vertical {
+  display: initial;
+}

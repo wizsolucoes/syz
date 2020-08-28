@@ -1,0 +1,69 @@
+:host {
+  display: block;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+
+.wiz-alert-content{
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 40px;
+  font-family: 'Roboto', sans-serif;
+  padding: 8px 8px;
+  border-radius: .25rem;
+  position: relative;
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.main-content{
+  height: 100%;
+
+}
+.wiz-icon-alert{
+  margin-right: 8px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wiz-alert-close{
+  position: absolute;
+  cursor: pointer;
+  right: 15px;
+  opacity: 0.5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.error{
+  background-color: rgba(255, 53, 53, 0.15);
+  color: #992020;
+  border: 1px solid #ff3535;
+}
+.success{
+  background-color: rgba(0, 191, 133, 0.15);
+  color: #007350;
+  border: 1px solid #00bf85;
+}
+.warning{
+  background-color: rgba(255, 193, 54, 0.15);
+  border: 1px solid #ffc136;
+  color: #b38726;
+}
+.information{
+  background-color: rgba(33, 117, 214, 0.15);
+  border: 1px solid #2175d6;
+  color: #154b8a;
+
+}

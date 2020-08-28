@@ -1,0 +1,23 @@
+{
+  "packages": ["packages/components/*"],
+  "version": "independent",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "**/package-lock.json",
+        "**/*.test.ts",
+        "**/*.e2e.ts",
+        "**/*.spec.ts",
+        "**/*.md",
+        "**/*.mdx"
+      ],
+      "yes": true
+    },
+    "version": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "message": "chore(release): bump versions [skip ci]",
+      "yes": true
+    }
+  }
+}

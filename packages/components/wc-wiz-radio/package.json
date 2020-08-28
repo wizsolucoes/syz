@@ -1,0 +1,46 @@
+{
+  "name": "@wizsolucoes/wiz-radio",
+  "version": "2.0.8",
+  "description": "O componente radiobutton conta com dois comportamentos, selecionado e desmarcado. que proporciona maior usabilidade e adequação a diferentes tipos de produtos e projetos.",
+  "author": "Hugo dos Santos Ricchino Rosello",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "homepage": "https://github.com/wizsolucoes/syz/packages/components/wc-wiz-radio#-wiz-radio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wizsolucoes/syz"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/wc-wiz-radio/wc-wiz-radio.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@stencil/core": "^1.12.2",
+    "@types/jest": "24.9.1",
+    "@types/puppeteer": "2.0.1",
+    "jest": "24.9.0",
+    "jest-cli": "24.9.0",
+    "puppeteer": "2.1.1"
+  },
+  "dependencies": {
+    "@types/jest": "^25.2.3"
+  }
+}

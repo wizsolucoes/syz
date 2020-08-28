@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  --syz-default-primary-color: #ff9100;
+}
+
+.feedback-z {
+  stroke-width: 2px;
+  stroke-dashoffset: 1150;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  animation: feedback-z ease 2000ms infinite;
+  -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+}
+
+@keyframes feedback-z {
+  0% {
+    stroke-dasharray: 0 245;
+  }
+  100% {
+    stroke-width: 22px;
+    stroke-dasharray: 110 115;
+  }
+}
+
+.main-spinner-percent {
+  width: 100%;
+  font-size: 16px;
+  margin: 0 auto;
+  animation: donutfade 1s;
+}
+
+@keyframes donutfade {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.donut-ring {
+  stroke: #979797;
+  stroke-width: 1px;
+}
+
+.donut-segment-2 {
+  stroke: var(--syz-primary-color, var(--syz-default-primary-color));
+  animation: donut1 3s;
+}
+
+.segment-2 {
+  fill: #50555a;
+}
+
+.donut-percent {
+  animation: donutfadelong 1s;
+}
+
+@keyframes donut1 {
+  0% {
+    stroke-dasharray: 0, 100;
+  }
+  100% {
+    /* stroke-dasharray: 50, 50; */
+  }
+}
+
+.donut-text-1 {
+  fill: #50555a;
+}
+
+.donut-label {
+  font-size: 0.28em;
+  font-weight: 700;
+  line-height: 1;
+  fill: #000;
+  transform: translateY(0.25em);
+}
+
+.donut-percent {
+  font-size: 0.5em;
+  line-height: 1;
+  transform: translateY(0.5em);
+  font-weight: bold;
+}
+
+.spinner-continuous .spinner {
+  -webkit-animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
+  /* z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px; */
+}
+.spinner-continuous .spinner .path {
+  stroke: var(--syz-primary-color, var(--syz-default-primary-color));
+  /* stroke-linecap: round; */
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.feedback-sonar .feedback-sonar {
+  width: 50px;
+}
+.feedback-sonar .spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.feedback-sonar .double-bounce1,
+.feedback-sonar .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--syz-primary-color, var(--syz-default-primary-color));
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
+}
+
+.feedback-sonar .double-bounce2 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+.feedback-bounce .spinner {
+  margin: 50px;
+  width: 70px;
+  text-align: center;
+}
+
+.feedback-bounce .spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: var(--syz-primary-color, var(--syz-default-primary-color));
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.feedback-bounce .spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+  background-color: #ffd399;
+}
+
+.feedback-bounce .spinner .bounce3 {
+  background-color: #ffd399;
+}
+
+.feedback-bounce .spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.circle-loader {
+  margin-bottom: 3.5em;
+  border: 3px solid #ffd399;
+  border-left-color: var(--syz-primary-color, var(--syz-default-primary-color));
+  animation: loader-spin 1.2s infinite linear;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+.check {
+  position: absolute;
+  top: 8px;
+  left: 11.4px;
+}
+
+.load-complete {
+  -webkit-animation: none;
+  animation: none;
+  border-color: var(--syz-primary-color, var(--syz-default-primary-color));
+  transition: border 500ms ease-out;
+}
+
+.checkmark {
+  display: none;
+}
+.checkmark .draw:after {
+  animation-duration: 800ms;
+  animation-timing-function: ease;
+  animation-name: checkmark;
+  transform: scaleX(-1) rotate(135deg);
+}
+.checkmark:after {
+  opacity: 1;
+  height: 3.5em;
+  width: 1.75em;
+  transform-origin: left top;
+  border-right: 3px solid
+    var(--syz-primary-color, var(--syz-default-primary-color));
+  border-top: 3px solid
+    var(--syz-primary-color, var(--syz-default-primary-color));
+  content: "tt";
+  left: 1.75em;
+  top: 3.5em;
+  position: absolute;
+}
+
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 1.75em;
+    opacity: 1;
+  }
+  40% {
+    height: 3.5em;
+    width: 1.75em;
+    opacity: 1;
+  }
+  100% {
+    height: 3.5em;
+    width: 1.75em;
+    opacity: 1;
+  }
+}

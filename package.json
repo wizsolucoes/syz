@@ -1,0 +1,31 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap --hoist",
+    "test": "lerna run test",
+    "build": "lerna run build",
+    "version": "lerna version",
+    "release": "lerna publish from-package"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "copyfiles": "^2.3.0",
+    "husky": "^4.2.5",
+    "lerna": "^3.22.1",
+    "yargs": "^15.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@ssh.dev.azure.com:v3/wizsolucoes/DesignSystem/components"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "@stencil/core": "1.16.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@wizsolucoes/wiz-alerts",
+  "version": "2.0.12",
+  "description": "Forneça mensagens de feedback contextual para ações típicas do usuário com mensagens de alerta disponíveis e flexíveis.",
+  "author": "Hugo dos Santos Ricchino Rosello",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "homepage": "https://github.com/wizsolucoes/syz/packages/components/wc-wiz-alert#-wiz-alert",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wizsolucoes/syz"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/wiz-alert/wiz-alert.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@stencil/core": "1.13.0",
+    "@types/jest": "25.2.3",
+    "@types/puppeteer": "2.0.1",
+    "jest": "26.0.1",
+    "jest-cli": "26.0.1",
+    "puppeteer": "2.1.1"
+  }
+}

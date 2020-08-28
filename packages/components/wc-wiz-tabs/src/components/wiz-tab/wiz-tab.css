@@ -1,0 +1,21 @@
+li {
+  width: 140px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.active {
+  border-color: #ff9100 !important;
+  font-weight: 700;
+  color: #50555a;
+}
+
+.horizontal {
+  border-bottom: #eaeef0 3px solid;
+}
+.vertical {
+  border-left: #eaeef0 3px solid;
+}

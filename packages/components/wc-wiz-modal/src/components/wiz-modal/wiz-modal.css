@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.wiz-modal a {
+  cursor: pointer;
+}
+
+.wiz-modal hr {
+  clear: both;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 0;
+  border-top: 1px solid #aaa;
+}
+.wiz-modal h1 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+.wiz-modal p {
+  margin-bottom: 20px;
+}
+/* .wiz-modal-btn {
+  background: #ff9100;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  width: 104px;
+  height: 40px;
+  position: relative;
+  transition: color 0.1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
+} */
+
+.wiz-modal .btn.btn-big {
+  font-size: 18px;
+  padding: 15px 20px;
+  min-width: 100px;
+}
+.wiz-modal .btn-close {
+  color: #50555a;
+  font-size: 30px;
+  text-decoration: none;
+  float: right;
+  margin-right: 40px;
+  margin-top: 30px;
+  /* position: absolute; */
+}
+
+.wiz-modal .lg-close {
+  color: #50555a;
+  font-size: 40px;
+  text-decoration: none;
+  position: fixed !important;
+  right: 168px;
+  top: 68px;
+}
+.wiz-modal .btn-close:hover {
+  color: #919191;
+}
+
+.is-visible {
+  display: block;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.wiz-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.wiz-modal .wiz-modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 0%;
+}
+.wiz-modal-dialog {
+  /* background: #fefefe; */
+  border-radius: 5px;
+  margin-left: -200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  top: -100%;
+  height: 100%;
+  z-index: 11;
+  background: rgba(255, 255, 254, 0.8);
+  -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+}
+
+.dialog {
+  background-color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 10px 15px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 10px 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 10px 15px;
+}
+.wiz-modal-body::-webkit-scrollbar,
+.wiz-modal-body::-webkit-scrollbar {
+  width: 10px;
+  height: 4px;
+}
+
+.wiz-modal-body::-webkit-scrollbar-button,
+.wiz-modal-body::-webkit-scrollbar-button {
+  display: none;
+  background-color: #07f;
+}
+/* .principais-casos::-webkit-scrollbar-track {
+    background-color: #123;
+    -webkit-border-radius: 5px;
+} */
+/* .principais-casos::-webkit-scrollbar-track-piece {
+    background-color: #789;
+    -webkit-border-radius: 5px;
+} */
+.wiz-modal-body::-webkit-scrollbar-thumb,
+.wiz-modal-body::-webkit-scrollbar-thumb {
+  background-color: #bbbbbb;
+  -webkit-border-radius: 5px;
+}
+.wiz-modal-body::-webkit-scrollbar-corner,
+.wiz-modal-body::-webkit-scrollbar-corner {
+  background-color: #000;
+}
+
+.wiz-modal .sm {
+  max-width: 417px;
+  width: 100%;
+}
+
+.wiz-modal .md {
+  max-width: 920px;
+  width: 100%;
+}
+
+.wiz-modal .lg {
+  max-width: 816px;
+  width: 100%;
+  box-shadow: none;
+  /* top: 20% !important; */
+  /* height: 100%; */
+}
+
+.wiz-modal-body {
+  padding: 10px 40px;
+  margin-bottom: 36px;
+  max-height: 35vh;
+  margin-right: 24px;
+  line-height: 27px;
+  font-size: 16px;
+  overflow: auto;
+}
+.wiz-modal-header,
+.wiz-modal-footer {
+  display: flex;
+  padding: 40px 40px;
+}
+.wiz-modal-header {
+  font-size: 26px;
+  font-weight: 500;
+  color: #50555a;
+  line-height: 39px;
+  font-family: "Roboto Medium";
+}
+.wiz-modal-header h2 {
+  font-size: 26px;
+}
+
+.wiz-modal hr {
+  margin-left: 40px !important;
+  margin-right: 26px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  /* color: #eaeef0 !important; */
+  border: 0;
+  background-color: #eaeef0;
+  height: 1px;
+}
+
+.wiz-modal-footer {
+  /* border-top: #eee solid 1px; */
+  text-align: right;
+  flex-direction: row-reverse;
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .wiz-modal .lg-close {
+    color: #50555a;
+    font-size: 40px;
+    text-decoration: none;
+    position: fixed !important;
+    right: 50px;
+    top: 68px;
+  }
+}

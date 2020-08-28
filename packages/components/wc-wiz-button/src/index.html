@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/wc-wiz-button.esm.js"></script>
+    <script nomodule src="/build/wc-wiz-button.js"></script>
+    <style>
+      h2 {
+        font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+      p {
+        font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+        font-size: 18px;
+      }
+
+      :root {
+        --primary-button: red;
+        --primary-button-hover: black;
+        --secondary-button-background: #ffffff;
+        --secondary-button: red;
+        --secondary-button-hover: black;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <br />
+    <h2>Primary Button</h2>
+
+    <wiz-button>Button</wiz-button>
+    <wiz-button shape="round">Button</wiz-button>
+    <br />
+    <br />
+    <h2>Secondary Button</h2>
+    <wiz-button color="secundary">Button</wiz-button>
+    <wiz-button color="secundary" shape="round">Button</wiz-button>
+    <br />
+    <br />
+    <h2>Button Size</h2>
+    <p>Small</p>
+    <wiz-button size="small">Button</wiz-button>
+    <wiz-button size="small" shape="round">Button</wiz-button>
+    <p>Medium</p>
+    <wiz-button>Button</wiz-button>
+    <wiz-button shape="round">Button</wiz-button>
+    <p>Large</p>
+    <wiz-button size="large">Button</wiz-button>
+    <wiz-button size="large" shape="round">Button</wiz-button>
+    <br />
+    <br />
+    <h2>Button Status</h2>
+    <p>Default</p>
+    <wiz-button>Button</wiz-button>
+    <wiz-button shape="round">Button</wiz-button>
+    <wiz-button color="secundary">Button</wiz-button>
+    <wiz-button color="secundary" shape="round">Button</wiz-button>
+    <p>Disabled</p>
+    <wiz-button disabled>Button</wiz-button>
+    <wiz-button shape="round" disabled>Button</wiz-button>
+    <wiz-button color="secundary" disabled>Button</wiz-button>
+    <wiz-button color="secundary" shape="round" disabled>Button</wiz-button>
+    <br />
+    <br />
+    <wiz-button responsive="full-width">Button</wiz-button>
+  </body>
+</html>

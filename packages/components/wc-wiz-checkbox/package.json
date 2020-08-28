@@ -1,0 +1,44 @@
+{
+  "name": "@wizsolucoes/wiz-checkbox",
+  "version": "2.0.12",
+  "description": "Checkbox é nosso componente de seleção, geralmente utilizado para coletar respostas dos usuários. O componente pode ser usado para um único item selecionável ou para uma lista de itens de seleção. Um Checkbox tem dois estados principais; selecionado e desmarcado. É importante sempre usar um texto de apoio para descrever a finalidade do checkbox.",
+  "author": "Hugo dos Santos Ricchino Rosello",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "homepage": "https://github.com/wizsolucoes/syz/packages/components/wc-wiz-checkbox#-wiz-checkbox",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wizsolucoes/syz"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/wiz-alert/wiz-alert.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@stencil/angular-output-target": "0.0.2",
+    "@stencil/core": "1.13.0",
+    "@types/jest": "24.9.1",
+    "@types/puppeteer": "2.0.1",
+    "jest": "24.9.0",
+    "jest-cli": "24.9.0",
+    "puppeteer": "2.1.1"
+  }
+}

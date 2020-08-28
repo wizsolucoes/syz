@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/wc-wiz-modal.esm.js"></script>
+  <script nomodule src="/build/wc-wiz-modal.js"></script>
+
+</head>
+
+<body>
+
+  <p id="modal-trigger" class="btn btn-big">[Clique aqui para abrir o modal]</p>
+
+  <wiz-modal size='lg' title-modal="Modal Title" trigger-element-id="modal-trigger">
+    <span slot="modal-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, quam? Rem labore, autem
+      excepturi
+      obcaecati ab distinctio ad! Voluptatibus neque enim voluptatem rem sit ab quisquam, facere tempore ad
+      perferendis?</span>
+    <span slot="modal-footer">Conteúdo de footer</span>
+  </wiz-modal>
+
+</body>
+
+</html>

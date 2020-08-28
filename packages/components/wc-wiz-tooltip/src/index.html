@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/wc-wiz-tooltip.esm.js"></script>
+  <script nomodule src="/build/wc-wiz-tooltip.js"></script>
+
+</head>
+
+<body style="margin: 50px">
+  <!--
+  <wiz-tooltip bg-color='red'>
+    <span slot="content">teste</span>
+    <span slot="tooltip-text">ola</span>
+  </wiz-tooltip> -->
+
+  <wiz-tooltip size='md' direction='right' bg-color='#2175d6' label-color='#fff' active-border="true">
+    <div slot="content"><label for="">loremx99</label></div>
+    <div slot="tooltip-text">
+      Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+    </div>
+  </wiz-tooltip>
+
+  <wiz-tooltip 
+    size="md" 
+    direction="top"
+    bg-color="#50555a" 
+    label-color="#fff"
+    active-border="false">
+    <div slot="content"><label for="">Mouse over</label></div>
+    <div slot="tooltip-text">
+      Label Here
+    </div>
+  </wiz-tooltip>
+</body>
+
+</html>
