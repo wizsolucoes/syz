@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.1.0 (2020-09-02)
+
+
+### Features
+
+* initial commit ([c89a33a](https://github.com/wizsolucoes/syz/commit/c89a33a0d742dfa3bc3f131f5c9cf6ae4ed88923))
+
+
+
+
+
 ## [2.0.3](https://github.com/wizsolucoes/wc-wiz-tabs/compare/@wizsolucoes/wiz-tabs@2.0.2...@wizsolucoes/wiz-tabs@2.0.3) (2020-07-21)
 
 **Note:** Version bump only for package @wizsolucoes/wiz-tabs
