@@ -2,7 +2,8 @@ const { argv } = require("yargs");
 const copyfiles = require("copyfiles");
 const { exec } = require("child_process");
 
-const siteAssetsPath = argv.siteAssetsPath;
+const sitePath = stripTrailingSlash(argv.sitePath);
+const siteAssetsPath = `${sitePath}/src/assets`;
 
 function start() {
   copyMarkdownFiles();
@@ -63,6 +64,10 @@ function copyLoaders() {
     { up: 2, exclude: "**/node_modules/**" },
     onLoadersCopied
   );
+}
+
+function stripTrailingSlash(path) {
+  return path.replace(/\/+$/, "");
 }
 
 start();
