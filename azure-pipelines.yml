@@ -15,7 +15,7 @@ resources:
     - repository: site
       type: git
       name: DesignSystem/wizis-web
-      ref: refs/heads/components-docs-integration
+      ref: refs/heads/master
 
 pool:
   vmImage: 'ubuntu-latest'
