@@ -185,6 +185,7 @@ stages:
             verbose: true
             customCommand: 'run version'
             workingDir: $(ComponentsDirectory)
+          continueOnError: true
         - task: Npm@1
           displayName: 'Publish'
           inputs:
