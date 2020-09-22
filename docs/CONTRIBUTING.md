@@ -1,6 +1,6 @@
 <!-- omit in toc -->
 # Contribuindo componentes para o SYZ
-Leia com atenção as orientações a seguir. São essenciais para que sua contribuição de componentes para o SYZ seja aprovada quando do [code review](./CODE_REVIEW.md).
+Queremos que você ajude e melhorar o SYZ com suas contribuições. Como contribuidor, pedimos que você siga as orientações a seguir. São essenciais para que sua contribuição seja aprovada quando do [code review](./CODE_REVIEW.md).
 
 - [Feature branch](#feature-branch)
 - [Criando um novo componente](#criando-um-novo-componente)
@@ -32,7 +32,7 @@ npm init stencil
 Se você precisa adicionar um componente existente, basta colocar o pacote inteiro na pasta `packages/components` e remover a pasta `.git` do componente. Por exemplo:
 
 ```bash
-# Entre na pasta de pacotes
+# Entre na pasta dos componentes
 cd packages/components/
 
 # Na pasta packages, clone o repositório existente
@@ -47,7 +47,7 @@ rm -rf wc-wiz-component/.git
 
 
 ## Comandos `npm` obrigatórios para cada componente
-Não é preciso fazer qualquer alteração ao arquivo `package.json` do componente ao incluí-lo no monorepositório Confirme apenas que o pacote tenha comandos para os scripts `test` e `build`. Por exemplo:
+Confirme que o pacote do componente tenha comandos para os scripts `test` e `build`. Por exemplo:
 ```json
 "scripts": {
   "build": "stencil build --docs",
@@ -69,4 +69,8 @@ Você, como desenvolvedor, não precisa de preocupar com versionamento ou public
 Verifique que seu PR atenda os itens do [Checklist de code review](./CODE_REVIEW.md).
 
 ## Criando seu PR
-O monorepositório do SYZ segue [o fluxo de gestão de mudanças corporativo](https://parcorretoradeseguros.sharepoint.com/sites/Chapter.SouBack/Shared%20Documents/Front%20%C3%A9%20meu%20forte/DevOps%20para%20Devz%20-%20Compartilhado.pdf). Os ambientes mencionados no fluxo (HML-DEV, HML-UAT e PRD) correspondem à publicações do site do SYZ com a documentação com demos interativos do componente.
+ Ao finalizar o desenvolvimento, crie uma branch `release/*` antes de abrir um PR. A criação da branch `release/*` aciona a publicação da documentação do componentes na página do site de homologação do SYZ.
+
+Você pode conferir a página de documentação do seu componente no [site de homologação](http://wizis-hml-web.azurewebsites.net/) antes de abrir o PR.
+
+Se estiver satisfeito com sua branch de `release/*`, abra um PR da `release/*` para a branch `master`. Por favor, inclua um link para a página de documentação no seu PR no site de homologação.
