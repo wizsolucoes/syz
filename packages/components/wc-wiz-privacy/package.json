@@ -1,7 +1,7 @@
 {
   "name": "@wizsolucoes/wiz-privacy",
   "version": "1.0.0",
-  "description": "Forneça mensagens de feedback contextual para ações típicas do usuário com mensagens de alerta disponíveis e flexíveis.",
+  "description": "Forneça aos usuários dos sistemas da Wiz um banner informativo sobre a LGPD e o uso de cookies.",
   "author": "Lucas Mindêllo de Andrade",
   "license": "ISC",
   "publishConfig": {
