@@ -1,4 +1,4 @@
-import { Component, Prop, h, State } from '@stencil/core';
+import { Component, h, State } from '@stencil/core';
 import WizLocalStorageManager from '@wizsolucoes/wiz-localstorage-manager';
 
 @Component({
