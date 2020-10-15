@@ -30,7 +30,7 @@ npm i @wizsolucoes/wiz-privacy
 
 ### Componente html
 ```html
-<wiz-privacy></wiz-alert>
+<wiz-privacy></wiz-privacy>
 
 ```
 

@@ -12,7 +12,7 @@ npm i @wizsolucoes/wiz-privacy
 
 Incluir o componente dentro da tag body
 ```html
-<wiz-privacy></wiz-alert>
+<wiz-privacy></wiz-privacy>
 
 ```
 
