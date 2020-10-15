@@ -1,5 +1,4 @@
 import { Component, h, State } from '@stencil/core';
-import WizLocalStorageManager from '@wizsolucoes/wiz-localstorage-manager';
 
 @Component({
   tag: 'wiz-privacy',
@@ -10,19 +9,8 @@ import WizLocalStorageManager from '@wizsolucoes/wiz-localstorage-manager';
 export class WizPrivacy {
   @State() isShow: boolean = true;
 
-  private storage: WizLocalStorageManager;
-
-  constructor() {
-    this.storage = new WizLocalStorageManager(
-      {
-        scope: 'privacy',
-        tokenFromUI: '1234578901234567890',
-        keySize: 16
-      });
-  }
-
   componentWillLoad() {
-    let lido = this.storage.getItem("lido");
+    let lido = window.localStorage.getItem("privacy-lido");
     if(lido != null) {
       this.isShow = !lido;
     }
@@ -30,7 +18,7 @@ export class WizPrivacy {
 
   close() {
     this.isShow = false;
-    this.storage.setItem("lido", true);
+    window.localStorage.setItem("privacy-lido", "true");
   }
 
 
