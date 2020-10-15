@@ -1,8 +1,8 @@
 {
   "name": "@wizsolucoes/wiz-privacy",
-  "version": "2.0.12",
+  "version": "1.0.0",
   "description": "Forneça mensagens de feedback contextual para ações típicas do usuário com mensagens de alerta disponíveis e flexíveis.",
-  "author": "Hugo dos Santos Ricchino Rosello",
+  "author": "Lucas Mindêllo de Andrade",
   "license": "ISC",
   "publishConfig": {
     "access": "public"
@@ -20,7 +20,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/wiz-alert/wiz-alert.js",
+  "unpkg": "dist/wiz-privacy/wiz-privacy.js",
   "files": [
     "dist/",
     "loader/"
