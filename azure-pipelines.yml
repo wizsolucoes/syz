@@ -4,7 +4,12 @@
 # https://aka.ms/yaml
 
 trigger:
-  batch: 'true'
+  - master
+  - release/*
+
+pr:
+  - master
+  - release/*
 
 variables:
   SiteDirectory: '$(Build.SourcesDirectory)/wizis-web'
