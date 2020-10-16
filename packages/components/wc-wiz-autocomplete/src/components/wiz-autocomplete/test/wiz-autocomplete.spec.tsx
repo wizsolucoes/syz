@@ -2,17 +2,20 @@ import { newSpecPage } from '@stencil/core/testing';
 import { WizAutocomplete } from '../wiz-autocomplete';
 
 describe('wiz-autocomplete', () => {
-  const list = `[{"email":"hugorosello@wizsolucoes.com.br",
-    "name":"Hugo dos Santos Ricchino Rosello"
-  },
-  {
-    "email":"thaischaves@wizsolucoes.com.br",
-    "name":"Thais Pimentel Chaves"
-  },
-  {
-    "email":"mayumeheldt@wizsolucoes.com.br",
-    "name":"Mayume Heldt"
-  }]`
+  const list = `[
+    {
+      "email":"john.doe@test.com.br",
+      "name":"John Doe"
+    }​,
+    {​
+      "email":"aldrey.doe@test.com.br",
+      "name":"Audrey Doe"
+    }​,
+    {​
+      "email":"potter.doe@test.com.br",
+      "name":"Potter Doe"
+    }
+  ]`
 
 
   it('renders', async () => {
@@ -34,7 +37,10 @@ describe('wiz-autocomplete', () => {
 
   it('setInformation', () => {
     const component = new WizAutocomplete();
-    component.setInformation('return');
+    component.setInformation('return', {
+      email:"aldrey.doe@test.com.br",
+      name:"Audrey Doe"
+    });
     expect(component.itemSelected).not.toBeNull();
 
   });

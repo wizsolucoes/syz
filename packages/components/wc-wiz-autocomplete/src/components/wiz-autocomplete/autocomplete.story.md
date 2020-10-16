@@ -10,18 +10,20 @@ O comportamento campo aberto é uma opção para áreas maiores ou sem limitaç�
 
 <wiz-code-demo>
     <wiz-autocomplete
-      data='[{
-          "email":"hugorosello@wizsolucoes.com.br",
-          "name":"Hugo dos Santos Ricchino Rosello"
-        },
+      data='[    
         {
-          "email":"thaischaves@wizsolucoes.com.br",
-          "name":"Thais Pimentel Chaves"
-        },
-        {
-          "email":"mayumeheldt@wizsolucoes.com.br",
-          "name":"Mayume Heldt"
-        }]'
+        "email":"john.doe@test.com.br",
+        "name":"John Doe"
+        }​,
+        {​
+          "email":"aldrey.doe@test.com.br",
+          "name":"Audrey Doe"
+        }​,
+        {​
+          "email":"potter.doe@test.com.br",
+          "name":"Potter Doe"
+        }
+      ]'
       search-result="name"
       search-item="name"
       placeholder="Pesquisar"
