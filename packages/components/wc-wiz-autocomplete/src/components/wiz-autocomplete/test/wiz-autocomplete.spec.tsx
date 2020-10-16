@@ -16,7 +16,11 @@ describe('wiz-autocomplete', () => {
       "name":"Potter Doe"
     }
   ]`
+  let component: WizAutocomplete;
 
+  beforeEach(() => {
+    component = new WizAutocomplete();
+  });
 
   it('renders', async () => {
     const page = await newSpecPage({
@@ -27,16 +31,13 @@ describe('wiz-autocomplete', () => {
 
 
   it('parseMyArrayProp', () => {
-    const component = new WizAutocomplete();
     expect(component.data).not.toBeNull();
-    component.data = list;
-    component.parseMyArrayProp(list)
+    component.data = JSON.stringify(list);
+    component.parseMyArrayProp(JSON.stringify(list))
   });
 
 
-
   it('setInformation', () => {
-    const component = new WizAutocomplete();
     component.setInformation('return', {
       email:"aldrey.doe@test.com.br",
       name:"Audrey Doe"
@@ -61,7 +62,6 @@ describe('wiz-autocomplete', () => {
 
 
   it('clearValue', () => {
-    const component = new WizAutocomplete();
     component.clearValue();
   });
 

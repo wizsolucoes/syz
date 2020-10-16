@@ -24,7 +24,12 @@ export class WizAutocomplete {
 
   @Watch('data')
   parseMyArrayProp(newValue: string) {
-    if (newValue && typeof newValue !== 'object') this.data = JSON.parse(newValue);  }
+    if (newValue && typeof newValue !== 'object') {
+      this.data = JSON.parse(newValue);
+    } else {
+      this.data = newValue;
+    }
+  }
 
   componentWillLoad() {
     this.configInitial();
@@ -70,8 +75,6 @@ export class WizAutocomplete {
       this.searchActive = true;
       searchArray.forEach(element => {
         this.dataFilter = this.dataFilter.filter(r => r['' + this.searchItem + ''].toLowerCase().includes(element.toLowerCase()));
-        console.log(this.dataFilter);
-        //
       });
     }
   }

@@ -28,6 +28,7 @@ declare global {
 declare namespace LocalJSX {
     interface WizAutocomplete {
         "data"?: any;
+        "onGetInputValue"?: (event: CustomEvent<any>) => void;
         "onReturnAutoComplete"?: (event: CustomEvent<any>) => void;
         "placeholder"?: any;
         "searchActive"?: any;
