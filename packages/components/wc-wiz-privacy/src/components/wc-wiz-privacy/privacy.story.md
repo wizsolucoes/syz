@@ -1,4 +1,4 @@
-# Alert
+# Privacy
 
 Privacy é o nosso componente que tem como objetivo mostrar aos usuários dos sistemas da Wiz um banner informativo sobre a LGPD e o uso de cookies.
 

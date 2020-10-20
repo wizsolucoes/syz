@@ -9,24 +9,21 @@ O componente autocomplete conta com uma variação de comportamento que proporci
 O comportamento campo aberto é uma opção para áreas maiores ou sem limitação de espaço.
 
 <wiz-code-demo>
-    <wiz-autocomplete
-      data='[    
-        {
-        "email":"john.doe@test.com.br",
-        "name":"John Doe"
-        }​,
-        {​
-          "email":"aldrey.doe@test.com.br",
-          "name":"Audrey Doe"
-        }​,
-        {​
-          "email":"potter.doe@test.com.br",
-          "name":"Potter Doe"
-        }
-      ]'
-      search-result="name"
-      search-item="name"
-      placeholder="Pesquisar"
-      (returnAutoComplete)="returnAutoComplete($event)"
-    ></wiz-autocomplete>
+  <wiz-autocomplete data='[{
+    "email":"john.doe@test.com.br",
+    "name":"John Doe"
+    },
+    {
+      "email":"aldrey.doe@test.com.br",
+      "name":"Audrey Doe"
+    },
+    {
+      "email":"potter.doe@test.com.br",
+      "name":"Potter Doe"
+    }]'
+    search-result='name'
+    search-item='name'
+    (returnAutoComplete)="returnAutoComplete($event)"
+    (getInputValue)="getInputAutoComplete($event)"
+  ></wiz-autocomplete>
 </wiz-code-demo>
