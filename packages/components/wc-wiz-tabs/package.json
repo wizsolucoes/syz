@@ -1,6 +1,6 @@
 {
   "name": "@wizsolucoes/wiz-tabs",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "Organizam o conteúdo em vistas separadas, onde apenas uma vista pode ser visível por vez.",
   "author": "Hugo dos Santos Ricchino Rosello",
   "license": "ISC",
