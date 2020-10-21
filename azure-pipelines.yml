@@ -30,7 +30,7 @@ stages:
   jobs:
     - job: Build
       displayName: 'Test and Build'
-      condition: succeeded()
+      condition: not(or(startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'), eq(variables['build.sourceBranch'], 'refs/heads/master')))
       steps:
         # Build  and test components 
         - checkout: self
@@ -63,8 +63,7 @@ stages:
             workingDir: $(ComponentsDirectory)
 - stage: Stage
   displayName: 'Stage Solution'
-  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))
-  dependsOn: [Build]
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')
   jobs:
     - job: Site
       displayName: 'Publish site to staging'
@@ -129,8 +128,7 @@ stages:
             appName: '$(HML_SITE_APP_NAME)'
             package: $(System.ArtifactsDirectory)/*.zip
 - stage: Publish
-  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
-  dependsOn: [Build]
+  condition: eq(variables['build.sourceBranch'], 'refs/heads/master')
   jobs:
     - job: Publish
       displayName: 'Bump versions and publish' 
@@ -190,7 +188,6 @@ stages:
             verbose: true
             customCommand: 'run version'
             workingDir: $(ComponentsDirectory)
-          continueOnError: true
         - task: Npm@1
           displayName: 'Publish'
           inputs:
