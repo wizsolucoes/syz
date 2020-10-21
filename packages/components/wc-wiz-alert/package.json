@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "description": "Forneça mensagens de feedback contextual para ações típicas do usuário com mensagens de alerta disponíveis e flexíveis.",
   "author": "Hugo dos Santos Ricchino Rosello",
-  "license": "ISC",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
