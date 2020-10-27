@@ -20,6 +20,7 @@
 
 | Event                | Description | Type               |
 | -------------------- | ----------- | ------------------ |
+| `getInputValue`      |             | `CustomEvent<any>` |
 | `returnAutoComplete` |             | `CustomEvent<any>` |
 
 

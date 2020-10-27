@@ -1,4 +1,4 @@
-import { Component, h, Prop, Watch, State, Event, EventEmitter } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 
 @Component({
   tag: 'wiz-autocomplete',
@@ -14,6 +14,7 @@ export class WizAutocomplete {
   @Prop() searchItem: any;
   @State() inputString: string;
   @Event() returnAutoComplete: EventEmitter;
+  @Event() getInputValue: EventEmitter;
 
   public dataFilter: any = [];
   public value: string;
@@ -23,7 +24,11 @@ export class WizAutocomplete {
 
   @Watch('data')
   parseMyArrayProp(newValue: string) {
-    if (newValue) this.data = JSON.parse(newValue);
+    if (newValue && typeof newValue !== 'object') {
+      this.data = JSON.parse(newValue);
+    } else {
+      this.data = newValue;
+    }
   }
 
   componentWillLoad() {
@@ -31,8 +36,9 @@ export class WizAutocomplete {
     this.parseMyArrayProp(this.data);
   }
 
-  setInformation(r) {
+  setInformation(r, result) {
     this.returnAutoComplete.emit(r);
+    this.getInputValue.emit(result);
     this.itemSelected = r;
     this.dataFilter = [];
     this.render();
@@ -69,8 +75,6 @@ export class WizAutocomplete {
       this.searchActive = true;
       searchArray.forEach(element => {
         this.dataFilter = this.dataFilter.filter(r => r['' + this.searchItem + ''].toLowerCase().includes(element.toLowerCase()));
-        console.log(this.dataFilter);
-        //
       });
     }
   }
@@ -111,7 +115,7 @@ export class WizAutocomplete {
         <div class="result-auto-complete">
           <div class="itens-container">
             {this.dataFilter.map((result) =>
-              <a class="item-result" onClick={() => this.setInformation(this.dataFilter)} >
+              <a class="item-result" onClick={() => this.setInformation(this.dataFilter, result)} >
                 <div class="wiz-auto-complete-item">
                   {result[this.searchResult]}
                 </div>
