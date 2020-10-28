@@ -1,6 +1,6 @@
 {
   "name": "@wizsolucoes/wiz-auto-complete-component",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Baseado em uma entrada de texto o componente sugere opções filtradas para seleção; ",
   "publishConfig": {
     "access": "public"

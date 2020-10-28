@@ -1,6 +1,6 @@
 {
   "name": "@wizsolucoes/wiz-tooltip",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Tooltip é aquela moldura flutuante (pop up) que abre quando passa-se o mouse sobre um elemento da interface.",
   "author": "Hugo dos Santos Ricchino Rosello",
   "license": "MIT",
