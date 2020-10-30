@@ -41,7 +41,7 @@ describe('wiz-autocomplete', () => {
     component.setInformation('return', {
       email:"aldrey.doe@test.com.br",
       name:"Audrey Doe"
-    });
+    }, "Audrey Doe");
     expect(component.itemSelected).not.toBeNull();
 
   });

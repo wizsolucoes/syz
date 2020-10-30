@@ -7,13 +7,14 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type  | Default     |
-| -------------- | --------------- | ----------- | ----- | ----------- |
-| `data`         | `data`          |             | `any` | `undefined` |
-| `placeholder`  | `placeholder`   |             | `any` | `undefined` |
-| `searchActive` | `search-active` |             | `any` | `undefined` |
-| `searchItem`   | `search-item`   |             | `any` | `undefined` |
-| `searchResult` | `search-result` |             | `any` | `undefined` |
+| Property       | Attribute       | Description | Type     | Default     |
+| -------------- | --------------- | ----------- | -------- | ----------- |
+| `data`         | `data`          |             | `any`    | `undefined` |
+| `placeholder`  | `placeholder`   |             | `any`    | `undefined` |
+| `searchActive` | `search-active` |             | `any`    | `undefined` |
+| `searchItem`   | `search-item`   |             | `any`    | `undefined` |
+| `searchResult` | `search-result` |             | `any`    | `undefined` |
+| `value`        | `value`         |             | `string` | `undefined` |
 
 
 ## Events
