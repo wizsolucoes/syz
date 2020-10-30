@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/wizsolucoes/syz/compare/@wizsolucoes/wiz-auto-complete-component@2.3.0...@wizsolucoes/wiz-auto-complete-component@2.4.0) (2020-10-30)
+
+
+### Features
+
+* initial value and selected correct item ([45f65ba](https://github.com/wizsolucoes/syz/commit/45f65bae353b2130b4935b06eef2f1ebc82c7680))
+
+
+
+
+
 # 2.3.0 (2020-10-28)
 
 
