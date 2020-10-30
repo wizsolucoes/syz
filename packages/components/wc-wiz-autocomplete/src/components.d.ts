@@ -12,6 +12,7 @@ export namespace Components {
         "searchActive": any;
         "searchItem": any;
         "searchResult": any;
+        "value": string;
     }
 }
 declare global {
@@ -34,6 +35,7 @@ declare namespace LocalJSX {
         "searchActive"?: any;
         "searchItem"?: any;
         "searchResult"?: any;
+        "value"?: string;
     }
     interface IntrinsicElements {
         "wiz-autocomplete": WizAutocomplete;
