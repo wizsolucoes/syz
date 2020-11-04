@@ -2,18 +2,25 @@ import { newSpecPage } from '@stencil/core/testing';
 import { WizAutocomplete } from '../wiz-autocomplete';
 
 describe('wiz-autocomplete', () => {
-  const list = `[{"email":"hugorosello@wizsolucoes.com.br",
-    "name":"Hugo dos Santos Ricchino Rosello"
-  },
-  {
-    "email":"thaischaves@wizsolucoes.com.br",
-    "name":"Thais Pimentel Chaves"
-  },
-  {
-    "email":"mayumeheldt@wizsolucoes.com.br",
-    "name":"Mayume Heldt"
-  }]`
+  const list = `[
+    {
+      "email":"john.doe@test.com.br",
+      "name":"John Doe"
+    }​,
+    {​
+      "email":"aldrey.doe@test.com.br",
+      "name":"Audrey Doe"
+    }​,
+    {​
+      "email":"potter.doe@test.com.br",
+      "name":"Potter Doe"
+    }
+  ]`
+  let component: WizAutocomplete;
 
+  beforeEach(() => {
+    component = new WizAutocomplete();
+  });
 
   it('renders', async () => {
     const page = await newSpecPage({
@@ -24,17 +31,17 @@ describe('wiz-autocomplete', () => {
 
 
   it('parseMyArrayProp', () => {
-    const component = new WizAutocomplete();
     expect(component.data).not.toBeNull();
-    component.data = list;
-    component.parseMyArrayProp(list)
+    component.data = JSON.stringify(list);
+    component.parseMyArrayProp(JSON.stringify(list))
   });
 
 
-
   it('setInformation', () => {
-    const component = new WizAutocomplete();
-    component.setInformation('return');
+    component.setInformation('return', {
+      email:"aldrey.doe@test.com.br",
+      name:"Audrey Doe"
+    }, "Audrey Doe");
     expect(component.itemSelected).not.toBeNull();
 
   });
@@ -55,7 +62,6 @@ describe('wiz-autocomplete', () => {
 
 
   it('clearValue', () => {
-    const component = new WizAutocomplete();
     component.clearValue();
   });
 

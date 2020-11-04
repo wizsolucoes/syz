@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.2.0 (2020-10-28)
+
+
+### Features
+
+* initial commit ([c89a33a](https://github.com/wizsolucoes/syz/commit/c89a33a0d742dfa3bc3f131f5c9cf6ae4ed88923))
+
+
+
+
+
 ## [2.0.12](https://github.com/wizsolucoes/wiz-checkbox/compare/@wizsolucoes/wiz-checkbox@2.0.11...@wizsolucoes/wiz-checkbox@2.0.12) (2020-07-20)
 
 **Note:** Version bump only for package @wizsolucoes/wiz-checkbox

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.2.0 (2020-10-28)
+
+
+### Features
+
+* initial commit ([c89a33a](https://github.com/wizsolucoes/syz/commit/c89a33a0d742dfa3bc3f131f5c9cf6ae4ed88923))
+
+
+
+
+
 ## [2.0.6](https://github.com/wizsolucoes/wc-wiz-modal/compare/@wizsolucoes/wiz-modal@2.0.5...@wizsolucoes/wiz-modal@2.0.6) (2020-07-17)
 
 **Note:** Version bump only for package @wizsolucoes/wiz-modal

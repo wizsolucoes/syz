@@ -1,9 +1,9 @@
 {
   "name": "@wizsolucoes/wiz-checkbox",
-  "version": "2.0.12",
+  "version": "2.2.0",
   "description": "Checkbox é nosso componente de seleção, geralmente utilizado para coletar respostas dos usuários. O componente pode ser usado para um único item selecionável ou para uma lista de itens de seleção. Um Checkbox tem dois estados principais; selecionado e desmarcado. É importante sempre usar um texto de apoio para descrever a finalidade do checkbox.",
   "author": "Hugo dos Santos Ricchino Rosello",
-  "license": "ISC",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },

@@ -1,4 +1,4 @@
-import { Component, h, Prop, Watch, State, Event, EventEmitter } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 
 @Component({
   tag: 'wiz-autocomplete',
@@ -12,18 +12,23 @@ export class WizAutocomplete {
   @Prop() data;
   @Prop() searchResult;
   @Prop() searchItem: any;
+  @Prop() value: string;
   @State() inputString: string;
   @Event() returnAutoComplete: EventEmitter;
+  @Event() getInputValue: EventEmitter;
 
   public dataFilter: any = [];
-  public value: string;
   @State() itemSelected: any = [];
 
 
 
   @Watch('data')
   parseMyArrayProp(newValue: string) {
-    if (newValue) this.data = JSON.parse(newValue);
+    if (newValue && typeof newValue !== 'object') {
+      this.data = JSON.parse(newValue);
+    } else {
+      this.data = newValue;
+    }
   }
 
   componentWillLoad() {
@@ -31,9 +36,10 @@ export class WizAutocomplete {
     this.parseMyArrayProp(this.data);
   }
 
-  setInformation(r) {
+  setInformation(r, result, selectedItem) {
     this.returnAutoComplete.emit(r);
-    this.itemSelected = r;
+    this.getInputValue.emit(result);
+    this.itemSelected = selectedItem;
     this.dataFilter = [];
     this.render();
   }
@@ -42,6 +48,12 @@ export class WizAutocomplete {
   configInitial() {
     if (!this.placeholder) {
       this.placeholder = 'Pesquisar';
+    }
+    if(this.value) {
+      this.parseMyArrayProp(this.data);
+      this.search(this.value);
+      this.setInformation(this.data, this.value, this.value);
+      this.render();
     }
   }
 
@@ -69,8 +81,6 @@ export class WizAutocomplete {
       this.searchActive = true;
       searchArray.forEach(element => {
         this.dataFilter = this.dataFilter.filter(r => r['' + this.searchItem + ''].toLowerCase().includes(element.toLowerCase()));
-        console.log(this.dataFilter);
-        //
       });
     }
   }
@@ -81,7 +91,7 @@ export class WizAutocomplete {
     return (
       <div class="auto-complete">
         {
-          this.itemSelected.length == 0
+          this.itemSelected.length === 0
             ? <span>
               <input onInput={(event) => this.handleChange(event)} class={`input ${this.searchActive ? ' searchActiveInput' : ' '}`} type="text" />
               <div class={`title ${this.searchActive ? ' searchActiveTitle' : ''}`}>
@@ -99,7 +109,7 @@ export class WizAutocomplete {
               </div>
             </span>
             : <div class="item-select">
-              {this.itemSelected[0][this.searchResult]}
+              {this.itemSelected}
               <div class="btn-clear">
                 <a onClick={() => this.clearValue()}>Limpar</a>
               </div>
@@ -111,7 +121,7 @@ export class WizAutocomplete {
         <div class="result-auto-complete">
           <div class="itens-container">
             {this.dataFilter.map((result) =>
-              <a class="item-result" onClick={() => this.setInformation(this.dataFilter)} >
+              <a class="item-result" onClick={() => this.setInformation(this.dataFilter, result, result[this.searchResult])} >
                 <div class="wiz-auto-complete-item">
                   {result[this.searchResult]}
                 </div>

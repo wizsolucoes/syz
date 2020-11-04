@@ -1,9 +1,9 @@
 {
   "name": "@wizsolucoes/wiz-loader",
-  "version": "2.1.0",
+  "version": "2.3.0",
   "description": "Pré-carregadores são animações simples que são usadas para manter os visitantes entretidos enquanto a página ainda está carregando - isso ajuda a melhorar a experiência do usuário.",
   "author": "Hugo dos Santos Ricchino Rosello",
-  "license": "ISC",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },

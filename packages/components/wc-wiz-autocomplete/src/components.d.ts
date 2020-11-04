@@ -12,6 +12,7 @@ export namespace Components {
         "searchActive": any;
         "searchItem": any;
         "searchResult": any;
+        "value": string;
     }
 }
 declare global {
@@ -28,11 +29,13 @@ declare global {
 declare namespace LocalJSX {
     interface WizAutocomplete {
         "data"?: any;
+        "onGetInputValue"?: (event: CustomEvent<any>) => void;
         "onReturnAutoComplete"?: (event: CustomEvent<any>) => void;
         "placeholder"?: any;
         "searchActive"?: any;
         "searchItem"?: any;
         "searchResult"?: any;
+        "value"?: string;
     }
     interface IntrinsicElements {
         "wiz-autocomplete": WizAutocomplete;
