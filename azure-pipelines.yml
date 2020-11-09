@@ -20,7 +20,6 @@ resources:
     - repository: site
       type: git
       name: DesignSystem/wizis-web
-      endpoint: wizsolucoesAdminPAT
       ref: refs/heads/master
 
 pool:
@@ -189,6 +188,7 @@ stages:
             verbose: true
             customCommand: 'run version'
             workingDir: $(ComponentsDirectory)
+            customEndpoint: 'wizsolucoesAdminPAT'
         - task: Npm@1
           displayName: 'Publish'
           inputs:
