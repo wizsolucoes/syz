@@ -20,6 +20,7 @@ resources:
     - repository: site
       type: git
       name: DesignSystem/wizis-web
+      endpoint: wizsolucoesAdminPAT
       ref: refs/heads/master
 
 pool:
