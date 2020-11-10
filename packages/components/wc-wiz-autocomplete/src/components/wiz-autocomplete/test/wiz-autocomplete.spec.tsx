@@ -9,7 +9,7 @@ describe('wiz-autocomplete', () => {
     }​,
     {​
       "email":"aldrey.doe@test.com.br",
-      "name":"Audrey Doe"
+      "name":"Aldrey Doe"
     }​,
     {​
       "email":"potter.doe@test.com.br",
@@ -40,8 +40,8 @@ describe('wiz-autocomplete', () => {
   it('setInformation', () => {
     component.setInformation('return', {
       email:"aldrey.doe@test.com.br",
-      name:"Audrey Doe"
-    }, "Audrey Doe");
+      name:"Aldrey Doe"
+    }, "Aldrey Doe");
     expect(component.itemSelected).not.toBeNull();
 
   });

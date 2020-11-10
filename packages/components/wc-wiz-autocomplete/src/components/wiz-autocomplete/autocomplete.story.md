@@ -15,7 +15,7 @@ O comportamento campo aberto é uma opção para áreas maiores ou sem limitaç�
     },
     {
       "email":"aldrey.doe@test.com.br",
-      "name":"Audrey Doe"
+      "name":"Aldrey Doe"
     },
     {
       "email":"potter.doe@test.com.br",
