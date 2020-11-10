@@ -21,6 +21,10 @@ resources:
       type: git
       name: DesignSystem/wizis-web
       ref: refs/heads/master
+    - repository: this
+      type: github
+      endpoint: wizsolucoesAdminPAT
+      name: wizsolucoes/syz
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -33,7 +37,7 @@ stages:
       condition: not(or(startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'), eq(variables['build.sourceBranch'], 'refs/heads/master')))
       steps:
         # Build  and test components 
-        - checkout: self
+        - checkout: this
         - checkout: site
         - task: Npm@1
           displayName: 'Install dependencies'
@@ -69,7 +73,7 @@ stages:
       displayName: 'Publish site to staging'
       condition: succeeded()
       steps:
-        - checkout: self
+        - checkout: this
         - checkout: site
 
         # Build components
@@ -134,7 +138,7 @@ stages:
       displayName: 'Bump versions and publish' 
       condition: succeeded() 
       steps:
-        - checkout: self
+        - checkout: this
           persistCredentials: 'true'
         - checkout: site
 
