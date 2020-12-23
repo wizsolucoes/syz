@@ -27,11 +27,13 @@ export class WizPrivacy {
     if (this.isShow === true) {
       return (
         <div class="banner">
-          <button onClick={() => this.close()}>PROSSEGUIR</button>
           <div class="advise">Nós usamos cookies e outras tecnologias semelhantes para melhorar a sua experiência em nossos serviços. Ao utilizar nossos serviços, você concorda com a nossa política de dados. Conheça nosso <a href="https://protecaodedados.wizsolucoes.com.br" target="_blank">Portal de Privacidade</a> e leia mais sobre a nossa nova Política.</div>
+          <div>
+            <button onClick={() => this.close()}>PROSSEGUIR</button>
+          </div>
         </div>
       )
-    } 
+    }
     else {
       return
     }
