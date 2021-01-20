@@ -4,8 +4,7 @@ import { WizCard } from '../wiz-card';
 describe('wiz-card', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WizCard],
-      html: `<wiz-card></wiz-card>`,
+      components: [WizCard]
     });
 
   });
