@@ -4,7 +4,8 @@
   "description": "Componente de card",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wizsolucoes/wiz-card"
+    "url": "  https://github.com/wizsolucoes/syz/packages/components/wc-wiz-card#-wc-wiz-card"
+
   },
   "main": "dist/index.js",
   "module": "dist/custom-elements/index.js",
