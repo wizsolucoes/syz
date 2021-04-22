@@ -25,6 +25,7 @@ resources:
       type: github
       endpoint: wizsolucoesAdminPAT
       name: wizsolucoes/syz
+      ref: '$(Build.SourceBranch)'
 
 pool:
   vmImage: 'ubuntu-latest'
