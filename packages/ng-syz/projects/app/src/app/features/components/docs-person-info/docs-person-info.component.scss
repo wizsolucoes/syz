@@ -1,0 +1,10 @@
+.example {
+  ng-syz-person-info {
+    --syz-person-info-text-color: black;
+  }
+}
+
+.example2 {
+  background-color: var(--accent-color);
+  max-width: 480px;
+}
