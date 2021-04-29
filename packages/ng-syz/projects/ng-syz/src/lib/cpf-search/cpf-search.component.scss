@@ -1,0 +1,78 @@
+:host {
+  --text-color: var(--light-text, white);
+}
+
+#searchBox {
+  background: linear-gradient(
+    180deg,
+    var(--secondary-color,#ffa226) 0%,
+    var(--primary-color, #ff9100) 100%
+  );
+
+  border-radius: 4px;
+
+  .search-wrapper {
+    display: flex;
+    padding: 15px 40px;
+    align-items: center;
+  }
+
+  .user {
+    font-size: var(--font-size, 18px);
+    color: var(--text-color); // TODO: CSS Variables
+    max-width: 360px;
+  }
+  .search-form {
+    margin-left: auto;
+    display: flex;
+
+    .select-type {
+      width: 80px;
+    }
+
+    .mat-radio-group {
+      display: flex;
+
+      .mat-radio-button {
+        margin-right: 20px;
+        margin-top: 35px;
+        color: var(--text-color); // TODO: CSS Variables
+      }
+    }
+
+
+    .mat-form-field {
+      margin-top: 15px;
+      margin-right: 20px;
+      color: var(--text-color); // TODO: CSS Variables
+      font-size: 14px;
+    }
+
+    ::ng-deep {
+      .mat-radio-outer-circle {
+        border-color: var(--text-color); // TODO: CSS Variables
+      }
+      .mat-radio-inner-circle {
+        background-color: var(--text-color); // TODO: CSS Variables
+      }
+
+      .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: var(--text-color);  // TODO: CSS Variables
+      }
+      mat-form-field {
+        .mat-hint,
+        input,
+        ::placeholder,
+        .mat-form-field-label {
+          color: var(--text-color);  // TODO: CSS Variables
+        }
+      }
+    }
+
+    .btn-default {
+      margin-top: 20px;
+      height: 48px;
+      width: 219px;
+    }
+  }
+}

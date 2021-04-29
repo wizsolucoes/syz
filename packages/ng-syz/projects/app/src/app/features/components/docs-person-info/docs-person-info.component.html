@@ -1,0 +1,31 @@
+<app-component-page
+  [title]="'Dados pessoais'"
+  [description]="'Componente para mostrar dados pessoais'"
+  [selector]="'ng-syz-person-info'"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+  [importCode]="importCode"
+>
+  <!-- Example 1 -->
+  <app-code-example
+    [htmlCode]="exampleHtml"
+    [tsCode]="exampleTs"
+    [cssCode]="exampleCss"
+  >
+    <div class="example">
+      <ng-syz-person-info [person]="examplePerson"></ng-syz-person-info>
+    </div>
+  </app-code-example>
+
+  <p>Veja um exemplo com fundo colorido:</p>
+  <!-- Example 2 -->
+  <app-code-example
+    [htmlCode]="example2Html"
+    [tsCode]="exampleTs"
+    [cssCode]="example2Css"
+  >
+    <div class="example2">
+      <ng-syz-person-info [person]="examplePerson"></ng-syz-person-info>
+    </div>
+  </app-code-example>
+</app-component-page>

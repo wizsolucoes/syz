@@ -1,5 +1,9 @@
 {
-  "packages": ["packages/components/*"],
+  "packages": [
+    "packages/components/*",
+    "packages/ng-syz/projects/ng-syz",
+    "packages/ng-syz"
+  ],
   "version": "independent",
   "command": {
     "publish": {

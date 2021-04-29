@@ -1,0 +1,36 @@
+<app-component-page
+  [title]="'Busca por CPF/CNPJ'"
+  [description]="
+    'Componente para iniciar busca por CPF ou por CNPJ com máscaras de input. Recebe um texto opcional e emite um evento com o input do usuário quando o botão é clicado.'
+  "
+  [selector]="'ng-syz-cpf-search'"
+  [importCode]="importCode"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+>
+  <!-- Begin examples in `app-code-example` tags -->
+
+  <!-- Exmple 1 -->
+  <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
+    <ng-syz-cpf-search
+      [message]="'Acompanhe seus pedidos!'"
+      (buttonClick)="onCpfSeachButtonClick($event)"
+    ></ng-syz-cpf-search>
+  </app-code-example>
+
+  <!-- Exaple 2 -->
+  <p>Exemplo de customização com variáveis de CSS:</p>
+  <app-code-example
+    [htmlCode]="htmlExampleCode2"
+    [tsCode]="tsExampleCode"
+    [cssCode]="cssExampleCode"
+  >
+    <ng-syz-cpf-search
+      class="example-2"
+      [message]="'Acompanhe seus pedidos!'"
+      (buttonClick)="onCpfSeachButtonClick($event)"
+    ></ng-syz-cpf-search>
+  </app-code-example>
+
+  <!-- End examples -->
+</app-component-page>

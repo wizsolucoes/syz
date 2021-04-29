@@ -2,11 +2,11 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist",
+    "bootstrap": "lerna bootstrap --hoist --nohoist=@types/jasmine",
     "test": "lerna run test",
     "build": "lerna run build",
     "version": "lerna version",
-    "release": "lerna publish from-package"
+    "release": "lerna publish from-package --contents build"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",

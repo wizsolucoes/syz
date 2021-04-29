@@ -27,6 +27,8 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "prebuild": "rm -rf build dist loader",
+    "postbuild": "mkdir build && cp -r dist loader package.json build/",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",

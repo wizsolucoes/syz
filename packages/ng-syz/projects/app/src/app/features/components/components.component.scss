@@ -1,0 +1,22 @@
+header {
+  background-color: var(--accent-color);
+  padding: 20px;
+
+  h1 {
+    margin: 0;
+    color: var(--light-text-color);
+  }
+}
+
+.mat-sidenav-container {
+  height: 100%;
+  min-height: 100vh;
+
+  .mat-sidenav {
+    min-width: 240px;
+  }
+
+  a.active {
+    background-color: var(--light-accent-color);
+  }
+}
