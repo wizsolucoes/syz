@@ -9,8 +9,8 @@
     "release": "lerna publish from-package"
   },
   "devDependencies": {
-    "@commitlint/cli": "^9.0.1",
-    "@commitlint/config-conventional": "^9.0.1",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
     "copyfiles": "^2.3.0",
     "husky": "^4.2.5",
     "lerna": "^3.22.1",
