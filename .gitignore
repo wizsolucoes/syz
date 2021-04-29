@@ -63,6 +63,3 @@ typings/
 # docs
 packages/site/syz-web/src/assets/docs
 packages/site/syz-web/src/assets/libs/syz
-
-# VS Code
-.vscode/

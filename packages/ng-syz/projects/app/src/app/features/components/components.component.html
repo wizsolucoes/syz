@@ -1,0 +1,18 @@
+<header>
+  <h1>Componentes</h1>
+</header>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="cpf-search" routerLinkActive="active">
+        Busca por CPF/CNPJ
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="app-main-content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

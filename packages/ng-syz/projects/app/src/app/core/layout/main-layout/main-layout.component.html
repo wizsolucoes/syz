@@ -1,0 +1,19 @@
+<mat-toolbar color="accent">
+  <a routerLink="components/home">
+    <div class="navbar-brand">
+      <img
+        [src]="
+          'https://material.angular.io/assets/img/homepage/angular-white-transparent.svg'
+        "
+        alt="logo"
+        data-test="logo-img"
+      />
+
+      <span>Syz</span>
+    </div>
+  </a>
+</mat-toolbar>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,14 @@
+{
+  "name": "@wizsolucoes/ng-syz",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/cdk": "^11.2.10",
+    "@angular/common": "^11.0.9",
+    "@angular/core": "^11.0.9",
+    "@angular/material": "^11.2.10",
+    "ngx-mask": "^11.1.5"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

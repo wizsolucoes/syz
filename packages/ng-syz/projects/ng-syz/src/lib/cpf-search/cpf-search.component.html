@@ -1,0 +1,52 @@
+<div id="searchBox">
+  <div class="search-wrapper">
+    <div class="user" data-test="message">{{ message }}</div>
+
+    <form class="search-form" [formGroup]="searchFormGroup">
+      <mat-radio-group
+        aria-label="Select an option"
+        formControlName="selectedTypeOfSearch"
+        name="selectedTypeOfSearch"
+        #radioGroup="matRadioGroup"
+      >
+        <mat-radio-button value="cpf" name="cpf">CPF</mat-radio-button>
+        <mat-radio-button value="cnpj" name="cnpj">CNPJ</mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field
+        appearance="outline"
+        *ngIf="searchFormGroup.value.selectedTypeOfSearch === 'cpf'"
+      >
+        <mat-label>Digite o número do CPF</mat-label>
+        <input
+          matInput
+          formControlName="cpfCnpj"
+          mask="000.000.000-00"
+          (keydown.enter)="searchCustomer()"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field
+        appearance="outline"
+        *ngIf="searchFormGroup.value.selectedTypeOfSearch == 'cnpj'"
+      >
+        <mat-label>Digite o número do CNPJ</mat-label>
+        <input
+          matInput
+          formControlName="cpfCnpj"
+          mask="00.000.000/0000-00"
+          (keydown.enter)="searchCustomer()"
+          required
+        />
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="accent"
+        class="btn-default"
+        type="button"
+        (click)="searchCustomer()"
+      >
+        Pesquisar
+      </button>
+    </form>
+  </div>
+</div>
