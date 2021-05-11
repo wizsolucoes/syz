@@ -14,6 +14,7 @@ pr:
 variables:
   SiteDirectory: '$(Build.SourcesDirectory)/wizis-web'
   ComponentsDirectory: '$(Build.SourcesDirectory)/syz'
+  NgSyzDirectory: '$(Build.SourcesDirectory)/packages/ng-syz'
 
 resources:
   repositories:
@@ -70,14 +71,77 @@ stages:
   displayName: 'Stage Solution'
   condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')
   jobs:
+    - job: NgSyz
+      pool:
+       vmImage: 'windows-latest'
+      displayName: 'Publish NgSyz to staging'
+      steps:
+        - checkout: this
+
+        - task: Npm@1
+          displayName: "Install dependencies"
+          inputs:
+            command: "install"
+            workingDir: $(NgSyzDirectory)
+
+        - task: Npm@1
+          displayName: 'Build lib'
+          inputs:
+            command: custom
+            verbose: true
+            customCommand: 'run build:lib:prod'
+            workingDir: $(NgSyzDirectory)
+
+        - task: Npm@1
+          displayName: 'Test lib'
+          inputs:
+            command: custom
+            verbose: true
+            customCommand: 'run test:lib'
+            workingDir: $(NgSyzDirectory)
+
+        - task: Npm@1
+          displayName: 'Publish lib to npm (Temp)'
+          inputs:
+            command: "custom"
+            verbose: true
+            customCommand: "publish"
+            customEndpoint: "npmjs"
+            workingDir: $(NgSyzDirectory)/dist/ng-syz
+
+        - task: Npm@1
+          displayName: 'Build app'
+          inputs:
+            command: custom
+            verbose: true
+            customCommand: 'run build:app:prod'
+            workingDir: $(NgSyzDirectory)
+
+        - task: Npm@1
+          displayName: 'Test app'
+          inputs:
+            command: custom
+            verbose: true
+            customCommand: 'run test:app'
+            workingDir: $(NgSyzDirectory)
+
+        - task: AzureFileCopy@4
+          displayName: 'Publish app to storage'
+          inputs:
+            SourcePath: $(NgSyzDirectory)/dist/app
+            azureSubscription: 'AmbientesDevHml'
+            Destination: 'AzureBlob'
+            storage: 'sysstorybookhmlstg'
+            ContainerName: '$web'
+
     - job: Site
-      displayName: 'Publish site to staging'
-      condition: succeeded()
+      displayName: 'Publish Syz site to staging'
+      condition: 'false'
       steps:
         - checkout: this
         - checkout: site
 
-        # Build packages
+        # Build components
         - task: Npm@1
           displayName: 'Install dependencies'
           inputs:

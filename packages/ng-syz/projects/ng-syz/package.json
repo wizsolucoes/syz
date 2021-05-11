@@ -1,6 +1,10 @@
 {
   "name": "@wizsolucoes/ng-syz",
   "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
   "peerDependencies": {
     "@angular/cdk": "^11.2.10",
     "@angular/common": "^11.0.9",
