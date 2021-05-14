@@ -72,6 +72,7 @@ stages:
   condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')
   jobs:
     - job: NgSyz
+      condition: 'false'
       pool:
        vmImage: 'windows-latest'
       displayName: 'Publish NgSyz to staging'
