@@ -15,6 +15,7 @@
   - [1. Gere um distribuível da biblioteca](#1-gere-um-distribuível-da-biblioteca)
   - [2. Instale o distribuível na outra aplicação](#2-instale-o-distribuível-na-outra-aplicação)
   - [3. Adicione o componente à aplicação](#3-adicione-o-componente-à-aplicação)
+- [Contribuição, homologação e CI/CD](#contribuição-homologação-e-cicd)
 
 ## Sobre
 Uma biblioteca angular com os componentes do design system SYZ e uma aplicação Angular com uma demonstração dos componentes.
@@ -130,3 +131,15 @@ npm i ../<path-to>/ng-syz/dist/ng-syz/wizsolucoes-ng-syz-x.x.x.tgz
 
 ### 3. Adicione o componente à aplicação
 Importa o módulo do componente no módulo da aplicação e adicione o componente à interface.
+
+## Contribuição, homologação e CI/CD
+Ao finalizar o desenvolvimento, basta criar uma branch `release/*` para que a galeria com os componentes atualizados seja publicada para homologação.
+
+A URL de homologação é https://sysstorybookhmlstg.z13.web.core.windows.net/
+
+Depois de criar a branch `release/*` você deve abrir um PR. O PR precisa ser aprovador por um membro do _team_ **[syz-approvers](https://github.com/orgs/wizsolucoes/teams/syz-approvers/members)**.
+
+Quando o PR for aceito e houver merger na branch `master`´, a biblioteca será publicada para **[npm](https://www.npmjs.com/package/@wizsolucoes/ng-syz)** e a galeria será publicada para a página de produção. 
+
+
+
