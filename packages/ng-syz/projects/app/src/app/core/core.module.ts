@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [MainLayoutComponent],
@@ -13,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     BrowserAnimationsModule,
     RouterModule,
     MatToolbarModule,
+    SharedModule,
   ],
   exports: [MainLayoutComponent],
 })

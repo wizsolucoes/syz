@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -8,8 +9,15 @@ import { ComponentPageComponent } from './components/component-page/component-pa
 
 @NgModule({
   declarations: [ComponentPageComponent, CodeExampleComponent],
-  imports: [MatTableModule, MatTabsModule, MatSnackBarModule, CommonModule],
+  imports: [
+    MatButtonModule,
+    MatTableModule,
+    MatTabsModule,
+    MatSnackBarModule,
+    CommonModule,
+  ],
   exports: [
+    MatButtonModule,
     MatSnackBarModule,
     MatTableModule,
     MatTabsModule,

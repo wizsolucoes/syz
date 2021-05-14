@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:app": "ng serve app",
+    "app": "ng serve app",
     "build": "npm run build:lib:prod && npm run build:app:prod",
     "build:app": "ng build app",
     "build:app:prod": "ng build app --prod",
