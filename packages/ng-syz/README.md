@@ -2,15 +2,19 @@
 # NgSyz
 
 - [Sobre](#sobre)
+  - [Estrutura](#estrutura)
 - [Desenvolvimento](#desenvolvimento)
   - [Por onde começar](#por-onde-começar)
-  - [Desenvolvimento com live reload](#desenvolvimento-com-live-reload)
 - [Adicionando um componente](#adicionando-um-componente)
   - [1. Crie uma nova pasta para o módulo do novo componente em `projects/ng-syz/src/lib`](#1-crie-uma-nova-pasta-para-o-módulo-do-novo-componente-em-projectsng-syzsrclib)
   - [2. Adicione dependências do componente a `peerDependencies` no `projects/ng-syz/package.json`.](#2-adicione-dependências-do-componente-a-peerdependencies-no-projectsng-syzpackagejson)
   - [3. Prefixe o seletor do componente com "ng-syz"](#3-prefixe-o-seletor-do-componente-com-ng-syz)
   - [4. Torne os membros do componente públicos](#4-torne-os-membros-do-componente-públicos)
-  - [5. Visualize o resultado na aplicação de demonstração](#5-visualize-o-resultado-na-aplicação-de-demonstração)
+  - [5. Visualize e documente o componente na aplicação de demonstração](#5-visualize-e-documente-o-componente-na-aplicação-de-demonstração)
+    - [5.1 Crie um módulo para a documentação do Componente](#51-crie-um-módulo-para-a-documentação-do-componente)
+    - [5.2 Adiciona o novo componente ao template](#52-adiciona-o-novo-componente-ao-template)
+    - [5.3 Adicione um `navItem`](#53-adicione-um-navitem)
+    - [5.4 Documente o novo componente com o componente compartilhado `<app-component-page>`](#54-documente-o-novo-componente-com-o-componente-compartilhado-app-component-page)
 - [Testando o componente em outra aplicação](#testando-o-componente-em-outra-aplicação)
   - [1. Gere um distribuível da biblioteca](#1-gere-um-distribuível-da-biblioteca)
   - [2. Instale o distribuível na outra aplicação](#2-instale-o-distribuível-na-outra-aplicação)
@@ -19,6 +23,22 @@
 
 ## Sobre
 Uma biblioteca angular com os componentes do design system SYZ e uma aplicação Angular com uma demonstração dos componentes.
+
+### Estrutura
+```bash
+.
+└── projects
+    # Aplicação de galeria da biblioteca de componentes
+    └── app 
+        └── src/app
+
+    # A biblioteca de componentes
+    └── ng-syz 
+        ├── package.json
+        └── src/lib
+            ├── cpf-search
+            └── componente-2
+```
 
 ## Desenvolvimento
 ### Por onde começar
@@ -33,31 +53,9 @@ ng test ng-syz
 ng test app
 
 # Buildar biblioteca
-ng build ng-syz
-
-# Servir a aplicação demo
-ng serve app
-```
-
-### Desenvolvimento com live reload
-Para facilitar o desenvolvimento dos componentes usando a aplicação de demo, use `npm link` para habilitar live reload e evitar a necessidade de instalar a biblioteca a cada build.
-```bash
-# Entrar na pasta do build na biblioteca
-cd dist/ng-syz/
-
-# Fazer link da biblioteca
-npm link
-
-# Voltar para a raiz do projeto
-cd ../..
-
-# Fazer link na raiz do projeto
-npm link
-
-# Buildar biblioteca com flag `watch`
 ng build ng-syz --watch
 
-#Servir applicação
+# Servir a aplicação demo
 ng serve app
 ```
 
@@ -89,23 +87,50 @@ export * from './lib/cpf-search/cpf-search.module';
 export * from './lib/cpf-search/cpf-search.component';
 ```
 
-### 5. Visualize o resultado na aplicação de demonstração
+### 5. Visualize e documente o componente na aplicação de demonstração
 Habilite [desenvolvimento com live reload](#desenvolvimento-com-live-reload) e adicione o componente à aplicação de demo para visualizar o resultado.
 
-Obs: Se você exportar um módulo novo depois de fazer `npm link`, será necessário `npm unlink`ar a biblioteca e `npm link`á-la novamente.
-
+#### 5.1 Crie um módulo para a documentação do Componente
+Crie o módulo:
 ```bash
-# Fazer unlink na raiz do projeto
-npm unlink
-
-# Entrar na pasta do build na biblioteca
-cd dist/ng-syz/
-
-# Fazer unlink da biblioteca
-npm unlink
-
-# Depois seguir os passos para npm linkar
+ng g m features/components/my-component --route my-component --module features/components/components.module.ts
 ```
+
+Verifique que novo `Route` está na array de `Children` do `ComponentsRoutingModule`.
+```ts
+const routes: Routes = [
+  {
+    path: '',
+    component: ComponentsComponent,
+    children: [
+      ...
+    ]
+  }
+```
+
+#### 5.2 Adiciona o novo componente ao template
+Para validar que está tudo ok, importa o módulo do componente no módulo da documentação e acrescente ao template
+
+```html
+<!-- projects\app\src\app\features\components\my-component\my-component.component.html -->
+
+<my-component></my-component>
+```
+
+#### 5.3 Adicione um `navItem`
+No arquivo `projects\app\src\app\features\components\components.component.ts`, adicione um objeto ao Array `navItems`.
+
+```ts
+navItems: NavItem[] = [
+  { displayName: 'Busca por CPF/CNPJ', route: 'cpf-search' },
+  { displayName: 'Meu componente irado', route: 'my-component' },
+];
+```
+
+#### 5.4 Documente o novo componente com o componente compartilhado `<app-component-page>`
+- Importe `SharedModule` on módulo de documentação
+- Use o componente `<app-component-page>` para documentar o componente e adicionar exemplos.
+- Use o componente `<app-code-example>` para mostrar trechos de código com os exemplos.
 
 ## Testando o componente em outra aplicação
 ### 1. Gere um distribuível da biblioteca
