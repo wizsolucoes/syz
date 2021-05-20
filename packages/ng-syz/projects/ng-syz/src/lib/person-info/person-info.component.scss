@@ -1,0 +1,45 @@
+#PersonInfo {
+  color: var(--syz-person-info-text-color, var(--light-text-color, black));
+  padding: 80px 60px;
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+
+  .personal-data,
+  .contact,
+  .address {
+    h3 {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    hr {
+      border: none;
+      height: 1px;
+      background-color:  var(--syz-person-info-text-color, var(--light-text-color, black));
+      margin-bottom: 32px;
+    }
+  }
+
+  .data-group {
+    display: flex;
+
+    .data {
+      margin-bottom: 28px;
+      label {
+        font-size: 14px;
+      }
+      p {
+        font-weight: bold;
+        font-size: 16px;
+      }
+      &:first-child {
+        width: 60%;
+      }
+      &:last-child {
+        width: 40%;
+      }
+    }
+  }
+}
