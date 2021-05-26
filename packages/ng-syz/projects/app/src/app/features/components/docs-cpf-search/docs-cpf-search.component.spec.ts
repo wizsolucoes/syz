@@ -1,14 +1,13 @@
-import { formatPercent } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSyzCpfSearchModule } from '@wizsolucoes/ng-syz';
 import { SharedModule } from '../../../shared/shared.module';
-import { CpfSearchComponent } from './cpf-search.component';
+import { DocsCpfSearchComponent } from './docs-cpf-search.component';
 
-describe('CpfSearchComponent', () => {
-  let component: CpfSearchComponent;
-  let fixture: ComponentFixture<CpfSearchComponent>;
+describe('DocsCpfSearchComponent', () => {
+  let component: DocsCpfSearchComponent;
+  let fixture: ComponentFixture<DocsCpfSearchComponent>;
   let template: HTMLElement;
   let mockSnackBar: jasmine.SpyObj<MatSnackBar>;
 
@@ -22,13 +21,13 @@ describe('CpfSearchComponent', () => {
         SharedModule,
         NoopAnimationsModule,
       ],
-      declarations: [CpfSearchComponent],
+      declarations: [DocsCpfSearchComponent],
       providers: [{ provide: MatSnackBar, useValue: mockSnackBar }],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CpfSearchComponent);
+    fixture = TestBed.createComponent(DocsCpfSearchComponent);
     component = fixture.componentInstance;
     template = fixture.nativeElement;
     fixture.detectChanges();
@@ -38,24 +37,16 @@ describe('CpfSearchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xdescribe('Component Demos', () => {
-    describe('CpfSearch', () => {
-      it('should display CpfSearch', () => {
-        expect(template.querySelector('ng-syz-cpf-search')).toBeTruthy();
-      });
+  describe('onCpfSeachButtonClick', () => {
+    it('should open snack bar', () => {
+      // Given
+      const cpf = '12340';
 
-      describe('onCpfSeachButtonClick', () => {
-        it('should open snack bar', () => {
-          // Given
-          const cpf = '12340';
+      // When
+      component.onCpfSeachButtonClick(cpf);
 
-          // When
-          component.onCpfSeachButtonClick(cpf);
-
-          // Then
-          expect(mockSnackBar.open).toHaveBeenCalledWith(cpf, 'Fechar');
-        });
-      });
+      // Then
+      expect(mockSnackBar.open).toHaveBeenCalledWith(cpf, 'Fechar');
     });
   });
 });

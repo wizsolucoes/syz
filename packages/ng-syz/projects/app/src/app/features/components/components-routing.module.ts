@@ -9,13 +9,6 @@ const routes: Routes = [
     component: ComponentsComponent,
     children: [
       {
-        path: 'cpf-search',
-        loadChildren: () =>
-          import('./cpf-search/cpf-search.module').then(
-            (m) => m.CpfSearchModule
-          ),
-      },
-      {
         path: 'home',
         loadChildren: () =>
           import('./home/home.module').then((m) => m.HomeModule),
@@ -25,6 +18,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./person-info/person-info.module').then(
             (m) => m.PersonInfoModule
+          ),
+      },
+      {
+        path: 'cpf-search',
+        loadChildren: () =>
+          import('./docs-cpf-search/docs-cpf-search.module').then(
+            (m) => m.DocsCpfSearchModule
           ),
       },
     ],

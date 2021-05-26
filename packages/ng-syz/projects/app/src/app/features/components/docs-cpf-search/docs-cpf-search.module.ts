@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CpfSearchRoutingModule } from './cpf-search-routing.module';
-import { CpfSearchComponent } from './cpf-search.component';
+import { DocsCpfSearchRoutingModule } from './docs-cpf-search-routing.module';
+import { DocsCpfSearchComponent } from './docs-cpf-search.component';
 
 import { NgSyzCpfSearchModule } from '@wizsolucoes/ng-syz';
 import { SharedModule } from '../../../shared/shared.module';
 
 @NgModule({
-  declarations: [CpfSearchComponent],
+  declarations: [DocsCpfSearchComponent],
   imports: [
     CommonModule,
     SharedModule,
-    CpfSearchRoutingModule,
+    DocsCpfSearchRoutingModule,
     NgSyzCpfSearchModule,
   ],
 })
-export class CpfSearchModule {}
+export class DocsCpfSearchModule {}

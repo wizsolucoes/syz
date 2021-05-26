@@ -4,10 +4,10 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
 
 @Component({
   selector: 'app-cpf-search',
-  templateUrl: './cpf-search.component.html',
-  styleUrls: ['./cpf-search.component.scss'],
+  templateUrl: './docs-cpf-search.component.html',
+  styleUrls: ['./docs-cpf-search.component.scss'],
 })
-export class CpfSearchComponent {
+export class DocsCpfSearchComponent {
   /* Documentation */
   importCode = `
   import { NgSyzCpfSearchModule } from '@wizsolucoes/ng-syz';
