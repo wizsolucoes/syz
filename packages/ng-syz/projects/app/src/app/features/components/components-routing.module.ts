@@ -14,17 +14,17 @@ const routes: Routes = [
           import('./home/home.module').then((m) => m.HomeModule),
       },
       {
-        path: 'person-info',
-        loadChildren: () =>
-          import('./person-info/person-info.module').then(
-            (m) => m.PersonInfoModule
-          ),
-      },
-      {
         path: 'cpf-search',
         loadChildren: () =>
           import('./docs-cpf-search/docs-cpf-search.module').then(
             (m) => m.DocsCpfSearchModule
+          ),
+      },
+      {
+        path: 'person-info',
+        loadChildren: () =>
+          import('./docs-person-info/docs-person-info.module').then(
+            (m) => m.DocsPersonInfoModule
           ),
       },
     ],

@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ComponentProps } from '../../../shared/models/component-props.interface';
 
 @Component({
-  selector: 'app-person-info',
-  templateUrl: './person-info.component.html',
-  styleUrls: ['./person-info.component.scss'],
+  selector: 'app-docs-person-info',
+  templateUrl: './docs-person-info.component.html',
+  styleUrls: ['./docs-person-info.component.scss'],
 })
-export class PersonInfoComponent implements OnInit {
+export class DocsPersonInfoComponent {
   examplePerson = {
     name: 'Lucas Brando',
     cpfCnpj: '05011798100',
@@ -26,6 +26,10 @@ export class PersonInfoComponent implements OnInit {
       number: '29',
     },
   };
+
+  importCode = `
+  import { NgSyzPersonInfoModule } from '@wizsolucoes/ng-syz';
+  `;
 
   exampleHtml = `
   <div class="example">
@@ -89,12 +93,8 @@ export class PersonInfoComponent implements OnInit {
 
   componentCSSVariables: ComponentProps[] = [
     {
-      name: `--person-info-text-color`,
+      name: `--syz-person-info-text-color`,
       description: 'Cor do texto',
     },
   ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

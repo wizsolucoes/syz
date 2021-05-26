@@ -1,5 +1,5 @@
 <div id="PersonInfo">
-  <h1>{{ person.name }}</h1>
+  <h1 data-test="name">{{ person.name }}</h1>
   <div class="personal-data" *ngIf="person.cpfCnpj.length < 14">
     <h3>Dados Pessoais</h3>
     <hr />
@@ -46,7 +46,7 @@
     <div class="data-group">
       <div class="data">
         <label>E-mail</label>
-        <p>{{ person.email }}</p>
+        <p data-test="email">{{ person.email }}</p>
       </div>
     </div>
   </div>
