@@ -5,6 +5,10 @@
     "access": "public"
   },
   "private": false,
+  "scripts": {
+    "build": "echo please build workspace",
+    "test": "echo please test workspace"
+  },
   "peerDependencies": {
     "@angular/cdk": "^11.2.10",
     "@angular/common": "^11.0.9",

@@ -63,3 +63,7 @@ typings/
 # docs
 packages/site/syz-web/src/assets/docs
 packages/site/syz-web/src/assets/libs/syz
+
+# Build artefacts
+**/dist/
+**/build/
