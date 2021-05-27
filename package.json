@@ -6,8 +6,7 @@
     "test": "lerna run test",
     "build": "lerna run build",
     "version": "lerna version",
-    "release": "lerna publish from-package --contents build",
-    "prepublish": "lerna run build"
+    "release": "lerna publish from-package --contents build"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",

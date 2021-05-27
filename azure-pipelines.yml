@@ -248,6 +248,16 @@ stages:
               verbose: true
               customCommand: 'run version'
               workingDir: $(MonoRepoDirectory)
+
+          # Build before publishing to get updated packages.json version
+          - task: Npm@1
+            displayName: 'Build'
+            inputs:
+              command: custom
+              verbose: false
+              customCommand: 'run build'
+              workingDir: $(MonoRepoDirectory)
+
           - task: Npm@1
             displayName: 'Publish'
             inputs:
@@ -257,36 +267,90 @@ stages:
               workingDir: $(MonoRepoDirectory)
 
           # Build site documentaion and publish site
-          # - task: Npm@1
-          #   displayName: 'Install site dependencies'
-          #   inputs:
-          #     command: ci
-          #     workingDir: $(SiteDirectory)
-          # - script: node docs.js --site-path=$(SiteDirectory)
-          #   displayName: 'Generate site documentation'
-          #   workingDirectory: $(MonoRepoDirectory)
-          # - task: Npm@1
-          #   displayName: 'Build site'
-          #   inputs:
-          #     command: custom
-          #     verbose: false
-          #     customCommand: 'run build'
-          #     workingDir: $(SiteDirectory)
-          # - task: CopyFiles@2
-          #   displayName: 'Copy site dist to artifact staging directory'
-          #   inputs:
-          #     SourceFolder: '$(SiteDirectory)/dist/angular-wiz-repositorio'
-          #     Contents: '**'
-          #     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-          # - task: ArchiveFiles@2
-          #   displayName: 'Archive site dist'
-          #   inputs:
-          #     rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
-          #     includeRootFolder: false
-          # - task: AzureWebApp@1
-          #   displayName: 'Deploy site to Azure Web App'
-          #   inputs:
-          #     azureSubscription: '$(PRD_SITE_AZURE_SUBSCRIPTION)'
-          #     appType: webApp
-          #     appName: '$(PRD_SITE_APP_NAME)'
-          #     package: $(System.ArtifactsDirectory)/*.zip
+          - task: Npm@1
+            displayName: 'Install site dependencies'
+            inputs:
+              command: ci
+              workingDir: $(SiteDirectory)
+          - script: node docs.js --site-path=$(SiteDirectory)
+            displayName: 'Generate site documentation'
+            workingDirectory: $(MonoRepoDirectory)
+          - task: Npm@1
+            displayName: 'Build site'
+            inputs:
+              command: custom
+              verbose: false
+              customCommand: 'run build'
+              workingDir: $(SiteDirectory)
+          - task: CopyFiles@2
+            displayName: 'Copy site dist to artifact staging directory'
+            inputs:
+              SourceFolder: '$(SiteDirectory)/dist/angular-wiz-repositorio'
+              Contents: '**'
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - task: ArchiveFiles@2
+            displayName: 'Archive site dist'
+            inputs:
+              rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+              includeRootFolder: false
+          - task: AzureWebApp@1
+            displayName: 'Deploy site to Azure Web App'
+            inputs:
+              azureSubscription: '$(PRD_SITE_AZURE_SUBSCRIPTION)'
+              appType: webApp
+              appName: '$(PRD_SITE_APP_NAME)'
+              package: $(System.ArtifactsDirectory)/*.zip
+
+      - job: NgSyz
+        pool:
+          vmImage: 'windows-latest'
+        displayName: 'Publish NgSyz to production'
+        steps:
+          - checkout: this
+
+          - task: Npm@1
+            displayName: 'Install dependencies'
+            inputs:
+              command: 'install'
+              workingDir: $(NgSyzDirectory)
+
+          - task: Npm@1
+            displayName: 'Build lib'
+            inputs:
+              command: custom
+              verbose: true
+              customCommand: 'run build:lib:prod'
+              workingDir: $(NgSyzDirectory)
+
+          - task: Npm@1
+            displayName: 'Test lib'
+            inputs:
+              command: custom
+              verbose: true
+              customCommand: 'run test:lib'
+              workingDir: $(NgSyzDirectory)
+
+          - task: Npm@1
+            displayName: 'Build app'
+            inputs:
+              command: custom
+              verbose: true
+              customCommand: 'run build:app:prod'
+              workingDir: $(NgSyzDirectory)
+
+          - task: Npm@1
+            displayName: 'Test app'
+            inputs:
+              command: custom
+              verbose: true
+              customCommand: 'run test:app'
+              workingDir: $(NgSyzDirectory)
+
+          - task: AzureFileCopy@4
+            displayName: 'Publish app to storage'
+            inputs:
+              SourcePath: '$(NgSyzDirectory)/dist/app/*'
+              azureSubscription: 'AmbienteCorporativoExterior'
+              Destination: 'AzureBlob'
+              storage: 'sysstorybookprdstg'
+              ContainerName: '$web'
