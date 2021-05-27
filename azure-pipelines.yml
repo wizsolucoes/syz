@@ -13,7 +13,7 @@ pr:
 
 variables:
   SiteDirectory: '$(Build.SourcesDirectory)/wizis-web'
-  ComponentsDirectory: '$(Build.SourcesDirectory)/syz'
+  MonoRepoDirectory: '$(Build.SourcesDirectory)/syz'
   NgSyzDirectory: '$(Build.SourcesDirectory)/packages/ng-syz'
 
 resources:
@@ -45,31 +45,31 @@ stages:
             displayName: 'Install dependencies'
             inputs:
               command: ci
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
           - task: Npm@1
             displayName: 'Bootstrap'
             inputs:
               command: custom
               verbose: false
               customCommand: 'run bootstrap'
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
           - task: Npm@1
             displayName: 'Test'
             inputs:
               command: 'custom'
               verbose: false
               customCommand: 'run test'
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
           - task: Npm@1
             displayName: 'Build'
             inputs:
               command: custom
               verbose: false
               customCommand: 'run build'
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
   - stage: Stage
     displayName: 'Stage Solution'
-    condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')
+    condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/xpto/')
     jobs:
       - job: NgSyz
         pool:
@@ -137,21 +137,21 @@ stages:
             displayName: 'Install dependencies'
             inputs:
               command: ci
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
           - task: Npm@1
             displayName: 'Bootstrap'
             inputs:
               command: custom
               verbose: false
               customCommand: 'run bootstrap'
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
           - task: Npm@1
             displayName: 'Build'
             inputs:
               command: custom
               verbose: false
               customCommand: 'run build'
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
 
           # Build site documentaion and publish site
           - task: Npm@1
@@ -161,7 +161,7 @@ stages:
               workingDir: $(SiteDirectory)
           - script: node docs.js --site-path=$(SiteDirectory)
             displayName: 'Generate site documentation'
-            workingDirectory: $(ComponentsDirectory)
+            workingDirectory: $(MonoRepoDirectory)
           - task: Npm@1
             displayName: 'Build site'
             inputs:
@@ -188,7 +188,7 @@ stages:
               appName: '$(HML_SITE_APP_NAME)'
               package: $(System.ArtifactsDirectory)/*.zip
   - stage: Publish
-    condition: eq(variables['build.sourceBranch'], 'refs/heads/master')
+    condition: eq(variables['build.sourceBranch'], 'refs/heads/release/ng-syz')
     jobs:
       - job: Publish
         displayName: 'Bump versions and publish'
@@ -205,40 +205,40 @@ stages:
               script: |
                 git config --global user.email "lernabot@wizsolucoes.com.br"
                 git config --global user.name "Lerna bot"
-              workingDirectory: $(ComponentsDirectory)
+              workingDirectory: $(MonoRepoDirectory)
           - task: CmdLine@2
-            displayName: Checkout $(Build.SourceBranchName)
+            displayName: Checkout release/ng-syz
             inputs:
-              script: 'git checkout $(Build.SourceBranchName)'
-              workingDirectory: $(ComponentsDirectory)
+              script: 'git checkout release/ng-syz'
+              workingDirectory: $(MonoRepoDirectory)
 
           # Build and test components
           - task: Npm@1
             displayName: 'Install dependencies'
             inputs:
               command: ci
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
           - task: Npm@1
             displayName: 'Bootstrap'
             inputs:
               command: custom
               verbose: false
               customCommand: 'run bootstrap'
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
           - task: Npm@1
             displayName: 'Build'
             inputs:
               command: custom
               verbose: false
               customCommand: 'run build'
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
           - task: Npm@1
             displayName: 'Test'
             inputs:
               command: 'custom'
               verbose: false
               customCommand: 'run test'
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
 
           # Version and publish components
           - task: Npm@1
@@ -247,46 +247,46 @@ stages:
               command: 'custom'
               verbose: true
               customCommand: 'run version'
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
           - task: Npm@1
             displayName: 'Publish'
             inputs:
               command: 'custom'
               customCommand: 'run release'
               customEndpoint: 'npmjs'
-              workingDir: $(ComponentsDirectory)
+              workingDir: $(MonoRepoDirectory)
 
           # Build site documentaion and publish site
-          - task: Npm@1
-            displayName: 'Install site dependencies'
-            inputs:
-              command: ci
-              workingDir: $(SiteDirectory)
-          - script: node docs.js --site-path=$(SiteDirectory)
-            displayName: 'Generate site documentation'
-            workingDirectory: $(ComponentsDirectory)
-          - task: Npm@1
-            displayName: 'Build site'
-            inputs:
-              command: custom
-              verbose: false
-              customCommand: 'run build'
-              workingDir: $(SiteDirectory)
-          - task: CopyFiles@2
-            displayName: 'Copy site dist to artifact staging directory'
-            inputs:
-              SourceFolder: '$(SiteDirectory)/dist/angular-wiz-repositorio'
-              Contents: '**'
-              TargetFolder: '$(Build.ArtifactStagingDirectory)'
-          - task: ArchiveFiles@2
-            displayName: 'Archive site dist'
-            inputs:
-              rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
-              includeRootFolder: false
-          - task: AzureWebApp@1
-            displayName: 'Deploy site to Azure Web App'
-            inputs:
-              azureSubscription: '$(PRD_SITE_AZURE_SUBSCRIPTION)'
-              appType: webApp
-              appName: '$(PRD_SITE_APP_NAME)'
-              package: $(System.ArtifactsDirectory)/*.zip
+          # - task: Npm@1
+          #   displayName: 'Install site dependencies'
+          #   inputs:
+          #     command: ci
+          #     workingDir: $(SiteDirectory)
+          # - script: node docs.js --site-path=$(SiteDirectory)
+          #   displayName: 'Generate site documentation'
+          #   workingDirectory: $(MonoRepoDirectory)
+          # - task: Npm@1
+          #   displayName: 'Build site'
+          #   inputs:
+          #     command: custom
+          #     verbose: false
+          #     customCommand: 'run build'
+          #     workingDir: $(SiteDirectory)
+          # - task: CopyFiles@2
+          #   displayName: 'Copy site dist to artifact staging directory'
+          #   inputs:
+          #     SourceFolder: '$(SiteDirectory)/dist/angular-wiz-repositorio'
+          #     Contents: '**'
+          #     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          # - task: ArchiveFiles@2
+          #   displayName: 'Archive site dist'
+          #   inputs:
+          #     rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+          #     includeRootFolder: false
+          # - task: AzureWebApp@1
+          #   displayName: 'Deploy site to Azure Web App'
+          #   inputs:
+          #     azureSubscription: '$(PRD_SITE_AZURE_SUBSCRIPTION)'
+          #     appType: webApp
+          #     appName: '$(PRD_SITE_APP_NAME)'
+          #     package: $(System.ArtifactsDirectory)/*.zip
