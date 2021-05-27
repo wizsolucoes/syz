@@ -5,6 +5,10 @@
     "access": "public"
   },
   "private": false,
+  "scripts": {
+    "build": "ng build ng-syz --prod",
+    "test": "ng test ng-syz --watch=false --browsers=\"ChromeHeadless\""
+  },
   "peerDependencies": {
     "@angular/cdk": "^11.2.10",
     "@angular/common": "^11.0.9",
