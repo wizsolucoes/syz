@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/wizsolucoes/syz/compare/@wizsolucoes/wiz-auto-complete-component@2.4.1...@wizsolucoes/wiz-auto-complete-component@2.5.0) (2021-05-28)
+
+
+### Features
+
+* add ng-syz ([ffaa504](https://github.com/wizsolucoes/syz/commit/ffaa504bf384fa7d557c0b1f37ab2fbc17b2ecf3))
+
+
+
+
+
 ## [2.4.1](https://github.com/wizsolucoes/syz/compare/@wizsolucoes/wiz-auto-complete-component@2.4.0...@wizsolucoes/wiz-auto-complete-component@2.4.1) (2020-11-10)
 
 **Note:** Version bump only for package @wizsolucoes/wiz-auto-complete-component

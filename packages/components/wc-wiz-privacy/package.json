@@ -1,6 +1,6 @@
 {
   "name": "@wizsolucoes/wiz-privacy",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "Forneça aos usuários dos sistemas da Wiz um banner informativo sobre a LGPD e o uso de cookies.",
   "author": "Lucas Mindêllo de Andrade",
   "license": "MIT",

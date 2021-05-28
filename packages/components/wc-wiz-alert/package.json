@@ -1,6 +1,6 @@
 {
   "name": "@wizsolucoes/wiz-alerts",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Forneça mensagens de feedback contextual para ações típicas do usuário com mensagens de alerta disponíveis e flexíveis.",
   "author": "Hugo dos Santos Ricchino Rosello",
   "license": "MIT",

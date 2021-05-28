@@ -1,6 +1,6 @@
 {
   "name": "@wizsolucoes/wiz-toggle",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Toogle Switch é nosso componente de chaveamento rápido entre opções binárias. Seu maior objetivo é ativar ou desativar um modo, recurso ou função. Como padrão sua resposta têm um efeito imediato no sistema. É importante sempre usar um texto de apoio para descrever a finalidade do toogle switch.",
   "author": "Hugo dos Santos Ricchino Rosello",
   "publishConfig": {

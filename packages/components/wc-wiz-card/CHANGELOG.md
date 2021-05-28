@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/wizsolucoes/syz/packages/components/wc-wiz-card/compare/@wizsolucoes/wiz-card@1.0.2...@wizsolucoes/wiz-card@1.1.0) (2021-05-28)
+
+
+### Features
+
+* add ng-syz ([ffaa504](https://github.com/wizsolucoes/syz/packages/components/wc-wiz-card/commit/ffaa504bf384fa7d557c0b1f37ab2fbc17b2ecf3))
+
+
+
+
+
 ## 1.0.2 (2021-01-20)
 
 **Note:** Version bump only for package @wizsolucoes/wiz-card
