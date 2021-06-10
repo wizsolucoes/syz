@@ -91,9 +91,9 @@ export * from './lib/cpf-search/cpf-search.component';
 Habilite [desenvolvimento com live reload](#desenvolvimento-com-live-reload) e adicione o componente à aplicação de demo para visualizar o resultado.
 
 #### 5.1 Crie um módulo para a documentação do Componente
-Crie o módulo:
+Crie o módulo **prefixado com "docs-"**:
 ```bash
-ng g m features/components/my-component --route my-component --module features/components/components.module.ts
+ng g m features/components/docs-my-component --route my-component --module features/components/components.module.ts
 ```
 
 Verifique que novo `Route` está na array de `Children` do `ComponentsRoutingModule`.
