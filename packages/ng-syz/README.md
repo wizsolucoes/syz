@@ -49,11 +49,11 @@ npm install
 # Executar testes da biblioteca
 ng test ng-syz
 
-# Executar testes da aplicação de demo
-ng test app
-
 # Buildar biblioteca
 ng build ng-syz --watch
+
+# Executar testes da aplicação de demo
+ng test app
 
 # Servir a aplicação demo
 ng serve app
