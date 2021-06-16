@@ -1,0 +1,13 @@
+.full-screen {
+  background-color: var(
+    --syz-example-flow-background-color,
+    var(--primary-color)
+  );
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--syz-example-flow-text-color, black);
+  padding: 20px;
+}
