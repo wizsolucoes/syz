@@ -1,0 +1,219 @@
+// @import "../../../theme/variables";
+// É a nossa paleta de cores primaria e principal,
+// ela é composta por tons monocromáticos, essa paleta
+// terá maior representação em nossas interfaces.
+$color-brand-orange: #ff9100;
+$color-p-orange1-0: #f56c00;
+$color-p-orange2-0: #F56C00;
+$color-p-orange3-0: #ffad42;
+$color-p-orange4-0: #D97B00;
+$color-p-orange5-0: #f2dcc0;
+$color-p-orange6-0: #faebd7;
+$color-p-orange7-0: #F06901;
+$color-p-orange8-0: #ffa500;
+$color-p-orange9-0: #e06002;
+$color-p-orange10-0: #fe7977;
+$color-p-orange11-0: #ebaa27;
+$color-p-orange12-0: #FF9001;
+$color-p-orange13-0: #E19100;
+//// SECONDARY COLOR PALETTE ////
+// É a nossa paleta paleta de cor secundária e complementar,
+// eles podem ser usados ​​para tabelas, gráficos, ilustrações
+// e outras áreas que exigem ênfase nas cores.
+$color-p-blue1-0: #004e87;
+$color-p-blue2-0: #006eb4;
+$color-p-blue3-0: #269cf4;
+$color-p-blue4-0: #00618f;
+$color-p-blue7-0: #339ed1;
+$color-p-blue7-0: #14ace8;
+$color-p-blue8-0: #a2c0d4;
+$color-p-green1-0: #008b7f;
+$color-p-green2-0: #00d9c6;
+$color-p-green3-0: #00d9c6;
+$color-p-green4-0: #00b434;
+$color-p-green5-0: #E5F7EB;
+$color-p-pink1-0: #c00043;
+$color-p-pink2-0: #eb145f;
+$color-p-red1-0: #FFF2F1;
+$color-p-purple-0: #BA77FE;
+//// NEUTRAL COLOR PALETTE ////
+// Representa nossa paleta de cores neutras, seu uso esta
+// associado a textos, ícones, planos de fundo, linhas, bordas
+// e também tem a função de transmitir status de “desativado”.
+$color-n-black: #000000;
+$color-n-grey1-0: #50555a;
+$color-n-grey2-0: #9ba5ae;
+$color-n-grey3-0: #c4c4c4;
+$color-n-grey4-0: #eaeef0;
+$color-n-grey5-0: #f8fbfc;
+$color-n-grey6-0: #EFEFEF;
+$color-n-grey7-0: #DFDFDF;
+$color-n-grey8-0: #f6f6f6;
+$color-n-grey9-0: #EEF2F5;
+$color-n-grey10-0: #e5f9ff;
+$color-n-grey11-0: #979797;
+$color-n-grey12-0: #eff0f2;
+$color-n-grey13-0: #37383a;
+$color-n-grey14-0: #1b1b29;
+$color-n-grey15-0: #50565B;
+$color-n-grey16-0: #ECECEC;
+$color-n-grey17-0: #3d4655;
+$color-n-grey18-0: #919bac;
+$color-n-grey19-0: #d5d5d5;
+$color-n-grey20-0: #ffebeb;
+$color-n-grey21-0: #414d55;
+$color-n-grey22-0: #333333;
+$color-n-grey23-0: #98989a;
+$color-n-white: #ffffff;
+//// ALERT COLOR PALETTE ////
+// é a paleta de cores responsável por feedback de ações, como
+// respostas de erro, atenção, sucesso e informação. Um método
+// de comunicação com nossos usuários.
+$color-a-error: #ff3535;
+$color-a-success: #00bf85;
+$color-a-warning: #ffc136;
+$color-a-information: #2175d6;
+//// VARIAVEIS GLOBAIS ////
+$content-gap: 1em;
+$font-size-base: 0.875rem;
+$heading-scale: 0.5;
+$trans-time-default: 0.25s;
+
+.btn {
+  &.default,
+  &.outline,
+  &.disabled {
+    width: 257px;
+    margin: 0 auto;
+  }
+}
+
+.btn-custom {
+  display: inline-table;
+  width: 264px;
+}
+
+.login-container {
+  overflow-x: hidden;
+}
+
+.content-login {
+  justify-content: center;
+  padding: 54px 16px;
+  text-align: center;
+}
+
+.esqueceu-senha {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.link-recuperar-senha {
+  padding: 0;
+  color: $color-p-blue2-0;
+  font-weight: bold;
+  text-decoration: underline;
+  width: auto;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.modal-footer {
+  display: block;
+}
+
+.img-manutencao {
+  max-width: 360px;
+  max-height: 360px;
+}
+
+.titulo-modal-manutencao {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 40px;
+  color: $color-n-grey1-0;
+  margin-bottom: 30px;
+}
+
+.text-modal-manutencao {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  color: $color-p-orange12-0;
+}
+
+@media all and (max-width: 766px) {
+  .content-login {
+    justify-content: center;
+    padding: 54px 16px;
+    text-align: center;
+  }
+
+  .img-manutencao {
+    width: 120px;
+    height: 120px;
+  }
+
+  .titulo-modal-manutencao {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+
+  .text-modal-manutencao {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media all and (min-width: 767px) and (max-width: 1022px) and (max-width: 1022px) {
+  .content-login {
+    justify-content: center;
+    padding: 54px 48px;
+    text-align: center;
+  }
+
+  .img-manutencao {
+    width: 240px;
+    height: 240px;
+  }
+
+  .titulo-modal-manutencao {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+
+  .text-modal-manutencao {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media all and (min-width: 1023px) and (max-width: 1438px) {
+  .content-login {
+    justify-content: center;
+    padding: 0 48px;
+    text-align: center;
+  }
+
+  .img-manutencao {
+    width: 375px;
+    height: 375px;
+  }
+}
+
+@media all and (min-width: 1439px) {
+  .content-login {
+    justify-content: center;
+    padding: 0 168px 0 204px;
+    text-align: center;
+  }
+
+  .img-manutencao {
+    width: 375px;
+    height: 375px;
+  }
+}
