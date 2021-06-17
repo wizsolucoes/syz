@@ -1,0 +1,31 @@
+<app-component-page
+  [title]="'Fluxo de exemplo'"
+  [description]="
+    'Apenas um exemplo de documentação de componentes de fluxos como páginas inteiras.'
+  "
+  [selector]="'ng-syz-example-flow'"
+  [importCode]="importCode"
+  [componentCSSVariables]="componentCSSVariables"
+>
+  <app-code-example [htmlCode]="htmlExampleCode" [cssCode]="cssExample1Code">
+    <a
+      routerLink="/components/examples/example-flow-example-one"
+      target="_blank"
+    >
+      Clique aqui para ver o exemplo em tela cheia
+      <span class="material-icons"> open_in_new </span>
+    </a>
+    <br />
+  </app-code-example>
+
+  <app-code-example [htmlCode]="htmlExampleCode" [cssCode]="cssExample2Code">
+    <a
+      routerLink="/components/examples/example-flow-example-two"
+      target="_blank"
+    >
+      Clique aqui para ver o exemplo em tela cheia
+      <span class="material-icons"> open_in_new </span>
+    </a>
+    <br />
+  </app-code-example>
+</app-component-page>

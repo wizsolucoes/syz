@@ -27,7 +27,21 @@ const routes: Routes = [
             (m) => m.DocsPersonInfoModule
           ),
       },
+      {
+        path: 'example-flow',
+        loadChildren: () =>
+          import('./docs-example-flow/docs-example-flow.module').then(
+            (m) => m.DocsExampleFlowModule
+          ),
+      },
     ],
+  },
+  {
+    path: 'examples',
+    loadChildren: () =>
+      import('./examples-pages/examples-pages.module').then(
+        (m) => m.ExamplesModule
+      ),
   },
 ];
 
