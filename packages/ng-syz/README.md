@@ -72,6 +72,18 @@ ng serve app
 
 Cada componente é um módulo Angular. [Veja um exemplo.](./projects/ng-syz/src/lib/cpf-search/) Crie uma nova pasta e para o `NgModule` e todos os arquivos do compontente (`.ts|.html|.css|.spec.ts`).
 
+Certifique-se de que os componentes que o módulo deva expor estejam na array de `exports`. Por exemplo, o `NgSyzCpfSearchModule` precisa expor o componente `NgSyzCpfSearchComponent`:
+```ts
+@NgModule({
+  declarations: [NgSyzCpfSearchComponent],
+  imports: [
+    CommonModule,
+  ],
+  exports: [NgSyzCpfSearchComponent],
+})
+export class NgSyzCpfSearchModule {}
+```
+
 **Se o componente for um fluxo, como uma página de login, siga a convenção de sufixar o nome com a palavra "flow". Por exemplo: `login-flow` ou `login-with-carousel-flow`. [Exemplo](./projects/ng-syz/src/lib/example-flow/)**
 
 ### 2. Adicione dependências do componente a `peerDependencies` no `projects/ng-syz/package.json`.
