@@ -1,0 +1,193 @@
+/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+
+// Plus imports for other components in your app.
+// @import './custom-component-themes.scss';
+
+@import './theme.scss';
+
+//// VARIAVEIS DO TEMA ////
+@import "./_variables";
+
+//// SPACINGS ////
+@import "./_spacing";
+
+//// FONT SIZE ////
+@import "./_fontSize";
+
+//// MIXINS ////
+@import './_mixins';
+
+//// FORMS ////
+@import './_forms';
+
+//// GRID ////
+@import './_grid';
+
+// Funcao criada para abreviar a quantidade de parametros para a variavel $colors
+@function color($key) {
+    @return map-get($syz-colors, $key);
+}
+
+//// FONTES  ////
+@font-face {
+    font-family: 'roboto-light';
+    src: url('/assets/fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto-regular';
+    src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto-medium';
+    src: url('/assets/fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto-bold';
+    src: url('/assets/fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto-black';
+    src: url('/assets/fonts/Roboto-Black.ttf') format('truetype');
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+//// MARGENS (0.15em a 4.05em) ////
+@for $i from 1 through 40 {
+    .margin-t-#{$i}5 {
+        margin-top: 0.05em + ($i * 0.1) !important;
+    }
+    .margin-r-#{$i}5 {
+        margin-right: 0.05em + ($i * 0.1) !important;
+    }
+    .margin-b-#{$i}5 {
+        margin-bottom: 0.05em + ($i * 0.1) !important;
+    }
+    .margin-l-#{$i}5 {
+        margin-left: 0.05em + ($i * 0.1) !important;
+    }
+}
+
+//// SCROLLBAR ////
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $color-n-grey2-0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-brand-orange;
+  border-radius: 1px;
+  &:hover {
+      background: $color-p-orange3-0;
+  }
+}
+
+//// CONTEUDO ////
+main {
+    min-height: 100vh;
+    display: grid;
+}
+
+.wrapper {
+    justify-content: center;
+    padding: $content-gap * 4;
+    text-align: center;
+    .product-logo {
+        width: 50%;
+        margin-bottom: $content-gap + 1;
+    }
+    .ilustra-sucesso {
+        width: 307px;
+    }
+    .title {
+        margin-bottom: $content-gap + 0.4375;
+        font-size: $font-size-base + 0.625;
+        font-weight: 700;
+        color: var(
+          --syz-login-with-carousel-flow-button-color,
+          orange);
+    }
+    .subtitle {
+        font-size: $font-size-base + 0.125;
+        font-weight: 700;
+        color: $color-n-grey1-0;
+    }
+    .info {
+        font-size: $font-size-base;
+        font-weight: 400;
+        color: $color-n-grey1-0;
+        span {
+            font-weight: 700;
+        }
+    }
+}
+
+.full-height {
+    min-height: 100vh;
+}
+
+.product-logo {
+    width: 50%;
+    margin-bottom: 2em;
+}
+
+.title {
+    margin-bottom: 1.4375em;
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: $color-brand-orange;
+}
+
+.float-right {
+    float: right;
+}
+
+.dropdown-scroll {
+  height: 15rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media only screen and (min-width: 960px) {
+    .app-slide {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.divider {
+    border: 1px solid #ECECEC;
+    align-self: center;
+    margin: 24px 8px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

@@ -2,6 +2,7 @@
   <div class="linha">
     <div
       class="
+        content-login-bg-color
         coluna-sm-12 coluna-md-12 coluna-lg-6 coluna-xl-6
         align-self-center
       "
@@ -46,13 +47,9 @@
                   (click)="showPassword()"
                   tabindex="-1"
                 >
-                  <em
-                    [class]="
-                      isTextFieldType
-                        ? 'icon icon-eye-open'
-                        : 'icon icon-eye-closed'
-                    "
-                  ></em>
+                  <span
+                    [class]="isTextFieldType ? 'fa fa-eye' : 'fa fa-eye-slash'"
+                  ></span>
                 </button>
                 <label>Senha</label>
                 <p
@@ -91,7 +88,7 @@
               <button
                 margin-t-305
                 class="btn-custom btn-block outline"
-                routerLink="/auth/cadastro"
+                routerLink="{{ signUpPath }}"
               >
                 Primeiro acesso
               </button>
@@ -106,7 +103,7 @@
               <button
                 type="button"
                 class="btn-custom clear txt-left link-recuperar-senha"
-                routerLink="/auth/recuperar-senha"
+                routerLink=" {{ forgotPasswordPath }}"
               >
                 <span>Recuperar aqui</span>
               </button>
@@ -116,7 +113,12 @@
       </div>
     </div>
     <div
-      class="bg-grey d-none-sm d-none-md coluna-lg-6 coluna-xl-6 full-height"
+      class="
+        slide-bg-color
+        d-none-sm d-none-md
+        coluna-lg-6 coluna-xl-6
+        full-height
+      "
     >
       <div class="app-slide">
         <div
@@ -125,7 +127,7 @@
         >
           <div class="slide-item">
             <swiper [config]="config">
-              <div *ngFor="let slide of [slides]">
+              <div *ngFor="let slide of slides">
                 <div class="img-container">
                   <img [src]="slide?.img" [alt]="slide?.alt" />
                   <div *ngIf="slide?.soon" class="badge-soon">EM BREVE</div>

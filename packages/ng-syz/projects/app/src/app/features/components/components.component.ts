@@ -15,5 +15,9 @@ export class ComponentsComponent {
     { displayName: 'Busca por CPF/CNPJ', route: 'cpf-search' },
     { displayName: 'Dados pessoais', route: 'person-info' },
     { displayName: 'Fluxo de exemplo', route: 'example-flow' },
+    {
+      displayName: 'Fluxo de login com carousel',
+      route: 'login-with-carousel-flow',
+    },
   ];
 }

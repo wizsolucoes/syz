@@ -6,25 +6,27 @@ export interface Credentials {
   password: string;
 }
 
+export interface Slide {
+  img: string;
+  soon: boolean;
+  title: string;
+  subtitle: string;
+  alt: string;
+}
+
+export interface ProductLogo {
+  img: string;
+  imgAlt: string;
+}
+
 @Component({
   selector: 'ng-syz-login-with-carousel-flow',
   templateUrl: './login-with-carousel-flow.component.html',
   styleUrls: ['./login-with-carousel-flow.component.scss'],
 })
 export class NgSyzLoginWithCarouselFlowComponent implements OnInit {
-  @Input() productLogo: {
-    img: string;
-    imgAlt: string;
-  };
-  @Input() slides: [
-    {
-      img: string;
-      soon: boolean;
-      title: string;
-      subtitle: string;
-      alt: string;
-    }
-  ];
+  @Input() productLogo: ProductLogo;
+  @Input() slides: Slide[];
   @Input() signUpPath: string;
   @Input() forgotPasswordPath: string;
 
