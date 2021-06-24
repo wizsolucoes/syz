@@ -21,11 +21,11 @@ export class DocsLoginWithCarouselFlowComponent {
       description: 'Cor de fundo do container com slides',
     },
     {
-      name: `--syz-login-with-carousel-button-color`,
+      name: `--syz-login-with-carousel-flow-button-color`,
       description: 'Cor dos botões',
     },
     {
-      name: `--syz-login-with-carousel-button-color-dark`,
+      name: `--syz-login-with-carousel-flow-button-color-dark`,
       description: 'Cor secundária para o hover',
     },
   ];
@@ -45,8 +45,8 @@ export class DocsLoginWithCarouselFlowComponent {
   ng-syz-login-with-carousel-flow {
     --syz-login-with-carousel-content-login-background-color: #D7DBDE;
     --syz-login-with-carousel-slide-background-color: #FF9100 ;
-    --syz-login-with-carousel-button-color: gray;
-    --syz-login-with-carousel-button-color-dark: gray;
+    --syz-login-with-carousel-flow-button-color: gray;
+    --syz-login-with-carousel-flow-button-color-dark: gray;
   }
   `;
 }

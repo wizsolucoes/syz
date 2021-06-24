@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Credentials } from './../../../../../../../ng-syz/build/lib/login-with-carousel-flow/login-with-carousel-flow.component.d';
 
 @Component({
   selector: 'app-login-with-carousel-flow-example-two',
@@ -39,4 +41,14 @@ export class LoginWithCarouselFlowExampleTwoComponent {
       alt: `#PraCegoVer Composição de produtos. Na cena temos uma cafeteira, uma caixa de som e celulares.`,
     },
   ];
+
+  constructor(private snackBar: MatSnackBar) {}
+
+  onLoginUserButtonClick(value: Credentials): void {
+    this.snackBar.open(
+      `Email: ${value.username}
+       Senha: ${value.password}`,
+      'Fechar'
+    );
+  }
 }

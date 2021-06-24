@@ -72,8 +72,8 @@ export class NgSyzLoginWithCarouselFlowComponent implements OnInit {
   loginUser() {
     if (this.formLogin.valid) {
       this.loginOnClick.emit({
-        username: this.formLogin.value('username'),
-        password: this.formLogin.value('password'),
+        username: this.formLogin.get('username').value,
+        password: this.formLogin.get('password').value,
       });
     }
   }

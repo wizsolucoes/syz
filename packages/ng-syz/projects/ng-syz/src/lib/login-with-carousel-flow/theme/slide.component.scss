@@ -1,0 +1,150 @@
+// @import "./variables";
+// @import "./mixins";
+
+// //// SLIDES ////
+
+// .slide-container {
+//   height: 100%;
+//   max-width: 550px;
+//   padding: 0;
+//   margin: 0;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   .slide-item {
+//       width: 90%;
+//       height: 100%;
+//       max-height: 740px;
+//       color: #ffffff;
+//       text-align: center;
+//       .img-container {
+//           img {
+//               width: 100%;
+//               margin-bottom: $content-gap + 1.5;
+//           }
+//           .badge-soon {
+//               @include centerer;
+//               padding: $content-gap / 2 $content-gap;
+//               font-size: $font-size-base - 0.15;
+//               background: #ff9100;
+//               @include border-radius(20px);
+//           }
+//       }
+//       h1 {
+//           font-size: $font-size-base + 2.75;
+//           font-weight: 900;
+//           margin-bottom: $content-gap - 0.65;
+//       }
+//       h2 {
+//           margin: 0;
+//           font-size: $font-size-base + 0.5;
+//           font-weight: 400;
+//           margin-bottom: 100px;
+//       }
+//   }
+// }
+
+// .swiper-pagination-bullet {
+//   background: rgba(#ffffff, 1) !important;
+// }
+// .swiper-pagination-bullet-active {
+//   width: 10px !important;
+//   height: 10px !important;
+//   transform: translateY(1px);
+//   @include transition(all $trans-time-default ease-out);
+// }
+
+// .swiper.s-wrapper.swiper-container-horizontal
+//   > .swiper-pagination
+//   .swiper-pagination-handle
+//   .swiper-pagination-bullet.swiper-pagination-bullet-first,
+// .swiper.s-wrapper.swiper-container-horizontal
+//   > .swiper-pagination
+//   .swiper-pagination-handle
+//   .swiper-pagination-bullet.swiper-pagination-bullet-last {
+//   margin: 0 !important;
+//   border: none;
+// }
+
+// .swiper-pagination-bullet {
+//   background: rgba(#ffffff, 1) !important;
+// }
+// .swiper-pagination-bullet-active {
+//   width: 10px !important;
+//   height: 10px !important;
+//   transform: translateY(1px);
+//   @include transition(all $trans-time-default ease-out);
+// }
+
+// .swiper.s-wrapper.swiper-container-horizontal
+//   > .swiper-pagination
+//   .swiper-pagination-handle
+//   .swiper-pagination-bullet.swiper-pagination-bullet-first,
+// .swiper.s-wrapper.swiper-container-horizontal
+//   > .swiper-pagination
+//   .swiper-pagination-handle
+//   .swiper-pagination-bullet.swiper-pagination-bullet-last {
+//   margin: 0 !important;
+//   border: none;
+//   position: relative;
+// }
+
+// //// RESPONSIVO ////
+
+// @media only screen and (min-width: 1200px) {
+//   .slide-container {
+//     max-width: auto;
+//   }
+// }
+
+// @media (min-width: 320px) and (max-width: 480px) {
+//   .btn.clear {
+//       &.txt-left {
+//           padding-left: $content-gap * 2;
+//           text-align: center;
+//       }
+//   }
+//   .container-fluid {
+//       padding-right: 0;
+//       padding-left: 0;
+//   }
+//   .wrapper {
+//       padding: $content-gap * 2;
+//       .logo-conseg {
+//           width: 75%;
+//       }
+//   }
+//   .slide-container {
+//       padding: $content-gap 0 0 $content-gap;
+//       .slide-item {
+//           width: 100%;
+//           height: 380px;
+//           .img-container {
+//               // max-height: 200px;
+//               img {
+//                   margin-bottom: $content-gap;
+//               }
+//               .badge-soon {
+//                   top: 53.5%;
+//                   padding: $content-gap - 0.65 $content-gap;
+//                   font-size: $font-size-base - 0.45;
+//               }
+//           }
+//           h1 {
+//               // margin-bottom: 0;
+//               font-size: $font-size-base + 0.5;
+//           }
+//           h2 {
+//               font-size: $font-size-base - 0.05;
+//           }
+//       }
+//   }
+// }
+
+// ::ng-deep.swiper.s-wrapper .swiper-pagination .swiper-pagination-handle .swiper-pagination-bullet {
+//   display: inline-block;
+//   margin: 0;
+//   pointer-events: none;
+//   background-color: var(
+//     --syz-login-with-carousel-flow-button-color, #ff9100);
+// }
