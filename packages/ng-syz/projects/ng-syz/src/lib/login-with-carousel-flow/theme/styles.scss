@@ -6,16 +6,12 @@
 // Plus imports for other components in your app.
 // @import './custom-component-themes.scss';
 
-@import './theme.scss';
-
 //// VARIAVEIS DO TEMA ////
 @import "./_variables";
 
 //// SPACINGS ////
 @import "./_spacing";
 
-//// FONT SIZE ////
-@import "./_fontSize";
 
 //// MIXINS ////
 @import './_mixins';
@@ -98,14 +94,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: $color-n-grey2-0;
+  background-color: #9ba5ae;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $color-brand-orange;
+  background-color: #ff9100;
   border-radius: 1px;
   &:hover {
-      background: $color-p-orange3-0;
+      background: #ffad42;
   }
 }
 
@@ -131,18 +127,18 @@ main {
         font-size: $font-size-base + 0.625;
         font-weight: 700;
         color: var(
-          --syz-login-with-carousel-flow-button-color,
+          --syz-login-with-carousel-button-color,
           orange);
     }
     .subtitle {
         font-size: $font-size-base + 0.125;
         font-weight: 700;
-        color: $color-n-grey1-0;
+        color: #50555a;
     }
     .info {
         font-size: $font-size-base;
         font-weight: 400;
-        color: $color-n-grey1-0;
+        color: #50555a;
         span {
             font-weight: 700;
         }
@@ -162,7 +158,7 @@ main {
     margin-bottom: 1.4375em;
     font-size: 1.625rem;
     font-weight: 700;
-    color: $color-brand-orange;
+    color: #ff9100;
 }
 
 .float-right {
