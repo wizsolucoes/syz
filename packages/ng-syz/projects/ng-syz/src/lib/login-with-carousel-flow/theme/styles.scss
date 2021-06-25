@@ -3,41 +3,6 @@
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
 
-// Funcao criada para abreviar a quantidade de parametros para a variavel $colors
-@function color($key) {
-    @return map-get($syz-colors, $key);
-}
-
-//// FONTES  ////
-@font-face {
-    font-family: 'roboto-light';
-    src: url('/assets/fonts/Roboto-Light.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'roboto-regular';
-    src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'roboto-medium';
-    src: url('/assets/fonts/Roboto-Medium.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'roboto-bold';
-    src: url('/assets/fonts/Roboto-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'roboto-black';
-    src: url('/assets/fonts/Roboto-Black.ttf') format('truetype');
-}
-
-* {
-    -webkit-font-smoothing: antialiased;
-}
-
 html,
 body {
   direction: ltr;
