@@ -38,6 +38,7 @@ export class DocsLoginWithCarouselFlowComponent {
       [forgotPasswordPath]="
           '/components/examples/login-with-carousel-flow-example-one'
       "
+      (loginOnClick)="onLoginUserButtonClick($event)"
   ></ng-syz-login-with-carousel-flow>
   `;
 
