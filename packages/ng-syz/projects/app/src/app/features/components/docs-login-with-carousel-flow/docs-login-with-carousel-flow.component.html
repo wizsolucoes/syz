@@ -7,7 +7,12 @@
   [importCode]="importCode"
   [componentCSSVariables]="componentCSSVariables"
 >
-  <app-code-example [htmlCode]="htmlExampleCode" [cssCode]="cssExample1Code">
+  <!-- Example 1 -->
+  <app-code-example
+    [htmlCode]="htmlExampleCode"
+    [cssCode]="cssExample1Code"
+    [tsCode]="tsExampleCode"
+  >
     <a
       routerLink="/components/examples/login-with-carousel-flow-example-one"
       target="_blank"
@@ -17,7 +22,14 @@
     </a>
     <br />
   </app-code-example>
-  <app-code-example [htmlCode]="htmlExampleCode" [cssCode]="cssExample1Code">
+
+  <!-- Example 2 -->
+
+  <app-code-example
+    [htmlCode]="htmlExampleCode"
+    [cssCode]="cssExample2Code"
+    [tsCode]="tsExampleCode"
+  >
     <a
       routerLink="/components/examples/login-with-carousel-flow-example-two"
       target="_blank"
