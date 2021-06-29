@@ -15,7 +15,8 @@
     "@angular/core": "^11.0.9",
     "@angular/material": "^11.2.10",
     "ngx-mask": "^11.1.5",
-    "swiper": "^6.7.0"
+    "swiper": "^6.7.0",
+    "ngx-swiper-wrapper": "^8.0.2"
   },
   "dependencies": {
     "tslib": "^2.0.0"
