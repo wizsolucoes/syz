@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 describe('NgSyzLoginWithCarouselFlowComponent', () => {
   let component: NgSyzLoginWithCarouselFlowComponent;
   let fixture: ComponentFixture<NgSyzLoginWithCarouselFlowComponent>;
-  let template: HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
