@@ -16,7 +16,7 @@ export class LoginWithCarouselFlowExampleOneComponent {
   exampleSlides = [
     {
       img: 'https://res.cloudinary.com/dexabcezh/image/upload/v1624386129/productImg_upobfg.png',
-      soon: false,
+
       title: 'Título 1 aqui',
       subtitle:
         'Seu texto de chamada slide 1 aqui. Seu texto de chamada slide 1 aqui. Seu texto de chamada slide 1 aqui.',
@@ -24,7 +24,7 @@ export class LoginWithCarouselFlowExampleOneComponent {
     },
     {
       img: 'https://res.cloudinary.com/dexabcezh/image/upload/v1624386129/productImg_upobfg.png',
-      soon: false,
+
       title: 'Título 2 aqui',
       subtitle:
         'Seu texto de chamada slide 2 aqui. Seu texto de chamada slide 2 aqui. Seu texto de chamada slide 2 aqui.',
@@ -32,7 +32,7 @@ export class LoginWithCarouselFlowExampleOneComponent {
     },
     {
       img: 'https://res.cloudinary.com/dexabcezh/image/upload/v1624386129/productImg_upobfg.png',
-      soon: false,
+
       title: 'Título 3 aqui',
       subtitle:
         'Seu texto de chamada slide 3 aqui. Seu texto de chamada slide 3 aqui. Seu texto de chamada slide 3 aqui.',

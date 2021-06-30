@@ -8,7 +8,6 @@ export interface NgSyzLoginCredentials {
 
 export interface NgSyzSlide {
   img: string;
-  soon: boolean;
   title: string;
   subtitle: string;
   alt: string;

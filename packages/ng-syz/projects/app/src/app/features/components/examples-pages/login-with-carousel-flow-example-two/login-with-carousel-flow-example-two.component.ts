@@ -16,7 +16,6 @@ export class LoginWithCarouselFlowExampleTwoComponent {
   exampleSlides = [
     {
       img: 'https://res.cloudinary.com/dexabcezh/image/upload/v1624480904/slide-entrada_sw9ltz.png',
-      soon: false,
       title: 'Conexão Conseg',
       subtitle:
         'É aqui que você se conecta com a maior operação de venda de seguros em concessionárias',
@@ -25,7 +24,6 @@ export class LoginWithCarouselFlowExampleTwoComponent {
     },
     {
       img: 'https://res.cloudinary.com/dexabcezh/image/upload/v1624480923/slide-cashback_vxwwcx.png',
-      soon: false,
       title: 'Cashback',
       subtitle:
         'Compre em mais de 150 lojas parceiras e ganhe parte do dinheiro de volta',
@@ -34,7 +32,6 @@ export class LoginWithCarouselFlowExampleTwoComponent {
     },
     {
       img: 'https://res.cloudinary.com/dexabcezh/image/upload/v1624480934/slide-conta-w_akp9ma.png',
-      soon: false,
       title: 'Conta W',
       subtitle:
         'Uma conta 100% digital com diversas funcionalidades para facilitar a sua vida',
