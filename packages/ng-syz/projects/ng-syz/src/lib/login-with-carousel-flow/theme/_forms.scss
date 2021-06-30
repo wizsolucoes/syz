@@ -1,0 +1,645 @@
+// Hack para cor do placeholder no input
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #9ba5ae;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #9ba5ae;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #9ba5ae;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #9ba5ae;
+}
+
+.field-wrapper {
+  position: relative;
+  margin-bottom: $content-gap + 2;
+  label {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: -35px;
+    font-size: $font-size-base;
+    font-weight: 500;
+    color: #979797;
+    line-height: 2;
+    text-align: left;
+  }
+  input,
+  select,
+  textarea {
+    width: 100%;
+    height: 48px;
+    padding: $content-gap / 2;
+    font-size: $font-size-base + 0.125;
+    color: #50555a;
+    background-color: #ffff;
+    border: 1px solid #979797;
+    @include border-radius(4px);
+    outline: none;
+    &:focus {
+      border: 2px solid
+      var(
+    --syz-login-with-carousel-button-color,
+    #ff9100
+    );
+    }
+    &[disabled] {
+      background: #eaeef0;
+      cursor: not-allowed;
+    }
+  }
+
+  textarea {
+    height: auto;
+  }
+
+  input {
+    &.ng-touched.ng-pristine.ng-valid {
+      border: 2px solid #00bf85;
+      box-shadow: none;
+    }
+  }
+
+  .btn-icon {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 6px;
+    top: 8px;
+    font-size: $font-size-base + 0.25;
+    color: #9ba5ae;
+    line-height: 1.85;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+  }
+}
+
+.field-wrapper input:focus ~ label,
+.field-wrapper select:focus ~ label,
+.field-wrapper textarea:focus ~ label {
+  color: var(
+    --syz-login-with-carousel-button-color,
+    #ff9100
+    );
+}
+
+.field-wrapper input:not(.ng-pristine).ng-invalid.ng-touched,
+.field-wrapper input:not(.ng-pristine).ng-invalid.ng-dirty,
+.field-wrapper textarea:not(.ng-pristine).ng-invalid.ng-touched,
+.field-wrapper textarea:not(.ng-pristine).ng-invalid.ng-dirty {
+  border: 2px solid #ff3535;
+}
+.field-wrapper input.input-error:focus,
+.field-wrapper textarea.input-error:focus {
+  border: 2px solid #ff3535;
+}
+.field-wrapper input:not(.ng-pristine).ng-invalid.ng-touched + label,
+.field-wrapper input:not(.ng-pristine).ng-invalid.ng-dirty + label,
+.field-wrapper textarea:not(.ng-pristine).ng-invalid.ng-touched + label,
+.field-wrapper textarea:not(.ng-pristine).ng-invalid.ng-dirty + label {
+  color: #ff3535;
+}
+.field-wrapper input:not(.ng-pristine).ng-valid.ng-touched,
+.field-wrapper select:not(.ng-pristine).ng-valid.ng-touched,
+.field-wrapper textarea:not(.ng-pristine).ng-valid.ng-touched,
+.field-wrapper input:not(.ng-pristine).ng-valid.ng-dirty,
+.field-wrapper textarea:not(.ng-pristine).ng-valid.ng-dirty,
+.field-wrapper select:not(.ng-pristine).ng-valid.ng-dirty {
+  border: 2px solid #00bf85;
+}
+.field-wrapper input:not(.ng-pristine).ng-valid.ng-touched + label,
+.field-wrapper select:not(.ng-pristine).ng-valid.ng-touched + label,
+.field-wrapper textarea:not(.ng-pristine).ng-valid.ng-touched + label,
+.field-wrapper input:not(.ng-pristine).ng-valid.ng-dirty + label,
+.field-wrapper select:not(.ng-pristine).ng-valid.ng-dirty + label,
+.field-wrapper textarea:not(.ng-pristine).ng-valid.ng-dirty + label {
+  color: #00bf85;
+}
+
+.error-msg {
+  margin-top: $content-gap / 2;
+  font-size: $font-size-base - 0.2;
+  color: #ff3535;
+  text-align: left;
+}
+
+.field-wrapper-not-color {
+  position: relative;
+  margin-bottom: 8;
+
+  label {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: -35px;
+    font-size: $font-size-base;
+    font-weight: 700;
+    color: #50555a;
+    line-height: 2;
+    text-align: left;
+  }
+  input,
+  select,
+  textarea {
+    width: 100%;
+    height: 48px;
+    padding: 13px 16px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #50555a;
+    background-color: #ffff;
+    border: 1px solid #50555a;
+    @include border-radius(4px);
+    outline: none;
+    &:focus {
+      border: 2px solid var(
+        --syz-login-with-carousel-button-color,
+        #ff9100
+      );
+    }
+  }
+
+  input {
+    border: 1px solid #eaeef0;
+  }
+
+  .btn-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 24px;
+    top: 8px;
+    line-height: 1.85;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+  }
+
+  ::placeholder {
+    font-style: normal;
+    font-weight: bold;
+    font-size: $font-size-base;
+    line-height: 21px;
+    color: #50555a;
+    opacity: 1;
+  }
+
+  :-ms-input-placeholder {
+    font-style: normal;
+    font-weight: bold;
+    font-size: $font-size-base;
+    line-height: 21px;
+    color: #50555a;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("/assets/icons/icon-arrow-select.svg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  &.ng-touched.ng-pristine.ng-valid {
+    border: 2px solid #00bf85;
+    box-shadow: none;
+  }
+}
+
+.custom-radio {
+  width: 24px;
+  height: 24px;
+  color: var(
+    --syz-login-with-carousel-button-color,
+    #ff9100
+  );
+}
+
+.radio {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  line-height: 25px;
+  font-size: 16px;
+  margin: 15px 15px 15px 0px;
+  .label {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 20px;
+    border-radius: 100%;
+    -webkit-tap-highlight-color: transparent;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      background: var(
+        --syz-login-with-carousel-button-color,
+        #ff9100
+      );
+      transform: scale(0);
+      transition: all 0.2s ease;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+  }
+
+  input[type="radio"]:after {
+    width: 16px;
+    height: 16px;
+    border-radius: 15px;
+    top: 0px;
+    left: 3px;
+    position: relative;
+    background-color: #ffff;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid #ffff;
+  }
+
+  input[type="radio"]:checked:before {
+    width: 16px;
+    height: 16px;
+    border-radius: 15px;
+    top: 0px;
+    left: 3px;
+    position: relative;
+    background-color: #ffa500;
+    content: "";
+    display: inline-flex;
+    visibility: visible;
+    border: 1px solid #ffff;
+  }
+
+  input[type="radio"]:checked {
+    -webkit-appearance: none;
+    border-radius: 15px;
+    outline: none;
+    border: 1px solid #ffa500;
+  }
+
+  .label {
+    color: #50555a;
+  }
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border: 1px solid #ff3535;
+}
+
+.btn-custom {
+  display: block;
+  padding: 1em 2em;
+  font-size: $font-size-base;
+  line-height: 1;
+  text-decoration: none;
+  @include border-radius(6px);
+  outline: none;
+  &.default {
+    color: #ffff;
+    background-color: var(
+      --syz-login-with-carousel-button-color,
+      #ff9100
+    );
+    border: 1px solid var(
+      --syz-login-with-carousel-button-color,
+      #ff9100
+    );
+    cursor: pointer;
+    &:hover {
+      color: #ffff;
+      background-color: var(
+        --syz-login-with-carousel-button-color-dark,
+        #f56c00
+      );
+      border-color: var(
+        ----syz-login-with-carousel-button-color-dark,
+        #f56c00
+      );
+      @include transition(all $trans-time-default ease-out);
+    }
+    &:active {
+      color: #ffff;
+      background-color: #ffad42;
+      border-color: #ffad42;
+      @include transition(all $trans-time-default ease-out);
+    }
+  }
+  &.danger {
+    color: #ffff;
+    background-color: #ff3535;
+    border: 1px solid #ff3535;
+    cursor: pointer;
+    &:hover {
+      color: #ffff;
+      background-color: #ff3535;
+      border-color: #ff3535;
+    }
+    &:active {
+      color: #ffff;
+      background-color: #ff3535;
+      border-color: #ff3535;
+    }
+  }
+  &.outline {
+    color: var(
+      --syz-login-with-carousel-button-color,
+      #ff9100
+    );
+    background-color: transparent;
+    border: 1px solid var(
+      --syz-login-with-carousel-button-color,
+      #ff9100
+    );
+    cursor: pointer;
+    &:hover {
+      color: #ffff;
+      background-color: var(
+        --syz-login-with-carousel-button-color,
+        #ff9100
+      );
+      border-color: var(
+        --syz-login-with-carousel-button-color,
+        #ff9100
+      );
+      @include transition(all $trans-time-default ease-out);
+    }
+    &:active {
+      color: #ffff;
+      background-color: #ffad42;
+      border-color: #ffad42;
+      @include transition(all $trans-time-default ease-out);
+    }
+  }
+  &.disabled {
+    color: #9ba5ae;
+    background-color: #c4c4c4;
+    border: 1px solid #c4c4c4;
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+  &.clear {
+    width: auto;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    &:hover {
+      color: var(
+        --syz-login-with-carousel-button-color,
+        #ff9100
+      );
+      @include transition(all $trans-time-default ease-out);
+    }
+    &.txt-left {
+      padding-left: 0;
+      text-align: left;
+    }
+  }
+}
+
+.btn-outline-custom {
+  width: auto;
+  display: block;
+  padding: 1em 2em;
+  font-size: $font-size-base;
+  line-height: 1;
+  text-decoration: none;
+  @include border-radius(6px);
+  outline: none;
+  &.default {
+    color: var(
+      --syz-login-with-carousel-button-color,
+      #ff9100
+      );
+    background-color: #ffff;
+    border: 1px solid var(
+      --syz-login-with-carousel-button-color,
+      #ff9100
+    );
+    cursor: pointer;
+    &:hover {
+      color: #ffff;
+      background-color: var(
+        ----syz-login-with-carousel-button-color-dark,
+        #f56c00
+      );
+      border-color: var(
+        ----syz-login-with-carousel-button-color-dark,
+        #f56c00
+      );
+      @include transition(all $trans-time-default ease-out);
+    }
+    &:active {
+      color: #ffff;
+      background-color: #ffad42;
+      border-color: #ffad42;
+      @include transition(all $trans-time-default ease-out);
+    }
+  }
+  &.outline {
+    color: var(
+      --syz-login-with-carousel-button-color,
+      #ff9100);
+    background-color: transparent;
+    border: 1px solid var(
+      --syz-login-with-carousel-button-color,
+      #ff9100
+      );
+    cursor: pointer;
+    &:hover {
+      color: #ffff;
+      background-color: var(
+        --syz-login-with-carousel-button-color,
+        #ff9100
+      );
+      border-color: var(
+        --syz-login-with-carousel-button-color,
+        #ff9100
+      );
+      @include transition(all $trans-time-default ease-out);
+    }
+    &:active {
+      color: #ffff;
+      background-color: #ffad42;
+      border-color: #ffad42;
+      @include transition(all $trans-time-default ease-out);
+    }
+  }
+  &.disabled {
+    color: #9ba5ae;
+    background-color: #c4c4c4;
+    border: 1px solid #c4c4c4;
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+  &.clear {
+    width: auto;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    &:hover {
+      color: var(
+        --syz-login-with-carousel-button-color,
+        #ff9100
+      );
+      @include transition(all $trans-time-default ease-out);
+    }
+    &.txt-left {
+      padding-left: 0;
+      text-align: left;
+    }
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.ng-select.select-custom {
+  width: 100%;
+  font-size: 1.125rem;
+  color: #50555a;
+  background-color: #ffff;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  outline: none;
+  .ng-select-container {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("/assets/icons/icon-arrow-select.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    overflow: initial;
+    height: 46px;
+  }
+  .ng-arrow-wrapper {
+    width: 25px;
+    padding-right: 5px;
+    display: none;
+  }
+}
+
+.ng-select .ng-select-container {
+  border: 1px solid #50555a;
+}
+
+.ng-select.ng-valid.ng-touched .ng-select-container {
+  border: 2px solid #00bf85;
+  box-shadow: none;
+}
+
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: -12px;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel
+  .ng-dropdown-panel-items
+  .ng-option.ng-option-selected.ng-option-marked,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+  color: #ffff;
+  background-color: var(
+    --syz-login-with-carousel-button-color,
+    #ff9100
+  );
+}
+
+@media all and (max-width: 766px) {
+  .text-sm-center {
+    text-align: center;
+  }
+
+  .text-sm-left {
+    text-align: left;
+  }
+
+  .text-sm-right {
+    text-align: right;
+  }
+
+  .btn-sm-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 767px) and (max-width: 1022px) {
+  .text-md-center {
+    text-align: center;
+  }
+
+  .text-md-left {
+    text-align: left;
+  }
+
+  .text-md-right {
+    text-align: right;
+  }
+
+  .btn-md-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 1023px) and (max-width: 1438px) {
+  .text-lg-center {
+    text-align: center;
+  }
+
+  .text-lg-left {
+    text-align: left;
+  }
+
+  .text-lg-right {
+    text-align: right;
+  }
+}
+
+@media all and (min-width: 1439px) {
+  .text-xl-center {
+    text-align: center;
+  }
+
+  .text-xl-left {
+    text-align: left;
+  }
+
+  .text-xl-right {
+    text-align: right;
+  }
+}
+
+
+

@@ -1,9 +1,21 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-export interface Credentials {
+export interface NgSyzLoginCredentials {
   username: string;
   password: string;
+}
+
+export interface NgSyzSlide {
+  img: string;
+  title: string;
+  subtitle: string;
+  alt: string;
+}
+
+export interface NgSyzLoginLogo {
+  img: string;
+  imgAlt: string;
 }
 
 @Component({
@@ -12,23 +24,13 @@ export interface Credentials {
   styleUrls: ['./login-with-carousel-flow.component.scss'],
 })
 export class NgSyzLoginWithCarouselFlowComponent implements OnInit {
-  @Input() productLogo: {
-    img: string;
-    imgAlt: string;
-  };
-  @Input() slides: [
-    {
-      img: string;
-      soon: boolean;
-      title: string;
-      subtitle: string;
-      alt: string;
-    }
-  ];
+  @Input() productLogo: NgSyzLoginLogo;
+  @Input() slides: NgSyzSlide[];
   @Input() signUpPath: string;
   @Input() forgotPasswordPath: string;
 
-  @Output() loginOnClick: EventEmitter<Credentials> = new EventEmitter();
+  @Output() loginOnClick: EventEmitter<NgSyzLoginCredentials> =
+    new EventEmitter();
   @Output() closeModalOnClick: EventEmitter<any> = new EventEmitter();
 
   formLogin: FormGroup;
@@ -61,17 +63,11 @@ export class NgSyzLoginWithCarouselFlowComponent implements OnInit {
     this.isTextFieldType = !this.isTextFieldType;
   }
 
-  openModal(id: string) {}
-
-  closeModal(id: string) {
-    this.closeModalOnClick.emit();
-  }
-
   loginUser() {
     if (this.formLogin.valid) {
       this.loginOnClick.emit({
-        username: this.formLogin.value('username'),
-        password: this.formLogin.value('password'),
+        username: this.formLogin.get('username').value,
+        password: this.formLogin.get('password').value,
       });
     }
   }

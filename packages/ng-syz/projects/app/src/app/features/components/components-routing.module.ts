@@ -34,6 +34,13 @@ const routes: Routes = [
             (m) => m.DocsExampleFlowModule
           ),
       },
+      {
+        path: 'login-with-carousel-flow',
+        loadChildren: () =>
+          import(
+            './docs-login-with-carousel-flow/docs-login-with-carousel-flow.module'
+          ).then((m) => m.DocsLoginWithCarouselFlowModule),
+      },
     ],
   },
   {
