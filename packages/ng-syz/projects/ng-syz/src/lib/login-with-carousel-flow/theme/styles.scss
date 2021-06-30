@@ -1,0 +1,135 @@
+/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+
+html,
+body {
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+//// MARGENS (0.15em a 4.05em) ////
+@for $i from 1 through 40 {
+    .margin-t-#{$i}5 {
+        margin-top: 0.05em + ($i * 0.1) !important;
+    }
+    .margin-r-#{$i}5 {
+        margin-right: 0.05em + ($i * 0.1) !important;
+    }
+    .margin-b-#{$i}5 {
+        margin-bottom: 0.05em + ($i * 0.1) !important;
+    }
+    .margin-l-#{$i}5 {
+        margin-left: 0.05em + ($i * 0.1) !important;
+    }
+}
+
+//// SCROLLBAR ////
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #9ba5ae;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff9100;
+  border-radius: 1px;
+  &:hover {
+      background: #ffad42;
+  }
+}
+
+//// CONTEUDO ////
+main {
+    min-height: 100vh;
+    display: grid;
+}
+
+.wrapper {
+    justify-content: center;
+    padding: $content-gap * 4;
+    text-align: center;
+    .product-logo {
+        width: 50%;
+        margin-bottom: $content-gap + 1;
+    }
+    .ilustra-sucesso {
+        width: 307px;
+    }
+    .title {
+        margin-bottom: $content-gap + 0.4375;
+        font-size: $font-size-base + 0.625;
+        font-weight: 700;
+        color: var(
+          --syz-login-with-carousel-button-color,
+          orange);
+    }
+    .subtitle {
+        font-size: $font-size-base + 0.125;
+        font-weight: 700;
+        color: #50555a;
+    }
+    .info {
+        font-size: $font-size-base;
+        font-weight: 400;
+        color: #50555a;
+        span {
+            font-weight: 700;
+        }
+    }
+}
+
+.full-height {
+    min-height: 100vh;
+}
+
+.product-logo {
+    width: 50%;
+    margin-bottom: 2em;
+}
+
+.title {
+    margin-bottom: 1.4375em;
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: #ff9100;
+}
+
+.float-right {
+    float: right;
+}
+
+.dropdown-scroll {
+  height: 15rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media only screen and (min-width: 960px) {
+    .app-slide {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.divider {
+    border: 1px solid #ECECEC;
+    align-self: center;
+    margin: 24px 8px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

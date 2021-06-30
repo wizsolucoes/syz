@@ -1,0 +1,144 @@
+<div class="login-container">
+  <div class="linha">
+    <div
+      class="
+        content-login-bg-color
+        coluna-sm-12 coluna-md-12 coluna-lg-6 coluna-xl-6
+        align-self-center
+      "
+    >
+      <div class="content-login">
+        <img
+          class="product-logo"
+          [src]="productLogo?.img"
+          [alt]="productLogo?.imgAlt"
+        />
+        <form class="margin-t-405" [formGroup]="formLogin" autocomplete="true">
+          <div class="linha">
+            <div class="coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12">
+              <div class="field-wrapper">
+                <input
+                  type="text"
+                  formControlName="username"
+                  autocomplete="off"
+                />
+                <label>Email</label>
+                <p
+                  class="error-msg"
+                  *ngIf="
+                    formLogin.get('username').invalid &&
+                    formLogin.get('username').touched
+                  "
+                >
+                  Por favor, insira um e-mail válido
+                </p>
+              </div>
+            </div>
+            <div class="coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12">
+              <div class="field-wrapper">
+                <input
+                  [type]="isTextFieldType ? 'text' : 'password'"
+                  formControlName="password"
+                  autocomplete="off"
+                />
+                <button
+                  type="button"
+                  class="btn-icon"
+                  (click)="showPassword()"
+                  tabindex="-1"
+                >
+                  <span
+                    [class]="isTextFieldType ? 'fa fa-eye' : 'fa fa-eye-slash'"
+                  ></span>
+                </button>
+                <label>Senha</label>
+                <p
+                  class="error-msg"
+                  *ngIf="
+                    formLogin.get('password').invalid &&
+                    (formLogin.get('password').dirty ||
+                      formLogin.get('password').touched)
+                  "
+                >
+                  Por favor, informe uma senha válida
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="linha">
+            <div
+              class="coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12 mb-8"
+            >
+              <button
+                margin-t-305
+                [class]="
+                  formLogin.invalid
+                    ? 'btn-custom btn-block disabled'
+                    : 'btn-custom btn-block default'
+                "
+                (click)="loginUser()"
+                [disabled]="formLogin.invalid"
+              >
+                Entrar
+              </button>
+            </div>
+            <div
+              class="coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12 mb-24"
+            >
+              <button
+                margin-t-305
+                class="btn-custom btn-block outline"
+                routerLink="{{ signUpPath }}"
+              >
+                Primeiro acesso
+              </button>
+            </div>
+            <div
+              class="
+                coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12
+                esqueceu-senha
+              "
+            >
+              Esqueceu a senha?
+              <button
+                type="button"
+                class="btn-custom clear txt-left link-recuperar-senha"
+                routerLink="{{ forgotPasswordPath }}"
+              >
+                <span>Recuperar aqui</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div
+      class="
+        slide-bg-color
+        d-none-sm d-none-md
+        coluna-lg-6 coluna-xl-6
+        full-height
+      "
+    >
+      <div class="app-slide">
+        <div
+          class="slide-container"
+          [ngClass]="{ 'position-fixed': obterWidth() }"
+        >
+          <div class="slide-item">
+            <swiper [config]="config">
+              <div *ngFor="let slide of slides">
+                <div class="img-container">
+                  <img [src]="slide?.img" [alt]="slide?.alt" />
+                  <div *ngIf="slide?.soon" class="badge-soon">EM BREVE</div>
+                </div>
+                <h1>{{ slide?.title }}</h1>
+                <h2>{{ slide?.subtitle }}</h2>
+              </div>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

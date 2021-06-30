@@ -18,6 +18,14 @@ const routes: Routes = [
         (m) => m.ExampleFlowExampleTwoModule
       ),
   },
+  {
+    path: 'login-with-carousel-flow-example-one',
+    loadChildren: () =>
+      import(
+        './login-with-carousel-flow-example-one/login-with-carousel-flow-example-one.module'
+      ).then((m) => m.LoginWithCarouselFlowExampleOneModule),
+  },
+  { path: 'login-with-carousel-flow-example-two', loadChildren: () => import('./login-with-carousel-flow-example-two/login-with-carousel-flow-example-two.module').then(m => m.LoginWithCarouselFlowExampleTwoModule) },
 ];
 
 @NgModule({
