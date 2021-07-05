@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '../../../shared/shared.module';
 
 import { DocsLoginWithCarouselFlowComponent } from './docs-login-with-carousel-flow.component';
 
@@ -8,9 +10,9 @@ describe('DocsLoginWithCarouselFlowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocsLoginWithCarouselFlowComponent ]
-    })
-    .compileComponents();
+      declarations: [DocsLoginWithCarouselFlowComponent],
+      imports: [SharedModule, NoopAnimationsModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
