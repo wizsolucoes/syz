@@ -32,7 +32,6 @@ describe('NgSyzLoginWithCarouselFlowComponent', () => {
       };
 
       component.ngOnInit();
-      console.log(component.formLogin.controls['username'].setErrors(null));
       component.formLogin.controls['username'].setErrors(null);
       component.formLogin.controls['password'].setErrors(null);
 

@@ -25,4 +25,27 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('loginUser', () => {
+    it('should emit buttonClick event with username and password', () => {
+      // Given
+      const credentials = {
+        username: 'example@email.com',
+        password: '12345678',
+      };
+
+      component.ngOnInit();
+      component.loginFormGroup.controls['Username'].setErrors(null);
+      component.loginFormGroup.controls['Password'].setErrors(null);
+
+      spyOn(component.buttonClick, 'emit');
+
+      component.loginFormGroup.get('Username').setValue(credentials.username);
+      component.loginFormGroup.get('Password').setValue(credentials.password);
+      // When
+      component.loginUser();
+      // Then
+      expect(component.buttonClick.emit).toHaveBeenCalledWith(credentials);
+    });
+  });
 });
