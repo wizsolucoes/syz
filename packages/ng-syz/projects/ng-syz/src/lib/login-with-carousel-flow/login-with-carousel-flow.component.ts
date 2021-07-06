@@ -1,22 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-export interface NgSyzLoginCredentials {
-  username: string;
-  password: string;
-}
-
-export interface NgSyzSlide {
-  img: string;
-  title: string;
-  subtitle: string;
-  alt: string;
-}
-
-export interface NgSyzLoginLogo {
-  img: string;
-  imgAlt: string;
-}
+import { NgSyzLoginCredentials, NgSyzLoginLogo, NgSyzSlide } from '../models';
 
 @Component({
   selector: 'ng-syz-login-with-carousel-flow',
