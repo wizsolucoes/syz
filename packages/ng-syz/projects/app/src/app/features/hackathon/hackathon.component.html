@@ -1,0 +1,83 @@
+<div id="hackathonPage">
+  <section class="dark-background">
+    <div class="hero"><h1>HackaSyz 2021</h1></div>
+
+    <div class="wrapper">
+      <div class="section-links">
+        <div
+          class="section-link"
+          *ngFor="let link of sectionLinks"
+          role="link"
+          (click)="scroll(target); selectedLink = link.key"
+        >
+          <div class="video-container">
+            <video
+              [ngClass]="
+                selectedLink === link.key
+                  ? 'hover-image selected'
+                  : 'hover-image'
+              "
+              loop
+              autoplay
+              preload
+            >
+              <source src="/assets/techy.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="text-container">
+            {{ link.title }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light-background" #target>
+    <div class="wrapper" [ngSwitch]="selectedLink">
+      <div class="content" *ngSwitchDefault>
+        <h2>Formato</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quod
+          suscipit architecto voluptatum ipsa voluptates accusantium, optio
+          vitae ipsum, sit aperiam unde earum laboriosam ullam distinctio,
+          facilis quaerat qui accusamus?
+        </p>
+      </div>
+
+      <div class="content" *ngSwitchCase="pointsKey">
+        <h2>Pontuação</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quod
+          suscipit architecto voluptatum ipsa voluptates accusantium, optio
+          vitae ipsum, sit aperiam unde earum laboriosam ullam distinctio,
+          facilis quaerat qui accusamus?
+        </p>
+      </div>
+
+      <div class="content" *ngSwitchCase="chronogramKey">
+        <h2>Cronograma</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quod
+          suscipit architecto voluptatum ipsa voluptates accusantium, optio
+          vitae ipsum, sit aperiam unde earum laboriosam ullam distinctio,
+          facilis quaerat qui accusamus?
+        </p>
+      </div>
+
+      <div class="content" *ngSwitchCase="prizesKey">
+        <h2>Premiação</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quod
+          suscipit architecto voluptatum ipsa voluptates accusantium, optio
+          vitae ipsum, sit aperiam unde earum laboriosam ullam distinctio,
+          facilis quaerat qui accusamus?
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
