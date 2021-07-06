@@ -1,0 +1,129 @@
+#hackathonPage {
+  h1,
+  h2,
+  p {
+    font-family: 'Squada One', cursive;
+  }
+
+  font-family: 'Squada One', cursive;
+
+  .dark-background {
+    background-color: #170031;
+    color: #e9e5ed;
+  }
+
+  .light-background {
+    background-color: #e9e5ed;
+    color: #170031;
+  }
+
+  .wrapper {
+    margin-right: auto;
+    margin-left: auto;
+
+    max-width: 1224px;
+
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .hero {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/assets/hackasyz-hero-background.png');
+    background-size: cover;
+    background-position: center;
+
+    h1 {
+      font-size: 72px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 72px;
+    }
+  }
+
+  .content {
+    padding: 40px 20px;
+
+    h2 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+
+  .section-links {
+    padding: 20px;
+  }
+
+  .section-link {
+    position: relative;
+    background: #1b0039;
+    border: 4px solid #270052;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 300ms;
+    font-size: 20px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    & .text-container {
+      position: relative;
+      margin: auto;
+      text-align: center;
+    }
+
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    video {
+      width: 100%;
+    }
+
+    &:not(hover) .hover-image {
+      opacity: 0;
+    }
+
+    &:not(hover) .hover-image.selected {
+      opacity: 1;
+    }
+
+    &:hover .hover-image {
+      opacity: 1;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .hero {
+      height: 560px;
+      background-position: bottom;
+    }
+
+    .content {
+      padding: 60px 40px;
+    }
+
+    .section-links {
+      display: flex;
+
+      .section-link {
+        flex: 1;
+        margin: 20px;
+      }
+    }
+  }
+}
