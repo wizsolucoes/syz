@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgSyzLoginWithCarouselFlowComponent } from './login-with-carousel-flow.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 
 describe('NgSyzLoginWithCarouselFlowComponent', () => {
   let component: NgSyzLoginWithCarouselFlowComponent;
@@ -8,7 +9,7 @@ describe('NgSyzLoginWithCarouselFlowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormsModule, ReactiveFormsModule],
+      imports: [FormsModule, ReactiveFormsModule, SwiperModule],
       declarations: [NgSyzLoginWithCarouselFlowComponent],
     }).compileComponents();
   });
@@ -31,14 +32,17 @@ describe('NgSyzLoginWithCarouselFlowComponent', () => {
         password: '12345678',
       };
 
+      const usernameKey = 'username';
+      const passwordKey = 'password';
+
       component.ngOnInit();
-      component.formLogin.controls['username'].setErrors(null);
-      component.formLogin.controls['password'].setErrors(null);
+      component.formLogin.controls[usernameKey].setErrors(null);
+      component.formLogin.controls[passwordKey].setErrors(null);
 
       spyOn(component.loginOnClick, 'emit');
 
-      component.formLogin.get('username').setValue(credentials.username);
-      component.formLogin.get('password').setValue(credentials.password);
+      component.formLogin.get(usernameKey).setValue(credentials.username);
+      component.formLogin.get(passwordKey).setValue(credentials.password);
       // When
       component.loginUser();
       // Then
