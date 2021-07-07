@@ -53,17 +53,17 @@ Uma biblioteca angular com os componentes do design system SYZ e uma aplicação
 # Instalar dependências
 npm install
 
-# Executar testes da biblioteca
-ng test ng-syz
-
 # Buildar biblioteca
 ng build ng-syz --watch
 
-# Executar testes da aplicação de demo
-ng test app
-
 # Servir a aplicação demo
 ng serve app
+
+# Executar testes da biblioteca
+ng test ng-syz
+
+# Executar testes da aplicação de demo
+ng test app
 ```
 
 ## Adicionando um componente
