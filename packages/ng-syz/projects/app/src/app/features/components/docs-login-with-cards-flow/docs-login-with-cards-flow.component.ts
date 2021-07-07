@@ -48,6 +48,7 @@ export class DocsLoginWithCardsFlowComponent {
   ng-syz-login-with-cards-flow {
     --accent-color: #8fc549;
     --primary-color: #fd5725;
+    --business-unit-logo-align: 30px;
   }`;
 
   cssExample2Code = `
@@ -158,6 +159,11 @@ export class DocsLoginWithCardsFlowComponent {
       name: `--primary-color`,
       description:
         'Cor primária da aplicação. Aparecerá na borda e texto do botão "Criar usuário" ',
+    },
+    {
+      name: `--business-unit-logo-align`,
+      description:
+        'Use essa propriedade para alinhar a logo da unidade de negócio com a logo do parceiro, caso necessário. Veja exemplo 1." ',
     },
   ];
 }

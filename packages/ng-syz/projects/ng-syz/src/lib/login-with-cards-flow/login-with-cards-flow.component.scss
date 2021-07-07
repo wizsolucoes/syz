@@ -17,7 +17,7 @@
 
           &:last-child {
             position: relative;
-            top: 30px;
+            top: var(--business-unit-logo-align, 0px);
           }
 
           &.caixa-seguradora-logo {
@@ -144,6 +144,4 @@
     width: 100%;
   }
 }
-
-
 
