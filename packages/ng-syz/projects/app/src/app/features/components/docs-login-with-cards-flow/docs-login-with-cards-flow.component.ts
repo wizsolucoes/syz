@@ -28,11 +28,32 @@ export class DocsLoginWithCardsFlowComponent {
   ></ng-syz-login-with-cards-flow>
   `;
 
+  html2ExampleCode = `
+  <ng-syz-login-with-cards-flow
+    [partnerLogo]="partnerLogo"
+    [businessUnitLogo]="businessUnitLogo"
+    [bgLogin]="bgLogin"
+    [title]="'TÍTULO'"
+    [subtitle]="'Adicione um subtítulo aqui.'"
+    [cards]="cards"
+    [signUpPath]="''../sign-up/sign-up.component''"
+    [forgotPasswordPath]="''../reset-password/reset-password.component''"
+    (buttonClick)="onButtonClick($event)"
+  ></ng-syz-login-with-cards-flow>
+  `;
+
   //EXEMPLOS - CSS
+
   cssExample1Code = `
   ng-syz-login-with-cards-flow {
     --accent-color: #8fc549;
     --primary-color: #fd5725;
+  }`;
+
+  cssExample2Code = `
+  ng-syz-login-with-cards-flow {
+    --accent-color: #F56C00;
+    --primary-color: #00AA9B;
   }`;
 
   //EXEMPLOS - TS

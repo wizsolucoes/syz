@@ -3,8 +3,16 @@
     <div class="loginWrapper">
       <div class="landing">
         <div class="logos">
-          <img [src]="partnerLogo?.img" [alt]="partnerLogo?.imgAlt" />
-          <img [src]="businessUnitLogo?.img" [alt]="businessUnitLogo?.imgAlt" />
+          <img
+            id="partnerLogo"
+            [src]="partnerLogo?.img"
+            [alt]="partnerLogo?.imgAlt"
+          />
+          <img
+            id="businessUnitLogo"
+            [src]="businessUnitLogo?.img"
+            [alt]="businessUnitLogo?.imgAlt"
+          />
         </div>
         <h1>{{ title }}</h1>
         <hr />
