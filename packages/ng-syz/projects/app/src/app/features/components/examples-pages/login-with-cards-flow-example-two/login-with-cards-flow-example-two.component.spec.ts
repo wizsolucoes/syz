@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NgSyzLoginWithCardsFlowModule } from '@wizsolucoes/ng-syz';
 
 import { LoginWithCardsFlowExampleTwoComponent } from './login-with-cards-flow-example-two.component';
 
@@ -12,7 +15,12 @@ describe('LoginWithCardsFlowExampleTwoComponent', () => {
     mockSnackBar = jasmine.createSpyObj('MatSnackBar', ['open']);
 
     await TestBed.configureTestingModule({
-      imports: [MatSnackBarModule],
+      imports: [
+        MatSnackBarModule,
+        NgSyzLoginWithCardsFlowModule,
+        RouterTestingModule,
+        NoopAnimationsModule,
+      ],
       declarations: [LoginWithCardsFlowExampleTwoComponent],
       providers: [{ provide: MatSnackBar, useValue: mockSnackBar }],
     }).compileComponents();

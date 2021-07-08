@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '../../../shared/shared.module';
 
 import { DocsLoginWithCardsFlowComponent } from './docs-login-with-cards-flow.component';
 
@@ -8,9 +10,9 @@ describe('DocsLoginWithCardsFlowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocsLoginWithCardsFlowComponent ]
-    })
-    .compileComponents();
+      declarations: [DocsLoginWithCardsFlowComponent],
+      imports: [SharedModule, NoopAnimationsModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

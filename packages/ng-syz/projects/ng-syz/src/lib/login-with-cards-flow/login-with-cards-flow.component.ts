@@ -12,14 +12,8 @@ import {
   styleUrls: ['./login-with-cards-flow.component.scss'],
 })
 export class NgSyzLoginWithCardsFlowComponent implements OnInit {
-  @Input() partnerLogo: NgSyzLoginLogo = {
-    img: '../../../assets/Banco Inter - Login.svg',
-    imgAlt: 'Logo banco',
-  };
-  @Input() businessUnitLogo: NgSyzLoginLogo = {
-    img: '../../../assets/Wiz Corporate-white.svg',
-    imgAlt: 'Wiz Corporate Logo',
-  };
+  @Input() partnerLogo: NgSyzLoginLogo;
+  @Input() businessUnitLogo: NgSyzLoginLogo;
   @Input() bgLogin: string;
   @Input() title: string;
   @Input() subtitle: string;
