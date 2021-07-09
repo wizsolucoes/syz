@@ -1,0 +1,91 @@
+<div id="login" [style]="bgLogin">
+  <div class="contentWrapper">
+    <div class="loginWrapper">
+      <div class="landing">
+        <div class="logos">
+          <img
+            id="partnerLogo"
+            [src]="partnerLogo?.img"
+            [alt]="partnerLogo?.imgAlt"
+          />
+          <img
+            id="businessUnitLogo"
+            [src]="businessUnitLogo?.img"
+            [alt]="businessUnitLogo?.imgAlt"
+          />
+        </div>
+        <h1>{{ title }}</h1>
+        <hr />
+        <h2>{{ subtitle }}</h2>
+
+        <div class="items">
+          <div class="item" *ngFor="let card of cards">
+            <div class="box-icon">
+              <img [src]="card?.img" [alt]="card?.imgAlt" />
+            </div>
+            <p>{{ card.text }}</p>
+          </div>
+        </div>
+      </div>
+      <mat-card>
+        <h3 class="title">Acessar</h3>
+        <form class="login-form" [formGroup]="loginFormGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input
+              matInput
+              type="email"
+              name="email"
+              formControlName="Username"
+              (keydown.enter)="loginUser()"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input
+              matInput
+              type="password"
+              name="password"
+              formControlName="Password"
+              (keydown.enter)="loginUser()"
+              required
+            />
+          </mat-form-field>
+          <button
+            mat-raised-button
+            color="accent"
+            class="btn-default"
+            type="button"
+            [disabled]="loginFormGroup.invalid || isSubmitting"
+            (click)="loginUser()"
+          >
+            Entrar
+          </button>
+        </form>
+        <div class="password-reset-button">
+          <button
+            mat-button
+            color="primary"
+            class="btn-default"
+            type="button"
+            routerLink="{{ forgotPasswordPath }}"
+          >
+            Esqueci minha senha
+          </button>
+        </div>
+        <div class="register-button">
+          <button
+            mat-stroked-button
+            color="primary"
+            class="btn-default"
+            type="button"
+            routerLink="{{ signUpPath }}"
+          >
+            Criar novo usuário
+          </button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -19,5 +19,9 @@ export class ComponentsComponent {
       displayName: 'Fluxo de login com carousel',
       route: 'login-with-carousel-flow',
     },
+    {
+      displayName: 'Fluxo de login com cards',
+      route: 'login-with-cards-flow',
+    },
   ];
 }
