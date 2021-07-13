@@ -1,9 +1,16 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 import {
   NgSyzLoginCredentials,
   NgSyzLoginLogo,
   NgSyzLoginCard,
+  NgSyzSignUpCredentials,
 } from '../models';
 
 @Component({
@@ -23,9 +30,14 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
 
   @Output() buttonClick: EventEmitter<NgSyzLoginCredentials> =
     new EventEmitter();
+  @Output() signUpButtonClick: EventEmitter<NgSyzSignUpCredentials> =
+    new EventEmitter();
 
+  currentForm: string = 'loginForm';
   loginFormGroup: FormGroup;
+  signUpForm: FormGroup;
   isSubmitting = false;
+  cadastrarUsuarioText = 'Cadastrar Usuário';
 
   constructor(private readonly formBuilder: FormBuilder) {}
 
@@ -34,6 +46,30 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
       Username: ['', [Validators.required]],
       Password: ['', [Validators.required]],
     });
+
+    this.signUpForm = this.formBuilder.group(
+      {
+        cpf: [
+          '',
+          Validators.compose([
+            Validators.required,
+            Validators.pattern(/^[0-9]*$/),
+            this.cpfValidator(),
+          ]),
+        ],
+        name: ['', [Validators.required, Validators.pattern(/^([^0-9]*)$/)]],
+        email: ['', [Validators.required, Validators.email]],
+        cellphone: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+        password: ['', [Validators.required]],
+        confirmPassword: ['', [Validators.required]],
+        organization: ['Caixa Econômica Federal'],
+        cnpj: ['00360305000104'],
+        profile: [2],
+      },
+      {
+        validators: [this.matchPassword],
+      }
+    );
   }
 
   loginUser(): void {
@@ -43,5 +79,74 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
         password: this.loginFormGroup.get('Password').value,
       });
     }
+  }
+
+  signUpUser(): void {
+    this.isSubmitting = true;
+    if (this.signUpForm.valid) {
+      this.isSubmitting = false;
+      this.signUpButtonClick.emit({
+        username: this.signUpForm.get('name').value,
+        cpf: this.signUpForm.get('cpf').value,
+        name: this.signUpForm.get('name').value,
+        email: this.signUpForm.get('email').value,
+        cellphone: this.signUpForm.get('cellphone').value,
+        password: this.signUpForm.get('password').value,
+        confirmPassword: this.signUpForm.get('confirmPassword').value,
+      });
+    }
+  }
+
+  // VALIDATORS
+
+  matchPassword(control: AbstractControl): ValidationErrors | null {
+    if (control) {
+      const password = control.get('password').value;
+      const confirmPassword = control.get('confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        control.get('confirmPassword').setErrors({ passwordMismatch: true });
+      } else {
+        control.get('confirmPassword').setErrors(null);
+      }
+    }
+
+    return null;
+  }
+
+  cpfValidator(): any {
+    return (control: AbstractControl): { [key: string]: any } => {
+      if (!control.value) {
+        return null;
+      }
+
+      // Primeira validação
+      const cpf = control.value.replace(/\D/g, '');
+      if (cpf.toString().length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+        return { invalidCpf: true };
+      }
+
+      let result = null;
+
+      // Segunda validação
+      [9, 10].forEach((j) => {
+        let soma = 0;
+        let r;
+        cpf
+          .split(/(?=)/)
+          .splice(0, j)
+          .forEach((e, i) => {
+            soma += Number(e) * (j + 2 - (i + 1));
+          });
+        r = soma % 11;
+        r = r < 2 ? 0 : 11 - r;
+
+        if (r !== Number(cpf.substring(j, j + 1))) {
+          result = { invalidCpf: true };
+        }
+      });
+
+      return result;
+    };
   }
 }

@@ -28,62 +28,183 @@
         </div>
       </div>
       <mat-card>
-        <h3 class="title">Acessar</h3>
-        <form class="login-form" [formGroup]="loginFormGroup">
-          <mat-form-field appearance="outline">
-            <mat-label>E-mail</mat-label>
-            <input
-              matInput
-              type="email"
-              name="email"
-              formControlName="Username"
-              (keydown.enter)="loginUser()"
-              required
-            />
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Senha</mat-label>
-            <input
-              matInput
-              type="password"
-              name="password"
-              formControlName="Password"
-              (keydown.enter)="loginUser()"
-              required
-            />
-          </mat-form-field>
-          <button
-            mat-raised-button
-            color="accent"
-            class="btn-default"
-            type="button"
-            [disabled]="loginFormGroup.invalid || isSubmitting"
-            (click)="loginUser()"
-          >
-            Entrar
-          </button>
-        </form>
-        <div class="password-reset-button">
-          <button
-            mat-button
-            color="primary"
-            class="btn-default"
-            type="button"
-            routerLink="{{ forgotPasswordPath }}"
-          >
-            Esqueci minha senha
-          </button>
+        <!-- LOGIN FORM -->
+        <div *ngIf="currentForm === 'loginForm'">
+          <h3 class="title">Acessar</h3>
+          <form class="login-form" [formGroup]="loginFormGroup">
+            <mat-form-field appearance="outline">
+              <mat-label>E-mail</mat-label>
+              <input
+                matInput
+                type="email"
+                name="email"
+                formControlName="Username"
+                (keydown.enter)="loginUser()"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Senha</mat-label>
+              <input
+                matInput
+                type="password"
+                name="password"
+                formControlName="Password"
+                (keydown.enter)="loginUser()"
+                required
+              />
+            </mat-form-field>
+            <button
+              mat-raised-button
+              color="accent"
+              class="btn-default"
+              type="button"
+              [disabled]="loginFormGroup.invalid || isSubmitting"
+              (click)="loginUser()"
+            >
+              Entrar
+            </button>
+          </form>
+          <div class="password-reset-button">
+            <button
+              mat-button
+              color="primary"
+              class="btn-default"
+              type="button"
+              routerLink="{{ forgotPasswordPath }}"
+            >
+              Esqueci minha senha
+            </button>
+          </div>
+          <div class="register-button">
+            <button
+              mat-stroked-button
+              color="primary"
+              class="btn-default"
+              type="button"
+              routerLink="{{ signUpPath }}"
+            >
+              Criar novo usuário
+            </button>
+          </div>
         </div>
-        <div class="register-button">
-          <button
-            mat-stroked-button
-            color="primary"
-            class="btn-default"
-            type="button"
-            routerLink="{{ signUpPath }}"
-          >
-            Criar novo usuário
+
+        <!-- PASSWORD RESET FORM -->
+
+        <!-- SIGN UP FORM -->
+        <div *ngIf="currentForm === 'signUpForm'>
+          <button mat-button class="btn-back" routerLink="">
+            <mat-icon>keyboard_arrow_left</mat-icon>Voltar
           </button>
+          <h3 class="title">Novo usuário</h3>
+          <form class="login-form" [formGroup]="signUpForm">
+            <mat-form-field appearance="outline">
+              <mat-label>Nome completo</mat-label>
+              <input
+                matInput
+                type="name"
+                name="name"
+                formControlName="name"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  signUpForm.controls.name.touched &&
+                  signUpForm.controls.name.errors?.pattern
+                "
+              >
+                Não é permitido números no nome
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>CPF</mat-label>
+              <input
+                matInput
+                type="text"
+                name="cpf"
+                formControlName="cpf"
+                required
+                mask="000.000.000-00"
+              />
+              <mat-error
+                *ngIf="
+                  signUpForm.controls.cpf.touched &&
+                  signUpForm.controls.cpf.errors?.invalidCpf
+                "
+              >
+                Informe um CPF válido
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>E-mail</mat-label>
+              <input
+                matInput
+                type="email"
+                name="email"
+                formControlName="email"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  signUpForm.controls.email.touched &&
+                  signUpForm.controls.email.errors?.email
+                "
+              >
+                Informe um e-mail válido
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Celular</mat-label>
+              <input
+                matInput
+                type="tel"
+                name="cellphone"
+                formControlName="cellphone"
+                required
+                mask="(00) 00000-0000"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Senha</mat-label>
+              <input
+                matInput
+                type="password"
+                name="password"
+                formControlName="password"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Confirmação de senha</mat-label>
+              <input
+                matInput
+                type="password"
+                name="confirmPassword"
+                formControlName="confirmPassword"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  signUpForm.controls.confirmPassword.touched &&
+                  signUpForm.controls.confirmPassword.errors?.passwordMismatch
+                "
+              >
+                As senhas não correspondem
+              </mat-error>
+            </mat-form-field>
+
+            <button
+              mat-raised-button
+              color="accent"
+              class="btn-default"
+              type="button"
+              [disabled]="signUpForm.invalid || isSubmitting"
+              (click)="signUpUser()"
+            >
+              <mat-spinner [diameter]="30" *ngIf="isSubmitting"></mat-spinner>
+              <span *ngIf="!isSubmitting">Cadastrar</span>
+            </button>
+          </form>
         </div>
       </mat-card>
     </div>
