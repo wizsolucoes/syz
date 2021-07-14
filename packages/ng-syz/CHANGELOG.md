@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/wizsolucoes/syz/compare/ng-syz@0.3.3...ng-syz@0.4.0) (2021-07-09)
+
+
+### Features
+
+* add hackasyz teaser ([bc7dde5](https://github.com/wizsolucoes/syz/commit/bc7dde5784091d399b04248e0abf495f6d1cdaae))
+
+
+
+
+
+## [0.3.3](https://github.com/wizsolucoes/syz/compare/ng-syz@0.3.2...ng-syz@0.3.3) (2021-07-09)
+
+**Note:** Version bump only for package ng-syz
+
+
+
+
+
 ## [0.3.2](https://github.com/wizsolucoes/syz/compare/ng-syz@0.3.1...ng-syz@0.3.2) (2021-07-07)
 
 **Note:** Version bump only for package ng-syz

@@ -6,6 +6,7 @@ import {
   NgSyzSignUpCredentials,
 } from '@wizsolucoes/ng-syz';
 
+
 @Component({
   selector: 'app-login-with-cards-flow-example-two',
   templateUrl: './login-with-cards-flow-example-two.component.html',
@@ -45,6 +46,7 @@ export class LoginWithCardsFlowExampleTwoComponent {
 
   constructor(private snackBar: MatSnackBar) {}
 
+
   onLoginButtonClick(value: NgSyzLoginCredentials): void {
     this.snackBar.open(
       `Email: ${value.username}
@@ -69,6 +71,7 @@ export class LoginWithCardsFlowExampleTwoComponent {
     this.snackBar.open(
       `cpf: ${value.cpf}
        email: ${value.email}`,
+
       'Fechar'
     );
   }

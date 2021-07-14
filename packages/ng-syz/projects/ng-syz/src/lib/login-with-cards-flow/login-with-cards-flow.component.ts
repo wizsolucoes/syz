@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import {
   AbstractControl,
   FormBuilder,
@@ -6,12 +7,14 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+
 import {
   NgSyzLoginCredentials,
   NgSyzLoginLogo,
   NgSyzLoginCard,
   NgSyzSignUpCredentials,
   NgSyzResetPasswordCredentials,
+
 } from '../models';
 
 @Component({

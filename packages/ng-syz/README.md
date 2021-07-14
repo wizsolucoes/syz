@@ -7,6 +7,9 @@
     - [Estrutura](#estrutura)
   - [Desenvolvimento](#desenvolvimento)
     - [Por onde começar](#por-onde-começar)
+      - [1. Clone o monorepositório](#1-clone-o-monorepositório)
+      - [2. Entre na pasta deste projeto do ng-syz](#2-entre-na-pasta-deste-projeto-do-ng-syz)
+      - [3. Todos os seguintes comandos são exucatados na raiz deste projeto específico. **Não na raíz do monorepositório.**](#3-todos-os-seguintes-comandos-são-exucatados-na-raiz-deste-projeto-específico-não-na-raíz-do-monorepositório)
   - [Adicionando um componente](#adicionando-um-componente)
     - [1. Crie uma nova pasta para o módulo do novo componente em `projects/ng-syz/src/lib`](#1-crie-uma-nova-pasta-para-o-módulo-do-novo-componente-em-projectsng-syzsrclib)
     - [2. Adicione dependências do componente a `peerDependencies` no `projects/ng-syz/package.json`.](#2-adicione-dependências-do-componente-a-peerdependencies-no-projectsng-syzpackagejson)
@@ -48,6 +51,19 @@ Uma biblioteca angular com os componentes do design system SYZ e uma aplicação
 ## Desenvolvimento
 
 ### Por onde começar
+
+#### 1. Clone o monorepositório
+```bash
+git clone git@github.com:wizsolucoes/syz.git
+# OU
+git clone https://github.com/wizsolucoes/syz.git
+```
+#### 2. Entre na pasta deste projeto do ng-syz
+```bash
+cd packages/ng-syz
+```
+
+#### 3. Todos os seguintes comandos são exucatados na raiz deste projeto específico. **Não na raíz do monorepositório.**
 
 ```bash
 # Instalar dependências
@@ -206,9 +222,51 @@ Exemplo:
 Exemplo:
 ```html
 <app-component-page>
-  <ng-syz-my-component></ng-syz-my-component>
+  <app-code-example>
+    <ng-syz-my-component></ng-syz-my-component>
+  </app-code-example>
 </app-component-page>
 ```
+- Você pode incluir quanto exemplos quiser.
+Exemplo:
+```html
+<app-component-page>
+  <app-code-example>
+    <ng-syz-my-component></ng-syz-my-component>
+  </app-code-example>
+  
+  <app-code-example>
+    <ng-syz-my-component></ng-syz-my-component>
+  </app-code-example>
+</app-component-page>
+```
+
+- Veja os parêmtros dos componentes `<app-component-page>` e `<app-code-example>` neste exemplo completo:
+```html
+<app-component-page
+  [title]="'Busca por CPF/CNPJ'"
+  [description]="
+    'Componente para iniciar busca por CPF ou por CNPJ com máscaras de input. Recebe um texto opcional e emite um evento com o input do usuário quando o botão é clicado.'
+  "
+  [selector]="'ng-syz-cpf-search'"
+  [importCode]="importCode"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+>
+  <!-- Begin examples in `app-code-example` tags -->
+
+  <!-- Example 1 -->
+  <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
+    <ng-syz-cpf-search
+      [message]="'Acompanhe seus pedidos!'"
+      (buttonClick)="onCpfSeachButtonClick($event)"
+    ></ng-syz-cpf-search>
+  </app-code-example>
+
+  <!-- End examples -->
+</app-component-page>
+```
+[projects/app/src/app/features/components/docs-cpf-search/docs-cpf-search.component.html](./projects/app/src/app/features/components/docs-cpf-search/docs-cpf-search.component.html)
 
 #### 5.5 Criando exemplos de componentes de página inteira
 

@@ -1,3 +1,4 @@
+
 import { NgSyzSignUpCredentials } from './../../../../../../../ng-syz/src/lib/models';
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -5,6 +6,7 @@ import {
   NgSyzLoginCredentials,
   NgSyzResetPasswordCredentials,
 } from '@wizsolucoes/ng-syz';
+
 
 @Component({
   selector: 'app-login-with-cards-flow-example-one',
@@ -44,6 +46,7 @@ export class LoginWithCardsFlowExampleOneComponent {
   ];
 
   constructor(private snackBar: MatSnackBar) {}
+
 
   onLoginButtonClick(value: NgSyzLoginCredentials): void {
     this.snackBar.open(

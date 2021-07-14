@@ -15,6 +15,17 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'hackathon',
+    loadChildren: () =>
+      import('./features/hackathon/hackathon.module').then(
+        (m) => m.HackathonModule
+      ),
+  },
+  {
+    path: 'hackasyz',
+    redirectTo: 'hackathon',
+  },
+  {
     path: '**',
     redirectTo: 'components/home',
   },

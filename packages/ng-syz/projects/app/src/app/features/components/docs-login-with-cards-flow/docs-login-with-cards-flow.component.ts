@@ -39,6 +39,7 @@ export class DocsLoginWithCardsFlowComponent {
     (loginButtonClick)="onLoginButtonClick($event)"
     (signUpButtonClick)="onSignUpButtonClick($event)"
     (resetPasswordButtonClick)="onResetPasswordButtonClick($event)"
+
   ></ng-syz-login-with-cards-flow>
   `;
 
@@ -89,6 +90,7 @@ export class DocsLoginWithCardsFlowComponent {
       text: 'Acompanhar atendimentos solicitados ou abrir novo pedido',
     },
   ];
+
 
     onLoginButtonClick(value: NgSyzLoginCredentials): void {
       this.snackBar.open(
@@ -163,6 +165,7 @@ export class DocsLoginWithCardsFlowComponent {
       description: `String com caminha para a página de resetar a senha`,
     },
     {
+
       name: `@Output() loginButtonClick: EventEmitter<NgSyzLoginCredentials>`,
       description: `Evento emitido com o objeto NgSyzLoginCredentials quando o usuário clica no botão 'entrar' do formulário de login.
       NgSyzLoginCredentials { username: string; password: string; }`,
@@ -183,6 +186,7 @@ export class DocsLoginWithCardsFlowComponent {
       NgSyzResetPasswordCredentials { cpf: string;
         email: string; }`,
     },
+
   ];
 
   componentCSSVariables: ComponentProps[] = [

@@ -41,7 +41,9 @@ describe('NgSyzLoginWithCardsFlowComponent', () => {
   });
 
   describe('loginUser', () => {
+
     it('should emit loginButtonClick event with username and password', () => {
+
       // Given
       const credentials = {
         username: 'example@email.com',
@@ -52,7 +54,9 @@ describe('NgSyzLoginWithCardsFlowComponent', () => {
       component.loginFormGroup.controls['Username'].setErrors(null);
       component.loginFormGroup.controls['Password'].setErrors(null);
 
+
       spyOn(component.loginButtonClick, 'emit');
+
 
       component.loginFormGroup.get('Username').setValue(credentials.username);
       component.loginFormGroup.get('Password').setValue(credentials.password);
