@@ -7,5 +7,7 @@
   [cards]="cards"
   [signUpPath]="''"
   [forgotPasswordPath]="''"
-  (buttonClick)="onButtonClick($event)"
+  (loginButtonClick)="onLoginButtonClick($event)"
+  (signUpButtonClick)="onSignUpButtonClick($event)"
+  (resetPasswordButtonClick)="onResetPasswordButtonClick($event)"
 ></ng-syz-login-with-cards-flow>

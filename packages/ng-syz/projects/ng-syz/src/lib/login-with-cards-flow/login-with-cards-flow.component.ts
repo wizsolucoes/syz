@@ -11,6 +11,7 @@ import {
   NgSyzLoginLogo,
   NgSyzLoginCard,
   NgSyzSignUpCredentials,
+  NgSyzResetPasswordCredentials,
 } from '../models';
 
 @Component({
@@ -28,16 +29,21 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
   @Input() signUpPath: string;
   @Input() forgotPasswordPath: string;
 
-  @Output() buttonClick: EventEmitter<NgSyzLoginCredentials> =
+  @Output() loginButtonClick: EventEmitter<NgSyzLoginCredentials> =
     new EventEmitter();
   @Output() signUpButtonClick: EventEmitter<NgSyzSignUpCredentials> =
     new EventEmitter();
+  @Output()
+  resetPasswordButtonClick: EventEmitter<NgSyzResetPasswordCredentials> = new EventEmitter();
 
-  currentForm: string = 'loginForm';
   loginFormGroup: FormGroup;
   signUpForm: FormGroup;
+  passwordResetForm: FormGroup;
+
+  currentForm: string = 'loginForm';
   isSubmitting = false;
   cadastrarUsuarioText = 'Cadastrar Usuário';
+  codeReceived = false;
 
   constructor(private readonly formBuilder: FormBuilder) {}
 
@@ -70,11 +76,25 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
         validators: [this.matchPassword],
       }
     );
+
+    this.passwordResetForm = this.formBuilder.group({
+      cpf: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(/^[0-9]*$/),
+          this.cpfValidator(),
+        ]),
+      ],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+      code: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+    });
   }
 
   loginUser(): void {
     if (this.loginFormGroup.valid) {
-      this.buttonClick.emit({
+      this.loginButtonClick.emit({
         username: this.loginFormGroup.get('Username').value,
         password: this.loginFormGroup.get('Password').value,
       });
@@ -86,15 +106,21 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
     if (this.signUpForm.valid) {
       this.isSubmitting = false;
       this.signUpButtonClick.emit({
-        username: this.signUpForm.get('name').value,
-        cpf: this.signUpForm.get('cpf').value,
         name: this.signUpForm.get('name').value,
+        cpf: this.signUpForm.get('cpf').value,
         email: this.signUpForm.get('email').value,
         cellphone: this.signUpForm.get('cellphone').value,
         password: this.signUpForm.get('password').value,
         confirmPassword: this.signUpForm.get('confirmPassword').value,
       });
     }
+  }
+
+  resetPassword(): void {
+    this.resetPasswordButtonClick.emit({
+      cpf: this.passwordResetForm.get('cpf').value,
+      email: this.passwordResetForm.get('email').value,
+    });
   }
 
   // VALIDATORS

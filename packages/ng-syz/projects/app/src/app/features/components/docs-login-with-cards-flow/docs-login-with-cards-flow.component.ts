@@ -22,9 +22,9 @@ export class DocsLoginWithCardsFlowComponent {
     [title]="'COTAGRO'"
     [subtitle]="'Facilita solicitação e contratação de seguro agro.'"
     [cards]="cards"
-    [signUpPath]="''../sign-up/sign-up.component''"
-    [forgotPasswordPath]="''../reset-password/reset-password.component''"
-    (buttonClick)="onButtonClick($event)"
+    (loginButtonClick)="onLoginButtonClick($event)"
+    (signUpButtonClick)="onSignUpButtonClick($event)"
+    (resetPasswordButtonClick)="onResetPasswordButtonClick($event)"
   ></ng-syz-login-with-cards-flow>
   `;
 
@@ -36,9 +36,9 @@ export class DocsLoginWithCardsFlowComponent {
     [title]="'TÍTULO'"
     [subtitle]="'Adicione um subtítulo aqui.'"
     [cards]="cards"
-    [signUpPath]="''../sign-up/sign-up.component''"
-    [forgotPasswordPath]="''../reset-password/reset-password.component''"
-    (buttonClick)="onButtonClick($event)"
+    (loginButtonClick)="onLoginButtonClick($event)"
+    (signUpButtonClick)="onSignUpButtonClick($event)"
+    (resetPasswordButtonClick)="onResetPasswordButtonClick($event)"
   ></ng-syz-login-with-cards-flow>
   `;
 
@@ -90,10 +90,30 @@ export class DocsLoginWithCardsFlowComponent {
     },
   ];
 
-  onButtonClick(value: NgSyzLoginCredentials): void {
+    onLoginButtonClick(value: NgSyzLoginCredentials): void {
       this.snackBar.open(
         \`Email: $\{value.username}
-        Senha: $\{value.password}\`,
+         Senha: $\{value.password}\`,
+        'Fechar'
+      );
+    }
+
+    onSignUpButtonClick(value: NgSyzSignUpCredentials): void {
+      this.snackBar.open(
+        \`Nome: $\{value.name}
+         Cpf: $\{value.cpf}
+         Email: $\{value.email}
+         Celular: $\{value.cellphone}
+         Senha: $\{value.password}
+         Confirmação: $\{value.confirmPassword}\`,
+        'Fechar'
+      );
+    }
+
+    onResetPasswordButtonClick(value: NgSyzResetPasswordCredentials): void {
+      this.snackBar.open(
+        \`cpf: $\{value.cpf}
+         email: $\{value.email}\`,
         'Fechar'
       );
     }`;
@@ -143,9 +163,25 @@ export class DocsLoginWithCardsFlowComponent {
       description: `String com caminha para a página de resetar a senha`,
     },
     {
-      name: `@Output() buttonClick: EventEmitter<NgSyzLoginCredentials>`,
-      description: `Evento emitido com o objeto NgSyzCredentials quando o usuário clica no botão 'entrar'.
+      name: `@Output() loginButtonClick: EventEmitter<NgSyzLoginCredentials>`,
+      description: `Evento emitido com o objeto NgSyzLoginCredentials quando o usuário clica no botão 'entrar' do formulário de login.
       NgSyzLoginCredentials { username: string; password: string; }`,
+    },
+    {
+      name: `@Output() signUpButtonClick: EventEmitter<NgSyzSignUpCredentials>`,
+      description: `Evento emitido com o objeto NgSyzSignUpCredentials quando o usuário clica no botão 'cadastrar' do formulário de cadastro.
+      NgSyzSignUpCredentials { name: string;
+        cpf: string;
+        email: string;
+        cellphone: string;
+        password: string;
+        confirmPassword: string; }`,
+    },
+    {
+      name: `@Output() resetPasswordButtonClick: EventEmitter<NgSyzResetPasswordCredentials>`,
+      description: `Evento emitido com o objeto NgSyzResetPasswordCredentials quando o usuário clica no botão 'enviar' do formulário de redefinir senha.
+      NgSyzResetPasswordCredentials { cpf: string;
+        email: string; }`,
     },
   ];
 

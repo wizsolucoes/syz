@@ -71,7 +71,7 @@
               color="primary"
               class="btn-default"
               type="button"
-              routerLink="{{ forgotPasswordPath }}"
+              (click)="currentForm = 'resetPasswordForm'"
             >
               Esqueci minha senha
             </button>
@@ -82,7 +82,7 @@
               color="primary"
               class="btn-default"
               type="button"
-              routerLink="{{ signUpPath }}"
+              (click)="currentForm = 'signUpForm'"
             >
               Criar novo usuário
             </button>
@@ -90,10 +90,96 @@
         </div>
 
         <!-- PASSWORD RESET FORM -->
-
+        <div *ngIf="currentForm === 'resetPasswordForm'">
+          <button
+            mat-button
+            class="btn-back"
+            (click)="currentForm = 'loginForm'"
+          >
+            <mat-icon>keyboard_arrow_left</mat-icon>Voltar
+          </button>
+          <h3 class="title">Redefinir senha</h3>
+          <p>Informe seu CPF e E-mail para receber o código</p>
+          <form class="login-form" [formGroup]="passwordResetForm">
+            <mat-form-field appearance="outline">
+              <mat-label>CPF</mat-label>
+              <input
+                matInput
+                type="text"
+                name="cpf"
+                formControlName="cpf"
+                required
+                mask="000.000.000-00"
+              />
+              <mat-error
+                *ngIf="
+                  passwordResetForm.controls.cpf.touched &&
+                  passwordResetForm.controls.cpf.errors?.invalidCpf
+                "
+              >
+                Informe um CPF válido
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>E-mail</mat-label>
+              <input
+                matInput
+                type="email"
+                name="email"
+                formControlName="email"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  passwordResetForm.controls.email.touched &&
+                  passwordResetForm.controls.email.errors?.email
+                "
+              >
+                Informe um e-mail válido
+              </mat-error>
+            </mat-form-field>
+            <div class="code-received" *ngIf="codeReceived">
+              <mat-form-field appearance="outline">
+                <mat-label>Código</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  name="code"
+                  formControlName="code"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input
+                  matInput
+                  type="password"
+                  name="password"
+                  formControlName="password"
+                  required
+                />
+              </mat-form-field>
+            </div>
+            <button
+              mat-raised-button
+              color="accent"
+              class="btn-default"
+              type="button"
+              [disabled]="isSubmitting"
+              (click)="resetPassword()"
+            >
+              <mat-spinner [diameter]="30" *ngIf="isSubmitting"></mat-spinner>
+              <span *ngIf="!isSubmitting">Enviar</span>
+            </button>
+          </form>
+        </div>
         <!-- SIGN UP FORM -->
-        <div *ngIf="currentForm === 'signUpForm'>
-          <button mat-button class="btn-back" routerLink="">
+        <div *ngIf="currentForm === 'signUpForm'">
+          <button
+            mat-button
+            class="btn-back"
+            (click)="currentForm = 'loginForm'"
+          >
             <mat-icon>keyboard_arrow_left</mat-icon>Voltar
           </button>
           <h3 class="title">Novo usuário</h3>

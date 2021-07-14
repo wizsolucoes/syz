@@ -21,11 +21,15 @@ export interface NgSyzLoginCard {
 }
 
 export interface NgSyzSignUpCredentials {
-  username: string;
-  cpf: string;
   name: string;
+  cpf: string;
   email: string;
   cellphone: string;
   password: string;
   confirmPassword: string;
+}
+
+export interface NgSyzResetPasswordCredentials {
+  cpf: string;
+  email: string;
 }

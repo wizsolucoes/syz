@@ -84,6 +84,11 @@
   mat-card {
     max-width: 410px;
     padding: 50px 40px;
+
+    .btn-back {
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
   }
 
   .login-form {
