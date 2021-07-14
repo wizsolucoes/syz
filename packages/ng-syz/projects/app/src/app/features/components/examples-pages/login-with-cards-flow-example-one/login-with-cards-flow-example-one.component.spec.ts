@@ -1,12 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { RouterTestingModule } from '@angular/router/testing';
-import { NgSyzLoginWithCarouselFlowModule } from '@wizsolucoes/ng-syz';
-import { LoginWithCarouselFlowExampleTwoComponent } from './login-with-carousel-flow-example-two.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('LoginWithCarouselFlowExampleTwoComponent', () => {
-  let component: LoginWithCarouselFlowExampleTwoComponent;
-  let fixture: ComponentFixture<LoginWithCarouselFlowExampleTwoComponent>;
+import { RouterTestingModule } from '@angular/router/testing';
+import { NgSyzLoginWithCardsFlowModule } from '@wizsolucoes/ng-syz';
+
+import { LoginWithCardsFlowExampleOneComponent } from './login-with-cards-flow-example-one.component';
+
+describe('LoginWithCardsFlowExampleOneComponent', () => {
+  let component: LoginWithCardsFlowExampleOneComponent;
+  let fixture: ComponentFixture<LoginWithCardsFlowExampleOneComponent>;
   let mockSnackBar: jasmine.SpyObj<MatSnackBar>;
 
   beforeEach(async () => {
@@ -15,16 +18,17 @@ describe('LoginWithCarouselFlowExampleTwoComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         MatSnackBarModule,
-        NgSyzLoginWithCarouselFlowModule,
+        NgSyzLoginWithCardsFlowModule,
         RouterTestingModule,
+        NoopAnimationsModule,
       ],
-      declarations: [LoginWithCarouselFlowExampleTwoComponent],
+      declarations: [LoginWithCardsFlowExampleOneComponent],
       providers: [{ provide: MatSnackBar, useValue: mockSnackBar }],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginWithCarouselFlowExampleTwoComponent);
+    fixture = TestBed.createComponent(LoginWithCardsFlowExampleOneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -7,17 +7,20 @@
     - [Estrutura](#estrutura)
   - [Desenvolvimento](#desenvolvimento)
     - [Por onde começar](#por-onde-começar)
+      - [1. Clone o monorepositório](#1-clone-o-monorepositório)
+      - [2. Entre na pasta deste projeto do ng-syz](#2-entre-na-pasta-deste-projeto-do-ng-syz)
+      - [3. Todos os seguintes comandos são exucatados na raiz deste projeto específico. **Não na raíz do monorepositório.**](#3-todos-os-seguintes-comandos-são-exucatados-na-raiz-deste-projeto-específico-não-na-raíz-do-monorepositório)
   - [Adicionando um componente](#adicionando-um-componente)
     - [1. Crie uma nova pasta para o módulo do novo componente em `projects/ng-syz/src/lib`](#1-crie-uma-nova-pasta-para-o-módulo-do-novo-componente-em-projectsng-syzsrclib)
     - [2. Adicione dependências do componente a `peerDependencies` no `projects/ng-syz/package.json`.](#2-adicione-dependências-do-componente-a-peerdependencies-no-projectsng-syzpackagejson)
-    - [3. Prefixe o seletor do componente com "ng-syz"](#3-prefixe-o-seletor-do-componente-com-ng-syz)
+    - [3. Prefixe o seletor do componente com "ng-syz" e nome do componente e módulo com "NgSyz"](#3-prefixe-o-seletor-do-componente-com-ng-syz-e-nome-do-componente-e-módulo-com-ngsyz)
     - [4. Torne os membros do componente públicos](#4-torne-os-membros-do-componente-públicos)
     - [5. Visualize e documente o componente na aplicação de demonstração](#5-visualize-e-documente-o-componente-na-aplicação-de-demonstração)
       - [5.1 Crie um módulo para a documentação do Componente](#51-crie-um-módulo-para-a-documentação-do-componente)
       - [5.2 Adiciona o novo componente ao template](#52-adiciona-o-novo-componente-ao-template)
       - [5.3 Adicione um `navItem`](#53-adicione-um-navitem)
       - [5.4 Documente o novo componente com o componente compartilhado `<app-component-page>`](#54-documente-o-novo-componente-com-o-componente-compartilhado-app-component-page)
-        - [5.4.1 Criando exemplos de componentes de página inteira](#541-criando-exemplos-de-componentes-de-página-inteira)
+      - [5.5 Criando exemplos de componentes de página inteira](#55-criando-exemplos-de-componentes-de-página-inteira)
   - [Testando o componente em outra aplicação](#testando-o-componente-em-outra-aplicação)
     - [1. Gere um distribuível da biblioteca](#1-gere-um-distribuível-da-biblioteca)
     - [2. Instale o distribuível na outra aplicação](#2-instale-o-distribuível-na-outra-aplicação)
@@ -49,28 +52,41 @@ Uma biblioteca angular com os componentes do design system SYZ e uma aplicação
 
 ### Por onde começar
 
+#### 1. Clone o monorepositório
+```bash
+git clone git@github.com:wizsolucoes/syz.git
+# OU
+git clone https://github.com/wizsolucoes/syz.git
+```
+#### 2. Entre na pasta deste projeto do ng-syz
+```bash
+cd packages/ng-syz
+```
+
+#### 3. Todos os seguintes comandos são exucatados na raiz deste projeto específico. **Não na raíz do monorepositório.**
+
 ```bash
 # Instalar dependências
 npm install
 
-# Executar testes da biblioteca
-ng test ng-syz
-
 # Buildar biblioteca
 ng build ng-syz --watch
 
-# Executar testes da aplicação de demo
-ng test app
-
 # Servir a aplicação demo
 ng serve app
+
+# Executar testes da biblioteca
+ng test ng-syz
+
+# Executar testes da aplicação de demo
+ng test app
 ```
 
 ## Adicionando um componente
 
 ### 1. Crie uma nova pasta para o módulo do novo componente em `projects/ng-syz/src/lib`
 
-Cada componente é um módulo Angular. [Veja um exemplo.](./projects/ng-syz/src/lib/cpf-search/) Crie uma nova pasta e para o `NgModule` e todos os arquivos do compontente (`.ts|.html|.css|.spec.ts`).
+Cada componente é um módulo Angular. [Veja um exemplo.](./projects/ng-syz/src/lib/cpf-search/) Crie uma nova pasta para o módulo. Crie (ou copie e cole) todos os arquivos do módulo do compontente nesta pasta (`.module.ts|.component.ts|.component.html|.component.scss|.spec.ts`).
 
 Certifique-se de que os componentes que o módulo deva expor estejam na array de `exports`. Por exemplo, o `NgSyzCpfSearchModule` precisa expor o componente `NgSyzCpfSearchComponent`:
 ```ts
@@ -90,7 +106,7 @@ export class NgSyzCpfSearchModule {}
 
 Adicione dependências do componente como propriedade de `peerDependencies` no [`projects/ng-syz/package.json`](./projects/ng-syz/package.json).
 
-### 3. Prefixe o seletor do componente com "ng-syz"
+### 3. Prefixe o seletor do componente com "ng-syz" e nome do componente e módulo com "NgSyz"
 
 A convenção é `ng-syz-{ componente }`
 Por exemplo:
@@ -99,9 +115,18 @@ Por exemplo:
 @Component({
   selector: 'ng-syz-cpf-search',
 })
+export class NgSyzCpfSearchComponent {
+```
+[Veja um exemplo.](./projects/ng-syz/src/lib/cpf-search/cpf-search.component.ts)
+
+```ts
+@NgModule({
+  ...
+})
+export class NgSyzCpfSearchModule {}
 ```
 
-[Veja um exemplo.](./projects/ng-syz/src/lib/cpf-search/cpf-search.component.ts)
+[Veja um exemplo.](./projects/ng-syz/src/lib/cpf-search/cpf-search.module.ts)
 
 ### 4. Torne os membros do componente públicos
 
@@ -128,7 +153,7 @@ Exemplo:
 ng g m features/components/docs-my-component --route my-component --module features/components/components.module.ts
 ```
 
-Verifique que novo `Route` está na array de `Children` do `ComponentsRoutingModule`.
+Verifique que novo `Route` está no array de `children` do array de `Routes` no `ComponentsRoutingModule`.
 
 ```ts
 const routes: Routes = [
@@ -143,10 +168,29 @@ const routes: Routes = [
 
 #### 5.2 Adiciona o novo componente ao template
 
-Para validar que está tudo ok, importa o módulo do componente no módulo da documentação e acrescente ao template
+Para validar que está tudo ok, importa o módulo do componente no módulo da documentação e acrescente ao template.
+
+1. Pare o `ng build ng-syz --watch` e o `ng serve app`
+2. Execute `ng build ng-syz --watch` novamente e `ng serve app` (Isso é necessário para rebuildar a biblioteca com o módulo e componente novo)
+3. importe o módulo do componente no módulo da documentação e acrescente o elemtno ao template
+
+Exemplo:
+```ts
+// projects\app\src\app\features\components\docs-my-component\docs-my-component.module.ts
+
+import { NgSyzMyComponentModule } from '@wizsolucoes/ng-syz';
+
+@NgModule({
+  declarations: [DocsMyComponentComponent],
+  imports: [
+    NgSyzMyComponentModule,
+  ],
+})
+export class DocsMyComponentModule {}
+```
 
 ```html
-<!-- projects\app\src\app\features\components\my-component\my-component.component.html -->
+<!-- projects\app\src\app\features\components\docs-my-component\docs-my-component.component.html -->
 
 <ng-syz-my-component></ng-syz-my-component>
 ```
@@ -166,9 +210,65 @@ navItems: NavItem[] = [
 
 - Importe `SharedModule` on módulo de documentação
 - Use o componente `<app-component-page>` para documentar o componente e adicionar exemplos.
+
+Exemplo:
+```html
+<app-component-page>
+  <ng-syz-my-component></ng-syz-my-component>
+</app-component-page>
+```
 - Use o componente `<app-code-example>` para mostrar trechos de código com os exemplos.
 
-##### 5.4.1 Criando exemplos de componentes de página inteira
+Exemplo:
+```html
+<app-component-page>
+  <app-code-example>
+    <ng-syz-my-component></ng-syz-my-component>
+  </app-code-example>
+</app-component-page>
+```
+- Você pode incluir quanto exemplos quiser.
+Exemplo:
+```html
+<app-component-page>
+  <app-code-example>
+    <ng-syz-my-component></ng-syz-my-component>
+  </app-code-example>
+  
+  <app-code-example>
+    <ng-syz-my-component></ng-syz-my-component>
+  </app-code-example>
+</app-component-page>
+```
+
+- Veja os parêmtros dos componentes `<app-component-page>` e `<app-code-example>` neste exemplo completo:
+```html
+<app-component-page
+  [title]="'Busca por CPF/CNPJ'"
+  [description]="
+    'Componente para iniciar busca por CPF ou por CNPJ com máscaras de input. Recebe um texto opcional e emite um evento com o input do usuário quando o botão é clicado.'
+  "
+  [selector]="'ng-syz-cpf-search'"
+  [importCode]="importCode"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+>
+  <!-- Begin examples in `app-code-example` tags -->
+
+  <!-- Example 1 -->
+  <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
+    <ng-syz-cpf-search
+      [message]="'Acompanhe seus pedidos!'"
+      (buttonClick)="onCpfSeachButtonClick($event)"
+    ></ng-syz-cpf-search>
+  </app-code-example>
+
+  <!-- End examples -->
+</app-component-page>
+```
+[projects/app/src/app/features/components/docs-cpf-search/docs-cpf-search.component.html](./projects/app/src/app/features/components/docs-cpf-search/docs-cpf-search.component.html)
+
+#### 5.5 Criando exemplos de componentes de página inteira
 
 Quando convier mostar o exemplo de um componente em "tela cheia", como uma página de login, crie um componente com rota própria no módulo `features/components/examples-pages` para cada exemplo.
 

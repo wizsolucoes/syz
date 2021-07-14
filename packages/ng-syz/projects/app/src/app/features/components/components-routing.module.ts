@@ -41,6 +41,13 @@ const routes: Routes = [
             './docs-login-with-carousel-flow/docs-login-with-carousel-flow.module'
           ).then((m) => m.DocsLoginWithCarouselFlowModule),
       },
+      {
+        path: 'login-with-cards-flow',
+        loadChildren: () =>
+          import(
+            './docs-login-with-cards-flow/docs-login-with-cards-flow.module'
+          ).then((m) => m.DocsLoginWithCardsFlowModule),
+      },
     ],
   },
   {

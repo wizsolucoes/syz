@@ -37,7 +37,7 @@ export class DocsLoginWithCarouselFlowComponent {
       description: 'o caminho para a página de sign up',
     },
     {
-      name: `forgotPasswordPath: string`,
+      name: `@Input() forgotPasswordPath: string`,
       description: 'o caminho para a página de recuperação de senha',
     },
     {

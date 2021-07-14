@@ -2,21 +2,21 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '../../../shared/shared.module';
 
-import { DocsLoginWithCarouselFlowComponent } from './docs-login-with-carousel-flow.component';
+import { DocsLoginWithCardsFlowComponent } from './docs-login-with-cards-flow.component';
 
-describe('DocsLoginWithCarouselFlowComponent', () => {
-  let component: DocsLoginWithCarouselFlowComponent;
-  let fixture: ComponentFixture<DocsLoginWithCarouselFlowComponent>;
+describe('DocsLoginWithCardsFlowComponent', () => {
+  let component: DocsLoginWithCardsFlowComponent;
+  let fixture: ComponentFixture<DocsLoginWithCardsFlowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DocsLoginWithCarouselFlowComponent],
+      declarations: [DocsLoginWithCardsFlowComponent],
       imports: [SharedModule, NoopAnimationsModule],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DocsLoginWithCarouselFlowComponent);
+    fixture = TestBed.createComponent(DocsLoginWithCardsFlowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

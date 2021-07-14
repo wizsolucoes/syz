@@ -26,6 +26,8 @@ const routes: Routes = [
       ).then((m) => m.LoginWithCarouselFlowExampleOneModule),
   },
   { path: 'login-with-carousel-flow-example-two', loadChildren: () => import('./login-with-carousel-flow-example-two/login-with-carousel-flow-example-two.module').then(m => m.LoginWithCarouselFlowExampleTwoModule) },
+  { path: 'login-with-cards-flow-example-one', loadChildren: () => import('./login-with-cards-flow-example-one/login-with-cards-flow-example-one.module').then(m => m.LoginWithCardsFlowExampleOneModule) },
+  { path: 'login-with-cards-flow-example-two', loadChildren: () => import('./login-with-cards-flow-example-two/login-with-cards-flow-example-two.module').then(m => m.LoginWithCardsFlowExampleTwoModule) },
 ];
 
 @NgModule({
