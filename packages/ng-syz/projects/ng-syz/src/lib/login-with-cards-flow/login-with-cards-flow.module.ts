@@ -10,6 +10,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+
+//External
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+const maskConfigFunction: () => Partial<IConfig> = () => {
+  return {
+    validation: false,
+  };
+};
 
 @NgModule({
   declarations: [NgSyzLoginWithCardsFlowComponent],
@@ -21,6 +31,9 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    NgxMaskModule.forRoot(maskConfigFunction),
   ],
   exports: [NgSyzLoginWithCardsFlowComponent],
 })

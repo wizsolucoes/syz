@@ -19,3 +19,17 @@ export interface NgSyzLoginCard {
   imgAlt: string;
   text: string;
 }
+
+export interface NgSyzSignUpCredentials {
+  name: string;
+  cpf: string;
+  email: string;
+  cellphone: string;
+  password: string;
+  confirmPassword: string;
+}
+
+export interface NgSyzResetPasswordCredentials {
+  cpf: string;
+  email: string;
+}

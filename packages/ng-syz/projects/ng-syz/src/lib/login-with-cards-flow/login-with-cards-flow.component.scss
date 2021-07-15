@@ -86,6 +86,11 @@
     padding: 50px 40px;
   }
 
+  .btn-back {
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
   .login-form {
     margin-top: 40px;
     mat-form-field {
@@ -130,6 +135,10 @@
 
 .mat-stroked-button {
   border-color: var(--accent-color);
+}
+
+.mat-spinner {
+  margin: auto;
 }
 
 //Grid
