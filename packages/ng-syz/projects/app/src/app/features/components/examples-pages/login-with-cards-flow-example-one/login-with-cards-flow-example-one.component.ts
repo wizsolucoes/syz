@@ -1,9 +1,9 @@
-import { NgSyzSignUpCredentials } from './../../../../../../../ng-syz/src/lib/models';
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {
   NgSyzLoginCredentials,
   NgSyzResetPasswordCredentials,
+  NgSyzSignUpCredentials,
 } from '@wizsolucoes/ng-syz';
 
 @Component({
