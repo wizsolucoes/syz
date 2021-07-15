@@ -21,6 +21,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
   };
 };
 
+// @dynamic
 @NgModule({
   declarations: [NgSyzLoginWithCardsFlowComponent],
   imports: [
