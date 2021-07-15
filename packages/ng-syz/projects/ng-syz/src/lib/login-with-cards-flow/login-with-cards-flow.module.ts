@@ -14,14 +14,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 
 //External
-import { NgxMaskModule, IConfig } from 'ngx-mask';
-const maskConfigFunction: () => Partial<IConfig> = () => {
-  return {
-    validation: false,
-  };
-};
+import { NgxMaskModule } from 'ngx-mask';
 
-// @dynamic
 @NgModule({
   declarations: [NgSyzLoginWithCardsFlowComponent],
   imports: [
@@ -34,7 +28,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     ReactiveFormsModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    NgxMaskModule.forRoot(maskConfigFunction),
+    NgxMaskModule.forRoot(),
   ],
   exports: [NgSyzLoginWithCardsFlowComponent],
 })
