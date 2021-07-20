@@ -15,61 +15,67 @@
         />
         <form class="margin-t-405" [formGroup]="formLogin" autocomplete="true">
           <div class="linha">
-            <div class="coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12">
-              <div class="field-wrapper">
-                <input
-                  type="text"
-                  formControlName="username"
-                  autocomplete="off"
-                />
-                <label>Email</label>
-                <p
-                  class="error-msg"
-                  *ngIf="
-                    formLogin.get('username').invalid &&
-                    formLogin.get('username').touched
-                  "
-                >
-                  Por favor, insira um e-mail válido
-                </p>
-              </div>
-            </div>
-            <div class="coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12">
-              <div class="field-wrapper">
-                <input
-                  [type]="isTextFieldType ? 'text' : 'password'"
-                  formControlName="password"
-                  autocomplete="off"
-                />
-                <button
-                  type="button"
-                  class="btn-icon"
-                  (click)="showPassword()"
-                  tabindex="-1"
-                >
-                  <span
-                    [class]="isTextFieldType ? 'fa fa-eye' : 'fa fa-eye-slash'"
-                  ></span>
-                </button>
-                <label>Senha</label>
-                <p
-                  class="error-msg"
-                  *ngIf="
-                    formLogin.get('password').invalid &&
-                    (formLogin.get('password').dirty ||
-                      formLogin.get('password').touched)
-                  "
-                >
-                  Por favor, informe uma senha válida
-                </p>
-              </div>
-            </div>
+            <mat-form-field
+              appearance="outline"
+              class="coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12"
+            >
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="username"
+                autocomplete="off"
+                required
+              />
+            </mat-form-field>
+            <p
+              class="error-msg"
+              *ngIf="
+                formLogin.get('username').invalid &&
+                formLogin.get('username').touched
+              "
+            >
+              Por favor, insira um e-mail válido
+            </p>
+
+            <mat-form-field
+              appearance="outline"
+              class="coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12"
+            >
+              <mat-label>Senha</mat-label>
+              <input
+                matInput
+                placeholder="Password"
+                [type]="isTextFieldType ? 'text' : 'password'"
+                formControlName="password"
+                autocomplete="off"
+                required
+              />
+              <mat-icon
+                matSuffix
+                (click)="isTextFieldType = !isTextFieldType"
+                >{{
+                  isTextFieldType ? 'visibility' : 'visibility_off'
+                }}</mat-icon
+              >
+            </mat-form-field>
+            <p
+              class="error-msg"
+              *ngIf="
+                formLogin.get('password').invalid &&
+                (formLogin.get('password').dirty ||
+                  formLogin.get('password').touched)
+              "
+            >
+              Por favor, informe uma senha válida
+            </p>
           </div>
           <div class="linha">
             <div
               class="coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12 mb-8"
             >
               <button
+                mat-raised-button
                 margin-t-305
                 [class]="
                   formLogin.invalid
@@ -86,6 +92,7 @@
               class="coluna-sm-12 coluna-md-12 coluna-lg-12 coluna-xl-12 mb-24"
             >
               <button
+                mat-stroked-button
                 margin-t-305
                 class="btn-custom btn-block outline"
                 routerLink="{{ signUpPath }}"

@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 // Material Components
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -26,6 +28,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     RouterModule,
     MatButtonModule,
     MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
   ],
 
   declarations: [NgSyzLoginWithCarouselFlowComponent],
