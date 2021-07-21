@@ -302,10 +302,7 @@ select {
   }
 }
 
-input.ng-invalid.ng-touched,
-select.ng-invalid.ng-touched {
-  border: 1px solid #ff3535;
-}
+
 
 .btn-custom {
   display: block;
@@ -348,7 +345,6 @@ select.ng-invalid.ng-touched {
   &.danger {
     color: #ffff;
     background-color: #ff3535;
-    border: 1px solid #ff3535;
     cursor: pointer;
     &:hover {
       color: #ffff;
