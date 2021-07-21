@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgSyzLoginWithCarouselFlowModule } from '@wizsolucoes/ng-syz';
 import { LoginWithCarouselFlowExampleOneComponent } from './login-with-carousel-flow-example-one.component';
@@ -17,6 +18,7 @@ describe('LoginWithCarouselFlowExampleOneComponent', () => {
         MatSnackBarModule,
         NgSyzLoginWithCarouselFlowModule,
         RouterTestingModule,
+        NoopAnimationsModule,
       ],
       declarations: [LoginWithCarouselFlowExampleOneComponent],
       providers: [{ provide: MatSnackBar, useValue: mockSnackBar }],

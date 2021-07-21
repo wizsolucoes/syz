@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgSyzLoginWithCarouselFlowComponent } from './login-with-carousel-flow.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SwiperModule } from 'ngx-swiper-wrapper';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 describe('NgSyzLoginWithCarouselFlowComponent', () => {
   let component: NgSyzLoginWithCarouselFlowComponent;
@@ -9,7 +11,13 @@ describe('NgSyzLoginWithCarouselFlowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormsModule, ReactiveFormsModule, SwiperModule],
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        SwiperModule,
+        MatIconModule,
+        MatFormFieldModule,
+      ],
       declarations: [NgSyzLoginWithCarouselFlowComponent],
     }).compileComponents();
   });
