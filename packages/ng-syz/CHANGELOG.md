@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/wizsolucoes/syz/compare/ng-syz@0.4.1...ng-syz@0.5.0) (2021-07-21)
+
+
+### Features
+
+* signup & password reset login-with-cards-flow ([fa788ab](https://github.com/wizsolucoes/syz/commit/fa788abf8fcef11455dd0040d0eb4e1eb9a4cc5e))
+
+
+
+
+
 ## [0.4.1](https://github.com/wizsolucoes/syz/compare/ng-syz@0.4.0...ng-syz@0.4.1) (2021-07-21)
 
 **Note:** Version bump only for package ng-syz
