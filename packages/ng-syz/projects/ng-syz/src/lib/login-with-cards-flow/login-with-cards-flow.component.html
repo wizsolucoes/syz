@@ -99,28 +99,31 @@
             <mat-icon>keyboard_arrow_left</mat-icon>Voltar
           </button>
           <h3 class="title">Redefinir senha</h3>
-          <p>Informe seu CPF e E-mail para receber o código</p>
+          <p>Informe seus dados para receber o código</p>
           <form class="login-form" [formGroup]="passwordResetForm">
-            <mat-form-field appearance="outline">
-              <mat-label>CPF</mat-label>
+            <mat-form-field
+              *ngFor="let item of resetPasswordFormFields"
+              appearance="outline"
+            >
+              <mat-label>{{ item.label }}</mat-label>
               <input
                 matInput
-                type="text"
-                name="cpf"
-                formControlName="cpf"
+                [type]="item.input.type"
+                [name]="item.input.name"
+                [formControlName]="item.input.formControlName"
                 required
-                mask="000.000.000-00"
+                [mask]="item.input.mask"
               />
-              <mat-error
+              <!-- <mat-error
                 *ngIf="
                   passwordResetForm.controls.cpf.touched &&
                   passwordResetForm.controls.cpf.errors?.invalidCpf
                 "
               >
-                Informe um CPF válido
-              </mat-error>
+                {{ item.matErrorMsg }}
+              </mat-error> -->
             </mat-form-field>
-            <mat-form-field appearance="outline">
+            <!-- <mat-form-field appearance="outline">
               <mat-label>E-mail</mat-label>
               <input
                 matInput
@@ -136,8 +139,8 @@
                 "
               >
                 Informe um e-mail válido
-              </mat-error>
-            </mat-form-field>
+              </mat-error> -->
+            <!-- </mat-form-field> -->
             <div class="code-received" *ngIf="codeReceived">
               <mat-form-field appearance="outline">
                 <mat-label>Código</mat-label>

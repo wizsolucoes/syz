@@ -12,7 +12,7 @@ export class DocsLoginWithCardsFlowComponent {
   import { NgSyzLoginWithCardsFlowModule } from '@wizsolucoes/ng-syz';
   `;
 
-  //EXEMPLOS - HTML
+  // EXEMPLOS - HTML
 
   htmlExampleCode = `
   <ng-syz-login-with-cards-flow
@@ -42,7 +42,7 @@ export class DocsLoginWithCardsFlowComponent {
   ></ng-syz-login-with-cards-flow>
   `;
 
-  //EXEMPLOS - CSS
+  // EXEMPLOS - CSS
 
   cssExample1Code = `
   ng-syz-login-with-cards-flow {
@@ -57,7 +57,7 @@ export class DocsLoginWithCardsFlowComponent {
     --primary-color: #00AA9B;
   }`;
 
-  //EXEMPLOS - TS
+  // EXEMPLOS - TS
 
   tsExampleCode = `bgLogin =
   "background-image: url('https://res.cloudinary.com/dexabcezh/image/upload/v1625252921/bg-login_l82sqp.jpg');";
@@ -116,7 +116,7 @@ export class DocsLoginWithCardsFlowComponent {
     );
   }`;
 
-  //API
+  // API
 
   componentProps: ComponentProps[] = [
     {

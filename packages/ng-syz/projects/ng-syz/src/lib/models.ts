@@ -33,3 +33,17 @@ export interface NgSyzResetPasswordCredentials {
   cpf: string;
   email: string;
 }
+
+export interface CreateFormInput {
+  type: string;
+  name: string;
+  formControlName: string;
+  mask: string;
+}
+
+export interface CreateFormField {
+  label: string;
+  input: CreateFormInput;
+  error: string;
+  matErrorMsg: string;
+}

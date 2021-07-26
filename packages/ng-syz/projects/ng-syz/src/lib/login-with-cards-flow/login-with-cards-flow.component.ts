@@ -12,6 +12,7 @@ import {
   NgSyzLoginCard,
   NgSyzSignUpCredentials,
   NgSyzResetPasswordCredentials,
+  CreateFormField,
 } from '../models';
 
 @Component({
@@ -36,11 +37,45 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
   @Output()
   resetPasswordButtonClick: EventEmitter<NgSyzResetPasswordCredentials> = new EventEmitter();
 
+  resetPasswordFormFields: CreateFormField[] = [
+    {
+      label: 'CPF',
+      input: {
+        type: 'text',
+        name: 'cpf',
+        formControlName: 'cpf',
+        mask: '000.000.000-00',
+      },
+      error: 'passwordResetForm.controls.cpf.touched',
+      matErrorMsg: 'Informe um CPF válido',
+    },
+    {
+      label: 'E-mail',
+      input: {
+        type: 'email',
+        name: 'email',
+        formControlName: 'email',
+        mask: '',
+      },
+      error: 'passwordResetForm.controls.email.touched',
+      matErrorMsg: 'Informe um e-mail válido',
+    },
+    // {
+    //   label: 'Telefone',
+    //   input: {
+    //     type: 'number',
+    //     name: 'phone',
+    //     formControlName: 'cellphone',
+    //     mask: '',
+    //   },
+    //   error: 'passwordResetForm.controls.email.touched',
+    //   matErrorMsg: 'Informe um e-mail válido',
+    // },
+  ];
   loginFormGroup: FormGroup;
   signUpForm: FormGroup;
   passwordResetForm: FormGroup;
-
-  currentForm: string = 'loginForm';
+  currentForm = 'loginForm';
   isSubmitting = false;
   cadastrarUsuarioText = 'Cadastrar Usuário';
   codeReceived = false;
