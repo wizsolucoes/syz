@@ -49,6 +49,25 @@ stages:
               command: 'install'
               workingDir: $(NgSyzDirectory)
 
+          - task: SonarQubePrepare@4
+            continueOnError: true
+            inputs:
+              SonarQube: 'SonarQube'
+              scannerMode: 'CLI'
+              configMode: 'manual'
+              cliProjectKey: 'wizsolucoes.syz.ng-syz.ng-zyz'
+              cliProjectName: 'wizsolucoes.syz.ng-syz.ng-zyz'
+              cliProjectVersion: $(Build.BuildNumber)
+              cliSources: 'packages/ng-syz/projects/ng-syz/src'
+              extraProperties: |
+                sonar.typescript.lcov.reportPaths=$(System.DefaultWorkingDirectory)/packages/ng-syz/coverage/ng-syz/lcov.info
+                sonar.exclusions=**/node_modules/**,**/*.spec.ts,**/main.ts,**/polyfills.ts,**/environments/**,**/*.module.ts,**/test.ts
+                sonar.tests=packages/ng-syz/projects/ng-syz/src/lib
+                sonar.test.inclusions=**/*.spec.ts
+                sonar.analysis.project=$(System.TeamProject)
+                sonar.analysis.repositoryId=$(Build.Repository.ID)
+                sonar.analysis.pullRequestId=$(System.PullRequest.PullRequestId)
+
           - task: Npm@1
             displayName: 'Build lib'
             inputs:
@@ -62,7 +81,7 @@ stages:
             inputs:
               command: custom
               verbose: true
-              customCommand: 'run test:lib'
+              customCommand: 'run test:lib:coverage'
               workingDir: $(NgSyzDirectory)
 
           - task: Npm@1
@@ -86,7 +105,7 @@ stages:
             inputs:
               command: custom
               verbose: true
-              customCommand: 'run test:app'
+              customCommand: 'run test:app:coverage'
               workingDir: $(NgSyzDirectory)
 
           - task: Npm@1
@@ -96,6 +115,14 @@ stages:
               verbose: true
               customCommand: 'run lint:app'
               workingDir: $(NgSyzDirectory)
+
+          - task: SonarQubeAnalyze@4
+            continueOnError: true
+
+          - task: SonarQubePublish@4
+            continueOnError: true
+            inputs:
+              pollingTimeoutSec: '300'
 
           - task: AzureFileCopy@4
             displayName: 'Publish app to storage'
