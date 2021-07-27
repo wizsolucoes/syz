@@ -47,15 +47,17 @@ describe('NgSyzLoginWithCardsFlowComponent', () => {
         username: 'example@email.com',
         password: '12345678',
       };
+      const username = 'Username';
+      const password = 'Password';
 
       component.ngOnInit();
-      component.loginFormGroup.controls['Username'].setErrors(null);
-      component.loginFormGroup.controls['Password'].setErrors(null);
+      component.loginFormGroup.controls[username].setErrors(null);
+      component.loginFormGroup.controls[password].setErrors(null);
 
       spyOn(component.loginButtonClick, 'emit');
 
-      component.loginFormGroup.get('Username').setValue(credentials.username);
-      component.loginFormGroup.get('Password').setValue(credentials.password);
+      component.loginFormGroup.get(username).setValue(credentials.username);
+      component.loginFormGroup.get(password).setValue(credentials.password);
       // When
       component.loginUser();
       // Then
