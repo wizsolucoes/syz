@@ -40,7 +40,7 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
   signUpForm: FormGroup;
   passwordResetForm: FormGroup;
 
-  currentForm: string = 'loginForm';
+  currentForm = 'loginForm';
   isSubmitting = false;
   cadastrarUsuarioText = 'Cadastrar Usuário';
   codeReceived = false;

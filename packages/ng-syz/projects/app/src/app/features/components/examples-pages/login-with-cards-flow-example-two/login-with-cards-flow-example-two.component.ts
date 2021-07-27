@@ -12,8 +12,7 @@ import {
   styleUrls: ['./login-with-cards-flow-example-two.component.scss'],
 })
 export class LoginWithCardsFlowExampleTwoComponent {
-  bgLogin =
-    "background-image: url('https://res.cloudinary.com/dexabcezh/image/upload/v1625597540/bg-login_xmzljx.jpg');";
+  bgLogin = `background-image: url('https://res.cloudinary.com/dexabcezh/image/upload/v1625597540/bg-login_xmzljx.jpg');`;
 
   partnerLogo = {
     img: 'https://res.cloudinary.com/dexabcezh/image/upload/v1625598193/logo_parceiro_yag67b.png',

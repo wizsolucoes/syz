@@ -30,7 +30,7 @@ export class NgSyzLoginWithCarouselFlowComponent implements OnInit {
 
   constructor(private readonly formBuilder: FormBuilder) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.formLogin = this.formBuilder.group({
       username: this.formBuilder.control('', [
         Validators.required,
@@ -43,11 +43,11 @@ export class NgSyzLoginWithCarouselFlowComponent implements OnInit {
     });
   }
 
-  showPassword() {
+  showPassword(): void {
     this.isTextFieldType = !this.isTextFieldType;
   }
 
-  loginUser() {
+  loginUser(): void {
     if (this.formLogin.valid) {
       this.loginOnClick.emit({
         username: this.formLogin.get('username').value,
@@ -56,7 +56,7 @@ export class NgSyzLoginWithCarouselFlowComponent implements OnInit {
     }
   }
 
-  obterWidth() {
+  obterWidth(): boolean {
     this.width = window.innerWidth;
     if (this.width > 992) {
       return true;
