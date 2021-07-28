@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { SafeHtml } from '@angular/platform-browser';
+import * as MarkdownIt from 'markdown-it';
 
 interface SectionLink {
   key: string;
@@ -10,34 +13,63 @@ interface SectionLink {
   templateUrl: './hackathon.component.html',
   styleUrls: ['./hackathon.component.scss'],
 })
-export class HackathonComponent {
+export class HackathonComponent implements OnInit {
+  story: SafeHtml;
+  md: MarkdownIt;
+
   formatKey = 'format';
-  pointsKey = 'points';
-  chronogramKey = 'chronogram';
+  faqKey = 'faq';
+  agendaKey = 'agenda';
   prizesKey = 'prizes';
+  overviewKey = 'overview';
 
   sectionLinks: SectionLink[] = [
     {
+      key: this.overviewKey,
+      title: 'OVERVIEW',
+    },
+    {
       key: this.formatKey,
-      title: 'FORMATO',
+      title: 'REGULAMENTO',
     },
     {
-      key: this.pointsKey,
-      title: 'PONTUAÇÃO',
-    },
-    {
-      key: this.chronogramKey,
-      title: 'CRONOGRAMA',
+      key: this.agendaKey,
+      title: 'AGENDA',
     },
     {
       key: this.prizesKey,
-      title: 'PREMIAÇÃO',
+      title: 'PRÊMIOS',
+    },
+    {
+      key: this.faqKey,
+      title: 'FAQ',
     },
   ];
 
-  selectedLink = this.formatKey;
+  selectedLink = this.overviewKey;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.initMarkdownIt();
+    this.renderMarkdown(this.selectedLink);
+  }
+
+  renderMarkdown(key: string): void {
+    this.http
+      .get(`/assets/hackathon/2021/md/${key}.md`, { responseType: 'text' })
+      ?.subscribe((val: string) => {
+        this.story = this.md.render(val);
+      });
+  }
 
   scroll(el: HTMLElement): void {
     el.scrollIntoView();
+  }
+
+  private initMarkdownIt(): void {
+    this.md = new MarkdownIt({
+      html: true,
+    });
   }
 }

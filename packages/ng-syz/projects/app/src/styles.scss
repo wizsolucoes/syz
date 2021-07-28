@@ -10,6 +10,10 @@ body {
   font-family: 'Roboto', 'Heebo', sans-serif;
 }
 
+:root {
+  font-size: 62.5%;
+}
+
 .app-main-content-wrapper {
   margin-right: auto;
   margin-left: 50px;
@@ -19,18 +23,64 @@ body {
   max-width: 960px;
 
   padding-right: 10px;
-  padding-left:  10px;
+  padding-left: 10px;
+}
+
+.app-vertical-divider {
+  height: 1px;
+  background-color: var(--lighter-grey-color, lightgrey);
 }
 
 pre {
   white-space: pre-wrap;
   word-wrap: break-word;
-  
+
   &.block {
-    background-color: var(--light-grey-color);
+    background-color: var(--lighter-grey-color);
     border-radius: 5px;
-    margin-top:8px;
+    margin-top: 8px;
     padding: 0 10px;
+  }
+}
+
+// Hackathon Page. TODO: Create seperate file for this and reorganize styles.scss
+
+#hackathonPage {
+  h2 {
+    font-size: 4.8rem;
+    line-height: 4.8rem;
+    margin-bottom: 2.4rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    margin-top: 2.4rem;
+    margin-bottom: 1.8rem;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: bold;
+  }
+
+  h5 {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    font-weight: bold;
+  }
+
+  p,
+  ul {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  ul {
+    margin-left: 2.4rem;
   }
 }
 

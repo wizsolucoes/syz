@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { HackathonRoutingModule } from './hackathon-routing.module';
 import { HackathonComponent } from './hackathon.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [
-    HackathonComponent
-  ],
+  declarations: [HackathonComponent],
   imports: [
     CommonModule,
-    HackathonRoutingModule
-  ]
+    HackathonRoutingModule,
+    HttpClientModule,
+    MatButtonModule,
+  ],
 })
-export class HackathonModule { }
+export class HackathonModule {}

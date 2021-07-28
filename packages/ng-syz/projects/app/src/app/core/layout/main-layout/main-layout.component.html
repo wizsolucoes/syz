@@ -30,14 +30,14 @@
   </a>
 </mat-toolbar>
 
-<div class="hackathon-banner" *ngIf="showHackathonBanner">
-  <div class="background"></div>
-  <div class="foreground"></div>
-  <div class="text">
-    <div class="title">VEM AÍ HACKASYZ 2021</div>
-    <div class="subtitle">Mais informações em breve</div>
+<a [routerLink]="'/hackasyz'">
+  <div class="hackathon-banner" *ngIf="showHackathonBanner">
+    <div class="text">
+      <div class="title">HACKASYZ 2021</div>
+      <div class="subtitle">Clique aqui para saber mais</div>
+    </div>
   </div>
-</div>
+</a>
 
 <main>
   <router-outlet></router-outlet>
