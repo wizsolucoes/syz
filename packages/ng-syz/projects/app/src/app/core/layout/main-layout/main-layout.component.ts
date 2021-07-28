@@ -16,7 +16,7 @@ export class MainLayoutComponent implements OnInit {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event) => {
-        this.showHackathonBanner = !['/hackathon', '/hackayz'].includes(
+        this.showHackathonBanner = !['/hackathon', '/hackasyz'].includes(
           this.router.url
         );
       });
