@@ -276,7 +276,7 @@ Exemplo:
 
 #### 5.5 Criando exemplos de componentes de página inteira
 
-Quando convier mostar o exemplo de um componente em "tela cheia", como uma página de login, crie um componente com rota própria no módulo `features/components/examples-pages` para cada exemplo.
+Quando convier mostrar o exemplo de um componente em "tela cheia", como uma página de login, crie um componente com rota própria no módulo `features/components/examples-pages` para cada exemplo.
 
 1. Crie o módulo.
 

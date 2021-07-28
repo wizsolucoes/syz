@@ -15,15 +15,15 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'hackathon',
+    path: 'hackasyz',
     loadChildren: () =>
       import('./features/hackathon/hackathon.module').then(
         (m) => m.HackathonModule
       ),
   },
   {
-    path: 'hackasyz',
-    redirectTo: 'hackathon',
+    path: 'hackathon',
+    redirectTo: 'hackasyz',
   },
   {
     path: '**',
