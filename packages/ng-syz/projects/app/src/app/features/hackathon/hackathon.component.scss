@@ -1,21 +1,5 @@
 #hackathonPage {
-  h1,
-  h2,
-  p {
-    font-family: 'Squada One', cursive;
-  }
-
-  font-family: 'Squada One', cursive;
-
-  .dark-background {
-    background-color: #170031;
-    color: #e9e5ed;
-  }
-
-  .light-background {
-    background-color: #e9e5ed;
-    color: #170031;
-  }
+  background-color: #fff;
 
   .wrapper {
     margin-right: auto;
@@ -23,29 +7,56 @@
 
     max-width: 1224px;
 
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   .hero {
-    height: 350px;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/assets/hackasyz-hero-background.png');
+    background-image: linear-gradient(
+        rgba(36, 72, 104, 0.9),
+        rgba(192, 108, 132, 0.2)
+      ),
+      url('/assets/hackathon/2021/banner_1920x1080.png');
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    padding-top: 56px;
 
     h1 {
       font-size: 72px;
       font-weight: bold;
-      text-align: center;
       line-height: 72px;
+      font-family: 'Squada One', cursive;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 36px;
+      font-family: 'Squada One', cursive;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    button {
+      margin-top: 48px;
+      margin-bottom: 12px;
+      height: 64px;
+      font-size: 18px;
+      font-family: 'Squada One', cursive;
     }
   }
 
   .content {
-    padding: 40px 20px;
+    padding-top: 40px;
+    padding-bottom: 80px;
 
     h2 {
       font-size: 36px;
@@ -58,13 +69,15 @@
   }
 
   .section-links {
-    padding: 20px;
+    padding-top: 40px;
+    font-family: 'Squada One', cursive;
   }
 
   .section-link {
     position: relative;
-    background: #1b0039;
-    border: 4px solid #270052;
+    background: #00766c;
+    color: #fff;
+    border: 2px solid #00766c;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -72,10 +85,6 @@
     overflow: hidden;
     transition: all 300ms;
     font-size: 20px;
-
-    &:hover {
-      transform: scale(1.2);
-    }
 
     & .text-container {
       position: relative;
@@ -107,14 +116,32 @@
     }
   }
 
+  caption {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: var(--light-grey-color, lightgrey);
+    margin-top: 1.2rem;
+  }
+
   @media only screen and (min-width: 600px) {
-    .hero {
-      height: 560px;
-      background-position: bottom;
+    .box {
+      width: 100%;
+      display: flex;
+
+      .col {
+        flex: 1;
+      }
     }
 
-    .content {
-      padding: 60px 40px;
+    .hero {
+      background-image: linear-gradient(
+          90deg,
+          rgba(36, 72, 104, 0.5),
+          rgba(192, 108, 132, 0)
+        ),
+        url('/assets/hackathon/2021/banner_1920x1080.png');
+      background-position: bottom;
     }
 
     .section-links {
@@ -122,8 +149,16 @@
 
       .section-link {
         flex: 1;
-        margin: 20px;
+        margin: 40px 40px 0 0;
+
+        &:hover {
+          transform: scale(1.2);
+        }
       }
+    }
+
+    .content {
+      padding-top: 80px;
     }
   }
 }
