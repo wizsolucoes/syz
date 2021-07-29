@@ -44,8 +44,6 @@ describe('NgSyzLoginWithCarouselFlowComponent', () => {
       const passwordKey = 'password';
 
       component.ngOnInit();
-      component.formLogin.controls[usernameKey].setErrors(null);
-      component.formLogin.controls[passwordKey].setErrors(null);
 
       spyOn(component.loginOnClick, 'emit');
 
@@ -55,6 +53,36 @@ describe('NgSyzLoginWithCarouselFlowComponent', () => {
       component.loginUser();
       // Then
       expect(component.loginOnClick.emit).toHaveBeenCalledWith(credentials);
+    });
+    it('should not emit loginOnClick event when loginForm  is INVALID', () => {
+      // Given
+      const credentials = {
+        username: 'exampleemail.com',
+        password: '12345678',
+      };
+
+      const usernameKey = 'username';
+      const passwordKey = 'password';
+
+      component.ngOnInit();
+
+      spyOn(component.loginOnClick, 'emit');
+
+      component.formLogin.get(usernameKey).setValue(credentials.username);
+      component.formLogin.get(passwordKey).setValue(credentials.password);
+      // When
+      component.loginUser();
+      // Then
+      expect(component.loginOnClick.emit).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('showPassword', () => {
+    it('should show password when button click', () => {
+      // When
+      component.showPassword();
+      // Then
+      expect(component.isTextFieldType).toBe(true);
     });
   });
 });

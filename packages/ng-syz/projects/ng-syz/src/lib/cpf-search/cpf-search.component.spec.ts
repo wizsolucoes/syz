@@ -60,11 +60,25 @@ describe('NgSyzCpfSearchComponent', () => {
 
       // When
       component.ngOnInit();
-      component.searchFormGroup.value.cpfCnpj = cpf;
+      component.searchFormGroup.get('cpfCnpj').setValue(cpf);
       component.searchCustomer();
 
       // Then
       expect(component.buttonClick.emit).toHaveBeenCalledWith(cpf);
+    });
+    it('should not emit buttonClick event if cpfCnpj is empty', () => {
+      // Given
+      const cpf = '';
+
+      spyOn(component.buttonClick, 'emit');
+
+      // When
+      component.ngOnInit();
+      component.searchFormGroup.get('cpfCnpj').setValue(cpf);
+      component.searchCustomer();
+
+      // Then
+      expect(component.buttonClick.emit).not.toHaveBeenCalled();
     });
   });
 });
