@@ -66,6 +66,14 @@ stages:
               workingDir: $(NgSyzDirectory)
 
           - task: Npm@1
+            displayName: 'Lint lib'
+            inputs:
+              command: custom
+              verbose: true
+              customCommand: 'run lint:lib'
+              workingDir: $(NgSyzDirectory)
+
+          - task: Npm@1
             displayName: 'Build app'
             inputs:
               command: custom
@@ -79,6 +87,14 @@ stages:
               command: custom
               verbose: true
               customCommand: 'run test:app'
+              workingDir: $(NgSyzDirectory)
+
+          - task: Npm@1
+            displayName: 'Lint app'
+            inputs:
+              command: custom
+              verbose: true
+              customCommand: 'run lint:app'
               workingDir: $(NgSyzDirectory)
 
           - task: AzureFileCopy@4

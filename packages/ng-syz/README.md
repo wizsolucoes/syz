@@ -80,6 +80,12 @@ ng test ng-syz
 
 # Executar testes da aplicação de demo
 ng test app
+
+# Executar lint da biblioteca
+ng lint ng-syz
+
+# Executar lint da aplicação de demo
+ng lint app
 ```
 
 ## Adicionando um componente

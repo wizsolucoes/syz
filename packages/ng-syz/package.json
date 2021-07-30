@@ -1,6 +1,6 @@
 {
   "name": "ng-syz",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "scripts": {
     "ng": "ng",
     "app": "ng serve app",
@@ -15,7 +15,9 @@
     "test:lib": "ng test ng-syz --watch=false --browsers=\"ChromeHeadless\"",
     "test:app:watch": "ng test app --browsers=\"ChromeHeadless\"",
     "test:lib:watch": "ng test ng-syz --browsers=\"ChromeHeadless\"",
-    "lint": "ng lint",
+    "lint": "npm run lint:lib && npm run lint:app",
+    "lint:app": "ng lint app",
+    "lint:lib": "ng lint ng-syz",
     "e2e": "ng e2e"
   },
   "private": true,
