@@ -55,13 +55,4 @@ export class NgSyzLoginWithCarouselFlowComponent implements OnInit {
       });
     }
   }
-
-  obterWidth(): boolean {
-    this.width = window.innerWidth;
-    if (this.width > 992) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 }

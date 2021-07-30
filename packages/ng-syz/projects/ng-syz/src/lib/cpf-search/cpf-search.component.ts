@@ -21,7 +21,7 @@ export class NgSyzCpfSearchComponent implements OnInit {
   }
 
   searchCustomer(): void {
-    if (this.searchFormGroup.value.cpfCpnj !== '') {
+    if (this.searchFormGroup.valid) {
       this.buttonClick.emit(this.searchFormGroup.value.cpfCnpj);
     }
   }
