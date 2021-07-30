@@ -1,4 +1,4 @@
-## Overview
+## Sobre
 
 ### O que é o NgSyz?
 

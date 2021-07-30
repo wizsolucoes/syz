@@ -1,6 +1,6 @@
-## Agenda: 
+## Agenda
 
-### Dia 1: 
+### Dia 1
 
 #### Abertura: 9h00  
 - Introdução da superintendência e diretoria  
@@ -12,7 +12,7 @@
 
 #### Encerramento: 17h00  
 
-### Dia 2: 
+### Dia 2
 
 #### Abertura: 9h00  
 - Introdução 

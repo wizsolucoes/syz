@@ -26,7 +26,7 @@ export class HackathonComponent implements OnInit {
   sectionLinks: SectionLink[] = [
     {
       key: this.overviewKey,
-      title: 'OVERVIEW',
+      title: 'SOBRE',
     },
     {
       key: this.formatKey,
