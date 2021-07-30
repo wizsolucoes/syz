@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/wizsolucoes/syz/compare/ng-syz@0.6.0...ng-syz@0.7.0) (2021-07-30)
+
+
+### Features
+
+* **ng-syz:** melhorar hackasyz hotsite ([ec90cc4](https://github.com/wizsolucoes/syz/commit/ec90cc433b63fdef990b7efd1e9e163386d7ce58))
+
+
+
+
+
 # [0.6.0](https://github.com/wizsolucoes/syz/compare/ng-syz@0.5.3...ng-syz@0.6.0) (2021-07-30)
 
 
