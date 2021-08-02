@@ -9,6 +9,28 @@ Qualquer colaborador da Wiz. No entanto, o hackathon é voltado para aqueles que
 ### Como vai funcionar?
 A participação no hackathon será **em duplas** e cada dupla deve adicionar o máximo de componentes que puder à biblioteca NgSyz.
 
+### Como os componentes serão avaliados?
+Para garantir a melhor pontuação para cada componente que você produzir, siga o **Checklist do sucesso**:
+- [ ] Documentação completa
+  - [ ] Aba de "Sobre"
+    - [ ] Título
+    - [ ] Descrição
+    - [ ] Seletor do componente
+  - [ ] Aba de "Exemplos"
+    - [ ] Pelo menos **2 exemplos**
+    - [ ] Cada exemplo tem o código `ts`, `html` e `css`
+  - [ ] Aba de "API"
+    - [ ] Código para importar o módulo do componente
+    - [ ] Tabela de propriedades com `@Inputs` e `@Outputs`
+    - [ ] Tabela de variáveis CSS
+- [ ] Adaptabilidade
+  - [ ] As principais cores do componente consomem variáveis de CSS, onde aplicável
+  - [ ] O conteúdo é parametrizável via `@Inputs()`, onde aplicável
+  - [ ] O componente emite eventos como `@Outputs()`, onde aplicável
+- [ ] Testes automatizados
+  - [ ] O suite de testes roda sem erros ou warnings relacionados aos componentes. (Lembre que `--browsers="ChromeHeadless"` é seu amigo :D)
+  - [ ] Quanto mais próximo de 100% de cobertura, melhor. Confira sua cobertura executando `ng test ng-syz --code-coverage && ng test app --code-coverage`.
+
 ### A inscrição é gratuita?
 Sim!
 
