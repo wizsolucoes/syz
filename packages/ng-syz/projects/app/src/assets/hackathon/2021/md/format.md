@@ -22,7 +22,7 @@
 - Cada dupla deve seguir [os passos da documentação do NgSyz](https://github.com/wizsolucoes/syz/tree/master/packages/ng-syz#desenvolvimento) para **preparar seu ambiente de desenvolvimento**.
 - É fortemente recomendado preparar o ambiente de desenvolvimento **antes do início do evento**.
 - O desenvolvimento da dupla deve ser feita em uma branch criada pela dupla no monorepositório do Syz a partir da branch **`master`**.
-- O nome da branch com o desenvolvimento da dupla deve começar com **`"hackathon/"`**, por exemplo `"hackathon/dulpa-dinamica"`. É necessário seguir essa nomenclatura para fazer a entrega.
+- O nome da branch com o desenvolvimento da dupla deve começar com **`"hackathon/"`**, por exemplo `"hackathon/dupla-dinamica"`. É necessário seguir essa nomenclatura para fazer a entrega.
 - A entrega da dupla é um **Pull Request** da sua branch para a branch `master` **que passe em todos os passos do pipeline de CI/CD**.
 - O repositório já tem [um Azure Pipeline](https://github.com/wizsolucoes/syz/blob/master/azure-pipelines.yml) e a dupla não deve criar ou modificar o pipeline de CI/CD.
 - Os passos de CI/CD serão:
@@ -55,19 +55,20 @@ Cada item a seguir corresponde a 1/3 da nota de qualidade:
 
 ##### Completude da documentação do componente
 - A aba de **"Sobre"** deve conter o título, descrição e seletor do componente.
-- A aba de **"Exemplos"** deve ter pelo menos **2 exemplos**.
+- A aba de **"Exemplos"** deve ter pelo menos **2 exemplos** e cada exemplo deve mostrar o código `ts`, `html` e `css` correspondente.
 - A aba de **"API"** deve ter o código para importar o módulo do componente e a tabela de propriedades e variáveis CSS devem estar preenchidas.
   
 > Dica: Veja um [exemplo completo de documentação de um componente](https://ng-syz.wizsolucoes.com.br/components/cpf-search) na página do NgSyz.
 
 ##### Cobertura e qualidade dos testes automatizados
 - A cobertura de testes considerada será a na análise SonarQube.
-- O _suite_ de testes deve rodar sem erros ou _warnings_ relacionados aos componentes.
+  - Você pode visualizar a cobertura localmente executando `ng test ng-syz --code-coverage` e `ng test app --code-coverage`
+- O _suite_ de testes deve rodar sem erros ou _warnings_ relacionados aos componentes. (Lembre que `--browsers="ChromeHeadless"` é seu amigo :D)
 
 ##### Adaptabilidade do componente
 - As principais **cores** do componente devem consumir **variáveis de CSS**, onde aplicável.
-- O **conteúdo é parametrizável** via `Inputs()`, onde aplicável.
-- O componente **emite eventos** como `Outputs()`, onde aplicável.
+- O **conteúdo é parametrizável** via `@Inputs()`, onde aplicável.
+- O componente **emite eventos** como `@Outputs()`, onde aplicável.
 
 No primeiro dia de maratona (20 de agosto), será apresentada aos participantes a matriz com os critérios de avaliação que serão utilizados para selecionar os vencedores. 
 
