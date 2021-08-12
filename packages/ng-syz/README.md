@@ -63,7 +63,7 @@ git clone https://github.com/wizsolucoes/syz.git
 cd packages/ng-syz
 ```
 
-#### 3. Todos os seguintes comandos são exucatados na raiz deste projeto específico. **Não na raíz do monorepositório.**
+#### 3. Todos os comandos a seguir são exucatados na raiz deste projeto específico. **Não na raíz do monorepositório.**
 
 ```bash
 # Instalar dependências
@@ -89,6 +89,8 @@ ng lint app
 ```
 
 ## Adicionando um componente
+
+>**Observação: Todos os comandos a seguir são exucatados na raiz deste projeto (packages/ng-syz).**
 
 ### 1. Crie uma nova pasta para o módulo do novo componente em `projects/ng-syz/src/lib`
 
