@@ -11,6 +11,7 @@
     "build:lib:prod": "ng build ng-syz --prod",
     "build:lib:watch": "ng build ng-syz --watch",
     "test": "npm run test:lib && npm run test:app",
+    "test:coverage": "npm run test:lib:coverage && npm run test:app:coverage",
     "test:app": "ng test app --watch=false --browsers=\"ChromeHeadless\"",
     "test:app:coverage": "ng test app --watch=false --browsers=\"ChromeHeadless\" --code-coverage",
     "test:lib": "ng test ng-syz --watch=false --browsers=\"ChromeHeadless\"",

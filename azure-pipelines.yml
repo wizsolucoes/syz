@@ -36,10 +36,10 @@ stages:
     displayName: 'Stage Solution'
     condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')
     jobs:
-      - job: NgSyz
+      - job: NgSyzLib
         pool:
           vmImage: 'windows-latest'
-        displayName: 'Publish NgSyz to staging'
+        displayName: 'NgSyz lib CI'
         steps:
           - checkout: this
 
@@ -55,8 +55,8 @@ stages:
               SonarQube: 'SonarQube'
               scannerMode: 'CLI'
               configMode: 'manual'
-              cliProjectKey: 'wizsolucoes.syz.ng-syz.ng-zyz'
-              cliProjectName: 'wizsolucoes.syz.ng-syz.ng-zyz'
+              cliProjectKey: 'wizsolucoes.syz.ng-syz.ng-syz'
+              cliProjectName: 'wizsolucoes.syz.ng-syz.ng-syz'
               cliProjectVersion: $(Build.BuildNumber)
               cliSources: 'packages/ng-syz/projects/ng-syz/src'
               extraProperties: |
@@ -90,6 +90,54 @@ stages:
               command: custom
               verbose: true
               customCommand: 'run lint:lib'
+              workingDir: $(NgSyzDirectory)
+
+          - task: SonarQubeAnalyze@4
+            continueOnError: true
+
+          - task: SonarQubePublish@4
+            continueOnError: true
+            inputs:
+              pollingTimeoutSec: '300'
+
+      - job: NgSyzApp
+        pool:
+          vmImage: 'windows-latest'
+        displayName: 'NgSyz app CI/CD to staging'
+        steps:
+          - checkout: this
+
+          - task: Npm@1
+            displayName: 'Install dependencies'
+            inputs:
+              command: 'install'
+              workingDir: $(NgSyzDirectory)
+
+          - task: SonarQubePrepare@4
+            continueOnError: true
+            inputs:
+              SonarQube: 'SonarQube'
+              scannerMode: 'CLI'
+              configMode: 'manual'
+              cliProjectKey: 'wizsolucoes.syz.ng-syz.app'
+              cliProjectName: 'wizsolucoes.syz.ng-syz.app'
+              cliProjectVersion: $(Build.BuildNumber)
+              cliSources: 'packages/ng-syz/projects/app/src'
+              extraProperties: |
+                sonar.typescript.lcov.reportPaths=$(System.DefaultWorkingDirectory)/packages/ng-syz/coverage/app/lcov.info
+                sonar.exclusions=**/node_modules/**,**/*.spec.ts,**/main.ts,**/polyfills.ts,**/environments/**,**/*.module.ts,**/test.ts
+                sonar.tests=packages/ng-syz/projects/app/src/app
+                sonar.test.inclusions=**/*.spec.ts
+                sonar.analysis.project=$(System.TeamProject)
+                sonar.analysis.repositoryId=$(Build.Repository.ID)
+                sonar.analysis.pullRequestId=$(System.PullRequest.PullRequestId)
+
+          - task: Npm@1
+            displayName: 'Build lib'
+            inputs:
+              command: custom
+              verbose: true
+              customCommand: 'run build:lib:prod'
               workingDir: $(NgSyzDirectory)
 
           - task: Npm@1
