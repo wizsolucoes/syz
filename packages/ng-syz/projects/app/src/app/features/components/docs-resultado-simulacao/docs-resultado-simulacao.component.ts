@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  NgSyzResultadoSimulacaoCard,
+  NgSyzResultadoSimulacaoCondicao,
+} from 'projects/ng-syz/src/lib/models';
 
 @Component({
   selector: 'app-docs-resultado-simulacao',
@@ -6,18 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./docs-resultado-simulacao.component.scss'],
 })
 export class DocsResultadoSimulacaoComponent implements OnInit {
-  description: string = `Este componente simula o resultado de uma determinada simulação. Todos os valores são parametrizáveis, 
+  description = `Este componente simula o resultado de uma determinada simulação. Todos os valores são parametrizáveis, 
                 além de ser possível configurar uma informação específica para ser detalhada no card, bem como a cor de seleção
                 quando o card for selecionado. Fora isso, tooltips de ajuda para as informações iniciais também podem ser configuradas.
                 Sobre os eventos: quando clicar no card, será retornado o índice do card selecionado. Com relação ao evento de modalidade,
                 será emitido o nome da modalidade.`;
 
-  //exemplo 1
+  // exemplo 1
   htmlExampleCode1: string;
   tsExampleCode1: string;
-  cssExampleCode1: string;
-  ajudaModalidadesExemplo1: string = 'Ajuda Exemplo 1';
-  cardsExemplo1: Card[] = [
+  ajudaModalidadesExemplo1 = 'Ajuda Exemplo 1';
+  cardsExemplo1: NgSyzResultadoSimulacaoCard[] = [
     {
       camposCard: [
         {
@@ -119,9 +122,9 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       selecionado: 'Renda mínima',
     },
   ];
-  valorExemplo1: number = 2500000;
-  modalidadesExemplo1: string[] = ['Price', 'SAC', 'SACRE'];
-  condicoesExemplo1: Condicao[] = [
+  valorExemplo1 = 2500000;
+  modalidadesExemplo1 = ['Price', 'SAC', 'SACRE'];
+  condicoesExemplo1: NgSyzResultadoSimulacaoCondicao[] = [
     {
       condicao: 'CESH',
       valor: '10,21%',
@@ -138,16 +141,15 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       ajuda: 'Ajuda Valor Bruto',
     },
   ];
-  corCardSelecionadoExemplo1: string = '#0169b3';
-  corLinhaSelecionadaExemplo1: string = '#dfeaf2';
-  corBotaoClicadoExemplo1: string = '#dc7700';
+  corCardSelecionadoExemplo1 = '#0169b3';
+  corLinhaSelecionadaExemplo1 = '#dfeaf2';
+  corBotaoClicadoExemplo1 = '#dc7700';
 
-  //exemplo2
+  // exemplo2
   htmlExampleCode2: string;
   tsExampleCode2: string;
-  cssExampleCode2: string;
-  ajudaModalidadesExemplo2: string = 'Ajuda Exemplo 2';
-  cardsExemplo2: Card[] = [
+  ajudaModalidadesExemplo2 = 'Ajuda Exemplo 2';
+  cardsExemplo2: NgSyzResultadoSimulacaoCard[] = [
     {
       camposCard: [
         {
@@ -249,9 +251,9 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       selecionado: 'Renda mínima',
     },
   ];
-  valorExemplo2: number = 2500000;
+  valorExemplo2 = 2500000;
   modalidadesExemplo2: string[] = ['Alter', 'Celta'];
-  condicoesExemplo2: Condicao[] = [
+  condicoesExemplo2: NgSyzResultadoSimulacaoCondicao[] = [
     {
       condicao: 'VAT',
       valor: '13,25%',
@@ -263,9 +265,9 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       ajuda: 'Ajuda Valor Bruto',
     },
   ];
-  corCardSelecionadoExemplo2: string = 'yellow';
-  corLinhaSelecionadaExemplo2: string = '#ccc';
-  corBotaoClicadoExemplo2: string = 'blue';
+  corCardSelecionadoExemplo2 = 'yellow';
+  corLinhaSelecionadaExemplo2 = '#ccc';
+  corBotaoClicadoExemplo2 = 'blue';
 
   constructor() {}
 
@@ -273,15 +275,15 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
     this.initExampleVariables();
   }
 
-  enviarCardSelecionado(cardIndex) {
+  enviarCardSelecionado(cardIndex): void {
     alert(cardIndex);
   }
 
-  enviarModalidadeSelecionada(modalidade) {
+  enviarModalidadeSelecionada(modalidade): void {
     alert(modalidade);
   }
 
-  initExampleVariables() {
+  initExampleVariables(): void {
     this.htmlExampleCode1 = `
     <ng-syz-resultado-simulacao
       [cards]="cardsExemplo1"
@@ -301,7 +303,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
     this.tsExampleCode1 = `
       htmlExampleCode1: string;
       tsExampleCode1: string;
-      cssExampleCode1: string;
       ajudaModalidadesExemplo1: string = 'Ajuda Exemplo 1';
       cardsExemplo1: Card[] = [
         {
@@ -427,9 +428,28 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       corCardSelecionadoExemplo1: string = '#0169b3';
       corLinhaSelecionadaExemplo1: string = '#dfeaf2';
       corBotaoClicadoExemplo1: string = '#dc7700';
-    `;
 
-    this.cssExampleCode1 = ``;
+      export interface Card {
+        camposCard: CamposCard[];
+        selecionado: string;
+      }
+      
+      export interface CamposCard {
+        campo: string;
+        valor: string;
+      }
+      
+      export interface Condicao {
+        condicao: string;
+        valor: string;
+        ajuda: string;
+      }
+      
+      export type linhaSelecionada =
+        | 'parcelaInicial'
+        | 'parcelaFinal'
+        | 'rendaMinima';
+    `;
 
     this.htmlExampleCode2 = `
     <ng-syz-resultado-simulacao
@@ -449,7 +469,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
     this.tsExampleCode2 = `
       htmlExampleCode2: string;
       tsExampleCode2: string;
-      cssExampleCode2: string;
       ajudaModalidadesExemplo2: string = 'Ajuda Exemplo 2';
       cardsExemplo2: Card[] = [
         {
@@ -571,29 +590,27 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       corCardSelecionadoExemplo2: string = 'yellow';
       corLinhaSelecionadaExemplo2: string = '#ccc';
       corBotaoClicadoExemplo2: string = 'blue';
-    `;
 
-    this.cssExampleCode2 = ``;
+      export interface Card {
+        camposCard: CamposCard[];
+        selecionado: string;
+      }
+      
+      export interface CamposCard {
+        campo: string;
+        valor: string;
+      }
+      
+      export interface Condicao {
+        condicao: string;
+        valor: string;
+        ajuda: string;
+      }
+      
+      export type linhaSelecionada =
+        | 'parcelaInicial'
+        | 'parcelaFinal'
+        | 'rendaMinima';
+    `;
   }
 }
-
-export interface Card {
-  camposCard: CamposCard[];
-  selecionado: string;
-}
-
-export interface CamposCard {
-  campo: string;
-  valor: string;
-}
-
-export interface Condicao {
-  condicao: string;
-  valor: string;
-  ajuda: string;
-}
-
-export type linhaSelecionada =
-  | 'parcelaInicial'
-  | 'parcelaFinal'
-  | 'rendaMinima';
