@@ -9,9 +9,9 @@
     - [Por onde começar](#por-onde-começar)
       - [1. Clone o monorepositório](#1-clone-o-monorepositório)
       - [2. Entre na pasta deste projeto do ng-syz](#2-entre-na-pasta-deste-projeto-do-ng-syz)
-      - [3. Todos os seguintes comandos são exucatados na raiz deste projeto específico. **Não na raíz do monorepositório.**](#3-todos-os-seguintes-comandos-são-exucatados-na-raiz-deste-projeto-específico-não-na-raíz-do-monorepositório)
+      - [3. Todos os comandos a seguir são executados na raiz deste projeto específico. **Não na raiz do monorepositório.**](#3-todos-os-comandos-a-seguir-são-executados-na-raiz-deste-projeto-específico-não-na-raiz-do-monorepositório)
   - [Adicionando um componente](#adicionando-um-componente)
-    - [1. Crie uma nova pasta para o módulo do novo componente em `projects/ng-syz/src/lib`](#1-crie-uma-nova-pasta-para-o-módulo-do-novo-componente-em-projectsng-syzsrclib)
+    - [1. Crie um novo módulo para o novo componente em `projects/ng-syz/src/lib`](#1-crie-um-novo-módulo-para-o-novo-componente-em-projectsng-syzsrclib)
     - [2. Adicione dependências do componente a `peerDependencies` no `projects/ng-syz/package.json`.](#2-adicione-dependências-do-componente-a-peerdependencies-no-projectsng-syzpackagejson)
     - [3. Prefixe o seletor do componente com "ng-syz" e nome do componente e módulo com "NgSyz"](#3-prefixe-o-seletor-do-componente-com-ng-syz-e-nome-do-componente-e-módulo-com-ngsyz)
     - [4. Torne os membros do componente públicos](#4-torne-os-membros-do-componente-públicos)
@@ -63,7 +63,7 @@ git clone https://github.com/wizsolucoes/syz.git
 cd packages/ng-syz
 ```
 
-#### 3. Todos os comandos a seguir são exucatados na raiz deste projeto específico. **Não na raíz do monorepositório.**
+#### 3. Todos os comandos a seguir são executados na raiz deste projeto específico. **Não na raiz do monorepositório.**
 
 ```bash
 # Instalar dependências
@@ -90,11 +90,19 @@ ng lint app
 
 ## Adicionando um componente
 
->**Observação: Todos os comandos a seguir são exucatados na raiz deste projeto (packages/ng-syz).**
+>**Observação: Todos os comandos a seguir são executados na raiz deste projeto (packages/ng-syz).**
 
-### 1. Crie uma nova pasta para o módulo do novo componente em `projects/ng-syz/src/lib`
+### 1. Crie um novo módulo para o novo componente em `projects/ng-syz/src/lib`
 
-Cada componente é um módulo Angular. [Veja um exemplo.](./projects/ng-syz/src/lib/cpf-search/) Crie uma nova pasta para o módulo. Crie (ou copie e cole) todos os arquivos do módulo do compontente nesta pasta (`.module.ts|.component.ts|.component.html|.component.scss|.spec.ts`).
+Cada componente é um módulo Angular. [Veja um exemplo.](./projects/ng-syz/src/lib/cpf-search/) Crie uma nova pasta para o módulo.
+
+Você pode criar um novo módulo com um novo componente executando estes comandos:
+```bash
+ng g m --project ng-syz my-component
+ng g c --project ng-syz my-component
+```
+
+Se você estiver inserindo um componente que existia em outra aplicação, você pode criar a pasta manualmente e copiar e colar todos os arquivos do módulo do componente para a nova pasta (`.module.ts|.component.ts|.component.html|.component.scss|.spec.ts`).
 
 Certifique-se de que os componentes que o módulo deva expor estejam na array de `exports`. Por exemplo, o `NgSyzCpfSearchModule` precisa expor o componente `NgSyzCpfSearchComponent`:
 ```ts
@@ -335,4 +343,4 @@ A URL de homologação é https://sysstorybookhmlstg.z13.web.core.windows.net/
 
 Depois de criar a branch `release/*` você deve abrir um PR. O PR precisa ser aprovador por um membro do _team_ **[syz-approvers](https://github.com/orgs/wizsolucoes/teams/syz-approvers/members)**.
 
-Quando o PR for aceito e houver merger na branch `master`´, a biblioteca será publicada para **[npm](https://www.npmjs.com/package/@wizsolucoes/ng-syz)** e a galeria será publicada para a página de produção.
+Quando o PR for aceito e houver merge na branch `master`´, a biblioteca será publicada para **[npm](https://www.npmjs.com/package/@wizsolucoes/ng-syz)** e a galeria será publicada para a página de produção.
