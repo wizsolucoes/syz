@@ -1,10 +1,13 @@
 $light-gray: #b4b4b4;
 $medium-gray: #979797;
 $dark-gray: #50555a;
+$selected-card: var(--selected-card);
+$selected-line: var(--selected-line);
+$selected-button: var(--selected-button);
 
 .resultado-simulacao {
   background-color: #fff;
-  width: 800px;
+  width: 850px;
 }
 
 .resultado-info {
@@ -76,7 +79,7 @@ $dark-gray: #50555a;
 
 .resultado-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   margin-top: 75px;
   row-gap: 30px;
 
@@ -89,14 +92,22 @@ $dark-gray: #50555a;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    height: 250px;
     justify-self: center;
-    width: 230px;
+    width: 260px;
+
+    &.card-selecionado {
+      background-color: $selected-card;
+
+      .resultado-cards--card--row--campo--titulo,
+      .resultado-cards--card--row--campo--valor {
+        color: #fff;
+      }
+    }
 
     &--row {
       align-items: center;
       display: flex;
-      flex: 1;
+      min-height: 60px;
       justify-content: space-between;
       margin: 0 10px;
 
@@ -106,7 +117,7 @@ $dark-gray: #50555a;
       }
 
       &.card-selecionado {
-        background-color: #dfeaf2;
+        background-color: $selected-line;
         margin: 0;
         padding: 0 10px;
 
@@ -124,22 +135,25 @@ $dark-gray: #50555a;
         flex-direction: column;
 
         &--titulo {
-          &.prazo {
+          &.primeiro {
             color: $medium-gray;
           }
 
           color: $light-gray;
+          flex: 3;
           font-size: 14px;
         }
 
         &--valor {
-          &.prazo {
+          &.primeiro {
             color: $dark-gray;
           }
 
           color: $light-gray;
           font-size: 18px;
+          flex: 7;
           font-weight: bold;
+          margin-left: auto;
         }
       }
 
@@ -157,9 +171,9 @@ $dark-gray: #50555a;
 }
 
 .info--titulo {
+  color: $medium-gray;
   font-size: 16px;
   font-weight: bold;
-  color: $medium-gray;
   margin-bottom: 10px;
 }
 
@@ -168,15 +182,11 @@ $dark-gray: #50555a;
 }
 
 .mat-button-toggle-checked {
-  background-color: #dc7700;
+  background-color: $selected-button;
   color: #fff;
 }
 
 .mat-button-toggle-label-content {
   font-size: 18px;
   font-weight: 600;
-}
-
-.ugabuga {
-  background-color: black;
 }

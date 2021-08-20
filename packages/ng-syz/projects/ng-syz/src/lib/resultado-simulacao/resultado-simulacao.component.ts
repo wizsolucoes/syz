@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'ng-syz-resultado-simulacao',
@@ -9,46 +9,104 @@ export class NgSyzResultadoSimulacaoComponent {
   @Input() ajudaModalidades: string = 'Ajuda';
   @Input() cards: Card[] = [
     {
-      prazo: 60,
-      parcelaInicial: 7040.23,
-      parcelaFinal: 4452.83,
-      rendaMinima: 21120.69,
+      camposCard: [
+        {
+          campo: 'Prazo',
+          valor: '60 meses',
+        },
+        {
+          campo: 'Parcela inicial',
+          valor: 'R$ 7.040,23',
+        },
+        {
+          campo: 'Parcela final',
+          valor: 'R$ 4.452,83',
+        },
+        {
+          campo: 'Renda mínima',
+          valor: 'R$ 21.120,69',
+        },
+        {
+          campo: 'Kill me please',
+          valor: 'right now',
+        },
+      ],
+      selecionado: 'Renda mínima',
     },
     {
-      prazo: 87,
-      parcelaInicial: 4752.09,
-      parcelaFinal: 4702.22,
-      rendaMinima: 15840.29,
+      camposCard: [
+        {
+          campo: 'Prazo',
+          valor: '60 meses',
+        },
+        {
+          campo: 'Parcela inicial',
+          valor: 'R$ 7.040,23',
+        },
+        {
+          campo: 'Parcela final',
+          valor: 'R$ 4.452,83',
+        },
+        {
+          campo: 'Renda mínima',
+          valor: 'R$ 21.120,69',
+        },
+        {
+          campo: 'Kill me please',
+          valor: 'right now',
+        },
+      ],
+      selecionado: 'Renda mínima',
     },
     {
-      prazo: 60,
-      parcelaInicial: 7040.23,
-      parcelaFinal: 4452.83,
-      rendaMinima: 21120.69,
+      camposCard: [
+        {
+          campo: 'Prazo',
+          valor: '60 meses',
+        },
+        {
+          campo: 'Parcela inicial',
+          valor: 'R$ 7.040,23',
+        },
+        {
+          campo: 'Parcela final',
+          valor: 'R$ 4.452,83',
+        },
+        {
+          campo: 'Renda mínima',
+          valor: 'R$ 21.120,69',
+        },
+        {
+          campo: "Kill me please now, I can't take it anymore",
+          valor: 'right now',
+        },
+      ],
+      selecionado: 'Renda mínima',
     },
     {
-      prazo: 87,
-      parcelaInicial: 4752.09,
-      parcelaFinal: 4702.22,
-      rendaMinima: 15840.29,
-    },
-    {
-      prazo: 60,
-      parcelaInicial: 7040.23,
-      parcelaFinal: 4452.83,
-      rendaMinima: 21120.69,
-    },
-    {
-      prazo: 87,
-      parcelaInicial: 4752.09,
-      parcelaFinal: 4702.22,
-      rendaMinima: 15840.29,
-    },
-    {
-      prazo: 60,
-      parcelaInicial: 7040.23,
-      parcelaFinal: 4452.83,
-      rendaMinima: 21120.69,
+      camposCard: [
+        {
+          campo: 'Prazo',
+          valor: '60 meses',
+        },
+        {
+          campo: 'Parcela inicial',
+          valor: 'R$ 7.040,23',
+        },
+        {
+          campo: 'Parcela final',
+          valor: 'R$ 4.452,83',
+        },
+        {
+          campo: 'Renda mínima',
+          valor: 'R$ 21.120,69',
+        },
+        {
+          campo: 'Kill me please',
+          valor: 'right now',
+        },
+      ],
+      selecionado: 'Renda mínima',
     },
   ];
   @Input() valor: number = 2500000;
@@ -71,23 +129,60 @@ export class NgSyzResultadoSimulacaoComponent {
     },
   ];
   @Input() linhaSelecionada: linhaSelecionada = 'rendaMinima';
+  @Input() corCardSelecionado: string = '#0169b3';
+  @Input() corLinhaSelecionada: string = '#dfeaf2';
+  @Input() corBotaoClicado: string = '#dc7700';
+  @Output() enviarCardSelecionado = new EventEmitter(true);
+  @Output() enviarModalidadeSelecionada = new EventEmitter(true);
+  cardIdSelecionadoAnteriormente: string;
 
-  selecionarCard(event) {
-    var target = event.target || event.srcElement || event.currentTarget;
+  constructor() {
+    document.documentElement.style.setProperty(
+      '--selected-card',
+      this.corCardSelecionado
+    );
+    document.documentElement.style.setProperty(
+      '--selected-line',
+      this.corLinhaSelecionada
+    );
+    document.documentElement.style.setProperty(
+      '--selected-button',
+      this.corBotaoClicado
+    );
+  }
+
+  selecionarCard(cardId) {
+    if (this.cardIdSelecionadoAnteriormente)
+      document
+        .getElementById(this.cardIdSelecionadoAnteriormente)
+        .classList.remove('card-selecionado');
+    document.getElementById(cardId).classList.add('card-selecionado');
+    this.cardIdSelecionadoAnteriormente = cardId;
+    this.enviarCardSelecionado.emit(cardId);
+  }
+
+  selecionarModalidade(modalidade) {
+    this.enviarModalidadeSelecionada.emit(modalidade);
   }
 }
 
-interface Card {
-  prazo: number;
-  parcelaInicial: number;
-  parcelaFinal: number;
-  rendaMinima: number;
+export interface Card {
+  camposCard: CamposCard[];
+  selecionado: string;
 }
 
-interface Condicao {
+export interface CamposCard {
+  campo: string;
+  valor: string;
+}
+
+export interface Condicao {
   condicao: string;
   valor: string;
   ajuda: string;
 }
 
-type linhaSelecionada = 'parcelaInicial' | 'parcelaFinal' | 'rendaMinima';
+export type linhaSelecionada =
+  | 'parcelaInicial'
+  | 'parcelaFinal'
+  | 'rendaMinima';

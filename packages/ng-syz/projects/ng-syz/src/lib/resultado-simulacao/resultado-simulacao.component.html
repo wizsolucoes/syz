@@ -6,11 +6,11 @@
       <span class="info--titulo">Modalidade</span>
       <div class="resultado-info--modalidade--buttons">
         <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-          <mat-button-toggle *ngFor="let modalidade of modalidades" value="bold"><b>{{modalidade}}</b>
+          <mat-button-toggle (click)="selecionarModalidade(modalidade)" *ngFor="let modalidade of modalidades" value="bold"><b>{{modalidade}}</b>
           </mat-button-toggle>
         </mat-button-toggle-group>
-        <mat-icon *ngIf="ajudaModalidades" [matTooltip]="ajudaModalidades"
-          aria-hidden="false" aria-label="Example home icon">help</mat-icon>
+        <mat-icon *ngIf="ajudaModalidades" [matTooltip]="ajudaModalidades" aria-hidden="false"
+          aria-label="Example home icon">help</mat-icon>
       </div>
     </div>
     <div class="resultado-info--condicoes">
@@ -23,30 +23,13 @@
     </div>
   </section>
   <section class="resultado-cards">
-    <div class="resultado-cards--card" (click)="selecionarCard($event)" *ngFor="let card of cards">
-      <div class="resultado-cards--card--row border-bottom"><span
-          class="resultado-cards--card--row--campo--titulo prazo">Prazo</span><span
-          class="resultado-cards--card--row--campo--valor prazo">{{card.prazo}} meses</span></div>
+    <div class="resultado-cards--card" [id]="'card' + i" (click)="selecionarCard('card' + i)"
+      *ngFor="let card of cards; let i = index">
       <div
-        [ngClass]="{'resultado-cards--card--row': true, 'card-selecionado': linhaSelecionada === 'parcelaInicial'}">
-        <div class="resultado-cards--card--row--campo"><span
-            class="resultado-cards--card--row--campo--titulo">Parcela</span><span
-            class="resultado-cards--card--row--campo--titulo">inicial</span></div><span
-          class="resultado-cards--card--row--campo--valor">{{card.parcelaInicial | currency: 'BRL'}}</span>
-      </div>
-      <div
-        [ngClass]="{'resultado-cards--card--row': true, 'card-selecionado': linhaSelecionada === 'parcelaFinal'}">
-        <div class="resultado-cards--card--row--campo"><span
-            class="resultado-cards--card--row--campo--titulo">Parcela</span><span
-            class="resultado-cards--card--row--campo--titulo">final</span></div><span
-          class="resultado-cards--card--row--campo--valor">{{card.parcelaFinal | currency: 'BRL'}}</span>
-      </div>
-      <div
-        [ngClass]="{'resultado-cards--card--row': true, 'card-selecionado': linhaSelecionada === 'rendaMinima'}">
-        <div class="resultado-cards--card--row--campo"><span
-            class="resultado-cards--card--row--campo--titulo">Renda</span><span
-            class="resultado-cards--card--row--campo--titulo">mínima</span></div><span
-          class="resultado-cards--card--row--campo--valor">{{card.parcelaFinal | currency: 'BRL'}}</span>
+        [ngClass]="{'resultado-cards--card--row': true, 'card-selecionado': card.selecionado === campo.campo, 'border-bottom': j === 0}"
+        *ngFor="let campo of card.camposCard; let j = index"><span
+          [ngClass]="{'resultado-cards--card--row--campo--titulo': true, 'primeiro': j === 0}">{{campo.campo}}</span><span
+          [ngClass]="{'resultado-cards--card--row--campo--valor': true, 'primeiro': j === 0}">{{campo.valor}}</span>
       </div>
     </div>
   </section>
