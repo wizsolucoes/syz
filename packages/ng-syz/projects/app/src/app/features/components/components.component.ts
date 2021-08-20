@@ -26,5 +26,9 @@ export class ComponentsComponent {
       displayName: 'Carousel Cards',
       route: 'carousel-cards',
     },
+    {
+      displayName: 'Card Result Initiative',
+      route: 'card-result-initiative',
+    },
   ];
 }

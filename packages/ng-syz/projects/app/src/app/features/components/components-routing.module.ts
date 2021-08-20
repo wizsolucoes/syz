@@ -49,6 +49,11 @@ const routes: Routes = [
             (m) => m.DocsCarouselCardsModule
           ),
       },
+      {
+        path: 'card-result-initiative',
+        loadChildren: () => import('./docs-card-result-initiative/docs-card-result-initiative.module').then(
+          m => m.DocsCardResultInitiativeModule)
+      },
     ],
   },
   {
@@ -64,4 +69,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ComponentsRoutingModule {}
+export class ComponentsRoutingModule { }

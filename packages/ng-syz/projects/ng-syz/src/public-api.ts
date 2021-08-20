@@ -20,4 +20,7 @@ export * from './lib/login-with-cards-flow/login-with-cards-flow.component';
 export * from './lib/carousel-cards/carousel-cards.module';
 export * from './lib/carousel-cards/carousel-cards.component';
 
+export * from './lib/card-result-initiative/card-result-initiative.module';
+export * from './lib/card-result-initiative/card-result-initiative.component';
+
 export * from './lib/models';
