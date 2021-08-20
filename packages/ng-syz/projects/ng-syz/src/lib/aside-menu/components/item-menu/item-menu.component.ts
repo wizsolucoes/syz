@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { NavItem } from '../../../models';
@@ -15,7 +15,8 @@ import { NavItem } from '../../../models';
         animate('320ms cubic-bezier(0.4,0.0,0.2,1)')
       ),
     ])
-  ]
+  ],
+
 })
 export class ItemMenuComponent implements OnInit {
 

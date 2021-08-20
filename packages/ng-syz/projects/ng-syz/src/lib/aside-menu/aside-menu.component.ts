@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NgSyzAsideMenuComponent implements OnInit {
 
-  @Input() navItems: NavItem;
+  @Input() navItems: NavItem[];
   expanded: boolean = true;
   showNav = false;
   isMenuOpen: boolean = false;

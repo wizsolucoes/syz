@@ -1,11 +1,11 @@
 <app-component-page [title]="'Aside menu, podendo ou não conter sub-links'" [description]="
     'Componente de tollbar contendo menu hamburguer, podendo ou não conter sub-links em cada menu.'
   " [selector]="'ng-syz-cpf-search'" [importCode]="importCode" [componentProps]="componentProps">
-  <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
-    <ng-syz-aside-menu navColor="primary" [navItems]="navItems"></ng-syz-aside-menu>
+  <app-code-example [htmlCode]="htmlExampleCode" [cssCode]="cssExampleCode" [tsCode]="tsExampleCode">
+    <ng-syz-aside-menu [navItems]="navItems"></ng-syz-aside-menu>
   </app-code-example>
 
-  <app-code-example [htmlCode]="htmlExampleCode2" [tsCode]="tsExampleCode2">
-    <ng-syz-aside-menu navColor="accent" [navItems]="navItems2"></ng-syz-aside-menu>
+  <app-code-example [htmlCode]="htmlExampleCode2" [tsCode]="tsExampleCode2" [cssCode]="cssExampleCode2">
+    <ng-syz-aside-menu [navItems]="navItems2"></ng-syz-aside-menu>
   </app-code-example>
 </app-component-page>

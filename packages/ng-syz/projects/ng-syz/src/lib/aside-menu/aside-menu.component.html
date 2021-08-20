@@ -1,12 +1,10 @@
-<mat-toolbar color="primary" class="nav-color">
-  <button mat-icon-button class="menu-icon" aria-label="Ícone de menu">
-    <button mat-button class="menu-button" (click)="sidenav.toggle()">
-      <mat-icon>{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon>
-    </button>
+<!-- <button mat-icon-button class="menu-icon" aria-label="Ícone de menu">
+  <button mat-button class="menu-button" (click)="sidenav.toggle()">
+    <mat-icon>{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon>
   </button>
-</mat-toolbar>
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="over" [(opened)]="isMenuOpen">
+</button> -->
+<mat-sidenav-container class="sidenav-container" data-sidebar='menu'>
+  <mat-sidenav #sidenav mode="over" [opened]="true" [disableClose]='true'>
     <mat-nav-list>
       <ng-syz-item-menu *ngFor="let item of navItems" [item]="item"></ng-syz-item-menu>
     </mat-nav-list>

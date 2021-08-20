@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgSyzAsideMenuComponent } from './aside-menu.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,5 +25,6 @@ import { ItemMenuComponent } from './components/item-menu/item-menu.component';
     MatListModule
   ],
   exports: [NgSyzAsideMenuComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class NgSyzAsideMenuModule { }

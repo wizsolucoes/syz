@@ -1,4 +1,4 @@
-<a mat-list-item (click)="onClickItem(item, $event.target)" class="menu-list-item"
+<a mat-list-item (click)="onClickItem(item, $event.target)" class="menu-list-item" data-menu='menu'
   [ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}">
   <mat-icon class="routeIcon">{{item.iconName}}</mat-icon>
   {{item.displayName}}

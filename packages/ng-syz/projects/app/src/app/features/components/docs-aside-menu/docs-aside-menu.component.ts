@@ -85,6 +85,12 @@ export class DocsAsideMenuComponent implements OnInit {
     </ng-syz-aside-menu>
   `;
 
+  cssExampleCode = `
+  ng-syz-aside-menu {
+    --primary-color: #f56c00;
+  }
+  `;
+
   tsExampleCode = `
   navItems:NavItem =[
     {
@@ -150,6 +156,12 @@ export class DocsAsideMenuComponent implements OnInit {
       ]
     },
   ];
+  `;
+
+  cssExampleCode2 = `
+  ng-syz-aside-menu {
+    --primary-color: #f56c00;
+  }
   `;
 
   constructor() { }
