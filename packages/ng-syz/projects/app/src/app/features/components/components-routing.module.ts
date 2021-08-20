@@ -42,6 +42,13 @@ const routes: Routes = [
             './docs-login-with-cards-flow/docs-login-with-cards-flow.module'
           ).then((m) => m.DocsLoginWithCardsFlowModule),
       },
+      {
+        path: 'resultado-simulacao',
+        loadChildren: () =>
+          import(
+            './docs-resultado-simulacao/docs-resultado-simulacao.module'
+          ).then((m) => m.DocsResultadoSimulacaoModule),
+      },
     ],
   },
   {
