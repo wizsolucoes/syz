@@ -30,7 +30,7 @@
           class="resultado-info--condicoes--container--item"
           *ngFor="let condicao of condicoes"
         >
-          <span class="resultado-info--condicoes--container--item--titulo"
+          <span class="resultado-info--condicoes--container--item--titulo" data-test="condicoes-titulo"
             >{{ condicao.condicao }}
             <mat-icon
               *ngIf="ajudaModalidades"
@@ -40,7 +40,7 @@
               >help</mat-icon
             >
           </span>
-          <span class="resultado-info--condicoes--container--item--valor">{{
+          <span class="resultado-info--condicoes--container--item--valor" data-test="condicoes-valor">{{
             condicao.valor
           }}</span>
         </div>

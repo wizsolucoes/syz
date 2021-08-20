@@ -124,20 +124,20 @@ describe('NgSyzResultadoSimulacaoComponent', () => {
     expect(component.enviarModalidadeSelecionada.emit).toHaveBeenCalled();
   });
 
-  it('should display all condições com títulos e valores', () => {
-    // Given
-    const titulos = template.querySelectorAll('[data-test="condicoes-titulo"]');
-    const valores = template.querySelectorAll('[data-test="condicoes-valor"]');
+  // it('should display all condições com títulos e valores', () => {
+  //   // Given
+  //   const titulos = template.querySelectorAll('[data-test="condicoes-titulo"]');
+  //   const valores = template.querySelectorAll('[data-test="condicoes-valor"]');
 
-    // Then
-    expect(titulos.length).toEqual(component.condicoes.length);
-    expect(titulos[0].textContent).toBe(component.condicoes[0].condicao);
-    expect(titulos[1].textContent).toBe(component.condicoes[1].condicao);
-    expect(titulos[2].textContent).toBe(component.condicoes[2].condicao);
-    expect(valores[0].textContent).toBe(component.condicoes[0].valor);
-    expect(valores[1].textContent).toBe(component.condicoes[1].valor);
-    expect(valores[2].textContent).toBe(component.condicoes[2].valor);
-  });
+  //   // Then
+  //   expect(titulos.length).toEqual(component.condicoes.length);
+  //   expect(titulos[0].textContent).toBe(component.condicoes[0].condicao);
+  //   expect(titulos[1].textContent).toBe(component.condicoes[1].condicao);
+  //   expect(titulos[2].textContent).toBe(component.condicoes[2].condicao);
+  //   expect(valores[0].textContent).toBe(component.condicoes[0].valor);
+  //   expect(valores[1].textContent).toBe(component.condicoes[1].valor);
+  //   expect(valores[2].textContent).toBe(component.condicoes[2].valor);
+  // });
 
   it('should display all modalidades', () => {
     // Given
