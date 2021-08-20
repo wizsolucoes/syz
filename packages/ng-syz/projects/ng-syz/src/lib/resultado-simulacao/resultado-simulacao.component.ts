@@ -33,14 +33,15 @@ export class NgSyzResultadoSimulacaoComponent {
     );
   }
 
-  selecionarCard(cardId) {
+  selecionarCard(index) {
     if (this.cardIdSelecionadoAnteriormente)
       document
         .getElementById(this.cardIdSelecionadoAnteriormente)
         .classList.remove('card-selecionado');
-    document.getElementById(cardId).classList.add('card-selecionado');
-    this.cardIdSelecionadoAnteriormente = cardId;
-    this.enviarCardSelecionado.emit(cardId);
+    var id = `card${index}`;
+    document.getElementById(id).classList.add('card-selecionado');
+    this.cardIdSelecionadoAnteriormente = id;
+    this.enviarCardSelecionado.emit(index);
   }
 
   selecionarModalidade(modalidade) {
