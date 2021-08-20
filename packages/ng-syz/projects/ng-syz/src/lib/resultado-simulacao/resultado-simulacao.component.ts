@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+//permission
 @Component({
   selector: 'ng-syz-resultado-simulacao',
   templateUrl: './resultado-simulacao.component.html',
