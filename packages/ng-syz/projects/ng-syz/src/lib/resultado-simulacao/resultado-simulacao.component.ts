@@ -77,7 +77,7 @@ export class NgSyzResultadoSimulacaoComponent {
           valor: 'R$ 21.120,69',
         },
         {
-          campo: "Kill me please now, I can't take it anymore",
+          campo: 'Kill me please',
           valor: 'right now',
         },
       ],

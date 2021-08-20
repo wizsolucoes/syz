@@ -6,7 +6,6 @@ $selected-line: var(--selected-line);
 $selected-button: var(--selected-button);
 
 .resultado-simulacao {
-  background-color: #fff;
   width: 850px;
 }
 
@@ -140,8 +139,8 @@ $selected-button: var(--selected-button);
           }
 
           color: $light-gray;
-          flex: 3;
           font-size: 14px;
+          width: 70px;
         }
 
         &--valor {
@@ -151,7 +150,6 @@ $selected-button: var(--selected-button);
 
           color: $light-gray;
           font-size: 18px;
-          flex: 7;
           font-weight: bold;
           margin-left: auto;
         }
