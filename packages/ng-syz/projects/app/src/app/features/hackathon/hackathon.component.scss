@@ -103,11 +103,11 @@
       width: 100%;
     }
 
-    &:not(hover) .hover-image {
+    &:not(:hover) .hover-image {
       opacity: 0;
     }
 
-    &:not(hover) .hover-image.selected {
+    &:not(:hover) .hover-image.selected {
       opacity: 1;
     }
 
