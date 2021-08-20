@@ -33,3 +33,11 @@ export interface NgSyzResetPasswordCredentials {
   cpf: string;
   email: string;
 }
+
+export interface NavItem {
+  displayName: string;
+  disabled?: boolean;
+  iconName: string;
+  route?: string;
+  children?: NavItem[];
+}

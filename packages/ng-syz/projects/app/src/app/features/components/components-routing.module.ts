@@ -42,6 +42,13 @@ const routes: Routes = [
             './docs-login-with-cards-flow/docs-login-with-cards-flow.module'
           ).then((m) => m.DocsLoginWithCardsFlowModule),
       },
+      {
+        path: 'aside-menu',
+        loadChildren: () =>
+          import('./docs-aside-menu/docs-aside-menu.module').then(
+            m => m.DocsAsideMenuModule
+          )
+      },
     ],
   },
   {
@@ -50,12 +57,11 @@ const routes: Routes = [
       import('./examples-pages/examples-pages.module').then(
         (m) => m.ExamplesModule
       ),
-  },
-  { path: 'aside-menu', loadChildren: () => import('./docs-aside-menu/docs-aside-menu.module').then(m => m.DocsAsideMenuModule) },
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ComponentsRoutingModule {}
+export class ComponentsRoutingModule { }

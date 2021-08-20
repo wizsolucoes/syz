@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgSyzAsideMenuComponent } from './aside-menu.component';
+import { ItemMenuComponent } from './item-menu.component';
 
-describe('NgSyzAsideMenuComponent', () => {
-  let component: NgSyzAsideMenuComponent;
-  let fixture: ComponentFixture<NgSyzAsideMenuComponent>;
+describe('ItemMenuComponent', () => {
+  let component: ItemMenuComponent;
+  let fixture: ComponentFixture<ItemMenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NgSyzAsideMenuComponent]
+      declarations: [ItemMenuComponent]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgSyzAsideMenuComponent);
+    fixture = TestBed.createComponent(ItemMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

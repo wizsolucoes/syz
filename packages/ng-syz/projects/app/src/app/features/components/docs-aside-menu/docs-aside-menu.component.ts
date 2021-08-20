@@ -7,76 +7,150 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   styleUrls: ['./docs-aside-menu.component.scss'],
 })
 export class DocsAsideMenuComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  /* Documentation */
+  navItems = [
+    {
+      displayName: 'Home',
+      iconName: 'home',
+      route: '/',
+    },
+    {
+      displayName: 'Minha conta',
+      iconName: 'person',
+      route: '',
+      children: [
+        {
+          displayName: 'Wallet',
+          iconName: 'shopping_cart',
+          route: 'wallet',
+        },
+        {
+          displayName: 'Meus dados',
+          iconName: 'sentiment_satisfied_alt',
+          route: 'minha-conta',
+        },
+      ]
+    },
+  ];
+
+  navItems2 = [
+    {
+      displayName: 'Home',
+      iconName: 'home',
+      route: '/',
+    },
+    {
+      displayName: 'Minha conta',
+      iconName: 'person',
+      route: '',
+      children: [
+        {
+          displayName: 'Wallet',
+          iconName: 'account_balance_wallet',
+          route: '',
+          children: [
+            {
+              displayName: 'Meus produtos',
+              iconName: 'shopping_cart',
+              route: 'minha-conta',
+            },
+          ]
+        },
+        {
+          displayName: 'Meus dados',
+          iconName: 'sentiment_satisfied_alt',
+          route: 'minha-conta',
+        },
+      ]
+    },
+  ];
+
   importCode = `
- import { NgSyzCpfSearchModule } from '@wizsolucoes/ng-syz';
- `;
+  import { NgSyzAsideMenuModule } from '@wizsolucoes/ng-syz';
+  `;
 
   componentProps: ComponentProps[] = [
     {
-      name: `@Input() message: string`,
-      description: 'O texto que aparece no lado esquerdo do componente.',
+      name: `@Input() navItems:NavItem[] `,
+      description: 'Array de menu do tipo NavItem.',
     },
-    {
-      name: '@Output() buttonClick: EventEmitter<string>',
-      description: 'Evento emitido quando o usuário clica no botão pesquisar',
-    },
-  ];
 
-  componentCSSVariables: ComponentProps[] = [
-    {
-      name: `--primary-color`,
-      description: 'Cor do início do gradiente do fundo do componente',
-    },
-    {
-      name: `--secondary-color`,
-      description: 'Cor do fim do gradiente do fundo do componente',
-    },
-    {
-      name: `--accent-color`,
-      description: 'Cor do botão',
-    },
-    {
-      name: `--light-text-color`,
-      description:
-        'Cor do texto, da borda e do preechimento do rádio e da borda do input',
-    },
-    {
-      name: `--font-size`,
-      description: 'Tamanho da fonte da mensagem',
-    },
   ];
 
   htmlExampleCode = `
- <ng-syz-cpf-search
-   [message]="'Acompanhe seus pedidos!'"
-   (buttonClick)="onCpfSeachButtonClick($event)">
- </ng-syz-cpf-search>
- `;
+    <ng-syz-aside-menu 
+    [navItems]="navItems">
+    </ng-syz-aside-menu>
+  `;
 
   tsExampleCode = `
- onCpfSeachButtonClick(value: string): void {
-   this.snackBar.open(value, 'Fechar');
- }
- `;
+  navItems:NavItem =[
+    {
+      displayName: 'Home',
+      iconName: 'home',
+      route: '/',
+    },
+    {
+      displayName: 'Minha conta',
+      iconName: 'person',
+      route: '',
+      children: [
+        {
+          displayName: 'Wallet',
+          iconName: 'shopping_cart',
+          route: 'wallet',
+        },
+        {
+          displayName: 'Meus dados',
+          iconName: 'sentiment_satisfied_alt',
+          route: 'minha-conta',
+        },
+      ]
+    },
+  ];
+  `;
 
   htmlExampleCode2 = `
- <ng-syz-cpf-search
-   class="example-2"
-   [message]="'Acompanhe seus pedidos!'"
-   (buttonClick)="onCpfSeachButtonClick($event)">
- </ng-syz-cpf-search>
- `;
+  <ng-syz-aside-menu  
+    [navItems]="navItems">
+    </ng-syz-aside-menu>
+  `;
 
-  cssExampleCode = `
- ng-syz-cpf-search.example-2 {
-   --primary-color: darkblue;
-   --secondary-color: blue;
-   --accent-color: darkorange;
- }
- `;
+  tsExampleCode2 = `
+  navItems: NavItem = [
+    {
+      displayName: 'Home',
+      iconName: 'home',
+      route: '/',
+    },
+    {
+      displayName: 'Minha conta',
+      iconName: 'person',
+      route: '',
+      children: [
+        {
+          displayName: 'Wallet',
+          iconName: 'account_balance_wallet',
+          route: '',
+          children: [
+            {
+              displayName: 'Meus produtos',
+              iconName: 'shopping_cart',
+              route: 'minha-conta',
+            },
+          ]
+        },
+        {
+          displayName: 'Meus dados',
+          iconName: 'sentiment_satisfied_alt',
+          route: 'minha-conta',
+        },
+      ]
+    },
+  ];
+  `;
+
+  constructor() { }
 }

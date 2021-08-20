@@ -1,1 +1,18 @@
-<p>aside-menu works!</p>
+<mat-toolbar color="primary" class="nav-color">
+  <button mat-icon-button class="menu-icon" aria-label="Ícone de menu">
+    <button mat-button class="menu-button" (click)="sidenav.toggle()">
+      <mat-icon>{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon>
+    </button>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" [(opened)]="isMenuOpen">
+    <mat-nav-list>
+      <ng-syz-item-menu *ngFor="let item of navItems" [item]="item"></ng-syz-item-menu>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
