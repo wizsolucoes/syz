@@ -11,14 +11,14 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   styleUrls: ['./docs-resultado-simulacao.component.scss'],
 })
 export class DocsResultadoSimulacaoComponent implements OnInit {
-  description = `Este componente simula o resultado de uma determinada simulação. Todos os valores são parametrizáveis, 
+  description = `Este componente simula o resultado de uma determinada simulação. Todos os valores são parametrizáveis,
                 além de ser possível configurar uma informação específica para ser detalhada no card, bem como a cor de seleção
                 quando o card for selecionado. Fora isso, tooltips de ajuda para as informações iniciais também podem ser configuradas.
                 Sobre os eventos: quando clicar no card, será retornado o índice do card selecionado. Com relação ao evento de modalidade,
                 será emitido o nome da modalidade.`;
 
   importCode =
-    "import { NgSyzResultadoSimulacaoModule } from 'projects/ng-syz/src/public-api";
+    "import { NgSyzResultadoSimulacaoModule } from 'projects/ng-syz/src/public-api'";
   // exemplo 1
   htmlExampleCode1: string;
   tsExampleCode1: string;
@@ -272,20 +272,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
   corLinhaSelecionadaExemplo2 = '#ccc';
   corBotaoClicadoExemplo2 = 'blue';
 
-  constructor() {}
-
-  ngOnInit(): void {
-    this.initExampleVariables();
-  }
-
-  enviarCardSelecionado(cardIndex): void {
-    alert(cardIndex);
-  }
-
-  enviarModalidadeSelecionada(modalidade): void {
-    alert(modalidade);
-  }
-
   componentProps: ComponentProps[] = [
     {
       name: `@Input() cards: NgSyzResultadoSimulacaoCard[]`,
@@ -330,6 +316,20 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         'Evento enviado quando a modalidade for clicada (enviará o respectivo texto)',
     },
   ];
+
+  constructor() {}
+
+  ngOnInit(): void {
+    this.initExampleVariables();
+  }
+
+  enviarCardSelecionado(cardIndex): void {
+    alert(cardIndex);
+  }
+
+  enviarModalidadeSelecionada(modalidade): void {
+    alert(modalidade);
+  }
 
   initExampleVariables(): void {
     this.htmlExampleCode1 = `
@@ -481,18 +481,18 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         camposCard: CamposCard[];
         selecionado: string;
       }
-      
+
       export interface CamposCard {
         campo: string;
         valor: string;
       }
-      
+
       export interface Condicao {
         condicao: string;
         valor: string;
         ajuda: string;
       }
-      
+
       export type linhaSelecionada =
         | 'parcelaInicial'
         | 'parcelaFinal'
@@ -643,18 +643,18 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         camposCard: CamposCard[];
         selecionado: string;
       }
-      
+
       export interface CamposCard {
         campo: string;
         valor: string;
       }
-      
+
       export interface Condicao {
         condicao: string;
         valor: string;
         ajuda: string;
       }
-      
+
       export type linhaSelecionada =
         | 'parcelaInicial'
         | 'parcelaFinal'
