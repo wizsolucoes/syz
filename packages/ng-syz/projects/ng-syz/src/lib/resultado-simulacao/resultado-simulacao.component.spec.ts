@@ -2,6 +2,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { LOCALE_ID } from '@angular/core';
 
 import { NgSyzResultadoSimulacaoComponent } from './resultado-simulacao.component';
 
@@ -11,9 +14,11 @@ describe('NgSyzResultadoSimulacaoComponent', () => {
   let template: HTMLElement;
 
   beforeEach(async () => {
+    registerLocaleData(ptBr);
     await TestBed.configureTestingModule({
       declarations: [NgSyzResultadoSimulacaoComponent],
       imports: [MatButtonToggleModule, MatIconModule, MatTooltipModule],
+      providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
     }).compileComponents();
   });
 
@@ -21,6 +26,7 @@ describe('NgSyzResultadoSimulacaoComponent', () => {
     fixture = TestBed.createComponent(NgSyzResultadoSimulacaoComponent);
     component = fixture.componentInstance;
     template = fixture.nativeElement;
+    component.valor = 150000;
     component.cards = [
       {
         camposCard: [
@@ -65,7 +71,7 @@ describe('NgSyzResultadoSimulacaoComponent', () => {
         selecionado: 'Renda mínima',
       },
     ];
-    (component.condicoes = [
+    component.condicoes = [
       {
         condicao: 'CESH',
         valor: '10,21%',
@@ -81,13 +87,41 @@ describe('NgSyzResultadoSimulacaoComponent', () => {
         valor: 'R$ 260.250,00',
         ajuda: 'Ajuda',
       },
-    ]),
-      (component.modalidades = ['Price', 'SAC', 'SACRE']),
-      fixture.detectChanges();
+    ];
+    component.modalidades = ['Price', 'SAC', 'SACRE'];
+    spyOn(component.enviarCardSelecionado, 'emit');
+    spyOn(component.enviarModalidadeSelecionada, 'emit');
+    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit event when card is clicked', () => {
+    // Given
+    const card: HTMLElement = template.querySelectorAll(
+      '[data-test="card"]'
+    )[0] as HTMLElement;
+
+    // When
+    card.click();
+
+    // Then
+    expect(component.enviarCardSelecionado.emit).toHaveBeenCalled();
+  });
+
+  it('should emit event when modalidade button is clicked', () => {
+    // Given
+    const modalidade: HTMLElement = template.querySelectorAll(
+      '[data-test="modalidade"]'
+    )[0] as HTMLElement;
+
+    // When
+    modalidade.click();
+
+    // Then
+    expect(component.enviarModalidadeSelecionada.emit).toHaveBeenCalled();
   });
 
   it('should display all condições com títulos e valores', () => {
@@ -118,8 +152,8 @@ describe('NgSyzResultadoSimulacaoComponent', () => {
     expect(modalidadeButtons[2].textContent).toBe(component.modalidades[2]);
   });
 
-  describe("should display card's data", () => {
-    it("should display component's card's", () => {
+  describe('should display cards data', () => {
+    it('should display components cards', () => {
       // Given
       const cards = template.querySelectorAll('[data-test="card"]');
 
@@ -127,7 +161,7 @@ describe('NgSyzResultadoSimulacaoComponent', () => {
       expect(cards.length).toEqual(component.cards.length);
     });
 
-    it("should display card's fields and values", () => {
+    it('should display cards fields and values', () => {
       // Given
       const cardCampos = template.querySelectorAll('[data-test="card-campo"]');
       const cardValores = template.querySelectorAll('[data-test="card-valor"]');
@@ -157,6 +191,14 @@ describe('NgSyzResultadoSimulacaoComponent', () => {
       expect(cardValores[3].textContent).toEqual(
         component.cards[0].camposCard[3].valor
       );
+    });
+
+    it('should display components cards', () => {
+      // Given
+      const cardRows = template.querySelectorAll('[data-test="card-row"]');
+
+      // Then
+      expect(cardRows[3].classList).toContain('card-selecionado');
     });
   });
 });

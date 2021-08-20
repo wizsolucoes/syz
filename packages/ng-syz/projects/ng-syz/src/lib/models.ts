@@ -33,3 +33,19 @@ export interface NgSyzResetPasswordCredentials {
   cpf: string;
   email: string;
 }
+
+export interface NgSyzResultadoSimulacaoCard {
+  camposCard: NgSyzResultadoSimulacaoCamposCard[];
+  selecionado: string;
+}
+
+export interface NgSyzResultadoSimulacaoCamposCard {
+  campo: string;
+  valor: string;
+}
+
+export interface NgSyzResultadoSimulacaoCondicao {
+  condicao: string;
+  valor: string;
+  ajuda: string;
+}

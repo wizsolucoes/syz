@@ -1,7 +1,7 @@
 <article class="resultado-simulacao">
   <section class="resultado-info">
     <div class="resultado-info--valor"><span class="resultado-info--valor--moeda">R$</span><span
-        class="resultado-info--valor--valor">{{valor | currency: 'BRL'}}</span></div>
+        class="resultado-info--valor--valor" data-test="valor">{{valor | currency: 'BRL'}}</span></div>
     <div class="resultado-info--modalidade">
       <span class="info--titulo">Modalidade</span>
       <div class="resultado-info--modalidade--buttons">
@@ -27,7 +27,7 @@
       *ngFor="let card of cards; let i = index">
       <div
         [ngClass]="{'resultado-cards--card--row': true, 'card-selecionado': card.selecionado === campo.campo, 'border-bottom': j === 0}"
-        *ngFor="let campo of card.camposCard; let j = index"><span
+        *ngFor="let campo of card.camposCard; let j = index" data-test="card-row"><span
           [ngClass]="{'resultado-cards--card--row--campo--titulo': true, 'primeiro': j === 0}" data-test="card-campo">{{campo.campo}}</span><span
           [ngClass]="{'resultado-cards--card--row--campo--valor': true, 'primeiro': j === 0}" data-test="card-valor">{{campo.valor}}</span>
       </div>

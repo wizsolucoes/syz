@@ -1,4 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  NgSyzResultadoSimulacaoCard,
+  NgSyzResultadoSimulacaoCondicao,
+} from '../models';
 
 @Component({
   selector: 'ng-syz-resultado-simulacao',
@@ -7,13 +11,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class NgSyzResultadoSimulacaoComponent {
   @Input() ajudaModalidades: string;
-  @Input() cards: Card[];
+  @Input() cards: NgSyzResultadoSimulacaoCard[];
   @Input() valor: number;
   @Input() modalidades: string[];
-  @Input() condicoes: Condicao[];
-  @Input() corCardSelecionado: string = '#0169b3';
-  @Input() corLinhaSelecionada: string = '#dfeaf2';
-  @Input() corBotaoClicado: string = '#dc7700';
+  @Input() condicoes: NgSyzResultadoSimulacaoCondicao[];
+  @Input() corCardSelecionado = '#0169b3';
+  @Input() corLinhaSelecionada = '#dfeaf2';
+  @Input() corBotaoClicado = '#dc7700';
   @Output() enviarCardSelecionado = new EventEmitter(true);
   @Output() enviarModalidadeSelecionada = new EventEmitter(true);
   cardIdSelecionadoAnteriormente: string;
@@ -33,34 +37,19 @@ export class NgSyzResultadoSimulacaoComponent {
     );
   }
 
-  selecionarCard(index) {
-    if (this.cardIdSelecionadoAnteriormente)
+  selecionarCard(index): void {
+    if (this.cardIdSelecionadoAnteriormente) {
       document
         .getElementById(this.cardIdSelecionadoAnteriormente)
         .classList.remove('card-selecionado');
-    var id = `card${index}`;
+    }
+    const id = `card${index}`;
     document.getElementById(id).classList.add('card-selecionado');
     this.cardIdSelecionadoAnteriormente = id;
     this.enviarCardSelecionado.emit(index);
   }
 
-  selecionarModalidade(modalidade) {
+  selecionarModalidade(modalidade): void {
     this.enviarModalidadeSelecionada.emit(modalidade);
   }
-}
-
-export interface Card {
-  camposCard: CamposCard[];
-  selecionado: string;
-}
-
-export interface CamposCard {
-  campo: string;
-  valor: string;
-}
-
-export interface Condicao {
-  condicao: string;
-  valor: string;
-  ajuda: string;
 }

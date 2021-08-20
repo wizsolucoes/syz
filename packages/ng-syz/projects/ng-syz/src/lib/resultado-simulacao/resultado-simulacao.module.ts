@@ -1,4 +1,4 @@
-import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgSyzResultadoSimulacaoComponent } from './resultado-simulacao.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
