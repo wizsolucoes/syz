@@ -72,6 +72,13 @@ $selected-button: var(--selected-button);
           font-size: 18px;
         }
       }
+
+      .mat-icon {
+        color: $dark-gray;
+        cursor: pointer;
+        font-size: 22px;
+        margin-left: 5px;
+      }
     }
   }
 }

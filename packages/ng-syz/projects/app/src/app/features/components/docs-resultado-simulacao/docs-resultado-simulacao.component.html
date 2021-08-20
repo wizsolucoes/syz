@@ -1,5 +1,39 @@
-<app-component-page [title]="'Resultado de simulação'" [selector]="'ng-syz-resultado-simulacao'" [description]="'Resultado de simulação'">
-  <app-code-example>
-    <ng-syz-resultado-simulacao></ng-syz-resultado-simulacao>
+<app-component-page
+  [title]="'Resultado de simulação'"
+  [selector]="'ng-syz-resultado-simulacao'"
+  [description]="description"
+>
+  <strong>Exemplo 1</strong>
+  <app-code-example [htmlCode]="htmlExampleCode1" [tsCode]="tsExampleCode1">
+    <ng-syz-resultado-simulacao
+      [cards]="cardsExemplo1"
+      [valor]="valorExemplo1"
+      [modalidades]="modalidadesExemplo1"
+      [ajudaModalidades]="ajudaModalidadesExemplo1"
+      [condicoes]="condicoesExemplo1"
+      [linhaSelecionada]="linhaSelecionadaExemplo1"
+      [corCardSelecionado]="corCardSelecionadoExemplo1"
+      [corLinhaSelecionada]="corLinhaSelecionadaExemplo1"
+      [corBotaoClicado]="corBotaoClicadoExemplo1"
+      (enviarCardSelecionado)="enviarCardSelecionado($event)"
+      (enviarModalidadeSelecionada)="enviarModalidadeSelecionada($event)"
+    ></ng-syz-resultado-simulacao>
+  </app-code-example>
+
+  <strong>Exemplo 2</strong>
+  <app-code-example [htmlCode]="htmlExampleCode2" [tsCode]="tsExampleCode2">
+    <ng-syz-resultado-simulacao
+      [cards]="cardsExemplo2"
+      [valor]="valorExemplo2"
+      [modalidades]="modalidadesExemplo2"
+      [ajudaModalidades]="ajudaModalidadesExemplo2"
+      [condicoes]="condicoesExemplo2"
+      [linhaSelecionada]="linhaSelecionadaExemplo2"
+      [corCardSelecionado]="corCardSelecionadoExemplo2"
+      [corLinhaSelecionada]="corLinhaSelecionadaExemplo2"
+      [corBotaoClicado]="corBotaoClicadoExemplo2"
+      (enviarCardSelecionado)="enviarCardSelecionado($event)"
+      (enviarModalidadeSelecionada)="enviarModalidadeSelecionada($event)"
+    ></ng-syz-resultado-simulacao>
   </app-code-example>
 </app-component-page>

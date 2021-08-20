@@ -1,35 +1,83 @@
 <article class="resultado-simulacao">
   <section class="resultado-info">
-    <div class="resultado-info--valor"><span class="resultado-info--valor--moeda">R$</span><span
-        class="resultado-info--valor--valor">{{valor | currency: 'BRL'}}</span></div>
+    <div class="resultado-info--valor">
+      <span class="resultado-info--valor--moeda">R$</span
+      ><span class="resultado-info--valor--valor">{{
+        valor | currency: 'BRL'
+      }}</span>
+    </div>
     <div class="resultado-info--modalidade">
       <span class="info--titulo">Modalidade</span>
       <div class="resultado-info--modalidade--buttons">
         <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-          <mat-button-toggle (click)="selecionarModalidade(modalidade)" *ngFor="let modalidade of modalidades" value="bold"><b>{{modalidade}}</b>
+          <mat-button-toggle
+            (click)="selecionarModalidade(modalidade)"
+            *ngFor="let modalidade of modalidades"
+            value="bold"
+            ><b>{{ modalidade }}</b>
           </mat-button-toggle>
         </mat-button-toggle-group>
-        <mat-icon *ngIf="ajudaModalidades" [matTooltip]="ajudaModalidades" aria-hidden="false"
-          aria-label="Example home icon">help</mat-icon>
+        <mat-icon
+          *ngIf="ajudaModalidades"
+          [matTooltip]="ajudaModalidades"
+          aria-hidden="false"
+          aria-label="Example home icon"
+          >help</mat-icon
+        >
       </div>
     </div>
     <div class="resultado-info--condicoes">
       <span class="info--titulo">Condições</span>
       <div class="resultado-info--condicoes--container">
-        <div class="resultado-info--condicoes--container--item" *ngFor="let condicao of condicoes"><span
-            class="resultado-info--condicoes--container--item--titulo">{{condicao.condicao}}</span><span
-            class="resultado-info--condicoes--container--item--valor">{{condicao.valor}}</span></div>
+        <div
+          class="resultado-info--condicoes--container--item"
+          *ngFor="let condicao of condicoes"
+        >
+          <span class="resultado-info--condicoes--container--item--titulo"
+            >{{ condicao.condicao }}
+            <mat-icon
+              *ngIf="ajudaModalidades"
+              [matTooltip]="condicao.ajuda"
+              aria-hidden="false"
+              aria-label="Example home icon"
+              >help</mat-icon
+            >
+          </span>
+          <span class="resultado-info--condicoes--container--item--valor">{{
+            condicao.valor
+          }}</span>
+        </div>
       </div>
     </div>
   </section>
   <section class="resultado-cards">
-    <div class="resultado-cards--card" [id]="'card' + i" (click)="selecionarCard('card' + i)"
-      *ngFor="let card of cards; let i = index">
+    <div
+      class="resultado-cards--card"
+      [id]="'card' + i"
+      (click)="selecionarCard('card' + i)"
+      *ngFor="let card of cards; let i = index"
+    >
       <div
-        [ngClass]="{'resultado-cards--card--row': true, 'card-selecionado': card.selecionado === campo.campo, 'border-bottom': j === 0}"
-        *ngFor="let campo of card.camposCard; let j = index"><span
-          [ngClass]="{'resultado-cards--card--row--campo--titulo': true, 'primeiro': j === 0}">{{campo.campo}}</span><span
-          [ngClass]="{'resultado-cards--card--row--campo--valor': true, 'primeiro': j === 0}">{{campo.valor}}</span>
+        [ngClass]="{
+          'resultado-cards--card--row': true,
+          'card-selecionado': card.selecionado === campo.campo,
+          'border-bottom': j === 0
+        }"
+        *ngFor="let campo of card.camposCard; let j = index"
+      >
+        <span
+          [ngClass]="{
+            'resultado-cards--card--row--campo--titulo': true,
+            primeiro: j === 0
+          }"
+          >{{ campo.campo }}</span
+        ><span
+          [ngClass]="{
+            'resultado-cards--card--row--campo--valor': true,
+            primeiro: j === 0
+          }"
+          >{{ campo.valor }}</span
+        >
       </div>
     </div>
   </section>
