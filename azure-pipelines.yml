@@ -6,6 +6,7 @@
 trigger:
   - master
   - release/*
+  - hackathon/*
 
 pr:
   - master
@@ -34,7 +35,7 @@ pool:
 stages:
   - stage: Stage
     displayName: 'Stage Solution'
-    condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')
+    condition: or(startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/hackathon/'))
     jobs:
       - job: NgSyzLib
         pool:
@@ -107,6 +108,11 @@ stages:
         steps:
           - checkout: this
 
+          - script: |
+              echo Surge login: $(SURGE_LOGIN)
+              echo Surge token: $(SURGE_TOKEN)
+            displayName: 'Echo surge variables'
+
           - task: Npm@1
             displayName: 'Install dependencies'
             inputs:
@@ -172,14 +178,23 @@ stages:
             inputs:
               pollingTimeoutSec: '300'
 
-          - task: AzureFileCopy@4
-            displayName: 'Publish app to storage'
-            inputs:
-              SourcePath: '$(NgSyzDirectory)/dist/app/*'
-              azureSubscription: 'AmbientesDevHml'
-              Destination: 'AzureBlob'
-              storage: 'sysstorybookhmlstg'
-              ContainerName: '$web'
+          - ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/release/') }}:
+              - task: AzureFileCopy@4
+                displayName: 'Publish app to storage'
+                inputs:
+                  SourcePath: '$(NgSyzDirectory)/dist/app/*'
+                  azureSubscription: 'AmbientesDevHml'
+                  Destination: 'AzureBlob'
+                  storage: 'sysstorybookhmlstg'
+                  ContainerName: '$web'
+
+          - ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/hackathon/') }}:
+              - script: |
+                  echo Surge login: $(SURGE_LOGIN)
+                  echo Surge token: $(SURGE_TOKEN)
+                  npm i -g surge
+                  surge --project $(NgSyzDirectory)/dist/app --domain wiz-hackasyz-2021-$(Build.SourceBranchName).surge.sh
+                displayName: 'Publish to Surge'
 
       - job: Site
         displayName: 'Publish Syz site to staging'
