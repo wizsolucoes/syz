@@ -1,7 +1,7 @@
 <div class="content-all">
     <div class="categorias">
-        <div (click) ="selectItem(item)"
-            class="item-categoria" *ngFor="let item of mockData" [ngClass]="{'border-left-active': itemSelected === item, 'border-left-deactive': itemSelected !== item}">
+        <div (click)="selectItem(item)" class="item-categoria" *ngFor="let item of data"
+            [ngClass]="{'border-left-active': itemSelected === item, 'border-left-deactive': itemSelected !== item}">
             <span [ngClass]="{'title-active': itemSelected === item}">{{ item.title }}</span>
         </div>
     </div>
@@ -9,20 +9,22 @@
 
         <div class="title">{{ itemSelected.title }}</div>
 
-        <div class="section">
-            <div class="" *ngFor="let item of itemSelected.itens">
-                <mat-accordion>
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                <span>{{ item.question }}</span>
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
-                            {{ item.answer }}
-                    </mat-expansion-panel>
-                </mat-accordion>
-            </div>
+        <div *ngIf="simpleDescription" class="" [innerHTML]="itemSelected.description"></div>
+
+        <div *ngIf="!simpleDescription" class="section">
+            <mat-accordion multi="true">
+                <mat-expansion-panel *ngFor="let item of itemSelected.itens; let isFirst = first" [expanded]="isFirst"
+                    [hideToggle]="!showToggle">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ item.question }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <span class="text">
+                        {{ item.answer }}
+                    </span>
+                </mat-expansion-panel>
+            </mat-accordion>
         </div>
-        
     </div>
 </div>

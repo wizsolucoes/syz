@@ -1,7 +1,14 @@
-<app-component-page>
-    <app-code-example>
+<app-component-page
+    [title]="'FAQ'"
+    [description]="'Componente para FAQ.'"
+    [selector]="'ng-syz-faq'"
+    [componentProps]="componentProps"
+    [componentCSSVariables]="componentCSSVariables">
+
+    <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
         <div class="example">
-            <ng-syz-faq [data]=""></ng-syz-faq>
+            <ng-syz-faq [data]="mockData" [simpleDescription]="false"></ng-syz-faq>
         </div>
     </app-code-example>
+
 </app-component-page>

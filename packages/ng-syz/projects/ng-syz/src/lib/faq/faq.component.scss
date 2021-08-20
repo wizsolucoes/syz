@@ -1,4 +1,5 @@
 .content-all {
+    
     display: grid;
     grid-template-columns: 20% 78%;
     column-gap: 2%;
@@ -7,16 +8,13 @@
         grid: 1;
         display: flex;
         flex-direction: column;
-        // background-color: aqua;
 
         .item-categoria {
             height: 64px;
             padding: 32px 16px;
-            background: #FFFFFF;
+            background: var(--syz-faq-color-background, white);
             cursor: pointer;
 
-            // font
-            font-family: Roboto;
             font-style: normal;
             font-weight: bold;
             font-size: 17px;
@@ -24,19 +22,19 @@
             display: flex;
             align-items: center;
             letter-spacing: 0.01em;
-            color: #000000;
+            color: var(--syz-faq-primary-color-text, #333333);
 
             .title-active {
-                color: #FF9100;
+                color: var(--primary-color);
             }
         }
 
         .border-left-active {
-            border-left: 5px solid #FF9100;
+            border-left: 5px solid var(--syz-faq-color-primary, --primary-color);
         }
 
         .border-left-deactive {
-            border-left: 5px solid #DFDFDF;
+            border-left: 5px solid var(--syz-faq-color-light, --light-accent-color);
         }
     }
 
@@ -44,13 +42,12 @@
         grid: 1;
 
         .title {
-            // font-family: Roboto;
             font-style: normal;
             font-weight: bold;
             font-size: 36px;
             line-height: 50px;
             letter-spacing: -1px;
-            color: #333333;
+            color: var(--syz-faq-primary-color-text, #333333);
         }
 
         .section {
@@ -58,7 +55,6 @@
             flex-direction: column;
             gap: 8px;
 
-            // font-family: Roboto;
             font-style: normal;
             font-weight: bold;
             font-size: 16px;
@@ -69,9 +65,13 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                background: #FFFFFF;
+                background: var(--syz-faq-color-background, white);
                 border-radius: 4px;
                 padding: 16px 24px;
+            }
+
+            .text {
+                color: var(--syz-faq-primary-color-text, #333333);
             }
 
             // styles angular material
@@ -85,23 +85,15 @@
             }
 
             .mat-expanded {
-                ::ng-deep .mat-expansion-indicator::after {
-                    color: #ffffff;
+                ::ng-deep .mat-expansion-indicator::after, .mat-expansion-panel-header-title {
+                    color: var(--syz-faq-color-secondary, white);
                 }
-    
-                .mat-expansion-panel-header-title {
-                    color: #ffffff;
-                }
-    
+
                 .mat-expansion-panel-header {
-                    background-color: #FF9100;
+                    background-color: var(--syz-faq-color-primary, --primary-color);
                 }
             }
         }
     }
 
-}
-
-.dark {
-    background: black;
 }

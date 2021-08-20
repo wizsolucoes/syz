@@ -7,34 +7,26 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NgSyzFaqComponent implements OnInit {
 
-
   @Input() data: any;
-  public itemSelected: any = {title: 'default', content: '', isActive: true, itens: []};
-  public questionSelect: any = {answer: '', question: ''};
+  @Input() simpleDescription: boolean;
 
-  public mockItens = [
-    {question: 'what 1', answer: 'answersssss'},
-    {question: 'what 2', answer: 'answersssss'},
-    {question: 'what 3', answer: 'answersssss'},
-    {question: 'what 4', answer: 'answersssss'}
-  ];
-
-  public mockData = [
-    {title: 'title1', content: '', itens: this.mockItens},
-    {title: 'title2', content: '', itens: this.mockItens},
-    {title: 'title3', content: '', itens: this.mockItens},
-    {title: 'title4', content: '', itens: this.mockItens},
-    {title: 'title5', content: '', itens: this.mockItens},
-  ];
+  public itemSelected: any;
+  public questionSelect: any = { answer: '', question: '' };
+  public showToggle: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+    try {
+      this.itemSelected = this.data[0];
+    } catch (error) {
+      this.itemSelected = { title: '', description: '', isActive: true, itens: [] };
+    }
   }
 
   public selectItem(item: any): void {
-    this.itemSelected = this.itemSelected === item ? null : item;
-    console.log('##', item);
+    this.itemSelected = item;
+    this.showToggle = this.itemSelected.itens.length > 1;
   }
 
 }

@@ -42,6 +42,13 @@ const routes: Routes = [
             './docs-login-with-cards-flow/docs-login-with-cards-flow.module'
           ).then((m) => m.DocsLoginWithCardsFlowModule),
       },
+      { 
+        path: 'faq',
+        loadChildren: () =>
+        import('./docs-faq/docs-faq.module').then(
+          m => m.DocsFaqModule
+        ) 
+      }
     ],
   },
   {
@@ -51,7 +58,6 @@ const routes: Routes = [
         (m) => m.ExamplesModule
       ),
   },
-  { path: 'faq', loadChildren: () => import('./docs-faq/docs-faq.module').then(m => m.DocsFaqModule) },
 ];
 
 @NgModule({
