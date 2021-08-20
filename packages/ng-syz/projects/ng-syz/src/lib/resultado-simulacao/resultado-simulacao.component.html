@@ -1,34 +1,53 @@
 <article class="resultado-simulacao">
   <section class="resultado-info">
     <div class="resultado-info--valor"><span class="resultado-info--valor--moeda">R$</span><span
-        class="resultado-info--valor--valor">{{informacoes.valor | currency: 'BRL':''}}</span></div>
+        class="resultado-info--valor--valor">{{valor | currency: 'BRL'}}</span></div>
     <div class="resultado-info--modalidade">
       <span class="info--titulo">Modalidade</span>
-      <div *ngFor="let modalidade of informacoes.modalidades"></div>
-      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle *ngFor="let modalidade of informacoes.modalidades" value="bold"><b>{{modalidade}}</b>
-        </mat-button-toggle>
-      </mat-button-toggle-group>
+      <div class="resultado-info--modalidade--buttons">
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle *ngFor="let modalidade of modalidades" value="bold"><b>{{modalidade}}</b>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-icon *ngIf="ajudaModalidades" [matTooltip]="ajudaModalidades"
+          aria-hidden="false" aria-label="Example home icon">help</mat-icon>
+      </div>
     </div>
     <div class="resultado-info--condicoes">
       <span class="info--titulo">Condições</span>
       <div class="resultado-info--condicoes--container">
-        <div class="resultado-info--condicoes--container--item" *ngFor="let condicao of informacoes.condicoes"><span
+        <div class="resultado-info--condicoes--container--item" *ngFor="let condicao of condicoes"><span
             class="resultado-info--condicoes--container--item--titulo">{{condicao.condicao}}</span><span
             class="resultado-info--condicoes--container--item--valor">{{condicao.valor}}</span></div>
       </div>
     </div>
   </section>
   <section class="resultado-cards">
-    <div class="resultado-cards--card"></div>
-    <div class="resultado-cards--card"></div>
-    <div class="resultado-cards--card"></div>
-    <div class="resultado-cards--card"></div>
-    <div class="resultado-cards--card"></div>
-    <div class="resultado-cards--card"></div>
-    <div class="resultado-cards--card"></div>
-    <div class="resultado-cards--card"></div>
-    <div class="resultado-cards--card"></div>
-    <div class="resultado-cards--card"></div>
+    <div class="resultado-cards--card" (click)="selecionarCard($event)" *ngFor="let card of cards">
+      <div class="resultado-cards--card--row border-bottom"><span
+          class="resultado-cards--card--row--campo--titulo prazo">Prazo</span><span
+          class="resultado-cards--card--row--campo--valor prazo">{{card.prazo}} meses</span></div>
+      <div
+        [ngClass]="{'resultado-cards--card--row': true, 'card-selecionado': linhaSelecionada === 'parcelaInicial'}">
+        <div class="resultado-cards--card--row--campo"><span
+            class="resultado-cards--card--row--campo--titulo">Parcela</span><span
+            class="resultado-cards--card--row--campo--titulo">inicial</span></div><span
+          class="resultado-cards--card--row--campo--valor">{{card.parcelaInicial | currency: 'BRL'}}</span>
+      </div>
+      <div
+        [ngClass]="{'resultado-cards--card--row': true, 'card-selecionado': linhaSelecionada === 'parcelaFinal'}">
+        <div class="resultado-cards--card--row--campo"><span
+            class="resultado-cards--card--row--campo--titulo">Parcela</span><span
+            class="resultado-cards--card--row--campo--titulo">final</span></div><span
+          class="resultado-cards--card--row--campo--valor">{{card.parcelaFinal | currency: 'BRL'}}</span>
+      </div>
+      <div
+        [ngClass]="{'resultado-cards--card--row': true, 'card-selecionado': linhaSelecionada === 'rendaMinima'}">
+        <div class="resultado-cards--card--row--campo"><span
+            class="resultado-cards--card--row--campo--titulo">Renda</span><span
+            class="resultado-cards--card--row--campo--titulo">mínima</span></div><span
+          class="resultado-cards--card--row--campo--valor">{{card.parcelaFinal | currency: 'BRL'}}</span>
+      </div>
+    </div>
   </section>
 </article>
