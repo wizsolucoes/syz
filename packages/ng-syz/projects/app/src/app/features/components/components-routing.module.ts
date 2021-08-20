@@ -51,6 +51,7 @@ const routes: Routes = [
         (m) => m.ExamplesModule
       ),
   },
+  { path: 'aside-menu', loadChildren: () => import('./docs-aside-menu/docs-aside-menu.module').then(m => m.DocsAsideMenuModule) },
 ];
 
 @NgModule({

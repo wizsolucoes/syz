@@ -22,5 +22,9 @@ export class ComponentsComponent {
       displayName: 'Fluxo de login com cards',
       route: 'login-with-cards-flow',
     },
+    {
+      displayName: 'Menu lateral com sub-link',
+      route: 'aside-menu',
+    },
   ];
 }
