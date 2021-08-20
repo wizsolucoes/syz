@@ -38,6 +38,7 @@
     "markdown-it": "^12.1.0",
     "ngx-mask": "^11.1.5",
     "ngx-swiper-wrapper": "^10.0.0",
+    "puppeteer": "^10.2.0",
     "rxjs": "~6.6.0",
     "swiper": "^6.7.0",
     "tslib": "^2.0.0",

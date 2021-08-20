@@ -138,7 +138,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       ajuda: 'Ajuda Valor Bruto',
     },
   ];
-  linhaSelecionadaExemplo1: linhaSelecionada = 'rendaMinima';
   corCardSelecionadoExemplo1: string = '#0169b3';
   corLinhaSelecionadaExemplo1: string = '#dfeaf2';
   corBotaoClicadoExemplo1: string = '#dc7700';
@@ -264,7 +263,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       ajuda: 'Ajuda Valor Bruto',
     },
   ];
-  linhaSelecionadaExemplo2: linhaSelecionada = 'parcelaInicial';
   corCardSelecionadoExemplo2: string = 'yellow';
   corLinhaSelecionadaExemplo2: string = '#ccc';
   corBotaoClicadoExemplo2: string = 'blue';
@@ -426,7 +424,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
           ajuda: 'Ajuda Valor bruto',
         },
       ];
-      linhaSelecionadaExemplo1: linhaSelecionada = 'rendaMinima';
       corCardSelecionadoExemplo1: string = '#0169b3';
       corLinhaSelecionadaExemplo1: string = '#dfeaf2';
       corBotaoClicadoExemplo1: string = '#dc7700';
@@ -441,7 +438,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       [modalidades]="modalidadesExemplo2"
       [ajudaModalidades]="ajudaModalidadesExemplo2"
       [condicoes]="condicoesExemplo2"
-      [linhaSelecionada]="linhaSelecionadaExemplo2"
       [corCardSelecionado]="corCardSelecionadoExemplo2"
       [corLinhaSelecionada]="corLinhaSelecionadaExemplo2"
       [corBotaoClicado]="corBotaoClicadoExemplo2"

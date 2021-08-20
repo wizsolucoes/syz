@@ -6,129 +6,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./resultado-simulacao.component.scss'],
 })
 export class NgSyzResultadoSimulacaoComponent {
-  @Input() ajudaModalidades: string = 'Ajuda';
-  @Input() cards: Card[] = [
-    {
-      camposCard: [
-        {
-          campo: 'Prazo',
-          valor: '60 meses',
-        },
-        {
-          campo: 'Parcela inicial',
-          valor: 'R$ 7.040,23',
-        },
-        {
-          campo: 'Parcela final',
-          valor: 'R$ 4.452,83',
-        },
-        {
-          campo: 'Renda mínima',
-          valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
-        },
-      ],
-      selecionado: 'Renda mínima',
-    },
-    {
-      camposCard: [
-        {
-          campo: 'Prazo',
-          valor: '60 meses',
-        },
-        {
-          campo: 'Parcela inicial',
-          valor: 'R$ 7.040,23',
-        },
-        {
-          campo: 'Parcela final',
-          valor: 'R$ 4.452,83',
-        },
-        {
-          campo: 'Renda mínima',
-          valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
-        },
-      ],
-      selecionado: 'Renda mínima',
-    },
-    {
-      camposCard: [
-        {
-          campo: 'Prazo',
-          valor: '60 meses',
-        },
-        {
-          campo: 'Parcela inicial',
-          valor: 'R$ 7.040,23',
-        },
-        {
-          campo: 'Parcela final',
-          valor: 'R$ 4.452,83',
-        },
-        {
-          campo: 'Renda mínima',
-          valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
-        },
-      ],
-      selecionado: 'Renda mínima',
-    },
-    {
-      camposCard: [
-        {
-          campo: 'Prazo',
-          valor: '60 meses',
-        },
-        {
-          campo: 'Parcela inicial',
-          valor: 'R$ 7.040,23',
-        },
-        {
-          campo: 'Parcela final',
-          valor: 'R$ 4.452,83',
-        },
-        {
-          campo: 'Renda mínima',
-          valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
-        },
-      ],
-      selecionado: 'Renda mínima',
-    },
-  ];
-  @Input() valor: number = 2500000;
-  @Input() modalidades: string[] = ['Price', 'SAC', 'SACRE'];
-  @Input() condicoes: Condicao[] = [
-    {
-      condicao: 'CESH',
-      valor: '10,21%',
-      ajuda: 'Ajuda',
-    },
-    {
-      condicao: 'CET',
-      valor: '15,35%',
-      ajuda: 'Ajuda',
-    },
-    {
-      condicao: 'Valor bruto',
-      valor: 'R$ 260.250,00',
-      ajuda: 'Ajuda',
-    },
-  ];
-  @Input() linhaSelecionada: linhaSelecionada = 'rendaMinima';
+  @Input() ajudaModalidades: string;
+  @Input() cards: Card[];
+  @Input() valor: number;
+  @Input() modalidades: string[];
+  @Input() condicoes: Condicao[];
   @Input() corCardSelecionado: string = '#0169b3';
   @Input() corLinhaSelecionada: string = '#dfeaf2';
   @Input() corBotaoClicado: string = '#dc7700';
@@ -151,14 +33,15 @@ export class NgSyzResultadoSimulacaoComponent {
     );
   }
 
-  selecionarCard(cardId) {
+  selecionarCard(index) {
     if (this.cardIdSelecionadoAnteriormente)
       document
         .getElementById(this.cardIdSelecionadoAnteriormente)
         .classList.remove('card-selecionado');
-    document.getElementById(cardId).classList.add('card-selecionado');
-    this.cardIdSelecionadoAnteriormente = cardId;
-    this.enviarCardSelecionado.emit(cardId);
+    var id = `card${index}`;
+    document.getElementById(id).classList.add('card-selecionado');
+    this.cardIdSelecionadoAnteriormente = id;
+    this.enviarCardSelecionado.emit(index);
   }
 
   selecionarModalidade(modalidade) {
@@ -181,8 +64,3 @@ export interface Condicao {
   valor: string;
   ajuda: string;
 }
-
-export type linhaSelecionada =
-  | 'parcelaInicial'
-  | 'parcelaFinal'
-  | 'rendaMinima';

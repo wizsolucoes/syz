@@ -14,6 +14,7 @@
             (click)="selecionarModalidade(modalidade)"
             *ngFor="let modalidade of modalidades"
             value="bold"
+            data-test="modalidade"
             ><b>{{ modalidade }}</b>
           </mat-button-toggle>
         </mat-button-toggle-group>
@@ -53,8 +54,9 @@
   <section class="resultado-cards">
     <div
       class="resultado-cards--card"
+      data-test="card"
       [id]="'card' + i"
-      (click)="selecionarCard('card' + i)"
+      (click)="selecionarCard(i)"
       *ngFor="let card of cards; let i = index"
     >
       <div
@@ -70,12 +72,14 @@
             'resultado-cards--card--row--campo--titulo': true,
             primeiro: j === 0
           }"
+          data-test="card-campo"
           >{{ campo.campo }}</span
         ><span
           [ngClass]="{
             'resultado-cards--card--row--campo--valor': true,
             primeiro: j === 0
           }"
+          data-test="card-valor"
           >{{ campo.valor }}</span
         >
       </div>
