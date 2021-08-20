@@ -3,6 +3,7 @@ import {
   NgSyzResultadoSimulacaoCard,
   NgSyzResultadoSimulacaoCondicao,
 } from 'projects/ng-syz/src/lib/models';
+import { ComponentProps } from '../../../shared/models/component-props.interface';
 
 @Component({
   selector: 'app-docs-resultado-simulacao',
@@ -16,6 +17,8 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
                 Sobre os eventos: quando clicar no card, será retornado o índice do card selecionado. Com relação ao evento de modalidade,
                 será emitido o nome da modalidade.`;
 
+  importCode =
+    "import { NgSyzResultadoSimulacaoModule } from 'projects/ng-syz/src/public-api";
   // exemplo 1
   htmlExampleCode1: string;
   tsExampleCode1: string;
@@ -283,6 +286,51 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
     alert(modalidade);
   }
 
+  componentProps: ComponentProps[] = [
+    {
+      name: `@Input() cards: NgSyzResultadoSimulacaoCard[]`,
+      description: 'Informações relacionadas ao card.',
+    },
+    {
+      name: '@Input() valor: number',
+      description: 'Valor que será apresentado no header do componente.',
+    },
+    {
+      name: '@Input() modalidades: string[]',
+      description: 'Modalidades que serão apresentadas como botões.',
+    },
+    {
+      name: '@Input() ajudaModalidades: string',
+      description: 'Tooltip para o grupo de botões de modalidades.',
+    },
+    {
+      name: '@Input() condicoes: NgSyzResultadoSimulacaoCondicao[]',
+      description: 'Condições que serão apresentadas.',
+    },
+    {
+      name: '@Input() corCardSelecionado: string',
+      description: 'Cor que aparecerá quando o card for clicado.',
+    },
+    {
+      name: '@Input() corLinhaSelecionada: string',
+      description: 'Cor da linha que irá vir destacada por padrão.',
+    },
+    {
+      name: '@Input() corBotaoClicado: string',
+      description: 'Cor do botão de modalidade quando selecionado.',
+    },
+    {
+      name: '@Output() enviarCardSelecionado: string',
+      description:
+        'Evento enviado quando algum card for clicado (enviará o respectivo index).',
+    },
+    {
+      name: '@Output() enviarModalidadeSelecionada: string',
+      description:
+        'Evento enviado quando a modalidade for clicada (enviará o respectivo texto)',
+    },
+  ];
+
   initExampleVariables(): void {
     this.htmlExampleCode1 = `
     <ng-syz-resultado-simulacao
@@ -304,7 +352,7 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       htmlExampleCode1: string;
       tsExampleCode1: string;
       ajudaModalidadesExemplo1: string = 'Ajuda Exemplo 1';
-      cardsExemplo1: Card[] = [
+      cardsExemplo1: NgSyzResultadoSimulacaoCard[] = [
         {
           camposCard: [
             {
@@ -408,7 +456,7 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       ];
       valorExemplo1: number = 2500000;
       modalidadesExemplo1: string[] = ['Price', 'SAC', 'SACRE'];
-      condicoesExemplo1: Condicao[] = [
+      condicoesExemplo1: NgSyzResultadoSimulacaoCondicao[] = [
         {
           condicao: 'CESH',
           valor: '10,21%',
@@ -470,7 +518,7 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       htmlExampleCode2: string;
       tsExampleCode2: string;
       ajudaModalidadesExemplo2: string = 'Ajuda Exemplo 2';
-      cardsExemplo2: Card[] = [
+      cardsExemplo2: NgSyzResultadoSimulacaoCard[] = [
         {
           camposCard: [
             {
@@ -574,7 +622,7 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       ];
       valorExemplo2: number = 2500000;
       modalidadesExemplo2: string[] = ['Alter', 'Celta'];
-      condicoesExemplo2: Condicao[] = [
+      condicoesExemplo2: NgSyzResultadoSimulacaoCondicao[] = [
         {
           condicao: 'VAT',
           valor: '13,25%',
