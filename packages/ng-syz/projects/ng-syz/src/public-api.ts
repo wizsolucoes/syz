@@ -17,4 +17,7 @@ export * from './lib/login-with-carousel-flow/login-with-carousel-flow.component
 export * from './lib/login-with-cards-flow/login-with-cards-flow.module';
 export * from './lib/login-with-cards-flow/login-with-cards-flow.component';
 
+export * from './lib/carousel-cards/carousel-cards.module';
+export * from './lib/carousel-cards/carousel-cards.component';
+
 export * from './lib/models';
