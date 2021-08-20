@@ -51,6 +51,7 @@ const routes: Routes = [
         (m) => m.ExamplesModule
       ),
   },
+  { path: 'faq', loadChildren: () => import('./docs-faq/docs-faq.module').then(m => m.DocsFaqModule) },
 ];
 
 @NgModule({

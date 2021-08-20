@@ -1,0 +1,107 @@
+.content-all {
+    display: grid;
+    grid-template-columns: 20% 78%;
+    column-gap: 2%;
+
+    .categorias {
+        grid: 1;
+        display: flex;
+        flex-direction: column;
+        // background-color: aqua;
+
+        .item-categoria {
+            height: 64px;
+            padding: 32px 16px;
+            background: #FFFFFF;
+            cursor: pointer;
+
+            // font
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 17px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.01em;
+            color: #000000;
+
+            .title-active {
+                color: #FF9100;
+            }
+        }
+
+        .border-left-active {
+            border-left: 5px solid #FF9100;
+        }
+
+        .border-left-deactive {
+            border-left: 5px solid #DFDFDF;
+        }
+    }
+
+    .conteudo-categoria {
+        grid: 1;
+
+        .title {
+            // font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 50px;
+            letter-spacing: -1px;
+            color: #333333;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            // font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 21px;
+            letter-spacing: 0.2px;
+
+            .sub-itens {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: #FFFFFF;
+                border-radius: 4px;
+                padding: 16px 24px;
+            }
+
+            // styles angular material
+            ::ng-deep .mat-expansion-panel-body {
+                padding: 32px;
+                background: transparent;
+            }
+
+            .mat-expansion-panel-header.mat-expanded {
+                height: 48px;
+            }
+
+            .mat-expanded {
+                ::ng-deep .mat-expansion-indicator::after {
+                    color: #ffffff;
+                }
+    
+                .mat-expansion-panel-header-title {
+                    color: #ffffff;
+                }
+    
+                .mat-expansion-panel-header {
+                    background-color: #FF9100;
+                }
+            }
+        }
+    }
+
+}
+
+.dark {
+    background: black;
+}
