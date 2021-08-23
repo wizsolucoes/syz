@@ -19,25 +19,7 @@ describe('NgSyzPersonInfoComponent', () => {
     fixture = TestBed.createComponent(NgSyzCarouselCardsComponent);
     component = fixture.componentInstance;
     template = fixture.nativeElement;
-    component.person = {
-      name: 'Lucas Brando',
-      cpfCnpj: '05011798100',
-      birthdate: '21/01/1995',
-      gerder: 'Masculino',
-      civilState: 'Casado(a)',
-      phone: '6133891473',
-      cellphone: '61984523615',
-      email: 'oliveira@live.in',
-      address: {
-        cep: '73320140',
-        uf: 'DF',
-        city: 'Brasília',
-        street: 'Rua Piaúi',
-        district: 'Vila Vicentina',
-        complement: 'Quadra 03',
-        number: '29',
-      },
-    };
+
     fixture.detectChanges();
   });
 

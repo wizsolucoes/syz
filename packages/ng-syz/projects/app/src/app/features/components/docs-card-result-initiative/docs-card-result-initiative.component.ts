@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+const imagemTeste = require("./assets/image.png");
 @Component({
   selector: 'app-docs-card-result-initiative',
   templateUrl: './docs-card-result-initiative.component.html',
@@ -7,22 +8,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocsCardResultInitiativeComponent implements OnInit {
   image = {
-    url: 'https://images-na.ssl-images-amazon.com/images/I/610mHhzQThL.png', 
+    url: imagemTeste, 
     alt: 'Teste'
   }
 
   cards = [
     {
-      icon: 'money',
+      icon: 'wallpaper',
       text: 'incentivo financeiro',
       value: 'R$ 910',
-      color: '#0AB64F'
+      color: 'orange',
+      variable: {
+        direction: 'up',
+        value: '+R$ 40,00'
+      }
     },
     {
-      icon: 'car',
+      icon: 'attach_money',
       text: 'Seguro auto',
       value: '16',
-      color: '#14ACE8'
+      color: '#14ACE8',
+      variable: {
+        value: '+R$ 40,00'
+      }
+    },
+    {
+      icon: 'attach_money',
+      text: 'Seguro auto',
+      value: '16',
+      color: 'red',
+      variable: {
+        direction: 'down',
+        value: '+R$ 40,00'
+      }
     },
   ]
 
@@ -31,8 +49,8 @@ export class DocsCardResultInitiativeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  myFunction(event){
-    console.log(event)
+  myFunction(){
+    console.log('clicou')
   }
 
 }

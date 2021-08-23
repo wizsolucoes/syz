@@ -1,6 +1,5 @@
 <app-component-page>
   <app-code-example>
-    <!-- type = Button ou cards -->
     <ng-syz-card-result-initiative
       name="Progresso de indicações"
       [image]="image"
@@ -8,8 +7,10 @@
       description="Para realizarmos o pagamento do seu incentivo financeiro, precisamos
       que você aceite o RPA. Clique no botão e siga as orientações."
       type="cards"
+      [maxWidth]="900"
       [cards]="cards"
+      (action)="myFunction()"
+      labelButton="Acessar o Gabriel"
     ></ng-syz-card-result-initiative>
   </app-code-example>
 </app-component-page>
-<!-- [action]="($event) => myFunction($event)" -->

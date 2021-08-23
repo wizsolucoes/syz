@@ -1,8 +1,8 @@
-<div id="wiz-card-result-initiative">
+<div id="wiz-card-result-initiative" >
     <h3 *ngIf="name">{{name}}</h3>
-    <div class="container">
+    <div class="container" [ngStyle]="{'maxWidth': maxWidth + 'px' }">
         <div class="content-left">
-            <img src={{image.url}} />
+            <img src={{image.url.default}} alt={{image.alt}} />
         </div>
         <div class="content-right">
             <div class="content-text">
@@ -10,13 +10,23 @@
                 <p class="subtitle">{{description}}</p>
             </div>
             <div class="content-items">
-                <button *ngIf="type === 'button' ">Acessar RPA</button>
+                <button *ngIf="type === 'button'" (click)="submitActionButton()">{{labelButton}}</button>
                 <ng-container *ngIf="type === 'cards' ">
-                    <div class="card" *ngFor="let item of cards">
-                        <!-- <mat-icon svgIcon="money"></mat-icon> -->
-                            <div [innerHTML]="showIcon(item.icon)"></div>
-                        <p>Incentivo financeiro</p>
-                        <span>R$ 910</span>
+                    <div class="card" *ngFor="let item of cards" [ngStyle]="{'borderColor': item.color }">
+                      <div class="icon">
+                        <mat-icon [ngStyle]="{'color': item.color}" matSuffix  aria-hidden="false" aria-label="Example home icon">{{item.icon}}</mat-icon>
+                        <span class="bg"[ngStyle]="{'background': item.color }"></span>
+                      </div>
+                      <p>Incentivo financeiro</p>
+                      <span>R$ 910</span>
+                      <div 
+                        class="direction"
+                        [ngClass]="item.variable.direction === 'up' ? 'direction-up' : item.variable.direction === 'down' ?'direction-down' : ''"
+                        *ngIf="item.variable"
+                      >
+                          {{item.variable.value}}
+                          <mat-icon *ngIf="item.variable.direction" matSuffix aria-hidden="false" aria-label="Example home icon">keyboard_backspace</mat-icon>
+                      </div>
                     </div>
                 </ng-container>
             </div>
