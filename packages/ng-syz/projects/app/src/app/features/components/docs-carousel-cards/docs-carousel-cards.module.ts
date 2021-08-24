@@ -6,6 +6,7 @@ import { DocsCarouselCardsComponent } from './docs-carousel-cards.component';
 import { NgSyzCarouselCardsModule } from '@wizsolucoes/ng-syz';
 import { SharedModule } from '../../../shared/shared.module';
 
+import 'swiper/swiper-bundle.css';
 
 
 @NgModule({
