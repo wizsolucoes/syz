@@ -6,6 +6,7 @@ import { NgSyzCarouselCardsComponent } from './carousel-cards.component';
 import { RouterModule } from '@angular/router';
 import { NgxMaskModule } from 'ngx-mask';
 import { SwiperConfigInterface, SwiperModule, SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { CardComponentComponent } from './card-component/card-component.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -13,7 +14,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 };
 
 @NgModule({
-  declarations: [NgSyzCarouselCardsComponent],
+  declarations: [NgSyzCarouselCardsComponent, CardComponentComponent],
   imports: [CommonModule, RouterModule, SwiperModule, NgxMaskModule.forRoot()],
   exports: [NgSyzCarouselCardsComponent],
   providers: [

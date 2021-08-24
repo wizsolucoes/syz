@@ -1,27 +1,15 @@
-<div id="ng-syz-carousel-cards">
-  <swiper [config]="config" >
+<div id="ng-syz-carousel-cards" *ngIf="slides.length > 3">
+  <swiper [config]="configuration">
     <div class="card" *ngFor="let slide of slides; let i = index">
-      <div class="boxCard">
-        <h2>{{slide.title}}</h2>
-        <ul>
-          <li *ngFor="let item of showItens(i)">
-            <a
-              [routerLink]="item.router"
-              [target]="item.target"
-            >{{item.text}}</a>
-            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.48539 2.01473L7.43514 6.96448L2.48539 11.9142" stroke="#00AA9B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </li>
-          <li *ngIf="slides[i].itens.length > 3">
-            <button class="actionShowMore" (click)="showMore(i)">{{slides[i].showMore ? 'Ver menos' : 'Ver Todas'}}</button>
-          </li>
-        </ul>
-      </div>
+      <app-card-component [slides]="slides" [index]="i" [slide]="slide" ></app-card-component>
     </div>
   </swiper>
-  <div class="swiper-button-custom swiper-button-custom-prev" >
-    <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.48539 2.01473L7.43514 6.96448L2.48539 11.9142" stroke="#00AA9B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-  <div class="swiper-button-custom swiper-button-custom-next" >
-    <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.48539 2.01473L7.43514 6.96448L2.48539 11.9142" stroke="#00AA9B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="swiper-button-custom swiper-button-custom-prev" [innerHTML]="iconDirect"></div>
+  <div class="swiper-button-custom swiper-button-custom-next" [innerHTML]="iconDirect"></div>
+</div>
+
+<div id="ng-syz-carousel-cards" class="ng-syz-carousel-cards-unique" *ngIf="slides.length <= 3">
+  <div class="card" *ngFor="let slide of slides; let i = index">
+    <app-card-component [slides]="slides" [index]="i" [slide]="slide" [unique]="true" ></app-card-component>
   </div>
 </div>

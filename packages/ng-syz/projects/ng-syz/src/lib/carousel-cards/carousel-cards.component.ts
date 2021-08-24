@@ -1,29 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-
-export interface Sliders {
-  title: string;
-  itens: any;
-  colorCard?: string;
-  showMore?: boolean;
-}
+import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Sliders, iconDirect } from './models';
 @Component({
   selector: 'ng-syz-carousel-cards',
   templateUrl: './carousel-cards.component.html',
   styleUrls: ['./carousel-cards.component.scss'],
 })
 export class NgSyzCarouselCardsComponent implements OnInit {
-  config: any = {
+  
+  @Input() config = {
+    speed: 500,
     spaceBetween: 15,
+    autoplay: false,
+    loop: false,
+    effect: 'slide'
+  }
+
+  configuration: any = {    
     slidesPerView: 3,
     pagination: false,
-    keyboard: true,
+    keyboard: false,
     grabCursor: true,
-    loop: false,
     preloadImages: false,
     lazy: true,
-    autoplay: false,
-    speed: 500,
-    effect: 'slide',
     zoom: false,
     zoomMax: 2,
     navigation: {
@@ -32,168 +31,20 @@ export class NgSyzCarouselCardsComponent implements OnInit {
     },
   };
 
-  slides: Sliders[] = [
-    {
-      title: 'Conexão Conseg',
-      colorCard: 'red',
-      itens: [
-        {
-          text: 'Teste link',
-          router: '/components/login-with-carousel-flow',
-          target: '_self',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-      ],
-    },
-    {
-      title: 'Conexão Conseg',
-      colorCard: 'red',
-      itens: [
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-      ],
-    },
-    {
-      title: 'Conexão Conseg',
-      colorCard: 'red',
-      itens: [
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-      ],
-    },
-    {
-      title: 'Conexão Conseg',
-      colorCard: 'red',
-      itens: [
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-      ],
-    },
-    {
-      title: 'Conexão Conseg',
-      colorCard: 'red',
-      itens: [
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-      ],
-    },
-    {
-      title: 'Conexão Conseg',
-      colorCard: 'red',
-      itens: [
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-        {
-          text: 'Qual o valor máximo de leads por agências',
-          router: '/components/login-with-carousel-flow',
-          target: 'blank',
-        },
-      ],
-    },
-  ];
+  @Input() slides: Sliders[] = [];
 
-  constructor() {}
+  iconDirect;
 
-  ngOnInit(): void {}
-
-  showItens(i) {
-    const list = this.slides[i];
-    if (!list.itens.length) return [];
-    if (list?.showMore) return list.itens;
-
-    const showMinItens = list.itens.slice(0, 3);
-    return showMinItens;
+  constructor(private sanitizer: DomSanitizer) {
+    this.iconDirect = this.sanitizer.bypassSecurityTrustHtml(iconDirect);
   }
-  showMore(i) {
-    this.slides[i].showMore = this.slides[i].showMore ? false : true;
+
+  ngOnInit(): void {
+    this.configuration.speed = this.config.speed;
+    this.configuration.spaceBetween = this.config.spaceBetween;
+    this.configuration.autoplay = this.config.autoplay;
+    this.configuration.loop = this.config.loop;
+    this.configuration.effect = this.config.effect;
   }
+
 }

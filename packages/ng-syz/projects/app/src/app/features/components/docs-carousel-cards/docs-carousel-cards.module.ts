@@ -11,7 +11,7 @@ import 'swiper/swiper-bundle.css';
 
 @NgModule({
   declarations: [
-    DocsCarouselCardsComponent
+    DocsCarouselCardsComponent,
   ],
   imports: [
     CommonModule,
