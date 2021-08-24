@@ -9,10 +9,12 @@ export class NgSyzFaqComponent implements OnInit {
 
   @Input() data: any;
   @Input() simpleDescription: boolean;
+  @Input() showToggle: boolean;
+  @Input() firstExpanded: boolean;
+  @Input() multiExpanded: boolean;
 
   public itemSelected: any;
   public questionSelect: any = { answer: '', question: '' };
-  public showToggle: boolean;
 
   constructor() { }
 
@@ -26,7 +28,7 @@ export class NgSyzFaqComponent implements OnInit {
 
   public selectItem(item: any): void {
     this.itemSelected = item;
-    this.showToggle = this.itemSelected.itens.length > 1;
+    // this.showToggle = this.itemSelected.itens.length > 1;
   }
 
 }

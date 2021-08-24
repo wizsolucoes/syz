@@ -13,17 +13,17 @@ export class DocsFaqComponent implements OnInit {
       title: 'Categoria 1',
       description: 'Descrição da categoria 1',
       itens: [
-        { question: 'Questão 1', answer: 'Resposta 1' },
-        { question: 'Questão 2', answer: 'Resposta 2' },
-        { question: 'Questão 3', answer: 'Resposta 3' },
-        { question: 'Questão 4', answer: 'Resposta 4' }
+        { question: 'Dúvida 1', answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+        { question: 'Dúvida 2', answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+        { question: 'Dúvida 3', answer: 'Resposta 3' },
+        { question: 'Dúvida 4', answer: 'Resposta 4' }
       ]
     },
     {
       title: 'Categoria 2',
       description: 'Descrição da categoria 2',
       itens: [
-        { question: 'Questão 1', answer: 'Resposta 1' },
+        { question: 'Dúvida 1', answer: 'Resposta 1' },
       ]
     },
     {
@@ -35,8 +35,8 @@ export class DocsFaqComponent implements OnInit {
       title: 'Categoria 4',
       description: 'Descrição da categoria 4',
       itens: [
-        { question: 'Questão 1', answer: 'Resposta 1' },
-        { question: 'Questão 2', answer: 'Resposta 2' }
+        { question: 'Dúvida 1', answer: 'Resposta 1' },
+        { question: 'Dúvida 2', answer: 'Resposta 2' }
       ]
     },
     {

@@ -12,12 +12,12 @@
         <div *ngIf="simpleDescription" class="" [innerHTML]="itemSelected.description"></div>
 
         <div *ngIf="!simpleDescription" class="section">
-            <mat-accordion multi="true">
-                <mat-expansion-panel *ngFor="let item of itemSelected.itens; let isFirst = first" [expanded]="isFirst"
+            <mat-accordion [multi]="multiExpanded">
+                <mat-expansion-panel *ngFor="let item of itemSelected.itens; let isFirst = first" [expanded]="isFirst && firstExpanded"
                     [hideToggle]="!showToggle">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            {{ item.question }}
+                            <span class="title-accordeon">{{ item.question }}</span>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <span class="text">
