@@ -9,7 +9,7 @@ const imagemTeste = require("./assets/image.png");
 })
 export class DocsCardResultInitiativeComponent implements OnInit {
   image = {
-    url: imagemTeste, 
+    url: 'https://cdamed.com.br/wp-content/uploads/2021/01/teste-de-covid-19-em-bauru.png',
     alt: 'Teste'
   }
 

@@ -28,4 +28,8 @@ export class NgSyzCardResultInitiativeComponent implements OnInit {
     this.action.emit();
   }
 
+  showImage() {
+    return this.image.url || this.image;
+  }
+
 } 
