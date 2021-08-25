@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { NgSyzCardResultInitiative } from '../models';
+import { NgSyzCardResultInitiative, NgSyzCardResultInitiativeImage } from '../models';
 
 @Component({
   selector: 'ng-syz-card-result-initiative',
@@ -9,7 +9,7 @@ import { NgSyzCardResultInitiative } from '../models';
 
 export class NgSyzCardResultInitiativeComponent {
   @Input() name: string;
-  @Input() image: any;
+  @Input() image: NgSyzCardResultInitiativeImage;
   @Input() title: string;
   @Input() description: string;
   @Input() type: string;

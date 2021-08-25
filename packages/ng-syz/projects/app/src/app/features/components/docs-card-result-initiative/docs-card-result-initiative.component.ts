@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgSyzCardResultInitiativeImage } from '@wizsolucoes/ng-syz';
 import { ComponentProps } from '../../../shared/models/component-props.interface';
 
+var require: any;
 const imagemTeste = require("./assets/image.png");
 const imagemTeste2 = require("./assets/IconCelphone.png");
 @Component({
@@ -9,12 +11,12 @@ const imagemTeste2 = require("./assets/IconCelphone.png");
   styleUrls: ['./docs-card-result-initiative.component.scss']
 })
 export class DocsCardResultInitiativeComponent implements OnInit {
-  image = {
+  image: NgSyzCardResultInitiativeImage = {
     url: imagemTeste, 
     alt: 'Ícone'
   }
 
-  image2 = {
+  image2: NgSyzCardResultInitiativeImage = {
     url: imagemTeste2, 
     alt: 'Ícone'
   }
