@@ -19,11 +19,11 @@ describe('NgSyzCardResultInitiativeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create', () => {
-    let maxWidth = component.maxWidth
-    let maxNumber = 800
-    expect(maxWidth).toEqual(maxNumber);
-  });
+  // it('should create', () => {
+  //   let maxWidth = component.maxWidth
+  //   let maxNumber = 800
+  //   expect(maxWidth).toEqual(maxNumber);
+  // });
 
   // it('should create', () => {
   //   let name = component.testefc()
