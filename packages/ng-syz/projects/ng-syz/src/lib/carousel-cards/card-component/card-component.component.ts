@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Sliders, iconDirect } from '../models';
+import { iconDirect } from '../models';
+import { NgSyzCarouselCardsSliders } from '../../models';
+
 
 @Component({
   selector: 'app-card-component',
@@ -9,7 +11,7 @@ import { Sliders, iconDirect } from '../models';
 })
 export class CardComponentComponent implements OnInit {
   @Input() slide: any;
-  @Input() slides: Sliders[];
+  @Input() slides: NgSyzCarouselCardsSliders[];
   @Input() index: number;
   @Input() unique: boolean = false;
 

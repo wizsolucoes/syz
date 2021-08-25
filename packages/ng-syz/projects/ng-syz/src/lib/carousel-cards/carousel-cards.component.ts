@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Sliders, iconDirect } from './models';
+import { iconDirect } from './models';
+import { NgSyzCarouselCardsConfig, NgSyzCarouselCardsSliders } from '../models';
 @Component({
   selector: 'ng-syz-carousel-cards',
   templateUrl: './carousel-cards.component.html',
@@ -8,7 +9,7 @@ import { Sliders, iconDirect } from './models';
 })
 export class NgSyzCarouselCardsComponent implements OnInit {
   
-  @Input() config = {
+  @Input() config: NgSyzCarouselCardsConfig = {
     speed: 500,
     spaceBetween: 15,
     autoplay: false,
@@ -16,7 +17,7 @@ export class NgSyzCarouselCardsComponent implements OnInit {
     effect: 'slide'
   }
 
-  configuration: any = {    
+  configuration: NgSyzCarouselCardsConfig = {    
     slidesPerView: 3,
     pagination: false,
     keyboard: false,
@@ -31,7 +32,7 @@ export class NgSyzCarouselCardsComponent implements OnInit {
     },
   };
 
-  @Input() slides: Sliders[] = [];
+  @Input() slides: NgSyzCarouselCardsSliders[] = [];
 
   iconDirect;
 

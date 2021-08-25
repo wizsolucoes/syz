@@ -1,10 +1,3 @@
-export interface Sliders {
-  title: string;
-  itens: any;
-  colorCard?: string;
-  showMore?: boolean;
-}
-
 export const iconDirect = `<svg
 width="9"
 height="14"

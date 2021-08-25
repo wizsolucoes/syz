@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-import { Cards } from './models';
+import { NgSyzCardResultInitiative } from '../models';
 
 @Component({
   selector: 'ng-syz-card-result-initiative',
@@ -14,7 +14,7 @@ export class NgSyzCardResultInitiativeComponent implements OnInit {
   @Input() description: string;
   @Input() type: string;
   @Input() maxWidth: number = 900;
-  @Input() cards: Cards[];
+  @Input() cards: NgSyzCardResultInitiative[];
   @Input() labelButton: string;
   @Output() action: EventEmitter<any> = new EventEmitter();
 

@@ -1,5 +1,88 @@
-<app-component-page>
-  <ng-syz-carousel-cards [slides]="slides" [config]="config"></ng-syz-carousel-cards>
-  <app-code-example>
+<app-component-page
+  [title]="'Carousel de Cards'"
+  [description]="Description"
+  [selector]="'ng-syz-carousel-cards'"
+  importCode="import { NgSyzCarouselCardsModule } from '@wizsolucoes/ng-syz';"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+>
+  <br />
+  <h2>Carousel Cards</h2>
+
+  <app-code-example
+    [htmlCode]="Exemples[0].htmlExampleCode"
+    [tsCode]="Exemples[0].tsCode"
+  >
+    <ng-syz-carousel-cards
+      [slides]="Exemples[0].slides"
+      [config]="Exemples[0].config"
+    ></ng-syz-carousel-cards>
   </app-code-example>
+
+  <h2>Exemplo com Auto Play</h2>
+
+  <app-code-example
+    [htmlCode]="Exemples[0].htmlExampleCode"
+    [tsCode]="Exemples[0].tsCode"
+  >
+    <ng-syz-carousel-cards
+      [slides]="Exemples[1].slides"
+      [config]="Exemples[1].config"
+    ></ng-syz-carousel-cards>
+  </app-code-example>
+
+  <h2>Cor de fundo do Card</h2>
+
+  <ul class="listExplique">
+    <li>
+      Controle as cores dos cards controlando o array de slides!
+      <pre class="block ng-star-inserted"><code>{{"slides: [
+        {
+          title: 'Conexão Conseg',
+          colorCard: '#ffffff',
+          itens: [...]
+        },
+        ...
+      ]"}}</code></pre>
+    </li>
+  </ul>
+
+  <app-code-example
+    [htmlCode]="Exemples[2].htmlExampleCode"
+    [tsCode]="Exemples[2].tsCode"
+  >
+    <ng-syz-carousel-cards
+      [slides]="Exemples[2].slides"
+      [config]="Exemples[2].config"
+    ></ng-syz-carousel-cards>
+  </app-code-example>
+
+  <h2>Cor do Título, botões e texto</h2>
+
+  <ul class="listExplique">
+    <li>Controle as cores dos botões com as variáveis de ambiente!</li>
+  </ul>
+  <pre class="block ng-star-inserted">
+    <code>{{
+        "
+        --text-color: #60a3c3;
+        --title-color: #1aa0bf;
+        --primary-color: #00aa9b;
+        --bg-card-color: #94feff;
+        "
+      }}</code>
+  </pre>
+
+  <div class="exemploCor">
+    <app-code-example
+      [htmlCode]="Exemples[0].htmlExampleCode"
+      [tsCode]="Exemples[0].tsCode"
+      [cssCode]="Exemples[0].cssCode"
+    >
+      <ng-syz-carousel-cards
+        [slides]="Exemples[0].slides"
+        [config]="Exemples[0].config"
+      ></ng-syz-carousel-cards>
+    </app-code-example>
+  </div>
 </app-component-page>

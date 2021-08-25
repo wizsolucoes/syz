@@ -1,6 +1,27 @@
-ng-syz-carousel-cards {
-  // --text-color: #5d5d5d;
-  --title-color: #5d5d5d;
-  --primary-color: #00aa9b;
-  // --bg-card-color: blue;
+@import "./template-ngsyz";
+
+.exemploCor {
+  ng-syz-carousel-cards {
+    --text-color: #60a3c3;
+    --title-color: #1aa0bf;
+    --primary-color: #00aa9b;
+    --bg-card-color: #94feff;
+  }
+}
+
+.listExplique {
+  margin-bottom: 30px;
+  li {
+    padding-left: 16px;
+    list-style-type: none;
+    &::before {
+      content: "•";
+      padding-right: 9px;
+      color: #36aa9b;
+      font-size: 29px;
+      top: 6px;
+      position: relative;
+    }
+  }
+  
 }

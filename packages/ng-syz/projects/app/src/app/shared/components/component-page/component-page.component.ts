@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ComponentProps } from '../../models/component-props.interface';
 
 @Component({
@@ -6,7 +6,7 @@ import { ComponentProps } from '../../models/component-props.interface';
   templateUrl: './component-page.component.html',
   styleUrls: ['./component-page.component.scss'],
 })
-export class ComponentPageComponent {
+export class ComponentPageComponent implements OnInit {
   @Input() title = '// TODO: Informar `title`';
   @Input() description = '// TODO: Informar `description`';
   @Input() selector = '// TODO: Informar `selector`';
@@ -19,4 +19,12 @@ export class ComponentPageComponent {
   ];
 
   displayedColumns: string[] = ['name', 'description'];
+
+  visibled = false;
+
+  ngOnInit() {}
+
+  showContent(event){
+    this.visibled = event.tab.textLabel === 'EXEMPLOS' ? true : false;
+  }
 }

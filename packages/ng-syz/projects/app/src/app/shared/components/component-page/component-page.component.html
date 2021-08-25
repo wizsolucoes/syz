@@ -1,13 +1,7 @@
-<mat-tab-group>
-    <!-- Exemplos -->
-    <mat-tab label="EXEMPLOS">
-      <div class="app-component-page-tab-content">
-        <ng-content></ng-content>
-      </div>
-    </mat-tab>
-    
+<mat-tab-group (selectedTabChange)="showContent($event)">
   <!-- Sobre -->
   <mat-tab label="SOBRE">
+    
     <div class="app-component-page-tab-content">
       <h2>{{ title }}</h2>
 
@@ -20,7 +14,10 @@
     </div>
   </mat-tab>
 
-
+  <!-- Exemplos -->
+  <mat-tab label="EXEMPLOS" >
+    <div class="app-component-page-tab-content" ></div>
+  </mat-tab>
 
   <!-- API -->
   <mat-tab label="API">
@@ -49,7 +46,7 @@
         <!--Description Column -->
         <ng-container matColumnDef="description">
           <th mat-header-cell *matHeaderCellDef scope="col">Description</th>
-          <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+          <td mat-cell *matCellDef="let element"><pre>{{ element.description }}</pre></td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -86,3 +83,8 @@
     </div>
   </mat-tab>
 </mat-tab-group>
+
+<div [class]="visibled ? 'showRenderNgContent' : 'hideRenderNgContent'">
+  <ng-content></ng-content>
+</div>
+
