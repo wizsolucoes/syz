@@ -32,7 +32,7 @@ export class NgSyzCardResultInitiativeComponent implements OnInit {
   }
 
   showImage() {
-    return this.image.url || this.image;
+    return this.image.url?.default || this.image;
   }
 
 } 
