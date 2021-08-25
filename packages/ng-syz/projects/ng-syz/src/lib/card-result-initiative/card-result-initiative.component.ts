@@ -21,7 +21,7 @@ export class NgSyzCardResultInitiativeComponent implements OnInit {
   constructor(){}
   
   ngOnInit(): void{
-    // console.log(this.image);
+    console.log(this.image);
   }
 
   submitActionButton(){

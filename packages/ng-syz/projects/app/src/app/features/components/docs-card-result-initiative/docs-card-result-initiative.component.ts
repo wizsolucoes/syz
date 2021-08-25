@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ComponentProps } from '../../../shared/models/component-props.interface';
 
-const imagemTeste = require("./assets/image.png");
+// const imagemTeste = require("./assets/image.png");
+const imagemTeste = ("https://github.com/gabriellennon.png");
 @Component({
   selector: 'app-docs-card-result-initiative',
   templateUrl: './docs-card-result-initiative.component.html',
@@ -10,7 +11,7 @@ const imagemTeste = require("./assets/image.png");
 export class DocsCardResultInitiativeComponent implements OnInit {
   image = {
     url: imagemTeste, 
-    alt: 'Teste'
+    alt: 'Ícone'
   }
 
   cards = [
@@ -137,7 +138,30 @@ export class DocsCardResultInitiativeComponent implements OnInit {
     },
     {
       name: `@Input() cards: Cards[]`,
-      description: 'Cards menores de com seus devidos atributos desejado, veja exemplo do array de objetos necessário.',
+      description: `Cards menores de com seus devidos atributos desejado, os ícones utilizados
+      são os do material icons (https://fonts.google.com/icons?selected=Material+Icons), precisando
+      então apenas passar o nome do ícone.
+      Pode-se passar também sem o parâmetro direction em variable.
+      {
+        icon: 'attach_money',
+        text: 'Seguro auto',
+        value: '16',
+        color: '#14ACE8',
+        variable: {
+          direction: 'down',
+          value: '+R$ 40,00'
+        }
+      },
+      {
+        icon: 'attach_money',
+        text: 'Seguro auto',
+        value: '16',
+        color: 'red',
+        variable: {
+          value: '+R$ 40,00'
+        }
+      }
+      `,
     },
     {
       name: `@Output() action: EventEmitter<any>`,
