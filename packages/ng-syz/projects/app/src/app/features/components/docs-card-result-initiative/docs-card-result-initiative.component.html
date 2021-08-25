@@ -1,7 +1,17 @@
-<app-component-page>
-  <app-code-example>
+<app-component-page
+  [title]="'Card de resultado de iniciativa'"
+  [description]="'Componente para mostrar cards com informações de resultados  de alguma iniciativa'"
+  [selector]="'ng-syz-card-result-initiative'"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+  [importCode]="importCode"
+>
+  <!-- Exemplo 1 -->
+  <app-code-example
+    [htmlCode]="exampleHtml"
+    [tsCode]="exampleTs"
+  >
     <ng-syz-card-result-initiative
-      name="Progresso de indicações"
       [image]="image"
       title="Chegou a hora de receber o seu incentivo!"
       description="Para realizarmos o pagamento do seu incentivo financeiro, precisamos
@@ -10,7 +20,23 @@
       [maxWidth]="900"
       [cards]="cards"
       (action)="myFunction()"
-      labelButton="Acessar o Gabriel"
+    ></ng-syz-card-result-initiative>
+  </app-code-example>
+
+  <!-- Exemplo 2 -->
+  <app-code-example
+  [htmlCode]="exampleHtml2"
+  >
+    <ng-syz-card-result-initiative
+      name="Progresso de indicações"
+      [image]="image"
+      title="Parabéns pelo seu resultado na campanha!"
+      description="A campanha se encerrou e essas foram as suas conquistas. Dá só uma olhada:"
+      type="cards"
+      [maxWidth]="900"
+      [cards]="button"
+      (action)="myFunction()"
+      labelButton="Assinar RPA"
     ></ng-syz-card-result-initiative>
   </app-code-example>
 </app-component-page>
