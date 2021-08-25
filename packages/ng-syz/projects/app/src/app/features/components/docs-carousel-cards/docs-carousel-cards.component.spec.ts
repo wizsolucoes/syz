@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgSyzCarouselCardsModule } from '@wizsolucoes/ng-syz';
+import { SharedModule } from '../../../shared/shared.module';
+
 
 import { DocsCarouselCardsComponent } from './docs-carousel-cards.component';
 
@@ -8,7 +11,8 @@ describe('DocsCarouselCardsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocsCarouselCardsComponent ]
+      imports: [NgSyzCarouselCardsModule, SharedModule],
+      declarations: [DocsCarouselCardsComponent],
     })
     .compileComponents();
   });
