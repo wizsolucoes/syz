@@ -19,7 +19,6 @@
       type="cards"
       [maxWidth]="900"
       [cards]="cards"
-      (action)="myFunction()"
     ></ng-syz-card-result-initiative>
   </app-code-example>
 
@@ -29,13 +28,28 @@
   >
     <ng-syz-card-result-initiative
       name="Progresso de indicações"
-      [image]="image"
+      [image]="image2"
       title="Parabéns pelo seu resultado na campanha!"
       description="A campanha se encerrou e essas foram as suas conquistas. Dá só uma olhada:"
-      type="cards"
+      type="button"
       [maxWidth]="900"
       (action)="myFunction()"
       labelButton="Assinar RPA"
+    ></ng-syz-card-result-initiative>
+  </app-code-example>
+
+  <!-- Exemplo 3 -->
+  <app-code-example
+    [htmlCode]="exampleHtml3"
+  >
+    <ng-syz-card-result-initiative
+      [image]="image2"
+      title="Parabéns pelo seu resultado na campanha!"
+      description="A campanha se encerrou e essas foram as suas conquistas. Dá só uma olhada:"
+      [maxWidth]="900"
+      backgroundCard="#ff9100"
+      titleColor="#FFFFFF"
+      descriptionColor="#FFFFFF"
     ></ng-syz-card-result-initiative>
   </app-code-example>
 </app-component-page>
