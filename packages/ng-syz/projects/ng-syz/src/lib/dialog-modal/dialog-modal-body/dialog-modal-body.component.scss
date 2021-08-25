@@ -1,0 +1,35 @@
+.widget-dialog-modal {
+  padding: 24px;
+  background: white;
+  border-radius: 4px;
+  margin-bottom: 24px;
+
+  .img {
+    max-width: 239px;
+    max-height: 220px;
+  }
+
+  .titulo {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+    color: black;
+    margin-bottom: 18px;
+  }
+
+  .descricao {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+    margin-bottom: 16px;
+    height: 110px;
+  }
+}
+
+@media all and (max-width: 767px){
+  button {
+    margin-top: 35px;
+  }
+}

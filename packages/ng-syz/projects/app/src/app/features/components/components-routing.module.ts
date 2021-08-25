@@ -42,6 +42,13 @@ const routes: Routes = [
             './docs-login-with-cards-flow/docs-login-with-cards-flow.module'
           ).then((m) => m.DocsLoginWithCardsFlowModule),
       },
+      {
+        path: 'dialog-modal',
+        loadChildren: () =>
+          import(
+            './docs-dialog-modal/docs-dialog-modal.module'
+          ).then((m) => m.DocsDialogModalModule),
+      },
     ],
   },
   {
@@ -51,6 +58,7 @@ const routes: Routes = [
         (m) => m.ExamplesModule
       ),
   },
+  { path: 'dialog-modal', loadChildren: () => import('./docs-dialog-modal/docs-dialog-modal.module').then(m => m.DocsDialogModalModule) },
 ];
 
 @NgModule({

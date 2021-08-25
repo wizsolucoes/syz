@@ -1,0 +1,18 @@
+<div class="widget-dialog-modal">
+  <div class="linha text-sm-center text-md-center">
+    <div class="coluna-sm-12 coluna-md-12 coluna-lg-4 coluna-xl-5 text-center">
+      <img class="img" [src]="data?.imagem" alt='imagem pequena modal'>
+    </div>
+    <div class="coluna-sm-12 coluna-md-12 coluna-lg-8 coluna-xl-7 text-sm-center text-md-center text-lg-left text-xl-left">
+      <div class="titulo">
+        {{data?.titulo}}
+      </div>
+      <div class="descricao">
+        {{data?.texto}}
+      </div>
+      <div class="d-flex">
+        <button [style.border-radius]="data?.percentBorderRadiusButton" class="btn btn-outline-custom btn-block default" (click)="eventoBotao()">{{data?.textoBotao}}</button>
+      </div>
+    </div>
+  </div>
+</div>

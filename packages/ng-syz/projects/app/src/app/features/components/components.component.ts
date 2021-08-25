@@ -12,8 +12,14 @@ interface NavItem {
 })
 export class ComponentsComponent {
   navItems: NavItem[] = [
-    { displayName: 'Busca por CPF/CNPJ', route: 'cpf-search' },
-    { displayName: 'Dados pessoais', route: 'person-info' },
+    {
+      displayName: 'Busca por CPF/CNPJ',
+      route: 'cpf-search'
+    },
+    {
+      displayName: 'Dados pessoais',
+      route: 'person-info'
+    },
     {
       displayName: 'Fluxo de login com carousel',
       route: 'login-with-carousel-flow',
@@ -21,6 +27,10 @@ export class ComponentsComponent {
     {
       displayName: 'Fluxo de login com cards',
       route: 'login-with-cards-flow',
+    },
+    {
+      displayName: 'Dialog Modal',
+      route: 'dialog-modal',
     },
   ];
 }

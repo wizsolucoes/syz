@@ -1,0 +1,26 @@
+<app-component-page
+  [title]="'Modal'"
+  [description]="
+    'Componente utilizado para abrir modal.'
+  "
+  [selector]="'ng-syz-dialog-modal'"
+  [importCode]="importCode"
+  [componentProps]="componentProps"
+>
+  <!-- Begin examples in `app-code-example` tags -->
+
+  <!-- Exmple 1 -->
+  <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
+    <ng-syz-dialog-modal
+    [titulo]="'Titulo da Modal'"
+    [texto]="'Texto da Modal'"
+    [textoBotao]="'Botão teste'"
+    [rotaExterna]="'false'"
+    [urlRota]="'www.google.com'"
+    [imagem]="'https://i.stack.imgur.com/W9kaK.jpg'"
+    [percentBorderRadiusButton]="'50'">
+  </ng-syz-dialog-modal>
+  </app-code-example>
+
+  <!-- End examples -->
+</app-component-page>
