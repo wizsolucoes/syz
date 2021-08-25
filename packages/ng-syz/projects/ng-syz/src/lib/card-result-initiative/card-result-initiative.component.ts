@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgSyzCardResultInitiative } from '../models';
 
 @Component({
@@ -7,7 +7,7 @@ import { NgSyzCardResultInitiative } from '../models';
   styleUrls: ['./card-result-initiative.component.scss'],
 })
 
-export class NgSyzCardResultInitiativeComponent implements OnInit {
+export class NgSyzCardResultInitiativeComponent {
   @Input() name: string;
   @Input() image: any;
   @Input() title: string;
@@ -20,12 +20,6 @@ export class NgSyzCardResultInitiativeComponent implements OnInit {
   @Input() titleColor: string;
   @Input() descriptionColor: string;
   @Output() action: EventEmitter<any> = new EventEmitter();
-
-  constructor(){}
-  
-  ngOnInit(): void{
-    console.log(this.image);
-  }
 
   submitActionButton(){
     this.action.emit();
