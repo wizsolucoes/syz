@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ComponentProps } from '../../../shared/models/component-props.interface';
 
 const imagemTeste = require("./assets/image.png");
+const imagemTeste2 = require("./assets/IconCelphone.png");
 @Component({
   selector: 'app-docs-card-result-initiative',
   templateUrl: './docs-card-result-initiative.component.html',
@@ -9,8 +10,18 @@ const imagemTeste = require("./assets/image.png");
 })
 export class DocsCardResultInitiativeComponent implements OnInit {
   image = {
+<<<<<<< HEAD
     url: 'https://cdamed.com.br/wp-content/uploads/2021/01/teste-de-covid-19-em-bauru.png',
     alt: 'Teste'
+=======
+    url: imagemTeste, 
+    alt: 'Ícone'
+  }
+
+  image2 = {
+    url: imagemTeste2, 
+    alt: 'Ícone'
+>>>>>>> 7e342295d2fe9c0dd93a76f00a14f007b81e8a7a
   }
 
   cards = [
@@ -47,7 +58,6 @@ export class DocsCardResultInitiativeComponent implements OnInit {
 
   exampleHtml = `
     <ng-syz-card-result-initiative
-      name="Progresso de indicações"
       [image]="image"
       title="Chegou a hora de receber o seu incentivo!"
       description="Para realizarmos o pagamento do seu incentivo financeiro, precisamos
@@ -55,7 +65,6 @@ export class DocsCardResultInitiativeComponent implements OnInit {
       type="cards"
       [maxWidth]="900"
       [cards]="cards"
-      (action)="myFunction()"
     ></ng-syz-card-result-initiative>
   `;
 
@@ -65,11 +74,22 @@ export class DocsCardResultInitiativeComponent implements OnInit {
       [image]="image"
       title="Parabéns pelo seu resultado na campanha!"
       description="A campanha se encerrou e essas foram as suas conquistas. Dá só uma olhada:"
-      type="cards"
+      type="button"
       [maxWidth]="900"
-      [cards]="button"
       (action)="myFunction()"
       labelButton="Assinar RPA"
+    ></ng-syz-card-result-initiative>
+  `;
+
+  exampleHtml3 = `
+      <ng-syz-card-result-initiative
+        [image]="image"
+        title="Parabéns pelo seu resultado na campanha!"
+        description="A campanha se encerrou e essas foram as suas conquistas. Dá só uma olhada:"
+        [maxWidth]="900"
+        backgroundCard="#ff9100"
+        titleColor="#FFFFFF"
+        descriptionColor="#FFFFFF"
     ></ng-syz-card-result-initiative>
   `;
 
@@ -136,8 +156,47 @@ export class DocsCardResultInitiativeComponent implements OnInit {
       description: 'Width máximo desejado do card, veja exemplo.',
     },
     {
+      name: `@Input() backgroundCard: string`,
+      description: 'Cor de fundo do card, veja exemplo 3.',
+    },
+    {
+      name: `@Input() titleColor: string`,
+      description: 'Cor desejada do título do card, veja exemplo 3.',
+    },
+    {
+      name: `@Input() descriptionColor: string`,
+      description: 'Cor desejada do subtítulo do card, veja exemplo 3.',
+    },
+    {
       name: `@Input() cards: Cards[]`,
-      description: 'Cards menores de com seus devidos atributos desejado, veja exemplo do array de objetos necessário.',
+      description: `Cards menores de com seus devidos atributos desejado, os ícones utilizados
+      são os do material icons (https://fonts.google.com/icons?selected=Material+Icons), precisando
+      então apenas passar o nome do ícone.
+      Pode-se passar também sem o parâmetro direction em variable.
+      {
+        icon: 'attach_money',
+        text: 'Seguro auto',
+        value: '16',
+        color: '#14ACE8',
+        variable: {
+          direction: 'down',
+          value: '+R$ 40,00'
+        }
+      },
+      {
+        icon: 'attach_money',
+        text: 'Seguro auto',
+        value: '16',
+        color: 'red',
+        variable: {
+          value: '+R$ 40,00'
+        }
+      }
+      `,
+    },
+    {
+      name: `@Input() backgroundCard: string`,
+      description: 'Cor de fundo do box caso deseje mudar, veja exemplo 3.',
     },
     {
       name: `@Output() action: EventEmitter<any>`,

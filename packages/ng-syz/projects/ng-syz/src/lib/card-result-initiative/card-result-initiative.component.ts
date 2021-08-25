@@ -16,12 +16,15 @@ export class NgSyzCardResultInitiativeComponent implements OnInit {
   @Input() maxWidth: number = 900;
   @Input() cards: NgSyzCardResultInitiative[];
   @Input() labelButton: string;
+  @Input() backgroundCard: string;
+  @Input() titleColor: string;
+  @Input() descriptionColor: string;
   @Output() action: EventEmitter<any> = new EventEmitter();
 
   constructor(){}
   
   ngOnInit(): void{
-    // console.log(this.image);
+    console.log(this.image);
   }
 
   submitActionButton(){
