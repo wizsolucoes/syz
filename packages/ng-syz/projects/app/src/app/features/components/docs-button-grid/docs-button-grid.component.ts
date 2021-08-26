@@ -13,7 +13,7 @@ export class DocsButtonGridComponent implements OnInit {
   corTextoExemplo1 = '#fff';
   corBordaExemplo1 = '#fff';
   importCode =
-    "import { NgSyzButtonGridModule } from 'projects/ng-syz/src/public-api'";
+    'import { NgSyzButtonGridModule } from "projects/ng-syz/src/public-api"';
 
   componentProps: ComponentProps[] = [
     {
