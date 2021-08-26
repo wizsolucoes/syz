@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgSyzDialogModalComponent } from './dialog-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogModalBodyComponent } from './dialog-modal-body/dialog-modal-body.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { DialogModalBodyComponent } from './dialog-modal-body/dialog-modal-body.
   ],
   imports: [
     CommonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ],
   exports: [NgSyzDialogModalComponent],
 })

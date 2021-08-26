@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatDialogModule } from '@angular/material/dialog';
 import { NgSyzDialogModalComponent } from './dialog-modal.component';
 
 describe('NgSyzDialogModalComponent', () => {
@@ -8,7 +8,8 @@ describe('NgSyzDialogModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgSyzDialogModalComponent ]
+      declarations: [ NgSyzDialogModalComponent ],
+      imports:[ MatDialogModule ]
     })
     .compileComponents();
   });
