@@ -6,12 +6,12 @@ import { DialogModalBodyComponent } from './dialog-modal-body/dialog-modal-body.
 
 @NgModule({
   declarations: [
-    NgSyzDialogModalComponent
+    NgSyzDialogModalComponent,
+    DialogModalBodyComponent
   ],
   imports: [
     CommonModule,
-    MatDialogModule,
-    DialogModalBodyComponent
+    MatDialogModule
   ],
   exports: [NgSyzDialogModalComponent],
 })
