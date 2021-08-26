@@ -3,7 +3,7 @@ import { NgxMaskModule } from 'ngx-mask';
 
 import { NgSyzCarouselCardsComponent } from './carousel-cards.component';
 
-describe('NgSyzPersonInfoComponent', () => {
+describe('NgSyzCarouselCardsComponent', () => {
   let component: NgSyzCarouselCardsComponent;
   let fixture: ComponentFixture<NgSyzCarouselCardsComponent>;
   let template: HTMLElement;

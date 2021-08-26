@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgSyzCardResultInitiativeImage } from '@wizsolucoes/ng-syz';
 import { ComponentProps } from '../../../shared/models/component-props.interface';
-
-var require: any;
-const imagemTeste = require("./assets/image.png");
-const imagemTeste2 = require("./assets/IconCelphone.png");
 @Component({
   selector: 'app-docs-card-result-initiative',
   templateUrl: './docs-card-result-initiative.component.html',
@@ -12,12 +8,12 @@ const imagemTeste2 = require("./assets/IconCelphone.png");
 })
 export class DocsCardResultInitiativeComponent implements OnInit {
   image: NgSyzCardResultInitiativeImage = {
-    url: imagemTeste, 
+    url: '/assets/docs-card-result-initiative/image.png', 
     alt: 'Ícone'
   }
 
   image2: NgSyzCardResultInitiativeImage = {
-    url: imagemTeste2, 
+    url: '/assets/docs-card-result-initiative/IconCelphone.png', 
     alt: 'Ícone'
   }
 
@@ -141,7 +137,7 @@ export class DocsCardResultInitiativeComponent implements OnInit {
       description: 'Tipo do card, podendo ser button ou cards, veja exemplo.',
     },
     {
-      name: `@Input() image: any`,
+      name: `@Input() image: NgSyzCardResultInitiativeImage`,
       description: 'Imagem geral do card, do tipo object, onde o objeto é contido pela url da imagem e o texto alt, veja exemplo.',
     },
     {

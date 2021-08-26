@@ -2,7 +2,7 @@
     <h3 *ngIf="name">{{name}}</h3>
     <div class="container" [ngStyle]="{'maxWidth': maxWidth + 'px' }">
         <div class="content-left">
-            <img [src]="showImage()" alt={{image.alt}} />
+            <img [src]="image?.url" alt={{image?.alt}} />
         </div>
         <div class="content-right">
             <div class="content-text">

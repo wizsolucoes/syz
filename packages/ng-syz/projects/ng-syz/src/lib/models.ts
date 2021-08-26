@@ -46,7 +46,7 @@ export interface NgSyzCardResultInitiative {
 }
 
 export interface NgSyzCardResultInitiativeImage {
-  url: any, 
+  url: string, 
   alt?: string
 }
 export interface NgSyzCarouselCardsConfig {

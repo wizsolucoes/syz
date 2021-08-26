@@ -25,26 +25,4 @@ describe('NgSyzCardResultInitiativeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create', () => {
-    let image = component.showImage()
-    expect(image).toEqual('https://miro.medium.com/max/3492/1*P7x-_0XfQz6CVmMY_QAv0w.png')
-  });
-
-  // it('should create', () => {
-  //   let maxWidth = component.maxWidth
-  //   let maxNumber = 800
-  //   expect(maxWidth).toEqual(maxNumber);
-  // });
-
-  // it('should create', () => {
-  //   let name = component.testefc()
-  //   expect(name).toEqual('gabriel')
-  // });
-
-  // it('should emit buttonClick event', () => {
-  //   let actionButton = component.submitActionButton();
-  //   let action = component.action;
-  //   expect(actionButton).toHaveBeenCalled()
-  // });
-
 });

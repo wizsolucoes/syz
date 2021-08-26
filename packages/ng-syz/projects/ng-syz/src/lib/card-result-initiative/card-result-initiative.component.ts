@@ -25,8 +25,4 @@ export class NgSyzCardResultInitiativeComponent {
     this.action.emit();
   }
 
-  showImage() {
-    return this.image.url?.default || this.image;
-  }
-
 } 
