@@ -18,7 +18,7 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
                 será emitido o nome da modalidade.`;
 
   importCode =
-    "import { NgSyzResultadoSimulacaoModule } from 'projects/ng-syz/src/public-api'";
+    'import { NgSyzResultadoSimulacaoModule } from "projects/ng-syz/src/public-api"';
   // exemplo 1
   htmlExampleCode1: string;
   tsExampleCode1: string;
@@ -28,23 +28,19 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       camposCard: [
         {
           campo: 'Prazo',
-          valor: '60 meses',
+          valor: '15 meses',
         },
         {
           campo: 'Parcela inicial',
-          valor: 'R$ 7.040,23',
+          valor: 'R$ 8.040,23',
         },
         {
           campo: 'Parcela final',
-          valor: 'R$ 4.452,83',
+          valor: 'R$ 3.452,83',
         },
         {
           campo: 'Renda mínima',
-          valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
+          valor: 'R$ 22.120,69',
         },
       ],
       selecionado: 'Renda mínima',
@@ -53,7 +49,7 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       camposCard: [
         {
           campo: 'Prazo',
-          valor: '60 meses',
+          valor: '33 meses',
         },
         {
           campo: 'Parcela inicial',
@@ -66,10 +62,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         {
           campo: 'Renda mínima',
           valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
         },
       ],
       selecionado: 'Renda mínima',
@@ -78,23 +70,19 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       camposCard: [
         {
           campo: 'Prazo',
-          valor: '60 meses',
+          valor: '47 meses',
         },
         {
           campo: 'Parcela inicial',
-          valor: 'R$ 7.040,23',
+          valor: 'R$ 5.050,23',
         },
         {
           campo: 'Parcela final',
-          valor: 'R$ 4.452,83',
+          valor: 'R$ 2.352,83',
         },
         {
           campo: 'Renda mínima',
-          valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
+          valor: 'R$ 19.478,55',
         },
       ],
       selecionado: 'Renda mínima',
@@ -103,7 +91,7 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       camposCard: [
         {
           campo: 'Prazo',
-          valor: '60 meses',
+          valor: '12 meses',
         },
         {
           campo: 'Parcela inicial',
@@ -116,10 +104,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         {
           campo: 'Renda mínima',
           valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
         },
       ],
       selecionado: 'Renda mínima',
@@ -144,20 +128,18 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       ajuda: 'Ajuda Valor Bruto',
     },
   ];
-  corCardSelecionadoExemplo1 = '#0169b3';
-  corLinhaSelecionadaExemplo1 = '#dfeaf2';
-  corBotaoClicadoExemplo1 = '#dc7700';
 
   // exemplo2
   htmlExampleCode2: string;
   tsExampleCode2: string;
+  cssExample2Code: string;
   ajudaModalidadesExemplo2 = 'Ajuda Exemplo 2';
   cardsExemplo2: NgSyzResultadoSimulacaoCard[] = [
     {
       camposCard: [
         {
-          campo: 'Prazo',
-          valor: '60 meses',
+          campo: 'Seguradora',
+          valor: 'Swiss',
         },
         {
           campo: 'Parcela inicial',
@@ -170,10 +152,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         {
           campo: 'Renda mínima',
           valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
         },
       ],
       selecionado: 'Renda mínima',
@@ -181,8 +159,8 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
     {
       camposCard: [
         {
-          campo: 'Prazo',
-          valor: '60 meses',
+          campo: 'Seguradora',
+          valor: 'Swiss',
         },
         {
           campo: 'Parcela inicial',
@@ -195,10 +173,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         {
           campo: 'Renda mínima',
           valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
         },
       ],
       selecionado: 'Renda mínima',
@@ -206,8 +180,8 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
     {
       camposCard: [
         {
-          campo: 'Prazo',
-          valor: '60 meses',
+          campo: 'Seguradora',
+          valor: 'Swiss',
         },
         {
           campo: 'Parcela inicial',
@@ -220,10 +194,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         {
           campo: 'Renda mínima',
           valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
         },
       ],
       selecionado: 'Renda mínima',
@@ -231,8 +201,8 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
     {
       camposCard: [
         {
-          campo: 'Prazo',
-          valor: '60 meses',
+          campo: 'Seguradora',
+          valor: 'Swiss',
         },
         {
           campo: 'Parcela inicial',
@@ -245,10 +215,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         {
           campo: 'Renda mínima',
           valor: 'R$ 21.120,69',
-        },
-        {
-          campo: 'Kill me please',
-          valor: 'right now',
         },
       ],
       selecionado: 'Renda mínima',
@@ -268,9 +234,121 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       ajuda: 'Ajuda Valor Bruto',
     },
   ];
-  corCardSelecionadoExemplo2 = '#0169b3';
-  corLinhaSelecionadaExemplo2 = '#dfeaf2';
-  corBotaoClicadoExemplo2 = '#dc7700';
+
+  // exemplo 1
+  htmlExampleCode3: string;
+  tsExampleCode3: string;
+  cssExample3Code: string;
+  ajudaModalidadesExemplo3 = 'Ajuda Exemplo 3';
+  cardsExemplo3: NgSyzResultadoSimulacaoCard[] = [
+    {
+      camposCard: [
+        {
+          campo: 'Campo a 1',
+          valor: 'valor a 1',
+        },
+        {
+          campo: 'Campo b 1',
+          valor: 'valor b 1',
+        },
+        {
+          campo: 'campo c 1',
+          valor: 'valor c 1',
+        },
+        {
+          campo: 'campo d 1',
+          valor: 'valor d 1',
+        },
+      ],
+      selecionado: 'Campo a 1',
+    },
+    {
+      camposCard: [
+        {
+          campo: 'Campo a 2',
+          valor: 'valor a 2',
+        },
+        {
+          campo: 'Campo b 2',
+          valor: 'valor b 2',
+        },
+        {
+          campo: 'campo c 2',
+          valor: 'valor c 2',
+        },
+        {
+          campo: 'campo d 2',
+          valor: 'valor d 2',
+        },
+      ],
+      selecionado: '',
+    },
+    {
+      camposCard: [
+        {
+          campo: 'Campo a 3',
+          valor: 'valor a 3',
+        },
+        {
+          campo: 'Campo b 3',
+          valor: 'valor b 3',
+        },
+        {
+          campo: 'campo c 3',
+          valor: 'valor c 3',
+        },
+        {
+          campo: 'campo d 3',
+          valor: 'valor d 3',
+        },
+        {
+          campo: 'campo r 3',
+          valor: 'valor r 3',
+        },
+      ],
+      selecionado: 'campo c 3',
+    },
+    {
+      camposCard: [
+        {
+          campo: 'Campo a 4',
+          valor: 'valor a 4',
+        },
+        {
+          campo: 'Campo b 4',
+          valor: 'valor b 4',
+        },
+        {
+          campo: 'campo c 4',
+          valor: 'valor c 4',
+        },
+        {
+          campo: 'campo d 4',
+          valor: 'valor d 4',
+        },
+      ],
+      selecionado: 'campo d 4',
+    },
+  ];
+  valorExemplo3 = 15500000;
+  modalidadesExemplo3 = ['Price'];
+  condicoesExemplo3: NgSyzResultadoSimulacaoCondicao[] = [
+    {
+      condicao: 'XXX',
+      valor: '77,21%',
+      ajuda: 'Ajuda XXX',
+    },
+    {
+      condicao: 'YYY',
+      valor: '0,35%',
+      ajuda: 'Ajuda YYY',
+    },
+    {
+      condicao: 'ZZZ',
+      valor: 'R$ 2.060.250,00',
+      ajuda: 'Ajuda ZZZ',
+    },
+  ];
 
   componentProps: ComponentProps[] = [
     {
@@ -294,18 +372,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       description: 'Condições que serão apresentadas.',
     },
     {
-      name: '@Input() corCardSelecionado: string',
-      description: 'Cor que aparecerá quando o card for clicado.',
-    },
-    {
-      name: '@Input() corLinhaSelecionada: string',
-      description: 'Cor da linha que irá vir destacada por padrão.',
-    },
-    {
-      name: '@Input() corBotaoClicado: string',
-      description: 'Cor do botão de modalidade quando selecionado.',
-    },
-    {
       name: '@Output() enviarCardSelecionado: string',
       description:
         'Evento enviado quando algum card for clicado (enviará o respectivo index).',
@@ -314,6 +380,21 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       name: '@Output() enviarModalidadeSelecionada: string',
       description:
         'Evento enviado quando a modalidade for clicada (enviará o respectivo texto)',
+    },
+  ];
+
+  componentCSSVariables: ComponentProps[] = [
+    {
+      name: `--selected-card`,
+      description: 'Cor de fundo do card selecionado',
+    },
+    {
+      name: `--selected-line`,
+      description: 'Cor de fundo da linha de destaque do card',
+    },
+    {
+      name: `--selected-button`,
+      description: 'Cor do botão de modalidade que foi clicado',
     },
   ];
 
@@ -340,40 +421,30 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       [ajudaModalidades]="ajudaModalidadesExemplo1"
       [condicoes]="condicoesExemplo1"
       [linhaSelecionada]="linhaSelecionadaExemplo1"
-      [corCardSelecionado]="corCardSelecionadoExemplo1"
-      [corLinhaSelecionada]="corLinhaSelecionadaExemplo1"
-      [corBotaoClicado]="corBotaoClicadoExemplo1"
       (enviarCardSelecionado)="enviarCardSelecionado($event)"
       (enviarModalidadeSelecionada)="enviarModalidadeSelecionada($event)"
     ></ng-syz-resultado-simulacao>
     `;
 
     this.tsExampleCode1 = `
-      htmlExampleCode1: string;
-      tsExampleCode1: string;
-      ajudaModalidadesExemplo1: string = 'Ajuda Exemplo 1';
-      cardsExemplo1: NgSyzResultadoSimulacaoCard[] = [
+      cardsExemplo1 = [
         {
           camposCard: [
             {
               campo: 'Prazo',
-              valor: '60 meses',
+              valor: '15 meses',
             },
             {
               campo: 'Parcela inicial',
-              valor: 'R$ 7.040,23',
+              valor: 'R$ 8.040,23',
             },
             {
               campo: 'Parcela final',
-              valor: 'R$ 4.452,83',
+              valor: 'R$ 3.452,83',
             },
             {
               campo: 'Renda mínima',
-              valor: 'R$ 21.120,69',
-            },
-            {
-              campo: 'Kill me please',
-              valor: 'right now',
+              valor: 'R$ 22.120,69',
             },
           ],
           selecionado: 'Renda mínima',
@@ -382,7 +453,7 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
           camposCard: [
             {
               campo: 'Prazo',
-              valor: '60 meses',
+              valor: '33 meses',
             },
             {
               campo: 'Parcela inicial',
@@ -395,10 +466,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
             {
               campo: 'Renda mínima',
               valor: 'R$ 21.120,69',
-            },
-            {
-              campo: 'Kill me please',
-              valor: 'right now',
             },
           ],
           selecionado: 'Renda mínima',
@@ -407,23 +474,19 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
           camposCard: [
             {
               campo: 'Prazo',
-              valor: '60 meses',
+              valor: '47 meses',
             },
             {
               campo: 'Parcela inicial',
-              valor: 'R$ 7.040,23',
+              valor: 'R$ 5.050,23',
             },
             {
               campo: 'Parcela final',
-              valor: 'R$ 4.452,83',
+              valor: 'R$ 2.352,83',
             },
             {
               campo: 'Renda mínima',
-              valor: 'R$ 21.120,69',
-            },
-            {
-              campo: 'Kill me please',
-              valor: 'right now',
+              valor: 'R$ 19.478,55',
             },
           ],
           selecionado: 'Renda mínima',
@@ -432,7 +495,7 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
           camposCard: [
             {
               campo: 'Prazo',
-              valor: '60 meses',
+              valor: '12 meses',
             },
             {
               campo: 'Parcela inicial',
@@ -445,18 +508,14 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
             {
               campo: 'Renda mínima',
               valor: 'R$ 21.120,69',
-            },
-            {
-              campo: 'Kill me please',
-              valor: 'right now',
             },
           ],
           selecionado: 'Renda mínima',
         },
       ];
-      valorExemplo1: number = 2500000;
-      modalidadesExemplo1: string[] = ['Price', 'SAC', 'SACRE'];
-      condicoesExemplo1: NgSyzResultadoSimulacaoCondicao[] = [
+      valorExemplo1 = 2500000;
+      modalidadesExemplo1 = ['Price', 'SAC', 'SACRE'];
+      condicoesExemplo1 = [
         {
           condicao: 'CESH',
           valor: '10,21%',
@@ -473,30 +532,14 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
           ajuda: 'Ajuda Valor bruto',
         },
       ];
-      corCardSelecionadoExemplo1: string = '#0169b3';
-      corLinhaSelecionadaExemplo1: string = '#dfeaf2';
-      corBotaoClicadoExemplo1: string = '#dc7700';
 
-      export interface Card {
-        camposCard: CamposCard[];
-        selecionado: string;
+      enviarCardSelecionado(cardIndex): void {
+        alert(cardIndex);
       }
 
-      export interface CamposCard {
-        campo: string;
-        valor: string;
+      enviarModalidadeSelecionada(modalidade): void {
+        alert(modalidade);
       }
-
-      export interface Condicao {
-        condicao: string;
-        valor: string;
-        ajuda: string;
-      }
-
-      export type linhaSelecionada =
-        | 'parcelaInicial'
-        | 'parcelaFinal'
-        | 'rendaMinima';
     `;
 
     this.htmlExampleCode2 = `
@@ -506,24 +549,18 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       [modalidades]="modalidadesExemplo2"
       [ajudaModalidades]="ajudaModalidadesExemplo2"
       [condicoes]="condicoesExemplo2"
-      [corCardSelecionado]="corCardSelecionadoExemplo2"
-      [corLinhaSelecionada]="corLinhaSelecionadaExemplo2"
-      [corBotaoClicado]="corBotaoClicadoExemplo2"
       (enviarCardSelecionado)="enviarCardSelecionado($event)"
       (enviarModalidadeSelecionada)="enviarModalidadeSelecionada($event)"
     ></ng-syz-resultado-simulacao>
     `;
 
     this.tsExampleCode2 = `
-      htmlExampleCode2: string;
-      tsExampleCode2: string;
-      ajudaModalidadesExemplo2: string = 'Ajuda Exemplo 2';
-      cardsExemplo2: NgSyzResultadoSimulacaoCard[] = [
+      cardsExemplo2 = [
         {
           camposCard: [
             {
-              campo: 'Prazo',
-              valor: '60 meses',
+              campo: 'Seguradora',
+              valor: 'Swiss',
             },
             {
               campo: 'Parcela inicial',
@@ -536,10 +573,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
             {
               campo: 'Renda mínima',
               valor: 'R$ 21.120,69',
-            },
-            {
-              campo: 'Kill me please',
-              valor: 'right now',
             },
           ],
           selecionado: 'Renda mínima',
@@ -547,8 +580,8 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         {
           camposCard: [
             {
-              campo: 'Prazo',
-              valor: '60 meses',
+              campo: 'Seguradora',
+              valor: 'Swiss',
             },
             {
               campo: 'Parcela inicial',
@@ -561,10 +594,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
             {
               campo: 'Renda mínima',
               valor: 'R$ 21.120,69',
-            },
-            {
-              campo: 'Kill me please',
-              valor: 'right now',
             },
           ],
           selecionado: 'Renda mínima',
@@ -572,8 +601,8 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         {
           camposCard: [
             {
-              campo: 'Prazo',
-              valor: '60 meses',
+              campo: 'Seguradora',
+              valor: 'Swiss',
             },
             {
               campo: 'Parcela inicial',
@@ -586,10 +615,6 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
             {
               campo: 'Renda mínima',
               valor: 'R$ 21.120,69',
-            },
-            {
-              campo: 'Kill me please',
-              valor: 'right now',
             },
           ],
           selecionado: 'Renda mínima',
@@ -597,8 +622,8 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         {
           camposCard: [
             {
-              campo: 'Prazo',
-              valor: '60 meses',
+              campo: 'Seguradora',
+              valor: 'Swiss',
             },
             {
               campo: 'Parcela inicial',
@@ -611,18 +636,14 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
             {
               campo: 'Renda mínima',
               valor: 'R$ 21.120,69',
-            },
-            {
-              campo: 'Kill me please',
-              valor: 'right now',
             },
           ],
           selecionado: 'Renda mínima',
         },
       ];
-      valorExemplo2: number = 2500000;
-      modalidadesExemplo2: string[] = ['Alter', 'Celta'];
-      condicoesExemplo2: NgSyzResultadoSimulacaoCondicao[] = [
+      valorExemplo2 = 2500000;
+      modalidadesExemplo2 = ['Alter', 'Celta'];
+      condicoesExemplo2 = [
         {
           condicao: 'VAT',
           valor: '13,25%',
@@ -634,31 +655,165 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
           ajuda: 'Ajuda Valor Bruto',
         },
       ];
-      linhaSelecionadaExemplo2: linhaSelecionada = 'parcelaInicial';
-      corCardSelecionadoExemplo2: string = '#0169b3';
-      corLinhaSelecionadaExemplo2: string = '#dfeaf2';
-      corBotaoClicadoExemplo2: string = '#dc7700';
+      linhaSelecionadaExemplo2 = 'parcelaInicial';
 
-      export interface Card {
-        camposCard: CamposCard[];
-        selecionado: string;
+      enviarCardSelecionado(cardIndex): void {
+        alert(cardIndex);
       }
 
-      export interface CamposCard {
-        campo: string;
-        valor: string;
+      enviarModalidadeSelecionada(modalidade): void {
+        alert(modalidade);
       }
+    `;
 
-      export interface Condicao {
-        condicao: string;
-        valor: string;
-        ajuda: string;
-      }
+    this.cssExample2Code = `
+    ng-syz-resultado-simulacao {
+      --selected-card: #8D4091;
+      --selected-line: #DEC36D;
+      --selected-button: #83DECB;
+    }
+    `;
 
-      export type linhaSelecionada =
-        | 'parcelaInicial'
-        | 'parcelaFinal'
-        | 'rendaMinima';
+    this.htmlExampleCode3 = `
+    <ng-syz-resultado-simulacao
+      [cards]="cardsExemplo3"
+      [valor]="valorExemplo3"
+      [modalidades]="modalidadesExemplo3"
+      [ajudaModalidades]="ajudaModalidadesExemplo3"
+      [condicoes]="condicoesExemplo3"
+      [linhaSelecionada]="linhaSelecionadaExemplo3"
+      (enviarCardSelecionado)="enviarCardSelecionado($event)"
+      (enviarModalidadeSelecionada)="enviarModalidadeSelecionada($event)"
+    ></ng-syz-resultado-simulacao>
+    `;
+
+    this.tsExampleCode3 = `
+    ajudaModalidadesExemplo3 = 'Ajuda Exemplo 3';
+    cardsExemplo3 = [
+      {
+        camposCard: [
+          {
+            campo: 'Campo a 1',
+            valor: 'valor a 1',
+          },
+          {
+            campo: 'Campo b 1',
+            valor: 'valor b 1',
+          },
+          {
+            campo: 'campo c 1',
+            valor: 'valor c 1',
+          },
+          {
+            campo: 'campo d 1',
+            valor: 'valor d 1',
+          },
+        ],
+        selecionado: 'Campo a 1',
+      },
+      {
+        camposCard: [
+          {
+            campo: 'Campo a 2',
+            valor: 'valor a 2',
+          },
+          {
+            campo: 'Campo b 2',
+            valor: 'valor b 2',
+          },
+          {
+            campo: 'campo c 2',
+            valor: 'valor c 2',
+          },
+          {
+            campo: 'campo d 2',
+            valor: 'valor d 2',
+          },
+        ],
+        selecionado: '',
+      },
+      {
+        camposCard: [
+          {
+            campo: 'Campo a 3',
+            valor: 'valor a 3',
+          },
+          {
+            campo: 'Campo b 3',
+            valor: 'valor b 3',
+          },
+          {
+            campo: 'campo c 3',
+            valor: 'valor c 3',
+          },
+          {
+            campo: 'campo d 3',
+            valor: 'valor d 3',
+          },
+          {
+            campo: 'campo r 3',
+            valor: 'valor r 3',
+          },
+        ],
+        selecionado: 'campo c 3',
+      },
+      {
+        camposCard: [
+          {
+            campo: 'Campo a 4',
+            valor: 'valor a 4',
+          },
+          {
+            campo: 'Campo b 4',
+            valor: 'valor b 4',
+          },
+          {
+            campo: 'campo c 4',
+            valor: 'valor c 4',
+          },
+          {
+            campo: 'campo d 4',
+            valor: 'valor d 4',
+          },
+        ],
+        selecionado: 'campo d 4',
+      },
+    ];
+    valorExemplo3 = 15500000;
+    modalidadesExemplo3 = ['Price'];
+    condicoesExemplo3 = [
+      {
+        condicao: 'XXX',
+        valor: '77,21%',
+        ajuda: 'Ajuda XXX',
+      },
+      {
+        condicao: 'YYY',
+        valor: '0,35%',
+        ajuda: 'Ajuda YYY',
+      },
+      {
+        condicao: 'ZZZ',
+        valor: 'R$ 2.060.250,00',
+        ajuda: 'Ajuda ZZZ',
+      },
+    ];
+
+    enviarCardSelecionado(cardIndex): void {
+      alert(cardIndex);
+    }
+
+    enviarModalidadeSelecionada(modalidade): void {
+      alert(modalidade);
+    }
+    `;
+
+    this.cssExample3Code = `
+    ng-syz-resultado-simulacao {
+      --selected-card: #003F63;
+      --selected-line: #D9D9D9;
+      --selected-button: #353D40;
+    }
     `;
   }
 }
