@@ -34,12 +34,12 @@
 
 ### Horário do evento
 - O evento acontecerá nos dias 20 e 27 de agosto de 2021 das 9h às 18h.
-- Os colaboradores participantes serão liberados das atividades da squad durante os dias do hackaton (20 e 27 de agosto).
+- Os colaboradores participantes serão liberados das atividades da squad durante os dias do hackathon (20 e 27 de agosto).
 - Após o início das atividades do evento, os inscritos deverão permanecer online durante o tempo inteiro do evento.
 - O desenvolvimento dos componentes está limitado ao horário da jornada normal de trabalho e os participantes não podem fazer horas extras de trabalho para desenvolver os componentes do hackathon.
 
 ### Critérios de avaliação para pontuação
-Para pontuação, serão avaliadas a **quantidade** de componentes entregues, assim como a sua **complexidade** e **qualidade**. Em caso de empate, a hora da entrega será considerada como critério de desempate.
+A pontuação final, será uma ponderação da **quantidade**, **complexidade** e **qualidade** dos componentes entregues e do voto da plateia. Em caso de empate, a hora da entrega será considerada como critério de desempate.
 
 #### Quantidade
 A quantidade de componentes entregues é quantidade inseridos na biblioteca e que tenham uma página de documentação com **pelo menos dois exemplos de uso** na aplicação de demo.
@@ -78,8 +78,7 @@ Os vencedores receberão cartões pré-pago (Touch Card), ou similar, fracionado
 - Para o primeiro lugar: dois cartões com o valor de R$1000,00 (um para cada integrante). 
 - Para o segundo lugar: dois cartões com o valor de R$500,00 (um para cada integrante). 
 - Para o terceiro lugar: dois cartões com o valor de R$300,00 (um para cada integrante). 
-- Para a dupla que desenvolver o componente mais utilizado nos projetos da Wiz. Essa avaliação será feita um mês após o último dia do evento: dois cartões com o valor de R$350,00 (um para cada integrante). 
-- Para a escolha do público: dois cartões com o valor de R$200,00 (um para cada integrante). 
+- Para a dupla que desenvolver os componentes mais utilizados nos projetos da Wiz. Essa avaliação será feita um mês após o último dia do evento: dois cartões com o valor de R$350,00 (um para cada integrante). 
 
 A premiação não tem natureza salarial, sendo concedido por liberalidade pela Wiz, desde que cumprimos os critérios para tanto. 
 
