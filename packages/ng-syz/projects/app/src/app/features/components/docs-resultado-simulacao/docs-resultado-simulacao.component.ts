@@ -18,7 +18,7 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
                 será emitido o nome da modalidade.`;
 
   importCode =
-    "import { NgSyzResultadoSimulacaoModule } from 'projects/ng-syz/src/public-api'";
+    'import { NgSyzResultadoSimulacaoModule } from "projects/ng-syz/src/public-api"';
   // exemplo 1
   htmlExampleCode1: string;
   tsExampleCode1: string;
