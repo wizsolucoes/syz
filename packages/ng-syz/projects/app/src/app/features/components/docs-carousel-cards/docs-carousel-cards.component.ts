@@ -505,8 +505,6 @@ export class DocsCarouselCardsComponent implements OnInit {
     }
   ]
 
-
-
   Description = 'Componente para iniciar um carrossel de cards com até 3 colunas, sendo possível estilizar cores. Recebe uma lista de intens com links que irão navegar, podendo controlar se deve abrir o link em uma nova página ou não. \n \n Para cada Card, o componente irá controlar automáticamente a exibição de 3 itens da lista, e mostrará um botão para ver mais quando essa quantidade for maior! \n\n';
   
   componentProps: ComponentProps[] = [

@@ -63,6 +63,7 @@ const routes: Routes = [
             './docs-performance-summary/docs-performance-summary.module'
           ).then((m) => m.DocsPerformanceSummaryModule),
       },
+      { path: 'checklist-status', loadChildren: () => import('./docs-checklist-status/docs-checklist-status.module').then(m => m.DocsChecklistStatusModule) },
     ],
   },
   {

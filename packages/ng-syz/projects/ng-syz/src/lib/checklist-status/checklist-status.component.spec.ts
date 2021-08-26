@@ -5,17 +5,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NgSyzPerformanceSummaryComponent } from './performance-summary.component';
+import { NgSyzCheckListStatusComponent } from './checklist-status.component';
 
-describe('NgSyzPerformanceSummaryComponent', () => {
-  let component: NgSyzPerformanceSummaryComponent;
-  let fixture: ComponentFixture<NgSyzPerformanceSummaryComponent>;
+describe('NgSyzCpfSearchComponent', () => {
+  let component: NgSyzCheckListStatusComponent;
+  let fixture: ComponentFixture<NgSyzCheckListStatusComponent>;
   let template: HTMLElement;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [NgSyzPerformanceSummaryComponent],
+        declarations: [NgSyzCheckListStatusComponent],
         imports: [
           FormsModule,
           ReactiveFormsModule,

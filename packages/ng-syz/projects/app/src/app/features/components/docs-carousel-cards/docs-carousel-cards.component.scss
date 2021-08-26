@@ -1,4 +1,4 @@
-@import "./template-ngsyz";
+@import './template-ngsyz';
 
 .exemploCor {
   ng-syz-carousel-cards {
@@ -15,7 +15,7 @@
     padding-left: 16px;
     list-style-type: none;
     &::before {
-      content: "•";
+      content: '•';
       padding-right: 9px;
       color: #36aa9b;
       font-size: 29px;
@@ -23,5 +23,4 @@
       position: relative;
     }
   }
-  
 }

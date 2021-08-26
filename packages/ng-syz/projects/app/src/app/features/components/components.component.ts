@@ -34,5 +34,9 @@ export class ComponentsComponent {
       displayName: 'Resumo de Desempenho',
       route: 'performance-summary',
     },
+    {
+      displayName: 'Status de checklist',
+      route: 'checklist-status',
+    },
   ];
 }

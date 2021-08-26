@@ -26,4 +26,7 @@ export * from './lib/card-result-initiative/card-result-initiative.component';
 export * from './lib/performance-summary/performance-summary.module';
 export * from './lib/performance-summary/performance-summary.component';
 
+export * from './lib/checklist-status/checklist-status.module';
+export * from './lib/checklist-status/checklist-status.component';
+
 export * from './lib/models';

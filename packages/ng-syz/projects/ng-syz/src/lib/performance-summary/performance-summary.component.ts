@@ -12,13 +12,12 @@ export class NgSyzPerformanceSummaryComponent implements OnInit {
   @Input() msgErroList: string = 'Nenhum item disponível para exibição!';
   @Input() List: NgSyzPerformanceSummaryList[] = [];
 
-
   constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  calcPercent(total, complet): number{
-    return (complet * 100) / total;
+  calcPercent(total, complet): number {
+    const calc = (complet * 100) / total;
+    return parseFloat(calc.toFixed(2));
   }
 }
