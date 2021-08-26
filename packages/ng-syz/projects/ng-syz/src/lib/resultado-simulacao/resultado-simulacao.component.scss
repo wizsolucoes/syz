@@ -1,9 +1,9 @@
 $light-gray: #b4b4b4;
 $medium-gray: #979797;
 $dark-gray: #50555a;
-$selected-card: var(--selected-card);
-$selected-line: var(--selected-line);
-$selected-button: var(--selected-button);
+$selected-card: var(--selected-card, #0169b3);
+$selected-line: var(--selected-line, #dfeaf2);
+$selected-button: var(--selected-button, #dc7700);
 
 .resultado-simulacao {
   width: 850px;
