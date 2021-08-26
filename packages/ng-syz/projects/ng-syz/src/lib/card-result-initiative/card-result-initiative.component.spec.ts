@@ -3,7 +3,7 @@ import { NgxMaskModule } from 'ngx-mask';
 
 import { NgSyzCardResultInitiativeComponent } from './card-result-initiative.component';
 
-describe('NgSyzPersonInfoComponent', () => {
+describe('NgSyzCardResultInitiativeComponent', () => {
   let component: NgSyzCardResultInitiativeComponent;
   let fixture: ComponentFixture<NgSyzCardResultInitiativeComponent>;
   let template: HTMLElement;
@@ -18,26 +18,6 @@ describe('NgSyzPersonInfoComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NgSyzCardResultInitiativeComponent);
     component = fixture.componentInstance;
-    template = fixture.nativeElement;
-    component.person = {
-      name: 'Lucas Brando',
-      cpfCnpj: '05011798100',
-      birthdate: '21/01/1995',
-      gerder: 'Masculino',
-      civilState: 'Casado(a)',
-      phone: '6133891473',
-      cellphone: '61984523615',
-      email: 'oliveira@live.in',
-      address: {
-        cep: '73320140',
-        uf: 'DF',
-        city: 'Brasília',
-        street: 'Rua Piaúi',
-        district: 'Vila Vicentina',
-        complement: 'Quadra 03',
-        number: '29',
-      },
-    };
     fixture.detectChanges();
   });
 
@@ -45,15 +25,26 @@ describe('NgSyzPersonInfoComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('should display person data', () => {
-    it('should diplay user name', () => {
-      const nameElement = template.querySelector('[data-test=name]');
-      expect(nameElement.innerHTML).toEqual(component.person.name);
-    });
-
-    it('should diplay user email', () => {
-      const emailElement = template.querySelector('[data-test=email]');
-      expect(emailElement.innerHTML).toEqual(component.person.email);
-    });
+  it('should create', () => {
+    let image = component.showImage()
+    expect(image).toEqual('https://miro.medium.com/max/3492/1*P7x-_0XfQz6CVmMY_QAv0w.png')
   });
+
+  // it('should create', () => {
+  //   let maxWidth = component.maxWidth
+  //   let maxNumber = 800
+  //   expect(maxWidth).toEqual(maxNumber);
+  // });
+
+  // it('should create', () => {
+  //   let name = component.testefc()
+  //   expect(name).toEqual('gabriel')
+  // });
+
+  // it('should emit buttonClick event', () => {
+  //   let actionButton = component.submitActionButton();
+  //   let action = component.action;
+  //   expect(actionButton).toHaveBeenCalled()
+  // });
+
 });

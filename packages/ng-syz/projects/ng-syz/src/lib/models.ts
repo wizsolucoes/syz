@@ -44,6 +44,11 @@ export interface NgSyzCardResultInitiative {
     value: string
   };
 }
+
+export interface NgSyzCardResultInitiativeImage {
+  url: any, 
+  alt?: string
+}
 export interface NgSyzCarouselCardsConfig {
   speed?: number,
   spaceBetween?: number,
