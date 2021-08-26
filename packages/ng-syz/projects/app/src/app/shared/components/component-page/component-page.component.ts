@@ -20,7 +20,7 @@ export class ComponentPageComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'description'];
 
-  visibled = false;
+  visibled = true;
 
   ngOnInit() {}
 

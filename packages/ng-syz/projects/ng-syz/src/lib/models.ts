@@ -70,3 +70,12 @@ export interface NgSyzCarouselCardsSliders {
   colorCard?: string;
   showMore?: boolean;
 }
+
+export interface NgSyzPerformanceSummaryList {
+  icon: string;
+  title: string;
+  subTitle: string;
+  nameType: string;
+  total: number;
+  totalComplet: number;
+}

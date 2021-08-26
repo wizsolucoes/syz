@@ -30,5 +30,9 @@ export class ComponentsComponent {
       displayName: 'Card Result Initiative',
       route: 'card-result-initiative',
     },
+    {
+      displayName: 'Resumo de Desempenho',
+      route: 'performance-summary',
+    },
   ];
 }

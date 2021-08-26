@@ -51,8 +51,17 @@ const routes: Routes = [
       },
       {
         path: 'card-result-initiative',
-        loadChildren: () => import('./docs-card-result-initiative/docs-card-result-initiative.module').then(
-          m => m.DocsCardResultInitiativeModule)
+        loadChildren: () =>
+          import(
+            './docs-card-result-initiative/docs-card-result-initiative.module'
+          ).then((m) => m.DocsCardResultInitiativeModule),
+      },
+      {
+        path: 'performance-summary',
+        loadChildren: () =>
+          import(
+            './docs-performance-summary/docs-performance-summary.module'
+          ).then((m) => m.DocsPerformanceSummaryModule),
       },
     ],
   },
@@ -69,4 +78,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ComponentsRoutingModule { }
+export class ComponentsRoutingModule {}

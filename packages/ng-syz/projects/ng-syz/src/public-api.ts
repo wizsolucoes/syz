@@ -23,4 +23,7 @@ export * from './lib/carousel-cards/carousel-cards.component';
 export * from './lib/card-result-initiative/card-result-initiative.module';
 export * from './lib/card-result-initiative/card-result-initiative.component';
 
+export * from './lib/performance-summary/performance-summary.module';
+export * from './lib/performance-summary/performance-summary.component';
+
 export * from './lib/models';
