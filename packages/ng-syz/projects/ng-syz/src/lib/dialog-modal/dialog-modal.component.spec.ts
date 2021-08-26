@@ -9,7 +9,7 @@ describe('NgSyzDialogModalComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ NgSyzDialogModalComponent ],
-      imports:[ MatDialogModule ]
+      imports: [ MatDialogModule ]
     })
     .compileComponents();
   });
