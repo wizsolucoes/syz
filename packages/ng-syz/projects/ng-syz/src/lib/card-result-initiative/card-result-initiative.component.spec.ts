@@ -25,9 +25,4 @@ describe('NgSyzCardResultInitiativeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should create', () => {
-  //   let image = component.showImage()
-  //   expect(image).toEqual('https://miro.medium.com/max/3492/1*P7x-_0XfQz6CVmMY_QAv0w.png')
-  // });
-
 });

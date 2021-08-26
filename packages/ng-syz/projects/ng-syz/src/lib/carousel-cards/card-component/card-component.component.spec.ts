@@ -25,7 +25,8 @@ describe('CardComponentComponent', () => {
   });
 
   it('should create', () => {
-    let showMore = component.showMore(false)
+    let i = 1;
+    let showMore = component.showMore(i)
     expect(showMore).toBeTruthy();
   });
 

@@ -1,4 +1,4 @@
-<div class="boxCard" [ngClass]="{'card-unique': unique}" [ngStyle]="{backgroundColor: slide.colorCard}" >
+<div class="boxCard" [ngClass]="{'card-unique': unique}" [ngStyle]="{backgroundColor: slide?.colorCard}" >
   <h2>{{ slide.title }}</h2>
   <ul>
     <li *ngFor="let item of showItens(index)">
