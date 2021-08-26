@@ -22,7 +22,9 @@ export class NgSyzResultadoSimulacaoComponent {
   @Output() enviarModalidadeSelecionada = new EventEmitter(true);
   cardIdSelecionadoAnteriormente: string;
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
     document.documentElement.style.setProperty(
       '--selected-card',
       this.corCardSelecionado

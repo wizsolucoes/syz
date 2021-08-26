@@ -268,9 +268,9 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
       ajuda: 'Ajuda Valor Bruto',
     },
   ];
-  corCardSelecionadoExemplo2 = 'yellow';
-  corLinhaSelecionadaExemplo2 = '#ccc';
-  corBotaoClicadoExemplo2 = 'blue';
+  corCardSelecionadoExemplo2 = '#0169b3';
+  corLinhaSelecionadaExemplo2 = '#dfeaf2';
+  corBotaoClicadoExemplo2 = '#dc7700';
 
   componentProps: ComponentProps[] = [
     {
@@ -635,9 +635,9 @@ export class DocsResultadoSimulacaoComponent implements OnInit {
         },
       ];
       linhaSelecionadaExemplo2: linhaSelecionada = 'parcelaInicial';
-      corCardSelecionadoExemplo2: string = 'yellow';
-      corLinhaSelecionadaExemplo2: string = '#ccc';
-      corBotaoClicadoExemplo2: string = 'blue';
+      corCardSelecionadoExemplo2: string = '#0169b3';
+      corLinhaSelecionadaExemplo2: string = '#dfeaf2';
+      corBotaoClicadoExemplo2: string = '#dc7700';
 
       export interface Card {
         camposCard: CamposCard[];

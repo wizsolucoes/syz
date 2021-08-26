@@ -26,5 +26,9 @@ export class ComponentsComponent {
       displayName: 'Resultado de simulação',
       route: 'resultado-simulacao',
     },
+    {
+      displayName: 'Grid de botões',
+      route: 'button-grid',
+    },
   ];
 }

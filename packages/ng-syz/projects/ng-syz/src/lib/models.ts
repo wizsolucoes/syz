@@ -49,3 +49,11 @@ export interface NgSyzResultadoSimulacaoCondicao {
   valor: string;
   ajuda: string;
 }
+
+export interface NgSyzButton {
+  text: string;
+  link?: string;
+  iconClass?: string;
+  imgPath?: string;
+  disabled?: boolean;
+}

@@ -49,6 +49,13 @@ const routes: Routes = [
             './docs-resultado-simulacao/docs-resultado-simulacao.module'
           ).then((m) => m.DocsResultadoSimulacaoModule),
       },
+      {
+        path: 'button-grid',
+        loadChildren: () =>
+          import('./docs-button-grid/docs-button-grid.module').then(
+            (m) => m.DocsButtonGridModule
+          ),
+      },
     ],
   },
   {
