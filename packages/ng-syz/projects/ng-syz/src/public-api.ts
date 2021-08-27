@@ -18,3 +18,6 @@ export * from './lib/login-with-cards-flow/login-with-cards-flow.module';
 export * from './lib/login-with-cards-flow/login-with-cards-flow.component';
 
 export * from './lib/models';
+
+export * from './lib/hello-world/hello-world.module';
+export * from './lib/hello-world/hello-world.component';

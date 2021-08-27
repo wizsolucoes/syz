@@ -22,5 +22,7 @@ export class ComponentsComponent {
       displayName: 'Fluxo de login com cards',
       route: 'login-with-cards-flow',
     },
+    { displayName: 'Hello World', route: 'hello-world' },
   ];
 }
+

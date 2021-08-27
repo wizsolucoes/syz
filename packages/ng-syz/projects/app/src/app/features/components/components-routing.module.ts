@@ -42,6 +42,13 @@ const routes: Routes = [
             './docs-login-with-cards-flow/docs-login-with-cards-flow.module'
           ).then((m) => m.DocsLoginWithCardsFlowModule),
       },
+      {
+        path: 'navbar',
+        loadChildren: () =>
+          import('./docs-navbar/docs-navbar.module').then(
+            (m) => m.DocsNavbarModule
+          ),
+      },
     ],
   },
   {

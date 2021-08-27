@@ -1,0 +1,119 @@
+<div id="PersonInfo">
+  <h1 data-test="name">{{ person.name }}</h1>
+  <div class="personal-data" *ngIf="person.cpfCnpj.length < 14">
+    <h3>Dados Pessoais</h3>
+    <hr />
+    <div class="data-group">
+      <div class="data">
+        <label>CPF</label>
+        <p>
+          {{ person.cpfCnpj }}
+        </p>
+      </div>
+      <div class="data">
+        <label>Data de Nascimento</label>
+        <p>{{ person.birthdate }}</p>
+      </div>
+    </div>
+    <div class="data-group">
+      <div class="data">
+        <label>Sexo</label>
+        <p>{{ person.gerder }}</p>
+      </div>
+      <div class="data">
+        <label>Estado Civil</label>
+        <p>{{ person.civilState }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="contact" *ngIf="person.cpfCnpj.length < 14">
+    <h3>Contato</h3>
+    <hr />
+    <div class="data-group">
+      <div class="data">
+        <label>Telefone</label>
+        <p>
+          {{ person.phone | mask: '(00) 0000-0000||(00) 0 0000-0000' }}
+        </p>
+      </div>
+      <div class="data">
+        <label>Celular</label>
+        <p>
+          {{ person.cellphone | mask: '(00) 0000-0000||(00) 0 0000-0000' }}
+        </p>
+      </div>
+    </div>
+    <div class="data-group">
+      <div class="data">
+        <label>E-mail</label>
+        <p data-test="email">{{ person.email }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="personal-data" *ngIf="person.cpfCnpj.length === 14">
+    <h3>Dados da Empresa</h3>
+    <hr />
+    <div class="data-group">
+      <div class="data">
+        <label>CNPJ</label>
+        <p>
+          {{ person.cpfCnpj }}
+        </p>
+      </div>
+      <div class="data">
+        <label>CPF do Representante</label>
+        <p>{{ person.representativeCpf }}</p>
+      </div>
+    </div>
+    <div class="data-group">
+      <div class="data">
+        <label>Razão Social</label>
+        <p>{{ person.socialReason }}</p>
+      </div>
+      <div class="data">
+        <label>Nome do Representante</label>
+        <p>{{ person.representativeName }}</p>
+      </div>
+    </div>
+    <div class="data-group">
+      <div class="data" *ngIf="person.representativePhone !== undefined">
+        <label>Telefone</label>
+        <p>{{ person.representativePhone }}</p>
+      </div>
+      <div class="data">
+        <label>Celular</label>
+        <p>{{ person.representativeCellphone }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="address">
+    <h3>Endereço</h3>
+    <hr />
+    <div class="data-group">
+      <div class="data">
+        <label>Estado</label>
+        <p>{{ person.address.uf }}</p>
+      </div>
+      <div class="data">
+        <label>Cidade</label>
+        <p>{{ person.address.city }}</p>
+      </div>
+    </div>
+    <div class="data-group">
+      <div class="data">
+        <label>Bairro</label>
+        <p>{{ person.address.district }}</p>
+      </div>
+      <div class="data">
+        <label>CEP</label>
+        <p>{{ person.address.cep }}</p>
+      </div>
+    </div>
+    <div class="data-group" *ngIf="person.address.complement !== undefined">
+      <div class="data">
+        <label>Complemento</label>
+        <p>{{ person.address.complement }}</p>
+      </div>
+    </div>
+  </div>
+</div>
