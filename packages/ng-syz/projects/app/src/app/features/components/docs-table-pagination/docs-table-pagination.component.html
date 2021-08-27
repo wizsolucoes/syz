@@ -1,0 +1,15 @@
+<app-component-page>
+
+
+  <ng-syz-table-pagination
+  [serverSide]="serverSide"
+  [showPaginator]="showPaginator"
+  [paginatorInfo]="paginatorInfo"
+  [tableInfo]="tableInfo"
+  (changePerPage)="changePerPage($event)"
+  (navigationPage)="navigationPage($event)"
+  (clickLine)="clickLine($event)"
+>
+</ng-syz-table-pagination>
+
+</app-component-page>

@@ -38,5 +38,9 @@ export class ComponentsComponent {
       displayName: 'Status de checklist',
       route: 'checklist-status',
     },
+    {
+      displayName: 'Tabela com paginação',
+      route: 'table-pagination',
+    },
   ];
 }

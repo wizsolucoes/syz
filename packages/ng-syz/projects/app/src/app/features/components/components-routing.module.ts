@@ -63,7 +63,20 @@ const routes: Routes = [
             './docs-performance-summary/docs-performance-summary.module'
           ).then((m) => m.DocsPerformanceSummaryModule),
       },
-      { path: 'checklist-status', loadChildren: () => import('./docs-checklist-status/docs-checklist-status.module').then(m => m.DocsChecklistStatusModule) },
+      {
+        path: 'checklist-status',
+        loadChildren: () =>
+          import('./docs-checklist-status/docs-checklist-status.module').then(
+            (m) => m.DocsChecklistStatusModule
+          ),
+      },
+      {
+        path: 'table-pagination',
+        loadChildren: () =>
+          import('./docs-table-pagination/docs-table-pagination.module').then(
+            (m) => m.DocsTablePaginationModule
+          ),
+      },
     ],
   },
   {

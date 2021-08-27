@@ -29,4 +29,7 @@ export * from './lib/performance-summary/performance-summary.component';
 export * from './lib/checklist-status/checklist-status.module';
 export * from './lib/checklist-status/checklist-status.component';
 
+export * from './lib/table-pagination/table-pagination.module';
+export * from './lib/table-pagination/table-pagination.component';
+
 export * from './lib/models';

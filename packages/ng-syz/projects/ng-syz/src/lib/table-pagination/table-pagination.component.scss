@@ -1,0 +1,94 @@
+#table-pagination {
+  table {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+  }
+  tr {
+    height: 40px;
+    td {
+      color: var(--color-head, gray);
+    }
+  }
+  th {
+    color: var(--color-head, #ffffff);
+  }
+  th:last-of-type {
+    padding: 0;
+  }
+  td {
+    border-bottom-color: var(--primary-color, blue);
+  }
+  td {
+    padding: 0 10px;
+  }
+  .mat-paginator-outer-container {
+    height: 45px;
+  }
+  [mat-header-row] {
+    background: var(--primary-color, blue);
+  }
+
+  table.table-pagination-custom {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    margin-top: 50px;
+    border-spacing: 0;
+    background: white;
+    thead {
+      tr {
+        background: var(--primary-color, blue);
+        border-bottom: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: var(--primary-color, blue);
+        padding: 0 10px;
+        th {
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          cursor: pointer;
+          border-bottom: solid;
+          border-bottom-width: 1px;
+          border-bottom-color: var(--primary-color, blue);
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+
+  .pagination{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 10px;
+    background: #fff;
+    align-items: center;
+    p{
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.54);
+      margin: 0px 10px;
+    }
+    select {
+      padding: 7px 12px;
+    }
+    svg {
+      width: 30px;
+      path {
+        fill: var(--primary-color, blue);
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .mat-sort-header-arrow,
+  [dir='rtl'] .mat-sort-header-position-before .mat-sort-header-arrow {
+    color: white !important;
+  }
+}
