@@ -23,8 +23,24 @@ export class DocsTimelineComponent implements OnInit {
 
   componentCSSVariables: ComponentProps[] = [
     {
-      name: `--primary-color`,
-      description: 'Cor do início do gradiente do fundo do componente',
+      name: `--syz-timeline-size-line`,
+      description: 'Tamanho da linha da timeline',
+    },
+    {
+      name: `--syz-timeline-primary-color-text`,
+      description: 'Cor primária do texto do conteudo da timeline',
+    },
+    {
+      name: `--syz-timeline-color-simbol`,
+      description: 'Cor símbolo do conteudo da timeline',
+    },
+    {
+      name: `--syz-timeline-color-line`,
+      description: 'Cor da linha da timeline',
+    },
+    {
+      name: `--syz-timeline-padding-item`,
+      description: 'Dimensões do padding',
     }
   ];
 

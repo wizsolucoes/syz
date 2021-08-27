@@ -9,9 +9,12 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
 export class DocsFaqComponent implements OnInit {
 
   public showToggleTest: boolean;
+  public simpleDescriptionTest: boolean;
+  public firstExpandedTest: boolean;
+  public multiExpandedTest: boolean;
 
   public mockDataCategorys = [
-    {id: 1, title: 'Categoria 1 @@@@@@@@@@@@@@@@@'},
+    {id: 1, title: 'Categoria 1'},
     {id: 2, title: 'Categoria 2'},
     {id: 3, title: 'Categoria 3'},
     {id: 4, title: 'Categoria 4'},
@@ -72,12 +75,32 @@ export class DocsFaqComponent implements OnInit {
       name: '@Input() simpleDescription: boolean',
       description: 'Controla os subitens da questão',
     },
+    {
+      name: '@Input() firstExpanded: boolean',
+      description: 'Controla o primeiro item expandido',
+    },
+    {
+      name: '@Input() multiExpanded: boolean',
+      description: 'Controla a seleção de múltiplos items',
+    }
   ];
 
   componentCSSVariables: ComponentProps[] = [
     {
-      name: `--primary-color`,
-      description: 'Cor do início do gradiente do fundo do componente',
+      name: `--syz-faq-color-background`,
+      description: 'Cor de fundo do conteudo de faq',
+    },
+    {
+      name: `--syz-faq-primary-color-text`,
+      description: 'Cor primária do texto do conteudo de faq',
+    },
+    {
+      name: `--syz-faq-color-primary`,
+      description: 'Cor primária do conteudo de faq',
+    },
+    {
+      name: `--syz-faq-color-light`,
+      description: 'Cor light do conteudo de faq',
     }
   ];
 
@@ -103,5 +126,17 @@ export class DocsFaqComponent implements OnInit {
 
   public showToggle(): void {
     this.showToggleTest = !this.showToggleTest;
+  }
+
+  public simpleDescription(): void {
+    this.simpleDescriptionTest = !this.simpleDescriptionTest;
+  }
+
+  public firstExpanded(): void {
+    this.firstExpandedTest = !this.firstExpandedTest;
+  }
+
+  public multiExpanded(): void {
+    this.multiExpandedTest = !this.multiExpandedTest;
   }
 }

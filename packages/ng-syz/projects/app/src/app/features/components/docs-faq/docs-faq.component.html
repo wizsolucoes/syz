@@ -1,4 +1,7 @@
 <button (click)="showToggle()">toggle show icon</button>
+<button (click)="simpleDescription()">simple description</button>
+<button (click)="firstExpanded()">first Expanded</button>
+<button (click)="multiExpanded()">multi Expanded</button>
 
 <app-component-page
     [title]="'FAQ'"
@@ -13,10 +16,10 @@
                 (categorySelectedEvent)="categorySelected($event)"
                 [dataCategory]="mockDataCategorys"
                 [dataContentCategorySelected]="mockContentCategorySelected"
-                [simpleDescription]="false"
+                [simpleDescription]="simpleDescriptionTest"
                 [showToggle]="showToggleTest"
-                [firstExpanded]="false"
-                [multiExpanded]="false">
+                [firstExpanded]="firstExpandedTest"
+                [multiExpanded]="multiExpandedTest">
             </ng-syz-faq>
         </div>
     </app-code-example>
