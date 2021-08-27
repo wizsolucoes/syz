@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, ViewChild, EventEmitter, AfterViewInit } from '@angular/core';
 import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -8,7 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './table-pagination.component.html',
   styleUrls: ['./table-pagination.component.scss'],
 })
-export class NgSyzTablepaginationComponent implements OnInit {
+export class NgSyzTablepaginationComponent implements AfterViewInit {
   @Input() hoverEffect = false;
   @Input() serverSide = false;
   @Input() showPaginator = true;
@@ -162,11 +162,8 @@ export class NgSyzTablepaginationComponent implements OnInit {
   dataSource;
   constructor() {}
   
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.dataSource = new MatTableDataSource(this.tableInfo.content);
-  }
-
-  ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
@@ -183,9 +180,9 @@ export class NgSyzTablepaginationComponent implements OnInit {
     this.navigationPage.emit(value);
   }
 
-  controlInfoHeader(infoHeader){
-    if(typeof infoHeader === 'object'){
-      return infoHeader.title
+  controlInfoHeader(infoHeader): string {
+    if (typeof infoHeader === 'object'){
+      return infoHeader.title;
     }else{
       return infoHeader;
     }
