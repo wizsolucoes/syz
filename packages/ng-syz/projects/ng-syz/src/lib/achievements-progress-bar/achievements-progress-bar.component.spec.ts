@@ -7,6 +7,7 @@ import { NgSyzAchievementsProgressBarComponent } from './achievements-progress-b
 describe('NgSyzAchievementsProgressBarComponent', () => {
   let component: NgSyzAchievementsProgressBarComponent;
   let fixture: ComponentFixture<NgSyzAchievementsProgressBarComponent>;
+  let template: HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -18,6 +19,7 @@ describe('NgSyzAchievementsProgressBarComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgSyzAchievementsProgressBarComponent);
+    template = fixture.nativeElement;
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -27,13 +29,11 @@ describe('NgSyzAchievementsProgressBarComponent', () => {
   });
 
   it('should sent event emitter', () => {
-    // expect(component).toBeTruthy();
-
-    // spy on event emitter
     spyOn(component.verifyToggleLeftIsSelectedEvent, 'emit');
-
-    // trigger
-
+    const trigger = template.querySelector('mat-button-toggle-group');
+    trigger.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+    expect(component.verifyToggleLeftIsSelectedEvent.emit).toHaveBeenCalledWith(true);
   });
 
 });
