@@ -52,7 +52,7 @@ export interface NgSyzResultadoSimulacaoCondicao {
 
 export interface NgSyzButton {
   text: string;
-  link?: string;
+  route?: string;
   iconClass?: string;
   imgPath?: string;
   disabled?: boolean;

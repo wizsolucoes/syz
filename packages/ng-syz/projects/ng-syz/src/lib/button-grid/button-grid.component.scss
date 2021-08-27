@@ -1,12 +1,11 @@
-$--primary-color: #fd5725;
-$--secundary-color: #fd7524;
-$--terciary-color: #ffe3d3;
-$--accent-color: #8fc549;
+$cor-fundo: var(--cor-fundo);
+$cor-fundo-contraste: var(--cor-fundo-contraste);
 $cor-texto: var(--cor-texto);
 $cor-borda: var(--cor-borda);
+$cor-texto-hover: var(--cor-texto-hover);
 
 #CultureType {
-  background: linear-gradient(180deg, #fd7524 0%, #fd5725 100%);
+  background: linear-gradient(180deg, $cor-fundo 0%, $cor-fundo-contraste 100%);
   height: 100%;
   padding-bottom: 400px;
   .content-wrapper {
@@ -64,10 +63,10 @@ $cor-borda: var(--cor-borda);
             transition: all 500ms ease;
           }
           h4 {
-            color: #fd7524;
+            color: $cor-texto-hover;
           }
           hr {
-            background-color: #fd7524;
+            background-color: $cor-texto-hover;
           }
         }
       }

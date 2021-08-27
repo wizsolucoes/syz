@@ -1,19 +1,53 @@
 <app-component-page
   [title]="'Grid de botões'"
-  [description]="'Este componente apresenta uma grid de botões customizada.'"
+  [description]="description"
   [selector]="'ng-syz-button-grid'"
   [componentProps]="componentProps"
   [importCode]="importCode"
 >
   <!-- Exmple 1 -->
-  <app-code-example [htmlCode]="htmlExampleCode1" [tsCode]="tsExampleCode1">
-    <ng-syz-button-grid
-      [titulo]="titulo"
-      [subtitulo]="subtitulo"
-      [buttons]="buttons"
-      [corTexto]="corTextoExemplo1"
-      [corBorda]="corBordaExemplo1"
-    ></ng-syz-button-grid>
+  <app-code-example
+    [htmlCode]="htmlExampleCode1"
+    [tsCode]="tsExampleCode1"
+    [cssCode]="cssExample1"
+  >
+    <div class="exemplo1">
+      <ng-syz-button-grid
+        [titulo]="tituloExemplo1"
+        [subtitulo]="subtituloExemplo1"
+        [buttons]="buttons"
+      ></ng-syz-button-grid>
+    </div>
+  </app-code-example>
+
+  <!-- Exmple 2 -->
+  <app-code-example
+    [htmlCode]="htmlExampleCode2"
+    [tsCode]="tsExampleCode2"
+    [cssCode]="cssExample2"
+  >
+    <div class="exemplo2">
+      <ng-syz-button-grid
+        [titulo]="tituloExemplo2"
+        [subtitulo]="subtituloExemplo2"
+        [buttons]="buttons"
+      ></ng-syz-button-grid>
+    </div>
+  </app-code-example>
+
+  <!-- Exmple 3 -->
+  <app-code-example
+    [htmlCode]="htmlExampleCode3"
+    [tsCode]="tsExampleCode3"
+    [cssCode]="cssExample3"
+  >
+    <div class="exemplo3">
+      <ng-syz-button-grid
+        [titulo]="tituloExemplo3"
+        [subtitulo]="subtituloExemplo3"
+        [buttons]="buttons"
+      ></ng-syz-button-grid>
+    </div>
   </app-code-example>
 
   <!-- End examples -->

@@ -30,23 +30,17 @@ describe('NgSyzButtonGridComponent', () => {
     fixture = TestBed.createComponent(NgSyzButtonGridComponent);
     component = fixture.componentInstance;
     template = fixture.nativeElement;
-    spyOn(component, 'initCssVariables');
 
     component.titulo = 'Tipo de Seguro';
     component.subtitulo = 'Subtítulo';
     component.buttons = [
-      { text: 'Seguro Cafezal', iconClass: 'fa fa-coffee', link: '#' },
-      { text: 'Seguro Pecuário', iconClass: 'fa fa-eercast', link: '#' },
-      { text: 'Seguro Canavial', iconClass: 'fa fa-picture-o', link: '#' },
-      { text: 'Seguro Floresta', iconClass: 'fa fa-tree', link: '#' },
+      { text: 'Seguro Cafezal', iconClass: 'fa fa-coffee', route: '#' },
+      { text: 'Seguro Pecuário', iconClass: 'fa fa-eercast', route: '#' },
+      { text: 'Seguro Canavial', iconClass: 'fa fa-picture-o', route: '#' },
+      { text: 'Seguro Floresta', iconClass: 'fa fa-tree', route: '#' },
     ];
 
     fixture.detectChanges();
-  });
-
-  it('should create and initialize css variables', () => {
-    expect(component).toBeTruthy();
-    expect(component.initCssVariables).toHaveBeenCalled();
   });
 
   it('should display all button values', () => {

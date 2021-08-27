@@ -6,21 +6,8 @@ import { NgSyzButton } from '../models';
   templateUrl: './button-grid.component.html',
   styleUrls: ['./button-grid.component.scss'],
 })
-export class NgSyzButtonGridComponent implements OnInit {
+export class NgSyzButtonGridComponent {
   @Input() titulo: string;
   @Input() subtitulo: string;
-  @Input() corTexto = '#fff';
-  @Input() corBorda = '#fff';
   @Input() buttons: NgSyzButton[];
-
-  constructor() {}
-
-  ngOnInit(): void {
-    this.initCssVariables();
-  }
-
-  initCssVariables(): void {
-    document.documentElement.style.setProperty('--cor-texto', this.corTexto);
-    document.documentElement.style.setProperty('--cor-borda', this.corBorda);
-  }
 }
