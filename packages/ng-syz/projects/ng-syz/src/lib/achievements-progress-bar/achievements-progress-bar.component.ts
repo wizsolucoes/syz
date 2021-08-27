@@ -12,8 +12,17 @@ export class NgSyzAchievementsProgressBarComponent implements OnInit {
   @Input() data: NgSyzAchievementsProgressBar;
   @Output() verifyToggleLeftIsSelectedEvent = new EventEmitter<boolean>();
 
-  public mockData: NgSyzAchievementsProgressBar = { 
-    actualProgress: 5, goalProgress: 80
+  public dataDefault: NgSyzAchievementsProgressBar = { 
+    title: 'Titulo',
+    labelToggleLeft: 'Left Toggle',
+    labelToggleRight: 'Right Toggle',
+    actualProgress: 3000,
+    actualProgressInPercentage: 10,
+    actualProgressDescription: 'Descrição',
+    goalProgress: 3500,
+    goalProgressInPercentage: 80,
+    goalProgressDescription: 'Descrição',
+    itensDescriptionBelow: [{title: 'string', subtitle: 'string'}]
   };
 
   public itensDescription = [
@@ -29,15 +38,10 @@ export class NgSyzAchievementsProgressBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.toggleLeftActive = true;
-    // this.data.actualProgress = 5;
-    // this.data.goalProgress = 80;
-    this.mockData.actualProgress = 40;
-    this.mockData.goalProgress = 90;
-    console.log('this.data: ', this.mockData);
+    this.data = this.data ? this.data : this.dataDefault;
   }
 
   public emitToggle(): void {
-    console.log('#toggleLeftActive', this.toggleLeftActive);
     this.verifyToggleLeftIsSelectedEvent.emit(this.toggleLeftActive);
   }
 

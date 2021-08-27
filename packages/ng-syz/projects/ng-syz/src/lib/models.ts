@@ -42,12 +42,14 @@ export interface NgSyzTimeline {
 }
 
 export interface NgSyzAchievementsProgressBar {
-  // title: string;
-  // labelToggleLeft: string;
-  // labelToggleRight: string;
+  title: string;
+  labelToggleLeft: string;
+  labelToggleRight: string;
   actualProgress: number;
-  // actualProgressDescription: string;
+  actualProgressInPercentage: number;
+  actualProgressDescription: string;
   goalProgress: number;
-  // goalProgressDescription: string;
-  // itensDescriptionBelow: [{key: string, value: string}];
+  goalProgressInPercentage: number;
+  goalProgressDescription: string;
+  itensDescriptionBelow: [{title: string, subtitle: string}];
 }

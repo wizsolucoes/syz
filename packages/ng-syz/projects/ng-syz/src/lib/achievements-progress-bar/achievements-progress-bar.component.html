@@ -3,26 +3,26 @@
 
         <div class="title-and-toggle">
             <div class="title">
-                Seu desempenho
+                {{ data.title }}
             </div>
             <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="toggleLeftActive" (click)="emitToggle()">
-                <mat-button-toggle [value]="true">Diário</mat-button-toggle>
-                <mat-button-toggle [value]="false">Mensal</mat-button-toggle>
+                <mat-button-toggle [value]="true">{{ data.labelToggleLeft }}</mat-button-toggle>
+                <mat-button-toggle [value]="false">{{ data.labelToggleRight }}</mat-button-toggle>
             </mat-button-toggle-group>
         </div>
 
         <div class="card">
-            <div class="description-progress-actual-and-goal" [style.width.%]="mockData.goalProgress">
-                <span>Progresso atual: <strong>3000 pts</strong></span>
-                <span>Objetivo do dia: <strong>3500 pts</strong> </span>
+            <div class="description-progress-actual-and-goal" [style.width.%]="data.goalProgressInPercentage">
+                <span>{{data.actualProgressDescription }} <strong>{{data.actualProgress }} pts</strong></span>
+                <span>{{data.goalProgressDescription }} <strong>{{data.goalProgress }} pts</strong> </span>
             </div>
             <div class="progress">
-                <div class="progress-actual" [style.width.%]="mockData.actualProgress"></div>
-                <div class="progress-goal" [style.width.%]="mockData.goalProgress"></div>
+                <div class="progress-actual" [style.width.%]="data.actualProgressInPercentage"></div>
+                <div class="progress-goal" [style.width.%]="data.goalProgressInPercentage"></div>
             </div>
 
             <div class="description-below-progress">
-                <div *ngFor="let item of itensDescription; let i = index;" class="item-description">
+                <div *ngFor="let item of data.itensDescriptionBelow; let i = index;" class="item-description">
                     <span class="title">{{ item.title }}</span>
                     <span class="subtitle">{{ item.subtitle }}</span>
                 </div>

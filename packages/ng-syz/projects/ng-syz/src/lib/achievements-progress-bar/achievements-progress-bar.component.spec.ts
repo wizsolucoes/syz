@@ -25,4 +25,15 @@ describe('NgSyzAchievementsProgressBarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should sent event emitter', () => {
+    // expect(component).toBeTruthy();
+
+    // spy on event emitter
+    spyOn(component.verifyToggleLeftIsSelectedEvent, 'emit');
+
+    // trigger
+
+  });
+
 });
