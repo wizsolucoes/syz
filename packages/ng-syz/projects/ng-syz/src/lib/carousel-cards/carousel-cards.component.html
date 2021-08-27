@@ -1,7 +1,22 @@
 <div id="ng-syz-carousel-cards" *ngIf="slides.length > 3">
   <swiper [config]="configuration">
     <div class="card" *ngFor="let slide of slides; let i = index">
-      <app-card-component [slides]="slides" [index]="i" [slide]="slide" ></app-card-component>
+      <div class="boxCard" [ngStyle]="{backgroundColor: slide?.colorCard}" >
+        <h2>{{ slide.title }}</h2>
+        <ul>
+          <li *ngFor="let item of showItens(i)">
+            <a [routerLink]="item.router" [target]="item.target">{{
+              item.text
+            }}</a>
+            <span [innerHTML]="iconDirect"></span>
+          </li>
+          <li *ngIf="slides[i].itens.length > 3">
+            <button class="actionShowMore" (click)="showMore(i)">
+              {{ slides[i].showMore ? 'Ver menos' : 'Ver Todas' }}
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
   </swiper>
   <div class="swiper-button-custom swiper-button-custom-prev" [innerHTML]="iconDirect"></div>
@@ -10,6 +25,21 @@
 
 <div id="ng-syz-carousel-cards" class="ng-syz-carousel-cards-unique" *ngIf="slides.length <= 3">
   <div class="card" *ngFor="let slide of slides; let i = index">
-    <app-card-component [slides]="slides" [index]="i" [slide]="slide" [unique]="true" ></app-card-component>
+    <div class="boxCard card-unique" [ngStyle]="{backgroundColor: slide?.colorCard}" >
+      <h2>{{ slide.title }}</h2>
+      <ul>
+        <li *ngFor="let item of showItens(i)">
+          <a [routerLink]="item.router" [target]="item.target">{{
+            item.text
+          }}</a>
+          <span [innerHTML]="iconDirect"></span>
+        </li>
+        <li *ngIf="slides[i].itens.length > 3">
+          <button class="actionShowMore" (click)="showMore(i)">
+            {{ slides[i].showMore ? 'Ver menos' : 'Ver Todas' }}
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

@@ -32,7 +32,14 @@ export class NgSyzCarouselCardsComponent implements OnInit {
     },
   };
 
-  @Input() slides: NgSyzCarouselCardsSliders[] = [];
+  @Input() slides: NgSyzCarouselCardsSliders[] = [
+    {
+      title: '',
+      itens: [],
+      showMore: false,
+
+    }
+  ];
 
   iconDirect;
 
@@ -46,6 +53,19 @@ export class NgSyzCarouselCardsComponent implements OnInit {
     this.configuration.autoplay = this.config.autoplay;
     this.configuration.loop = this.config.loop;
     this.configuration.effect = this.config.effect;
+  }
+
+  showItens(i = 0): [] {
+    const list = this.slides[i];
+    if (!list?.itens.length) return [];
+    if (list?.showMore) return list?.itens;
+
+    const showMinItens = list.itens.slice(0, 3);
+    return showMinItens;
+  }
+
+  showMore(i) {
+    this.slides[i].showMore = this.slides[i].showMore ? false : true;
   }
 
 }

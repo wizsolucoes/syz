@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
 import { NgxMaskModule } from 'ngx-mask';
 
 import { NgSyzCarouselCardsComponent } from './carousel-cards.component';
@@ -11,7 +12,7 @@ describe('NgSyzCarouselCardsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [NgSyzCarouselCardsComponent],
-      imports: [NgxMaskModule.forRoot()],
+      imports: [NgxMaskModule.forRoot(),RouterModule],
     }).compileComponents();
   });
 
@@ -26,4 +27,32 @@ describe('NgSyzCarouselCardsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create', () => {
+    expect(component.config).toBeTruthy();
+  });
+
+
+  it('should return array', () => {
+    let showItensExample = {
+      title: 'Conexão Conseg',
+      colorCard: '#ffffff',
+      itens: [
+        {
+          text: 'Teste link',
+          router: '/components/login-with-carousel-flow',
+          target: '_self',
+        }
+      ]
+    }
+    let showItens = component.showItens(showItensExample[0])
+    expect(showItens).toBeTruthy();
+  });
+  
+  it('should function showMore', () => {
+    let i = 0;
+    let showMoreExample = component.showMore(i)
+    expect(showMoreExample).toEqual(showMoreExample);
+  });
+
 });
