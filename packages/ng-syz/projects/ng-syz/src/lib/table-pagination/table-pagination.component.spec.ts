@@ -10,8 +10,6 @@ import { NgSyzTablepaginationComponent } from './table-pagination.component';
 describe('NgSyzPerformanceSummaryComponent', () => {
   let component: NgSyzTablepaginationComponent;
   let fixture: ComponentFixture<NgSyzTablepaginationComponent>;
-  let template: HTMLElement;
-
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
@@ -29,56 +27,25 @@ describe('NgSyzPerformanceSummaryComponent', () => {
   );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgSyzCpfSearchComponent);
+    fixture = TestBed.createComponent(NgSyzTablepaginationComponent);
     component = fixture.componentInstance;
-    template = fixture.nativeElement;
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 
-  it('should display message', () => {
-    // Given
-    const message = 'Lorem ipsum';
-    component.message = message;
-
-    // When
-    fixture.detectChanges();
-
-    // Then
-    const messsageElement = template.querySelector('[data-test="message"]');
-    expect(messsageElement.innerHTML).toEqual(message);
-  });
 
   describe('searchCustomer', () => {
-    it('should emit buttonClick event with input', () => {
-      // Given
-      const cpf = '12345678901';
-
-      spyOn(component.buttonClick, 'emit');
-
-      // When
-      component.ngOnInit();
-      component.searchFormGroup.get('cpfCnpj').setValue(cpf);
-      component.searchCustomer();
-
-      // Then
-      expect(component.buttonClick.emit).toHaveBeenCalledWith(cpf);
+    it('should create', () => {
+      expect(component).toBeTruthy();
     });
-    it('should not emit buttonClick event if cpfCnpj is empty', () => {
-      // Given
-      const cpf = '';
 
-      spyOn(component.buttonClick, 'emit');
-
-      // When
-      component.ngOnInit();
-      component.searchFormGroup.get('cpfCnpj').setValue(cpf);
-      component.searchCustomer();
-
-      // Then
-      expect(component.buttonClick.emit).not.toHaveBeenCalled();
+    it('change page', () => {
+      expect(component.changePerPage.emit).toHaveBeenCalledWith('hello');
+    });
+    it('clickLineEvent emit', () => {
+      expect(component.changePerPage.emit).toHaveBeenCalledWith('hello');
+    });
+    it('navigationPageClick emit', () => {
+      expect(component.changePerPage.emit).toHaveBeenCalledWith('hello');
     });
   });
 });
