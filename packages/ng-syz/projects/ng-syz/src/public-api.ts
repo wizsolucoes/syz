@@ -24,3 +24,7 @@ export * from './lib/navbar/ng-syz-navbar.component';
 
 export * from './lib/card-info/ng-syz-card-info.module';
 export * from './lib/card-info/ng-syz-card-info.component';
+
+export * from './lib/inputs-busca-tags/inputs-busca-tags.module';
+export * from './lib/inputs-busca-tags/inputs-busca-tags.component';
+

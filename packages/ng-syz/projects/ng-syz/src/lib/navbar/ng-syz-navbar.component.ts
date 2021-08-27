@@ -16,7 +16,7 @@ export interface MenuButton {
 })
 export class NgSyzNavbarComponent implements OnInit {
 
-  backGroundColor = "#FFF";
+  backGroundColor ="#FFF";
 
  menuItems: MenuItem[] = [
     {
@@ -38,14 +38,6 @@ export class NgSyzNavbarComponent implements OnInit {
       label: 'Calendário'
     
     },
-    {
-      label: 'Documentos'
-   
-    },
-    {
-      label: 'Duvidas'
-   
-    }
   ];
 
   menuButtons: MenuButton[] = [
