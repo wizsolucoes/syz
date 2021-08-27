@@ -21,3 +21,6 @@ export * from './lib/models';
 
 export * from './lib/navbar/ng-syz-navbar.module';
 export * from './lib/navbar/ng-syz-navbar.component';
+
+export * from './lib/inputs-busca-tags/inputs-busca-tags.module';
+export * from './lib/inputs-busca-tags/inputs-busca-tags.component';

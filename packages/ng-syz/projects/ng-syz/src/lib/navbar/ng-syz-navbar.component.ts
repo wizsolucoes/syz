@@ -16,7 +16,7 @@ export interface MenuButton {
 })
 export class NgSyzNavbarComponent implements OnInit {
 
-  backGroundColor = "#FFF";
+  backGroundColor ="#FFF";
 
  menuItems: MenuItem[] = [
     {

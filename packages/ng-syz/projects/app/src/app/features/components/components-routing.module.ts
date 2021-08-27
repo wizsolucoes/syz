@@ -58,6 +58,13 @@ const routes: Routes = [
         (m) => m.ExamplesModule
       ),
   },
+  {
+    path: 'inputs-busca-tags',
+    loadChildren: () =>
+      import('./docs-inputs-busca-tags/docs-inputs-busca-tags.module').then(
+        (m) => m.DocsInputsBuscaTagsModule
+      ),
+  },
 ];
 
 @NgModule({

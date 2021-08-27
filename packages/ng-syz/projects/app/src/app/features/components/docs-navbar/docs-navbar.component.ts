@@ -15,4 +15,11 @@ export class DocsNavbarComponent {
     },
   ];
 
+  componentCSSVariables: ComponentProps[] = [
+    {
+      name: `--primary-color`,
+      description: 'Cor do início do gradiente do fundo do componente',
+    }
+  ];  
+
 }
