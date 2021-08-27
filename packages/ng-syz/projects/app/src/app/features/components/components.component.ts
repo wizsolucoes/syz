@@ -31,6 +31,10 @@ export class ComponentsComponent {
       route: 'button-grid',
     },
     {
+      displayName: 'Filtro dinâmico',
+      route: 'filter',
+    },
+    {
       displayName: 'Redefinição de senha',
       route: 'redefinicao-senha',
     },

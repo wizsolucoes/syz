@@ -26,4 +26,7 @@ export * from './lib/button-grid/button-grid.component';
 export * from './lib/redefinicao-senha/redefinicao-senha.module';
 export * from './lib/redefinicao-senha/redefinicao-senha.component';
 
+export * from './lib/filtro/filtro.module';
+export * from './lib/filtro/filtro.component';
+
 export * from './lib/models';

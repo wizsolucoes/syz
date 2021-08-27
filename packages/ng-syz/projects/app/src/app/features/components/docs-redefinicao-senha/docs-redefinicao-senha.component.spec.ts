@@ -1,7 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgSyzRedefinicaoSenhaModule } from 'projects/ng-syz/build/public-api';
+import { NgSyzRedefinicaoSenhaModule } from 'projects/ng-syz/src/public-api';
 import { SharedModule } from '../../../shared/shared.module';
 
 import { DocsRedefinicaoSenhaComponent } from './docs-redefinicao-senha.component';
@@ -14,6 +15,7 @@ describe('DocsRedefinicaoSenhaComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [DocsRedefinicaoSenhaComponent],
       imports: [
+        CommonModule,
         NgSyzRedefinicaoSenhaModule,
         RouterTestingModule,
         SharedModule,

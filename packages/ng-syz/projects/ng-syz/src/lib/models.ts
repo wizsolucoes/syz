@@ -62,3 +62,19 @@ export interface NgSyzRegraSenha {
   text: string;
   icon: string;
 }
+
+export interface Filter {
+  field: string;
+  value: FilterSlider | FilterCheckbox;
+}
+
+export interface FilterSlider {
+  min: number;
+  max: number;
+  step: number;
+  value: number;
+}
+
+export interface FilterCheckbox {
+  values: string[];
+}

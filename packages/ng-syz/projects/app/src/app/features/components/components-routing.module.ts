@@ -63,6 +63,13 @@ const routes: Routes = [
             (m) => m.DocsRedefinicaoSenhaModule
           ),
       },
+      {
+        path: 'filter',
+        loadChildren: () =>
+          import('./docs-filtro/docs-filtro.module').then(
+            (m) => m.DocsFiltroModule
+          ),
+      },
     ],
   },
   {
