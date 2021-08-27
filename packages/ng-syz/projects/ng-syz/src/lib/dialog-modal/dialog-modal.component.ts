@@ -9,8 +9,10 @@ import { DialogModalBodyComponent } from './dialog-modal-body/dialog-modal-body.
 })
 export class NgSyzDialogModalComponent implements OnInit {
   @Input() texto: string;
+  @Input() textoCor: string;
   @Input() titulo: string;
   @Input() textoBotao: string;
+  @Input() corBotao: string;
   @Input() rotaExterna: boolean;
   @Input() urlRota: string;
   @Input() imagem: string;
@@ -25,8 +27,10 @@ export class NgSyzDialogModalComponent implements OnInit {
     {
       data: {
         titulo: this.titulo,
+        textoCor: this.textoCor,
         texto: this.texto,
         textoBotao: this.textoBotao,
+        corBotao: this.corBotao,
         rotaExterna: this.rotaExterna,
         urlRota: this.urlRota,
         imagem: this.imagem,

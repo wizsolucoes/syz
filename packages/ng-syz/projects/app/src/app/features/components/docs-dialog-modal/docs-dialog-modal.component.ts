@@ -18,12 +18,20 @@ export class DocsDialogModalComponent {
       description: 'O texto da modal.',
     },
     {
+      name: `@Input() textoCor: string`,
+      description: 'Cor do texto texto da modal.',
+    },
+    {
       name: '@Input() titulo: string',
       description: 'Titulo da modal.',
     },
     {
       name: '@Input() textoBotao: string',
-      description: 'Texto do botal.',
+      description: 'Texto do botão.',
+    },
+    {
+      name: '@Input() corBotao: string',
+      description: 'Cor do botão.',
     },
     {
       name: '@Input() rotaExterna: bool',
@@ -47,7 +55,9 @@ export class DocsDialogModalComponent {
   <ng-syz-dialog-modal
     [titulo]="'Titulo da Modal'"
     [texto]="'Texto da Modal'"
+    [textoCor]="'Texto da Modal'"
     [textoBotao]="'Botão teste'"
+    [corBotao]="'Botão teste'"
     [rotaExterna]="'false'"
     [urlRota]="'www.google.com'"
     [imagem]="'https://i.stack.imgur.com/W9kaK.jpg'"
