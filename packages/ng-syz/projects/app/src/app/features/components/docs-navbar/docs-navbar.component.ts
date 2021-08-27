@@ -22,4 +22,49 @@ export class DocsNavbarComponent {
     }
   ];  
 
+  htmlExampleCode = `
+  <ng-syz-navbar
+    [menuItems]="object.menus"
+    [menuButtons]="object.buttons">
+  </ng-syz-navbar>
+  `;
+
+  tsExampleCode =`
+  
+ menuItems: MenuItem[] = [
+  {
+    label: 'Iníco'
+   
+  },
+  {
+    label: 'Equipe'
+ 
+  },
+  {
+    label: 'Performance'
+    
+  },
+  {
+    label: 'Gestão'
+  },
+  {
+    label: 'Calendário'
+  
+  },
+];
+
+menuButtons: MenuButton[] = [
+  {
+    icon: 'logout',
+    tooltip: 'sair',
+  },
+  {
+    icon: 'notifications',
+    tooltip:'alerta'
+  },
+
+];`;
+
+
+
 }

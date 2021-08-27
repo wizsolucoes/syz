@@ -49,6 +49,9 @@ const routes: Routes = [
             (m) => m.DocsNavbarModule
           ),
       },
+       
+      { path: 'horizontal-timeline', loadChildren: () => import('./docs-horizontal-timeline/docs-horizontal-timeline.module').then(m => m.DocsHorizontalTimelineModule) },
+
     ],
   },
   {
@@ -65,6 +68,7 @@ const routes: Routes = [
         (m) => m.DocsInputsBuscaTagsModule
       ),
   },
+
 ];
 
 @NgModule({

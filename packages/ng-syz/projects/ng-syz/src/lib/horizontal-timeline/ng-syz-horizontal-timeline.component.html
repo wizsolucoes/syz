@@ -1,0 +1,28 @@
+
+<div id="timeline">
+   <div>
+      <div class="text-steps">
+            <h4 class="dot text-default" style="color: rgb(0, 0, 0);" *ngFor="let item of timelineData;">{{item.Name}}</h4>       
+      </div>
+   </div>
+   <div class="dots">
+        <div class="dotWrapper"  *ngFor=" let item of timelineData;">
+            <div [ngClass]="{
+                'dot' : true,
+                ' default': !item.Current && !item.Completed,
+                ' current': item.Current,
+                ' completed': item.Completed 
+            }"
+            >  
+            </div>
+          </div>
+    </div>
+    
+   <div class="progress-timeline" style="background-color: rgb(243, 239, 230);">
+      <div>
+        <div  [style.width]="widthPercentage">
+         <div class="progress" style="background-color: rgb(34, 201, 164);"></div>
+        </div>
+      </div>
+   </div>
+</div>

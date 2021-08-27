@@ -28,3 +28,6 @@ export * from './lib/card-info/ng-syz-card-info.component';
 export * from './lib/inputs-busca-tags/inputs-busca-tags.module';
 export * from './lib/inputs-busca-tags/inputs-busca-tags.component';
 
+export * from './lib/horizontal-timeline/ng-syz-horizontal-timeline.module';
+export * from './lib/horizontal-timeline/ng-syz-horizontal-timeline.component';
+

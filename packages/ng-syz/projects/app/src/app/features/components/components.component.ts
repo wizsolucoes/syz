@@ -23,7 +23,9 @@ export class ComponentsComponent {
       route: 'login-with-cards-flow',
     },
     { displayName: 'Barra de Navegação', route: 'navbar' },
-    { displayName: 'Inputs de Busca de Navegação', route: 'inputs-busca-tags' }
+
+    { displayName: 'Time Line Horizontal', route: 'horizontal-timeline' },
+    
   ];
 }
 
