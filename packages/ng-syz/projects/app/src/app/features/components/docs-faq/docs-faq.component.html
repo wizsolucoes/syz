@@ -1,3 +1,5 @@
+<button (click)="showToggle()">toggle show icon</button>
+
 <app-component-page
     [title]="'FAQ'"
     [description]="'Componente para FAQ.'"
@@ -7,7 +9,15 @@
 
     <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
         <div class="example">
-            <ng-syz-faq [data]="mockData" [simpleDescription]="false" [showToggle]="true" [firstExpanded]="false" [multiExpanded]="false"></ng-syz-faq>
+            <ng-syz-faq
+                (categorySelectedEvent)="categorySelected($event)"
+                [dataCategory]="mockDataCategorys"
+                [dataContentCategorySelected]="mockContentCategorySelected"
+                [simpleDescription]="false"
+                [showToggle]="showToggleTest"
+                [firstExpanded]="false"
+                [multiExpanded]="false">
+            </ng-syz-faq>
         </div>
     </app-code-example>
 

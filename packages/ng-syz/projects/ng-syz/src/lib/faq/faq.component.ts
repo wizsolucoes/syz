@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'ng-syz-faq',
   templateUrl: './faq.component.html',
@@ -6,28 +6,32 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NgSyzFaqComponent implements OnInit {
 
-  @Input() data: any;
+  @Input() dataContentCategorySelected: any;
+  @Input() dataCategory: any;
   @Input() simpleDescription: boolean;
   @Input() showToggle: boolean;
   @Input() firstExpanded: boolean;
   @Input() multiExpanded: boolean;
+  @Output() categorySelectedEvent = new EventEmitter<any>();
 
   public itemSelected: any;
   public questionSelect: any = { answer: '', question: '' };
+  public hasOneCategoryOnly: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
     try {
-      this.itemSelected = this.data[0];
+      this.hasOneCategoryOnly = false;
+      this.itemSelected = this.dataCategory.find(x => x.id === this.dataContentCategorySelected.id);
     } catch (error) {
-      this.itemSelected = { title: '', description: '', isActive: true, itens: [] };
+      this.itemSelected = { id: '', title: '' };
     }
   }
 
-  public selectItem(item: any): void {
+  public selectItemAndEmitIt(item: any): void {
     this.itemSelected = item;
-    // this.showToggle = this.itemSelected.itens.length > 1;
+    this.categorySelectedEvent.emit(item);
   }
 
 }
