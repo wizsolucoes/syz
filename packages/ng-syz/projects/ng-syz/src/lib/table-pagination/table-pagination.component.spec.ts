@@ -24,16 +24,5 @@ describe('NgSyzTablepaginationComponent', () => {
     expect(component.hoverEffect).toEqual(false);
   });
 
-  it('should create', () => {
-    expect(component.ngAfterViewInit).toBeTruthy;
-  });
-
-  it('should create', () => {
-    const componentExample = component.constrolInfoTr({
-      name: 'Teste'
-    }, 0)
-    expect(componentExample).toBeTruthy;
-  });
-
 
 });
