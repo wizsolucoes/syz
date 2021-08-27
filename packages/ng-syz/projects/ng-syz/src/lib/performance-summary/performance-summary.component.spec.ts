@@ -1,9 +1,4 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgSyzPerformanceSummaryComponent } from './performance-summary.component';
 
@@ -13,72 +8,22 @@ describe('NgSyzPerformanceSummaryComponent', () => {
   let template: HTMLElement;
 
   beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
+    waitForAsync(async () => {
+      await TestBed.configureTestingModule({
         declarations: [NgSyzPerformanceSummaryComponent],
-        imports: [
-          FormsModule,
-          ReactiveFormsModule,
-          BrowserAnimationsModule,
-          MatRadioModule,
-          MatButtonModule,
-          MatInputModule,
-        ],
+        imports: [],
       }).compileComponents();
     })
   );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgSyzCpfSearchComponent);
+    fixture = TestBed.createComponent(NgSyzPerformanceSummaryComponent);
     component = fixture.componentInstance;
-    template = fixture.nativeElement;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display message', () => {
-    // Given
-    const message = 'Lorem ipsum';
-    component.message = message;
-
-    // When
-    fixture.detectChanges();
-
-    // Then
-    const messsageElement = template.querySelector('[data-test="message"]');
-    expect(messsageElement.innerHTML).toEqual(message);
-  });
-
-  describe('searchCustomer', () => {
-    it('should emit buttonClick event with input', () => {
-      // Given
-      const cpf = '12345678901';
-
-      spyOn(component.buttonClick, 'emit');
-
-      // When
-      component.ngOnInit();
-      component.searchFormGroup.get('cpfCnpj').setValue(cpf);
-      component.searchCustomer();
-
-      // Then
-      expect(component.buttonClick.emit).toHaveBeenCalledWith(cpf);
-    });
-    it('should not emit buttonClick event if cpfCnpj is empty', () => {
-      // Given
-      const cpf = '';
-
-      spyOn(component.buttonClick, 'emit');
-
-      // When
-      component.ngOnInit();
-      component.searchFormGroup.get('cpfCnpj').setValue(cpf);
-      component.searchCustomer();
-
-      // Then
-      expect(component.buttonClick.emit).not.toHaveBeenCalled();
-    });
-  });
 });

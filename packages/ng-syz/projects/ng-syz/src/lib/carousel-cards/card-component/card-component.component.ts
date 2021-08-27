@@ -10,7 +10,10 @@ import { NgSyzCarouselCardsSliders } from '../../models';
   styleUrls: ['./card-component.component.scss']
 })
 export class CardComponentComponent implements OnInit {
-  @Input() slide: any;
+  @Input() slide: NgSyzCarouselCardsSliders = {
+    title: '',
+    itens: []
+  };
   @Input() slides: NgSyzCarouselCardsSliders[];
   @Input() index: number;
   @Input() unique: boolean = false;
@@ -23,7 +26,7 @@ export class CardComponentComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  showItens(i) {
+  showItens(i): [] {
     const list = this.slides[i];
     if (!list.itens.length) return [];
     if (list?.showMore) return list.itens;

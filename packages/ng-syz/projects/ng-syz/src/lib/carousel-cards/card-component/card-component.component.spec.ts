@@ -43,6 +43,6 @@ describe('CardComponentComponent', () => {
       ]
     }
     let showItens = component.showItens([showItensExample])
-    expect(showItens).toEqual([showItensExample]);
+    expect(showItens).toEqual(showItensExample[0]);
   });
 });
