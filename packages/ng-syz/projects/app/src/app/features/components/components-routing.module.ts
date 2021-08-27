@@ -55,7 +55,13 @@ const routes: Routes = [
           import(
             './docs-timeline/docs-timeline.module'
           ).then(m => m.DocsTimelineModule)
-      }
+      },
+      { path: 'achievements-progress-bar',
+      loadChildren: () =>
+        import(
+          './docs-achievements-progress-bar/docs-achievements-progress-bar.module'
+        ).then(m => m.DocsAchievementsProgressBarModule)
+      },
     ],
   },
   {

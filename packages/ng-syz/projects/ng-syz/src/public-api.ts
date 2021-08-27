@@ -26,4 +26,7 @@ export * from './lib/faq/faq.component';
 export * from './lib/timeline/timeline.module';
 export * from './lib/timeline/timeline.component';
 
+export * from './lib/achievements-progress-bar/achievements-progress-bar.module';
+export * from './lib/achievements-progress-bar/achievements-progress-bar.component';
+
 export * from './lib/models';

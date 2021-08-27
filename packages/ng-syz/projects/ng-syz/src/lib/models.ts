@@ -38,4 +38,16 @@ export interface NgSyzTimeline {
   title: string;
   subtitle: string;
   description: string;
+  colorStatus: string;
+}
+
+export interface NgSyzAchievementsProgressBar {
+  // title: string;
+  // labelToggleLeft: string;
+  // labelToggleRight: string;
+  actualProgress: number;
+  // actualProgressDescription: string;
+  goalProgress: number;
+  // goalProgressDescription: string;
+  // itensDescriptionBelow: [{key: string, value: string}];
 }

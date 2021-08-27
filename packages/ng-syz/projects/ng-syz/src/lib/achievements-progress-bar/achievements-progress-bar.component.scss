@@ -1,0 +1,137 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .title-and-toggle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+        .title {
+            color: #50555A;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 21px;
+            line-height: 27px;
+        }
+
+        // customize angular material
+        .mat-button-toggle-group {
+            background-color: #EAEEF0;
+            border-radius: 50px;
+            border: none;
+        }
+
+        .mat-button-toggle {
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #EAEEF0;
+            border-radius: 50px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: #9BA5AE;
+            border: none;
+            padding: 6px 16px;
+        }
+
+        .mat-button-toggle-checked {
+            background: #FF9100;
+            color: #FFFFFF;
+        }
+    }
+
+    .card {
+        background: #F8FBFC;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        padding: 28px 24px 24px 24px;
+        position: relative;
+
+        .progress {
+            background: #EAEEF0;
+            border-radius: 50px;
+            height: 16px;
+            overflow: hidden;
+            position: relative;
+
+            .progress-actual {
+                height: 100%;
+                width: 30%;
+                background: #FF9100;
+                position: absolute;
+                z-index: 2;
+                border-radius: 50px;
+            }
+
+            .progress-goal {
+                height: 100%;
+                width: 40%;
+                background: rgba(155, 165, 174, 0.3);
+                position: absolute;
+                z-index: 1;
+            }
+        }
+
+        .description-progress-actual-and-goal {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-right: 1px solid rgba(155, 165, 174, 0.3);
+            width: 40%;
+            padding-right: 8px;
+            margin-bottom: 8px;
+
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 16px;
+            color: #50555A;
+        }
+
+        .description-below-progress {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 32px;
+
+            .item-and-separator {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .item-description {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                .title {
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: 26px;
+                    line-height: 30px;
+                    text-align: center;
+                    color: #50555A;
+                }
+    
+                .subtitle {
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 16px;
+                    line-height: 19px;
+                    text-align: center;
+                    color: #50555A;
+                }
+            }
+        }
+    }
+}

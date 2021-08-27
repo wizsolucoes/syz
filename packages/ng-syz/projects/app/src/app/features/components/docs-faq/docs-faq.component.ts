@@ -92,7 +92,7 @@ export class DocsFaqComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.mockContentCategorySelected = this.mockData[1];
+    this.mockContentCategorySelected = this.mockData[0];
     // this.mockContentCategorySelected = null;
   }
 

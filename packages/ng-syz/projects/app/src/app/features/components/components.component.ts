@@ -29,6 +29,10 @@ export class ComponentsComponent {
     {
       displayName: 'Timeline',
       route: 'timeline',
+    },
+    {
+      displayName: 'Achievements Progress Bar',
+      route: 'achievements-progress-bar',
     }
   ];
 }
