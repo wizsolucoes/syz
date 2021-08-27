@@ -7,7 +7,12 @@
 
     <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
         <div class="example">
-            <ng-syz-timeline [data]="data" title="Detalhes do andamento" [isReverse]="false"></ng-syz-timeline>
+            <ng-syz-timeline
+                [data]="data"
+                [futureData]="futureData"
+                title="Detalhes do andamento"
+                [isReverse]="false">
+            </ng-syz-timeline>
         </div>
     </app-code-example>
 

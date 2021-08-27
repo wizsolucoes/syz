@@ -12,6 +12,9 @@ export class NgSyzTimelineComponent implements OnInit {
   @Input() title: string;
   @Input() data: NgSyzTimeline[];
   @Input() isReverse: boolean;
+  @Input() futureData: NgSyzTimeline[];
+
+  public hasFuture: boolean;
 
   public styleTitleTimeline: string;
   public styleSimbol: string;

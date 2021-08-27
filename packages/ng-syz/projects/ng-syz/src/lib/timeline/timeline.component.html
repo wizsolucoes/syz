@@ -1,10 +1,10 @@
-<section id="timeline">
+<section id="timeline" class="all-content">
         <span *ngIf="title" class="title-timeline" [ngStyle]="styleTitleTimeline" data-test="title">{{ title }}</span>
 
         <div *ngFor="let item of data" class="timeline" [ngClass]="{'timeline-reverse': isReverse }">
             <div class="line">
                 <div class="mark">
-                    <div class="simbol" [ngStyle]="styleSimbol"></div>
+                    <div class="simbol" [ngStyle]="styleSimbol" [style.background-color]="item.colorStatus"></div>
                 </div>
             </div>
 
@@ -14,4 +14,21 @@
                 <span class="details">{{ item.description }}</span>
             </div>
         </div>
+
+        <div *ngIf="futureData" class="">
+            <div *ngFor="let item of futureData" class="timeline" [ngClass]="{'timeline-reverse': isReverse }">
+                <div class="line future-line">
+                    <div class="mark">
+                        <div class="simbol future-simbol" [ngStyle]="styleSimbol"></div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <span class="title-item">{{ item.title }}</span>
+                    <span class="subtitle-item">{{ item.subtitle }}</span>
+                    <span class="details">{{ item.description }}</span>
+                </div>
+            </div>
+        </div>
+        
 </section>

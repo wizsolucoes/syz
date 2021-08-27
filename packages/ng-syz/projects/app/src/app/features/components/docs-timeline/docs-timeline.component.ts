@@ -37,12 +37,17 @@ export class DocsTimelineComponent implements OnInit {
   cssExampleCode = `cssExampleCode`;
 
   public data: NgSyzTimeline[] = [
-    { title: 'Titulo 1', subtitle: 'xx/xx/xxxx', description: 'Detalhes 1' },
-    { title: 'Titulo 2', subtitle: 'xx/xx/xxxx', description: 'Detalhes 2' },
-    { title: 'Titulo 3', subtitle: 'xx/xx/xxxx', description: 'Detalhes 3' },
-    { title: 'Titulo 4', subtitle: 'xx/xx/xxxx', description: 'Detalhes 4' },
-    { title: 'Titulo 5', subtitle: 'xx/xx/xxxx', description: 'Detalhes 5' },
-    { title: 'Titulo 6', subtitle: 'xx/xx/xxxx', description: 'Detalhes 6' },
+    { title: 'Titulo 1', subtitle: 'Teste!!!', description: 'Detalhes 1', colorStatus: 'red'},
+    { title: 'Titulo 2', subtitle: 'xx/xx/xxxx', description: 'Detalhes 2', colorStatus: 'blue'},
+    { title: 'Titulo 3', subtitle: 'xx/xx/xxxx', description: 'Detalhes 3', colorStatus: 'yellow'},
+    { title: 'Titulo 4', subtitle: 'xx/xx/xxxx', description: 'Detalhes 4', colorStatus: 'red'},
+    { title: 'Titulo 5', subtitle: 'xx/xx/xxxx', description: 'Detalhes 5', colorStatus: 'pink'},
+  ];
+
+  public futureData: NgSyzTimeline[] = [
+    { title: 'Futuro 1', subtitle: 'xx/xx/xxxx', description: 'Detalhes 1', colorStatus: 'red'},
+    { title: 'Futuro 2', subtitle: 'xx/xx/xxxx', description: 'Detalhes 2', colorStatus: 'green'},
+    { title: 'Futuro 5', subtitle: 'xx/xx/xxxx', description: 'Detalhes 5', colorStatus: 'red' }
   ];
 
   constructor() { }
