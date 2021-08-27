@@ -7,7 +7,7 @@ import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginato
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 
-export function CustomPaginator() {
+export function CustomPaginator(): object {
   const customPaginatorIntl = new MatPaginatorIntl();
 
   customPaginatorIntl.itemsPerPageLabel = 'Itens por página:';
