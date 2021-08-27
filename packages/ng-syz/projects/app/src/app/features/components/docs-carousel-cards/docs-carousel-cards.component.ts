@@ -13,7 +13,7 @@ export class DocsCarouselCardsComponent implements OnInit {
         [config]="slides"
       ></ng-syz-carousel-cards>
     `,
-    tsCode:`
+    tsCode: `
       config = {
         speed: 500,
         spaceBetween: 15,
@@ -51,7 +51,8 @@ export class DocsCarouselCardsComponent implements OnInit {
       autoplay: false,
       loop: false,
       effect: 'slide',
-  }
+  };
+
   dataSlides01: NgSyzCarouselCardsSliders[] = [
       {
         title: 'Conexão Conseg',
@@ -198,7 +199,7 @@ export class DocsCarouselCardsComponent implements OnInit {
           },
         ],
       },
-  ]
+  ];
 
   dataConfig02: NgSyzCarouselCardsConfig = {
     speed: 500,
@@ -206,7 +207,7 @@ export class DocsCarouselCardsComponent implements OnInit {
     autoplay: true,
     loop: false,
     effect: 'slide',
-  }
+  };
 
   dataSlides02: NgSyzCarouselCardsSliders[] = [
     {
@@ -334,7 +335,7 @@ export class DocsCarouselCardsComponent implements OnInit {
         },
       ],
     }
-  ]
+  ];
 
   config03 = {
     htmlExampleCode: `
@@ -343,7 +344,7 @@ export class DocsCarouselCardsComponent implements OnInit {
       [config]="slides"
     ></ng-syz-carousel-cards>
   `,
-    tsCode:`
+    tsCode: `
       config = {
         speed: 500,
         spaceBetween: 15,
@@ -367,7 +368,7 @@ export class DocsCarouselCardsComponent implements OnInit {
         ...
       ]
     `,
-  }
+  };
 
   dataConfig03: NgSyzCarouselCardsConfig = {
     speed: 500,
@@ -375,7 +376,7 @@ export class DocsCarouselCardsComponent implements OnInit {
     autoplay: false,
     loop: false,
     effect: 'slide',
-  }
+  };
 
   dataSlides03: NgSyzCarouselCardsSliders[] = [
     {
@@ -503,7 +504,7 @@ export class DocsCarouselCardsComponent implements OnInit {
         },
       ],
     }
-  ]
+  ];
 
   Description = 'Componente para iniciar um carrossel de cards com até 3 colunas, sendo possível estilizar cores. Recebe uma lista de intens com links que irão navegar, podendo controlar se deve abrir o link em uma nova página ou não. \n \n Para cada Card, o componente irá controlar automáticamente a exibição de 3 itens da lista, e mostrará um botão para ver mais quando essa quantidade for maior! \n\n';
   
@@ -560,8 +561,8 @@ slides: [
     },
     {
       name: `--bg-card-color`,
-      description:'Cor de fundo de todo componente',
-    },
+      description: 'Cor de fundo de todo componente'
+    }
   ];
 
   constructor() {}

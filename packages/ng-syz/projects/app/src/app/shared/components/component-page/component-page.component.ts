@@ -22,9 +22,9 @@ export class ComponentPageComponent implements OnInit {
 
   visibled = false;
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
-  showContent(event){
+  showContent(event): void{
     this.visibled = event.tab.textLabel === 'EXEMPLOS' ? true : false;
   }
 }

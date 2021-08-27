@@ -7,7 +7,7 @@
   tr {
     height: 40px;
     td {
-      color: var(--color-head, gray);
+      color: var(--color-text, gray);
     }
   }
   th {
@@ -17,7 +17,7 @@
     padding: 0;
   }
   td {
-    border-bottom-color: var(--primary-color, blue);
+    border-bottom-color: var(--tr-divisor, #c6c6c6);
   }
   td {
     padding: 0 10px;
@@ -26,7 +26,7 @@
     height: 45px;
   }
   [mat-header-row] {
-    background: var(--primary-color, blue);
+    background: var(--bg-header, #ff9100);
   }
 
   table.table-pagination-custom {
@@ -38,10 +38,9 @@
     background: white;
     thead {
       tr {
-        background: var(--primary-color, blue);
+        background: var(--bg-header, #ff9100);
         border-bottom: solid;
         border-bottom-width: 1px;
-        border-bottom-color: var(--primary-color, blue);
         padding: 0 10px;
         th {
           font-size: 12px;
@@ -55,7 +54,7 @@
           cursor: pointer;
           border-bottom: solid;
           border-bottom-width: 1px;
-          border-bottom-color: var(--primary-color, blue);
+          border-bottom-color: var(--tr-divisor, #c6c6c6);
           padding: 0 10px;
         }
       }
@@ -80,7 +79,7 @@
     svg {
       width: 30px;
       path {
-        fill: var(--primary-color, blue);
+        fill: var(--controll-buttons, #ff9100) !important;
       }
     }
   }

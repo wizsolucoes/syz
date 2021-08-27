@@ -4,12 +4,12 @@ export interface ComponentProps {
 }
 
 export interface NgSyzCarouselCardsConfig {
-  speed?: number,
-  spaceBetween?: number,
-  autoplay?: boolean,
-  loop?: boolean,
-  effect?: string,
-};
+  speed?: number;
+  spaceBetween?: number;
+  autoplay?: boolean;
+  loop?: boolean;
+  effect?: string;
+}
 export interface NgSyzCarouselCardsSliders {
   title: string;
   itens: any;

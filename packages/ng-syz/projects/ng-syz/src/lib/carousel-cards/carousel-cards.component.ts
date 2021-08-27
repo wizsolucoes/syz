@@ -15,7 +15,7 @@ export class NgSyzCarouselCardsComponent implements OnInit {
     autoplay: false,
     loop: false,
     effect: 'slide'
-  }
+  };
 
   configuration: NgSyzCarouselCardsConfig = {    
     slidesPerView: 3,
@@ -36,8 +36,7 @@ export class NgSyzCarouselCardsComponent implements OnInit {
     {
       title: '',
       itens: [],
-      showMore: false,
-
+      showMore: false
     }
   ];
 
@@ -57,14 +56,18 @@ export class NgSyzCarouselCardsComponent implements OnInit {
 
   showItens(i = 0): [] {
     const list = this.slides[i];
-    if (!list?.itens.length) return [];
-    if (list?.showMore) return list?.itens;
+    if (!list?.itens.length){
+      return []; 
+    }
+    if (list?.showMore){
+      return list?.itens;
+    }
 
     const showMinItens = list.itens.slice(0, 3);
     return showMinItens;
   }
 
-  showMore(i) {
+  showMore(i): void {
     this.slides[i].showMore = this.slides[i].showMore ? false : true;
   }
 

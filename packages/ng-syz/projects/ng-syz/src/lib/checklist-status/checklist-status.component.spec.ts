@@ -4,7 +4,6 @@ import { NgSyzCheckListStatusComponent } from './checklist-status.component';
 describe('NgSyzCheckListStatusComponent', () => {
   let component: NgSyzCheckListStatusComponent;
   let fixture: ComponentFixture<NgSyzCheckListStatusComponent>;
-  let template: HTMLElement;
 
   beforeEach(
     waitForAsync(async () => {

@@ -5,7 +5,6 @@ import { NgSyzPerformanceSummaryComponent } from './performance-summary.componen
 describe('NgSyzPerformanceSummaryComponent', () => {
   let component: NgSyzPerformanceSummaryComponent;
   let fixture: ComponentFixture<NgSyzPerformanceSummaryComponent>;
-  let template: HTMLElement;
 
   beforeEach(
     waitForAsync(async () => {
@@ -27,7 +26,7 @@ describe('NgSyzPerformanceSummaryComponent', () => {
   });
 
   it('should return float value', () => {
-    let floatvalue = 100;
+    const floatvalue = 100;
 
     expect(component.calcPercent(floatvalue, floatvalue)).toEqual(floatvalue);
   });

@@ -40,35 +40,35 @@ export interface NgSyzCardResultInitiative {
   value: string;
   color: string;
   variable?: {
-    direction: string,
-    value: string
+    direction: string;
+    value: string;
   };
 }
 
 export interface NgSyzCardResultInitiativeImage {
-  url: string, 
-  alt?: string
+  url: string; 
+  alt?: string;
 }
 export interface NgSyzCarouselCardsConfig {
-  speed?: number,
-  spaceBetween?: number,
-  autoplay?: boolean,
-  loop?: boolean,
-  effect?: string,
+  speed?: number;
+  spaceBetween?: number;
+  autoplay?: boolean;
+  loop?: boolean;
+  effect?: string;
 
-  slidesPerView?: number,
-  pagination?: boolean,
-  keyboard?: boolean,
-  grabCursor?: boolean,
-  preloadImages?: boolean,
-  lazy?: boolean,
-  zoom?: boolean,
-  zoomMax?: number,
+  slidesPerView?: number;
+  pagination?: boolean;
+  keyboard?: boolean;
+  grabCursor?: boolean;
+  preloadImages?: boolean;
+  lazy?: boolean;
+  zoom?: boolean;
+  zoomMax?: number;
   navigation?: {
-    nextEl: string,
-    prevEl: string,
-  },
-};
+    nextEl: string;
+    prevEl: string;
+  };
+}
 export interface NgSyzCarouselCardsSliders {
   title: string;
   itens: any;
