@@ -1,0 +1,26 @@
+.card-glossario {
+  width: 346px;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 0 12px 32px;
+  display: inline-block;
+
+  .titulo-card {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 31px;
+    text-transform: uppercase;
+    color: #303133;
+    margin-bottom: 16px;
+  }
+
+  .texto-card {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #98989a;
+  }
+}

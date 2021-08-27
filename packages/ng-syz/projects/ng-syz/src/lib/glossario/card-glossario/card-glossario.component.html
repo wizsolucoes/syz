@@ -1,0 +1,16 @@
+<ngx-masonry [options]="masonryOptions" [updateLayout]="listaGlossario">
+  <div ngxMasonryItem class="masonry-item" *ngFor="let glossario of listaGlossario">
+    <div class="card-glossario">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="titulo-card text-left">{{glossario.nome}}</div>
+        </div>
+      </div>
+      <div class="row float-none">
+        <div class="col-md-12">
+          <div class="texto-card text-left">{{glossario.descricao}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ngx-masonry>

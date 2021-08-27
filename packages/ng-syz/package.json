@@ -37,8 +37,9 @@
     "@angular/router": "~11.0.6",
     "markdown-it": "^12.1.0",
     "ngx-mask": "^11.1.5",
+    "ngx-masonry": "^11.0.2",
     "ngx-swiper-wrapper": "^10.0.0",
-    "rxjs": "~6.6.0",
+    "rxjs": "^6.6.7",
     "swiper": "^6.7.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
