@@ -1,0 +1,17 @@
+<section id="timeline">
+        <span *ngIf="title" class="title-timeline" [ngStyle]="styleTitleTimeline" data-test="title">{{ title }}</span>
+
+        <div *ngFor="let item of data" class="timeline" [ngClass]="{'timeline-reverse': isReverse }">
+            <div class="line">
+                <div class="mark">
+                    <div class="simbol" [ngStyle]="styleSimbol"></div>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="title-item">{{ item.title }}</span>
+                <span class="subtitle-item">{{ item.subtitle }}</span>
+                <span class="details">{{ item.description }}</span>
+            </div>
+        </div>
+</section>

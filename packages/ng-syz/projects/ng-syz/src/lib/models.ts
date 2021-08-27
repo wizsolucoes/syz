@@ -33,3 +33,9 @@ export interface NgSyzResetPasswordCredentials {
   cpf: string;
   email: string;
 }
+
+export interface NgSyzTimeline {
+  title: string;
+  subtitle: string;
+  description: string;
+}
