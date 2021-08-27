@@ -311,6 +311,29 @@ export class DocsButtonGridComponent implements OnInit {
     }
   `;
 
+  componentCSSVariables: ComponentProps[] = [
+    {
+      name: `--cor-texto`,
+      description: 'Cor do texto no botão',
+    },
+    {
+      name: `--cor-texto-hover`,
+      description: 'Cor de fundo quando passar o mouse sobre o botão.',
+    },
+    {
+      name: `--cor-borda`,
+      description: 'Cor da borda do botão.',
+    },
+    {
+      name: `--cor-fundo`,
+      description: 'Cor do fundo do componente.',
+    },
+    {
+      name: '--cor-fundo-contraste',
+      description: 'Cor de contrate do fundo do componente.',
+    },
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}
