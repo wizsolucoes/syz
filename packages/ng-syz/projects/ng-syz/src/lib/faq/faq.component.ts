@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-
 @Component({
   selector: 'ng-syz-faq',
   templateUrl: './faq.component.html',

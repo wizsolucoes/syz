@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { NgSyzFaqComponent } from './faq.component';
 
@@ -8,7 +9,10 @@ describe('NgSyzFaqComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgSyzFaqComponent ]
+      declarations: [ NgSyzFaqComponent ],
+      imports: [
+        MatExpansionModule
+      ]
     })
     .compileComponents();
   });
