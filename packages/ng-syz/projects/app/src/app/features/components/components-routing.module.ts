@@ -56,6 +56,7 @@ const routes: Routes = [
             (m) => m.DocsButtonGridModule
           ),
       },
+      { path: 'filter', loadChildren: () => import('./docs-filtro/docs-filtro.module').then(m => m.DocsFiltroModule) },
     ],
   },
   {

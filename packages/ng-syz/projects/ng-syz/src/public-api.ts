@@ -23,4 +23,7 @@ export * from './lib/resultado-simulacao/resultado-simulacao.component';
 export * from './lib/button-grid/button-grid.module';
 export * from './lib/button-grid/button-grid.component';
 
+export * from './lib/filtro/filtro.module';
+export * from './lib/filtro/filtro.component';
+
 export * from './lib/models';

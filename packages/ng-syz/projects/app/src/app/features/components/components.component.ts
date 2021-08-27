@@ -30,5 +30,9 @@ export class ComponentsComponent {
       displayName: 'Grid de botões',
       route: 'button-grid',
     },
+    {
+      displayName: 'Filtro dinâmico',
+      route: 'filter',
+    },
   ];
 }

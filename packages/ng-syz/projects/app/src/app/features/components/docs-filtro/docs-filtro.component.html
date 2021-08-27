@@ -1,0 +1,9 @@
+<app-component-page [title]="'Filtro dinâmico'" [selector]="'ng-syz-filtro'" [importCode]="importCode"
+  [description]="description">
+  <span class="title">Exemplo 1</span>
+  <app-code-example [htmlCode]="htmlExampleCode1" [tsCode]="tsExampleCode1">
+    <div class="exemplo1">
+      <ng-syz-filtro [filters]="filtroExemplo1" (handleFormChange)="showFilterValues($event)"></ng-syz-filtro>
+    </div>
+  </app-code-example>
+</app-component-page>
