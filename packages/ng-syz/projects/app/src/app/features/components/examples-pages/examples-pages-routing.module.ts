@@ -33,6 +33,13 @@ const routes: Routes = [
         './login-with-cards-flow-example-two/login-with-cards-flow-example-two.module'
       ).then((m) => m.LoginWithCardsFlowExampleTwoModule),
   },
+  {
+    path: 'button-grid-example-one',
+    loadChildren: () =>
+      import('./button-grid-example-one/button-grid-example-one.module').then(
+        (m) => m.ButtonGridExampleOneModule
+      ),
+  },
 ];
 
 @NgModule({

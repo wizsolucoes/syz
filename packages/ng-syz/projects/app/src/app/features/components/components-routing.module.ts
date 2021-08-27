@@ -56,6 +56,13 @@ const routes: Routes = [
             (m) => m.DocsButtonGridModule
           ),
       },
+      {
+        path: 'redefinicao-senha',
+        loadChildren: () =>
+          import('./docs-redefinicao-senha/docs-redefinicao-senha.module').then(
+            (m) => m.DocsRedefinicaoSenhaModule
+          ),
+      },
     ],
   },
   {

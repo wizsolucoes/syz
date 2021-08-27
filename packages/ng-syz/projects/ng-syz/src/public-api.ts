@@ -23,4 +23,7 @@ export * from './lib/resultado-simulacao/resultado-simulacao.component';
 export * from './lib/button-grid/button-grid.module';
 export * from './lib/button-grid/button-grid.component';
 
+export * from './lib/redefinicao-senha/redefinicao-senha.module';
+export * from './lib/redefinicao-senha/redefinicao-senha.component';
+
 export * from './lib/models';

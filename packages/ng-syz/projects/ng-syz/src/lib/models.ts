@@ -57,3 +57,8 @@ export interface NgSyzButton {
   imgPath?: string;
   disabled?: boolean;
 }
+
+export interface NgSyzRegraSenha {
+  text: string;
+  icon: string;
+}
