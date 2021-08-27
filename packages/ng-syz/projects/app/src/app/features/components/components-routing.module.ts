@@ -42,12 +42,19 @@ const routes: Routes = [
             './docs-login-with-cards-flow/docs-login-with-cards-flow.module'
           ).then((m) => m.DocsLoginWithCardsFlowModule),
       },
-      { 
+      {
         path: 'faq',
         loadChildren: () =>
-        import('./docs-faq/docs-faq.module').then(
-          m => m.DocsFaqModule
-        ) 
+          import(
+            './docs-faq/docs-faq.module'
+          ).then(m => m.DocsFaqModule)
+      },
+      { 
+        path: 'timeline',
+        loadChildren: () =>
+          import(
+            './docs-timeline/docs-timeline.module'
+          ).then(m => m.DocsTimelineModule)
       }
     ],
   },
@@ -64,4 +71,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ComponentsRoutingModule {}
+export class ComponentsRoutingModule { }

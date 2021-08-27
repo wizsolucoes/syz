@@ -1,0 +1,14 @@
+<app-component-page
+    [title]="'Timeline'"
+    [description]="'Componente de timeline'"
+    [selector]="'ng-syz-timeline'"
+    [componentProps]="componentProps"
+    [componentCSSVariables]="componentCSSVariables">
+
+    <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
+        <div class="example">
+            <ng-syz-timeline [data]="data" title="Detalhes do andamento" [isReverse]="false"></ng-syz-timeline>
+        </div>
+    </app-code-example>
+
+</app-component-page>

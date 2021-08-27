@@ -25,6 +25,10 @@ export class ComponentsComponent {
     {
       displayName: 'Faq',
       route: 'faq',
+    },
+    {
+      displayName: 'Timeline',
+      route: 'timeline',
     }
   ];
 }
