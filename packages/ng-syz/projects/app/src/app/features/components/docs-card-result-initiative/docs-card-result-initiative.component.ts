@@ -10,12 +10,12 @@ export class DocsCardResultInitiativeComponent implements OnInit {
   image: NgSyzCardResultInitiativeImage = {
     url: '/assets/docs-card-result-initiative/image.png', 
     alt: 'Ícone'
-  }
+  };
 
   image2: NgSyzCardResultInitiativeImage = {
     url: '/assets/docs-card-result-initiative/IconCelphone.png', 
     alt: 'Ícone'
-  }
+  };
 
   cards = [
     {
@@ -47,7 +47,7 @@ export class DocsCardResultInitiativeComponent implements OnInit {
         value: '+R$ 40,00'
       }
     },
-  ]
+  ];
 
   exampleHtml = `
     <ng-syz-card-result-initiative
@@ -120,7 +120,7 @@ export class DocsCardResultInitiativeComponent implements OnInit {
     ]
   `;
 
-  //Documentação parte API
+  // Documentação parte API
   importCode = `import { NgSyzCardResultInitiativeModule } from '@wizsolucoes/ng-syz';`;
 
   componentProps: ComponentProps[] = [
@@ -213,8 +213,8 @@ export class DocsCardResultInitiativeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  myFunction(){
-    console.log('clicou')
+  myFunction(): void{
+    console.log('clicou');
   }
 
 }

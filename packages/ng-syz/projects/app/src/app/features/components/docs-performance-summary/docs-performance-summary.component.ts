@@ -27,7 +27,7 @@ export class DocsPerformanceSummaryComponent implements OnInit {
     },
   ];
 
-  Description: string = 'Componente exibir lista de desempenho, sendo possível estilizar cores e alterar ícones. Recebe uma lista de itens. \n \n Para cada lista, pode-se controlar os ícones e valores! \n\n';
+  Description = 'Componente exibir lista de desempenho, sendo possível estilizar cores e alterar ícones. Recebe uma lista de itens. \n \n Para cada lista, pode-se controlar os ícones e valores! \n\n';
 
   componentProps: ComponentProps[] = [
     {
@@ -63,20 +63,20 @@ export class DocsPerformanceSummaryComponent implements OnInit {
   componentCSSVariables: ComponentProps[] = [
     {
       name: `--color-title`,
-      description: 'Cor dos textos dos itens.',
+      description: 'Cor dos textos dos itens.'
     },
     {
       name: `--color-grafic`,
-      description: 'Cores das barras e icone inicial.',
+      description: 'Cores das barras e icone inicial.'
     },
     {
       name: `--color-text`,
-      description: 'Cor padrão dos textos.',
+      description: 'Cor padrão dos textos.'
     },
     {
       name: `--bg-card`,
-      description:'Cor de fundo do card',
-    },
+      description: 'Cor de fundo do card'
+    }
   ];
 
   codeExemple01 = {
@@ -86,7 +86,7 @@ export class DocsPerformanceSummaryComponent implements OnInit {
         [List]="List"
       ></ng-syz-performance-summary>
     `,
-    tsCode:`
+    tsCode: `
     List: NgSyzPerformanceSummaryList[] = [
         {
           icon: 'home',
@@ -116,7 +116,7 @@ export class DocsPerformanceSummaryComponent implements OnInit {
       ></ng-syz-performance-summary>
     </div>
     `,
-    tsCode:`
+    tsCode: `
     List: NgSyzPerformanceSummaryList[] = [
         {
           icon: 'home',

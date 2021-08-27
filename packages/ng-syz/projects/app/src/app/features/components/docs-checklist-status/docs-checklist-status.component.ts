@@ -30,7 +30,7 @@ export class DocsChecklistStatusComponent implements OnInit {
     },
   ];
 
-  Description: string = 'Componente exibir lista de status, sendo possível estilizar cores e controlar os itens ativos. Recebe uma lista de itens. \n \n';
+  Description = 'Componente exibir lista de status, sendo possível estilizar cores e controlar os itens ativos. Recebe uma lista de itens. \n \n';
 
   componentProps: ComponentProps[] = [
     {
@@ -54,36 +54,36 @@ export class DocsChecklistStatusComponent implements OnInit {
         router: 'Saiba mais',
         target: '_self',
       };
-      `,
-    },
+      `
+    }
   ];
 
   componentCSSVariables: ComponentProps[] = [
     {
       name: `--maxWidth`,
       description: `tamanho máximo do componente.
-      valor default: 400px`,
+      valor default: 400px`
     },
     {
       name: `--color-title`,
-      description: 'Cores do Título principal do card',
+      description: 'Cores do Título principal do card'
     },
     {
       name: `--bg-card`,
-      description: 'Cor do fundo dos itens (inativos).',
+      description: 'Cor do fundo dos itens (inativos).'
     },
     {
       name: `--color-text`,
-      description:'Cor dos textos (inativos).',
+      description: 'Cor dos textos (inativos).'
     },
     {
       name: `--bg-card-active`,
-      description: 'Cor do fundo dos itens (ativos).',
+      description: 'Cor do fundo dos itens (ativos).'
     },
     {
       name: `--color-text-active`,
-      description:'Cor dos textos (ativos).',
-    },
+      description: 'Cor dos textos (ativos).'
+    }
   ];
 
   codeExemple01 = {
@@ -93,7 +93,7 @@ export class DocsChecklistStatusComponent implements OnInit {
       [list]="list"
     ></ng-syz-checklist-status>
     `,
-    tsCode:`
+    tsCode: `
     config: NgSyzCheckListStatusConfig = {
       title: 'Metas do sita',
       textButton: 'Saiba mais',
