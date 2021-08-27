@@ -27,11 +27,18 @@ export class CardComponentComponent implements OnInit {
   ngOnInit(): void {}
 
   showItens(i): [] {
+    // console.log('i',i)
+    console.log('slides:', this.slides)
+    if(!i){
+      return []
+    }
     const list = this.slides[i];
-    if (!list.itens.length) return [];
-    if (list?.showMore) return list.itens;
+    console.log('list:', list)
+    if (!list?.itens.length) return [];
+    if (list?.showMore) return list?.itens;
 
     const showMinItens = list.itens.slice(0, 3);
+    console.log('showminiitens',showMinItens)
     return showMinItens;
   }
   showMore(i) {

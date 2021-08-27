@@ -26,4 +26,10 @@ describe('NgSyzPerformanceSummaryComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should return float value', () => {
+    let floatvalue = 100;
+
+    expect(component.calcPercent(floatvalue, floatvalue)).toEqual(floatvalue);
+  });
+
 });

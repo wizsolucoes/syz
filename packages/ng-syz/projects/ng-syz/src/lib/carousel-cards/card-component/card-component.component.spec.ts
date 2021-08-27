@@ -17,6 +17,10 @@ describe('CardComponentComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CardComponentComponent);
     component = fixture.componentInstance;
+    component.slides = [{
+      title: '',
+      itens: []
+    }]
     fixture.detectChanges();
   });
 
@@ -30,7 +34,7 @@ describe('CardComponentComponent', () => {
     expect(showMore).toBeTruthy();
   });
 
-  it('should return array', () => {
+  fit('should return array', () => {
     let showItensExample = {
       title: 'Conexão Conseg',
       colorCard: '#ffffff',
