@@ -31,7 +31,7 @@ export class ComponentsComponent {
       route: 'timeline',
     },
     {
-      displayName: 'Achievements Progress Bar',
+      displayName: 'Visão de metas',
       route: 'achievements-progress-bar',
     }
   ];
