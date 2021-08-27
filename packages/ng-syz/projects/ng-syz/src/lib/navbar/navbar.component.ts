@@ -38,9 +38,6 @@ menuButtons: MenuButton[] = [
       label: 'Performance'
     },
     {
-      label: 'Gestão'
-    },
-    {
       label: 'Calendário'
     },
     {

@@ -19,5 +19,5 @@ export * from './lib/login-with-cards-flow/login-with-cards-flow.component';
 
 export * from './lib/models';
 
-export * from './lib/hello-world/hello-world.module';
-export * from './lib/hello-world/hello-world.component';
+export * from './lib/navbar/navbar.module';
+export * from './lib/navbar/navbar.component';
