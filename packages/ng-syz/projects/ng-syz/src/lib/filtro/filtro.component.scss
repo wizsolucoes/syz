@@ -89,3 +89,17 @@ $dark-gray: #50555a;
     background-color: $track-color;
   }
 }
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $accent-color;
+}
+
+::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $accent-color;
+  }
+
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: $accent-color;
+  }
+}

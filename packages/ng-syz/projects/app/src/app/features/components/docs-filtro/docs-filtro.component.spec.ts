@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSyzFiltroModule } from 'projects/ng-syz/src/public-api';
+import { SharedModule } from '../../../shared/shared.module';
 
 import { DocsFiltroComponent } from './docs-filtro.component';
 
@@ -10,10 +11,9 @@ describe('DocsFiltroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocsFiltroComponent ],
-      imports: [NgSyzFiltroModule, NoopAnimationsModule]
-    })
-    .compileComponents();
+      declarations: [DocsFiltroComponent],
+      imports: [NgSyzFiltroModule, NoopAnimationsModule, SharedModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,3 +1,17 @@
-ng-syz-filtro {
-  --accent-color: darkorange;
+.exemplo1 {
+  ng-syz-filtro {
+    --accent-color: darkorange;
+  }
+}
+
+.exemplo2 {
+  ng-syz-filtro {
+    --accent-color: #903ba5;
+    --card-color: #9cfac1;
+  }
+}
+
+.title {
+  font-size: large;
+  font-weight: bold;
 }

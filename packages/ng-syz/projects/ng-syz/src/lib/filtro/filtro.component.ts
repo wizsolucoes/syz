@@ -1,5 +1,5 @@
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Filter } from '../models';
 
@@ -8,14 +8,16 @@ import { Filter } from '../models';
   templateUrl: './filtro.component.html',
   styleUrls: ['./filtro.component.scss'],
 })
-export class NgSyzFiltroComponent {
+export class NgSyzFiltroComponent implements OnInit {
   @Output() handleFormChange = new EventEmitter(true);
   @Input() filters: Filter[] = [];
   componentFilters: any[] = [];
 
   form: FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(private readonly fb: FormBuilder) {}
+
+  ngOnInit(): void {
     const formFields = {};
     this.filters.forEach((filter) => {
       const minString = 'min';
@@ -42,12 +44,8 @@ export class NgSyzFiltroComponent {
       }
     });
 
-    this.form = fb.group(formFields);
+    this.form = this.fb.group(formFields);
 
-    // Init the FormGroup in Parent View
-    this.emitFormGroupToParent();
-
-    // Every Change the parent is listen to the FromGroup
     this.form.valueChanges.subscribe(() => {
       this.emitFormGroupToParent();
     });
