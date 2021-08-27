@@ -9,7 +9,7 @@ import { NgSyzPerformanceSummaryList } from '../models';
 export class NgSyzPerformanceSummaryComponent implements OnInit {
 
   @Input() title: string;
-  @Input() msgErroList: string = 'Nenhum item disponível para exibição!';
+  @Input() msgErroList = 'Nenhum item disponível para exibição!';
   @Input() List: NgSyzPerformanceSummaryList[] = [];
 
   constructor() {}

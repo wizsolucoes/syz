@@ -6,7 +6,6 @@ import { NgSyzCardResultInitiativeComponent } from './card-result-initiative.com
 describe('NgSyzCardResultInitiativeComponent', () => {
   let component: NgSyzCardResultInitiativeComponent;
   let fixture: ComponentFixture<NgSyzCardResultInitiativeComponent>;
-  let template: HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

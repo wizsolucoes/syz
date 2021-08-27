@@ -13,7 +13,7 @@ export class NgSyzCardResultInitiativeComponent {
   @Input() title: string;
   @Input() description: string;
   @Input() type: string;
-  @Input() maxWidth: number = 900;
+  @Input() maxWidth = 900;
   @Input() cards: NgSyzCardResultInitiative[];
   @Input() labelButton: string;
   @Input() backgroundCard: string;
@@ -21,7 +21,7 @@ export class NgSyzCardResultInitiativeComponent {
   @Input() descriptionColor: string;
   @Output() action: EventEmitter<any> = new EventEmitter();
 
-  submitActionButton(){
+  submitActionButton(): void{
     this.action.emit();
   }
 

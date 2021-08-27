@@ -12,8 +12,7 @@ describe('NgSyzCarouselCardsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [NgSyzCarouselCardsComponent],
-      imports: [NgxMaskModule.forRoot(),RouterModule],
-    }).compileComponents();
+      imports: [NgxMaskModule.forRoot(), RouterModule]}).compileComponents();
   });
 
   beforeEach(() => {
@@ -34,7 +33,7 @@ describe('NgSyzCarouselCardsComponent', () => {
 
 
   it('should return array', () => {
-    let showItensExample = {
+    const showItensExample = {
       title: 'Conexão Conseg',
       colorCard: '#ffffff',
       itens: [
@@ -44,14 +43,14 @@ describe('NgSyzCarouselCardsComponent', () => {
           target: '_self',
         }
       ]
-    }
-    let showItens = component.showItens(showItensExample[0])
+    };
+    const showItens = component.showItens(showItensExample[0]);
     expect(showItens).toBeTruthy();
   });
   
   it('should function showMore', () => {
-    let i = 0;
-    let showMoreExample = component.showMore(i)
+    const i = 0;
+    const showMoreExample = component.showMore(i);
     expect(showMoreExample).toEqual(showMoreExample);
   });
 
