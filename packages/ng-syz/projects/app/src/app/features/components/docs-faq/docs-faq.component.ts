@@ -12,6 +12,8 @@ export class DocsFaqComponent implements OnInit {
   public simpleDescriptionTest: boolean;
   public firstExpandedTest: boolean;
   public multiExpandedTest: boolean;
+  public showCustomColorTest: boolean;
+
 
   public mockDataCategorys = [
     {id: 1, title: 'Categoria 1'},
@@ -104,19 +106,86 @@ export class DocsFaqComponent implements OnInit {
     }
   ];
 
-  htmlExampleCode = `
-  <ng-syz-faq [data]="mockData" [simpleDescription]="false"></ng-syz-faq>
+  htmlExampleCode1 = 
+  `
+    <ng-syz-faq
+      (categorySelectedEvent)="categorySelected($event)"
+      [dataCategory]="mockDataCategorys"
+      [dataContentCategorySelected]="mockContentCategorySelected"
+      [simpleDescription]="simpleDescriptionTest"
+      [showToggle]="showToggleTest"
+      [firstExpanded]="firstExpandedTest"
+      [multiExpanded]="multiExpandedTest">
+    </ng-syz-faq>
   `;
 
-  tsExampleCode = `tsExampleCode`;
+  tsExampleCode1 = `
+  // Dado exemplo
+    public mockData = [
+      {
+        id: 1,
+        title: 'Categoria 1',
+        description: 'Descrição da categoria 1',
+        itens: [
+          { question: 'Dúvida 1', answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+          { question: 'Dúvida 2', answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+          { question: 'Dúvida 3', answer: 'Resposta 3' },
+          { question: 'Dúvida 4', answer: 'Resposta 4' }
+        ]
+      },
+      {
+        id: 2,
+        title: 'Categoria 2',
+        description: 'Descrição da categoria 2',
+        itens: [
+          { question: 'Dúvida 1', answer: 'Resposta 1' },
+        ]
+      },
+      {
+        id: 3,
+        title: 'Categoria 3',
+        description: 'Descrição da categoria 3',
+        itens: []
+      },
+      {
+        id: 4,
+        title: 'Categoria 4',
+        description: 'Descrição da categoria 4',
+        itens: [
+          { question: 'Dúvida 1', answer: 'Resposta 1' },
+          { question: 'Dúvida 2', answer: 'Resposta 2' }
+        ]
+      },
+      {
+        id: 5,
+        title: 'Categoria 5',
+        description: 'Descrição da categoria 5',
+        itens: []
+      },
+    ];
 
-  cssExampleCode = `cssExampleCode`;
+    // Emissor de evento para API para
+    public selectItemAndEmitIt(item: any): void {
+      this.itemSelected = item;
+      this.categorySelectedEvent.emit(item);
+    }
+  `;
+
+  cssExampleCode1 = 
+  `
+    .custom-color {
+      ng-syz-faq {
+          --syz-faq-color-primary: pink;
+          --syz-color-background: black;
+      }
+    }
+  `;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.showToggleTest = true;
     this.mockContentCategorySelected = this.mockData[0];
-    // this.mockContentCategorySelected = null;
   }
 
   public categorySelected(event): void {
@@ -138,5 +207,9 @@ export class DocsFaqComponent implements OnInit {
 
   public multiExpanded(): void {
     this.multiExpandedTest = !this.multiExpandedTest;
+  }
+
+  public showCustomColor(): void {
+    this.showCustomColorTest = !this.showCustomColorTest;
   }
 }

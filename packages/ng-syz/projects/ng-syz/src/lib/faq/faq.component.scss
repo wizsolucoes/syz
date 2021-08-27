@@ -26,12 +26,12 @@
             word-break: break-all;
 
             .title-active {
-                color: var(--primary-color);
+                color: var(--syz-faq-color-primary, #FF9100);
             }
         }
 
         .border-left-active {
-            border-left: 5px solid var(--syz-faq-color-primary, --primary-color);
+            border-left: 5px solid var(--syz-faq-color-primary, #FF9100);
         }
 
         .border-left-deactive {
@@ -94,11 +94,11 @@
 
             .mat-expanded {
                 ::ng-deep .mat-expansion-indicator::after, .mat-expansion-panel-header-title {
-                    color: var(--syz-faq-color-secondary, white);
+                    color: var(--syz-faq-color-primary-text, white);
                 }
 
                 .mat-expansion-panel-header {
-                    background-color: var(--syz-faq-color-primary, --primary-color);
+                    background-color: var(--syz-faq-color-primary, #FF9100);
                 }
             }
 
