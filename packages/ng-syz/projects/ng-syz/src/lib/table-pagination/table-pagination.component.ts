@@ -166,7 +166,7 @@ export class NgSyzTablepaginationComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.tableInfo.content);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
@@ -183,7 +183,7 @@ export class NgSyzTablepaginationComponent implements OnInit {
     this.navigationPage.emit(value);
   }
 
-  controlInfoHeader(infoHeader){
+  controlInfoHeader(infoHeader): string {
     if(typeof infoHeader === 'object'){
       return infoHeader.title
     }else{
