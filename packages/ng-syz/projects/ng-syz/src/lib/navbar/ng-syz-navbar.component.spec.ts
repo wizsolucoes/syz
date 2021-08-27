@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavbarComponent } from './navbar.component';
+import { NgSyzNavbarComponent } from './ng-syz-navbar.component';
 
-describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
+describe('NgSyzNavbarComponent', () => {
+  let component: NgSyzNavbarComponent;
+  let fixture: ComponentFixture<NgSyzNavbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      declarations: [ NgSyzNavbarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarComponent);
+    fixture = TestBed.createComponent(NgSyzNavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

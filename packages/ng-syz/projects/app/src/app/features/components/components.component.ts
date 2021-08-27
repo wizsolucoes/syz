@@ -22,7 +22,7 @@ export class ComponentsComponent {
       displayName: 'Fluxo de login com cards',
       route: 'login-with-cards-flow',
     },
-    { displayName: 'Nav Bar', route: 'navbar' },
+    { displayName: 'Barra de Navegação', route: 'navbar' },
   ];
 }
 

@@ -1,0 +1,22 @@
+<mat-toolbar  color="primary">
+    <div class="navbar-brand">
+        <a class="navbar-item" routerLink="comunicados">
+            NavBar
+       <img [src]="" alt=""/>
+        </a>
+      </div>
+
+<div class="center" >
+        <button mat-button *ngFor="let item of menuItems" fxHide.xs>
+            {{item.label}}
+        </button>
+</div>
+
+<div class="right">
+    <button mat-button *ngFor="let item of menuButtons" fxHide.xs>
+        <mat-icon class="mr">{{item.icon}}</mat-icon>
+        {{item.tooltip}}
+    </button>
+</div>
+
+</mat-toolbar>

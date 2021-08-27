@@ -19,5 +19,5 @@ export * from './lib/login-with-cards-flow/login-with-cards-flow.component';
 
 export * from './lib/models';
 
-export * from './lib/navbar/navbar.module';
-export * from './lib/navbar/navbar.component';
+export * from './lib/navbar/ng-syz-navbar.module';
+export * from './lib/navbar/ng-syz-navbar.component';
