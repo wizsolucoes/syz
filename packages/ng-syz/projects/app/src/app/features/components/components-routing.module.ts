@@ -42,6 +42,88 @@ const routes: Routes = [
             './docs-login-with-cards-flow/docs-login-with-cards-flow.module'
           ).then((m) => m.DocsLoginWithCardsFlowModule),
       },
+      {
+        path: 'cards-carousel',
+        loadChildren: () =>
+          import('./docs-cards-carousel/docs-cards-carousel.module').then(
+            (m) => m.DocsCarouselCardsModule
+          ),
+      },
+      {
+        path: 'initiative-result-card',
+        loadChildren: () =>
+          import(
+            './docs-initiative-result-card/docs-initiative-result-card.module'
+          ).then((m) => m.DocsCardResultInitiativeModule),
+      },
+      {
+        path: 'performance-summary',
+        loadChildren: () =>
+          import(
+            './docs-performance-summary/docs-performance-summary.module'
+          ).then((m) => m.DocsPerformanceSummaryModule),
+      },
+      {
+        path: 'checklist-status',
+        loadChildren: () =>
+          import('./docs-checklist-status/docs-checklist-status.module').then(
+            (m) => m.DocsChecklistStatusModule
+          ),
+      },
+      {
+        path: 'data-table',
+        loadChildren: () =>
+          import('./docs-data-table/docs-data-table.module').then(
+            (m) => m.DocsDataTableModule
+          ),
+      },
+      {
+        path: 'faq',
+        loadChildren: () =>
+          import('./docs-faq/docs-faq.module').then((m) => m.DocsFaqModule),
+      },
+      {
+        path: 'status-timeline',
+        loadChildren: () =>
+          import('./docs-status-timeline/docs-status-timeline.module').then(
+            (m) => m.DocsStatusTimelineModule
+          ),
+      },
+      {
+        path: 'achievements-progress-bar',
+        loadChildren: () =>
+          import(
+            './docs-achievements-progress-bar/docs-achievements-progress-bar.module'
+          ).then((m) => m.DocsAchievementsProgressBarModule),
+      },
+      {
+        path: 'simulation-result',
+        loadChildren: () =>
+          import('./docs-simulation-result/docs-simulation-result.module').then(
+            (m) => m.DocsSimulationResultModule
+          ),
+      },
+      {
+        path: 'button-grid',
+        loadChildren: () =>
+          import('./docs-button-grid/docs-button-grid.module').then(
+            (m) => m.DocsButtonGridModule
+          ),
+      },
+      {
+        path: 'password-reset-card',
+        loadChildren: () =>
+          import(
+            './docs-password-reset-card/docs-password-reset-card.module'
+          ).then((m) => m.DocsSimulationResultModule),
+      },
+      {
+        path: 'sidebar-filter',
+        loadChildren: () =>
+          import('./docs-sidebar-filter/docs-sidebar-filter.module').then(
+            (m) => m.DocsFiltroModule
+          ),
+      },
     ],
   },
   {

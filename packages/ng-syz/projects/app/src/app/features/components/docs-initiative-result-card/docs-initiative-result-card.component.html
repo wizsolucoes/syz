@@ -1,0 +1,50 @@
+<app-component-page
+  [title]="'Resultado de iniciativa'"
+  [description]="
+    'Componente para mostrar cards com informações de resultados  de alguma iniciativa'
+  "
+  [selector]="'ng-syz-initiative-result-card'"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+  [importCode]="importCode"
+>
+  <!-- Exemplo 1 -->
+  <app-code-example [htmlCode]="exampleHtml" [tsCode]="exampleTs">
+    <ng-syz-initiative-result-card
+      [image]="image"
+      title="Chegou a hora de receber o seu incentivo!"
+      description="Para realizarmos o pagamento do seu incentivo financeiro, precisamos
+      que você aceite o RPA. Clique no botão e siga as orientações."
+      type="cards"
+      [maxWidth]="900"
+      [cards]="cards"
+    ></ng-syz-initiative-result-card>
+  </app-code-example>
+
+  <!-- Exemplo 2 -->
+  <app-code-example [htmlCode]="exampleHtml2">
+    <ng-syz-initiative-result-card
+      name="Progresso de indicações"
+      [image]="image2"
+      title="Parabéns pelo seu resultado na campanha!"
+      description="A campanha se encerrou e essas foram as suas conquistas. Dá só uma olhada:"
+      type="button"
+      [maxWidth]="900"
+      (action)="myFunction()"
+      labelButton="Assinar RPA"
+    ></ng-syz-initiative-result-card>
+  </app-code-example>
+
+  <!-- Exemplo 3 -->
+  <app-code-example [htmlCode]="exampleHtml3">
+    <ng-syz-initiative-result-card
+      [image]="image2"
+      title="Parabéns pelo seu resultado na campanha!"
+      description="A campanha se encerrou e essas foram as suas conquistas. Dá só uma olhada:"
+      [maxWidth]="900"
+      backgroundCard="#ff9100"
+      titleColor="#FFFFFF"
+      descriptionColor="#FFFFFF"
+    ></ng-syz-initiative-result-card>
+  </app-code-example>
+</app-component-page>

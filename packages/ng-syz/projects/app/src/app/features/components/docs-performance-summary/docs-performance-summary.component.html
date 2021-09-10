@@ -1,0 +1,44 @@
+<app-component-page
+  title="Resumo de Desempenho"
+  [description]="Description"
+  selector="ng-syz-performance-summary"
+  importCode="import { NgSyzPerformanceSummary } from '@wizsolucoes/ng-syz';"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+>
+
+  <app-code-example
+    [htmlCode]="codeExemple01.htmlExampleCode"
+    [tsCode]="codeExemple01.tsCode"
+  >
+    <ng-syz-performance-summary title='Melhore seu desempenho' [List]="dataList" ></ng-syz-performance-summary>
+  </app-code-example>
+
+  <h2>Exemplo alterando as cores</h2>
+
+  <ul class="listExplique">
+    <li>
+      Controle as cores dos cards controlando o array de slides!
+      <pre class="block ng-star-inserted"><code>{{".exemplo ng-syz-performance-summary {
+  --color-title: #36aa9b;
+  --color-grafic: #ffb9b9;
+  --color-text: #7d88c1;
+  --bg-card: #d2f2ff;
+}"}}</code></pre>
+    </li>
+  </ul>
+  <br />
+
+  <div class="exemplo">
+    <app-code-example
+      [htmlCode]="codeExemple02.htmlExampleCode"
+      [tsCode]="codeExemple02.tsCode"
+      [cssCode]="codeExemple02.cssCode"
+    >
+      <ng-syz-performance-summary title='Melhore seu desempenho' [List]="dataList" ></ng-syz-performance-summary>
+    </app-code-example>
+  </div>
+
+
+
+</app-component-page>

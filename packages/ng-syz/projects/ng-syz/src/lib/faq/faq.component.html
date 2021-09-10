@@ -1,0 +1,32 @@
+<div class="content-all" [style.grid-template-columns]="hasOneCategoryOnly ? 'auto' : ''">
+
+    <div *ngIf="!hasOneCategoryOnly" class="categorias">
+        <div (click)="selectItemAndEmitIt(item)" class="item-categoria" *ngFor="let item of dataCategory"
+            [ngClass]="{'border-left-active': itemSelected === item, 'border-left-deactive': itemSelected !== item}">
+            <span [ngClass]="{'title-active': itemSelected === item}">{{ item.title }}</span>
+        </div>
+    </div>
+
+    <div *ngIf="dataContentCategorySelected" class="conteudo-categoria">
+
+        <div class="title">{{ dataContentCategorySelected.title }}</div>
+
+        <div *ngIf="simpleDescription" class="" [innerHTML]="dataContentCategorySelected.description"></div>
+
+        <div *ngIf="!simpleDescription" class="section">
+            <mat-accordion [multi]="multiExpanded">
+                <mat-expansion-panel *ngFor="let item of dataContentCategorySelected.itens; let isFirst = first"
+                    [expanded]="isFirst && firstExpanded" [hideToggle]="!showToggle">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span class="title-accordeon">{{ item.question }}</span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <span class="text">
+                        {{ item.answer }}
+                    </span>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<app-component-page
+  [title]="'Filtro de barra lateral'"
+  [selector]="'ng-syz-sidebar-filter'"
+  [importCode]="importCode"
+  [description]="description"
+  [componentCSSVariables]="componentCSSVariables"
+  [componentProps]="componentProps"
+>
+  <span class="title">Exemplo 1</span>
+  <app-code-example
+    [htmlCode]="htmlExampleCode1"
+    [tsCode]="tsExampleCode1"
+    [cssCode]="cssExampleCode1"
+  >
+    <div class="exemplo1">
+      <ng-syz-sidebar-filter
+        [filters]="filtroExemplo1"
+        (handleFormChange)="showFilterValues($event)"
+      ></ng-syz-sidebar-filter>
+    </div>
+  </app-code-example>
+
+  <span class="title">Exemplo 2</span>
+  <app-code-example
+    [htmlCode]="htmlExampleCode2"
+    [tsCode]="tsExampleCode2"
+    [cssCode]="cssExampleCode2"
+  >
+    <div class="exemplo2">
+      <ng-syz-sidebar-filter
+        [filters]="filtroExemplo2"
+        (handleFormChange)="showFilterValues($event)"
+      ></ng-syz-sidebar-filter>
+    </div>
+  </app-code-example>
+</app-component-page>

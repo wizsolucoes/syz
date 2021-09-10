@@ -1,0 +1,18 @@
+.custom-color {
+    ng-syz-faq {
+        --syz-faq-color-primary: pink;
+        --syz-color-background: black;
+    }
+}
+
+.buttons-section {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    button {
+        padding: 8px;
+    }
+
+}

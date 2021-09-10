@@ -1,0 +1,33 @@
+<app-component-page
+  title="Status de checklist"
+  [description]="Description"
+  selector="ng-syz-checklist-status"
+  importCode="import { NgSyzCheckListStatus } from '@wizsolucoes/ng-syz';"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+>
+  <app-code-example
+    [htmlCode]="codeExemple01.htmlExampleCode"
+    [tsCode]="codeExemple01.tsCode"
+  >
+    <ng-syz-checklist-status
+      [config]="config"
+      [list]="dataComponent"
+    ></ng-syz-checklist-status>
+  </app-code-example>
+
+  <h2>Personalizandos cores</h2>
+
+  <div class="exemplo">
+    <app-code-example
+      [htmlCode]="codeExemple01.htmlExampleCode"
+      [tsCode]="codeExemple01.tsCode"
+      [cssCode]="codeExemple01.cssCode"
+    >
+      <ng-syz-checklist-status
+        [config]="config"
+        [list]="dataComponent"
+      ></ng-syz-checklist-status>
+    </app-code-example>
+  </div>
+</app-component-page>

@@ -1,0 +1,20 @@
+.title {
+  font-size: large;
+  font-weight: bold;
+}
+
+.exemplo2 {
+  ng-syz-simulation-result {
+    --selected-card: #8d4091;
+    --selected-line: #dec36d;
+    --selected-button: #83decb;
+  }
+}
+
+.exemplo3 {
+  ng-syz-simulation-result {
+    --selected-card: #003f63;
+    --selected-line: #d9d9d9;
+    --selected-button: #353d40;
+  }
+}

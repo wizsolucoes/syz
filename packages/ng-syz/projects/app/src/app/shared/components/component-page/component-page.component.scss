@@ -13,6 +13,10 @@ table {
 
 .app-component-page-tab-content {
   padding-top: 8px;
+
+  p{
+    white-space: pre-line;
+  }
 }
 
 .app-components-selector-box {
@@ -29,3 +33,16 @@ table {
   }
 }
 
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  white-space: pre-line;
+}
+
+
+
+.showRenderNgContent{
+  opacity: 1;
+}
+
+.hideRenderNgContent{
+  opacity: 0;
+}

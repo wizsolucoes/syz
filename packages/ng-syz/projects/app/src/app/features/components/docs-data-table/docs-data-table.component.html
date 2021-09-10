@@ -1,0 +1,61 @@
+<app-component-page
+  title="Tabela de dados"
+  [description]="Description"
+  selector="ng-syz-data-table"
+  importCode="import { NgSyzDataTable } from '@wizsolucoes/ng-syz';"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+>
+  <app-code-example
+    [htmlCode]="codeExemple01.htmlExampleCode"
+    [tsCode]="codeExemple01.tsCode"
+  >
+    <ng-syz-data-table
+      [serverSide]="serverSide"
+      [showPaginator]="showPaginator"
+      [paginatorInfo]="paginatorInfo"
+      [tableInfo]="tableInfo"
+      (changePerPage)="changePerPage($event)"
+      (navigationPage)="navigationPage($event)"
+      (clickLine)="clickLine($event)"
+    >
+    </ng-syz-data-table>
+  </app-code-example>
+
+  <h2>Componente com paginação Server Side</h2>
+  <app-code-example
+    [htmlCode]="codeExemple02.htmlExampleCode"
+    [tsCode]="codeExemple02.tsCode"
+  >
+    <ng-syz-data-table
+      [serverSide]="true"
+      [showPaginator]="showPaginator"
+      [paginatorInfo]="paginatorInfo"
+      [tableInfo]="tableInfo"
+      (changePerPage)="changePerPage($event)"
+      (navigationPage)="navigationPage($event)"
+      (clickLine)="clickLine($event)"
+    >
+    </ng-syz-data-table>
+  </app-code-example>
+
+  <h2>Estilizando componente</h2>
+  <div class="exemplo">
+    <app-code-example
+      [htmlCode]="codeExemple01.htmlExampleCode"
+      [tsCode]="codeExemple01.tsCode"
+      [cssCode]="codeExemple01.cssCode"
+    >
+      <ng-syz-data-table
+        [serverSide]="true"
+        [showPaginator]="showPaginator"
+        [paginatorInfo]="paginatorInfo"
+        [tableInfo]="tableInfo"
+        (changePerPage)="changePerPage($event)"
+        (navigationPage)="navigationPage($event)"
+        (clickLine)="clickLine($event)"
+      >
+      </ng-syz-data-table>
+    </app-code-example>
+  </div>
+</app-component-page>
