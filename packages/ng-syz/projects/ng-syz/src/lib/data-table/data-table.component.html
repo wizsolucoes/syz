@@ -1,0 +1,147 @@
+<div id="data-table" *ngIf="!serverSide">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    class=""
+    [attr.aria-describedby]="tableInfo.tableDescription"
+  >
+    <caption>
+      {{
+        tableInfo.tableDescription
+      }}
+    </caption>
+    <ng-container
+      *ngFor="let item of tableInfo.rowOrder; let i = index"
+      matColumnDef="{{ item }}"
+    >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col">
+        {{ controlInfoHeader(tableInfo.header[i]) }}
+      </th>
+      <td mat-cell *matCellDef="let element; let index = index">
+        <div class="inline">
+          {{ element[item] }}
+        </div>
+      </td>
+    </ng-container>
+    <tr
+      class="header"
+      mat-header-row
+      *matHeaderRowDef="tableInfo.rowOrder"
+    ></tr>
+    <tr
+      (click)="clickLineEvent(row)"
+      [ngClass]="{ content: hoverEffect }"
+      mat-row
+      *matRowDef="let row; columns: tableInfo.rowOrder; let idx = dataIndex"
+    ></tr>
+  </table>
+  <div style="text-align: center" *ngIf="tableInfo.content.length === 0">
+    <p>Sem Resultados para exibir</p>
+  </div>
+  <mat-paginator
+    *ngIf="showPaginator"
+    [length]="tableInfo.content.length"
+    [pageSize]="paginatorInfo.pageSize"
+    [pageSizeOptions]="paginatorInfo.pageSizeOptions"
+  >
+  </mat-paginator>
+</div>
+
+<div id="data-table" *ngIf="serverSide">
+  <table
+    class="data-table-custom"
+    [attr.aria-describedby]="tableInfo.tableDescription"
+  >
+    <caption>
+      {{
+        tableInfo.tableDescription
+      }}
+    </caption>
+    <thead>
+      <tr>
+        <th *ngFor="let item of tableInfo.header" scope="col">
+          {{ item }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let item of tableInfo.content; let i = index"
+        (click)="clickLineEvent(item)"
+      >
+        <td *ngFor="let row of tableInfo.rowOrder; let iRow = index">
+          {{ constrolInfoTr(item, iRow) }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination" *ngIf="showPaginator">
+    <p>Itens por página</p>
+    <select (change)="changePage($event.target.value)">
+      <option *ngFor="let page of paginatorInfo.pageSizeOptions" [value]="page">
+        {{ page }}
+      </option>
+    </select>
+    <p>página atual {{ paginatorInfo.currentPage }}</p>
+    <button
+      type="button"
+      class="
+        mat-focus-indicator
+        mat-tooltip-trigger
+        mat-paginator-navigation-previous
+        mat-icon-button
+        mat-button-base
+      "
+      ng-reflect-message="Página anterior"
+      ng-reflect-disabled="true"
+      ng-reflect-position="above"
+      aria-label="Página anterior"
+      (click)="navigationPageClick('prev')"
+    >
+      <span class="mat-button-wrapper"
+        ><svg viewBox="0 0 24 24" focusable="false" class="mat-paginator-icon">
+          <path
+            d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+          ></path></svg></span
+      ><span
+        matripple=""
+        class="mat-ripple mat-button-ripple mat-button-ripple-round"
+        ng-reflect-disabled="true"
+        ng-reflect-centered="true"
+        ng-reflect-trigger="[object HTMLButtonElement]"
+      ></span
+      ><span class="mat-button-focus-overlay"></span>
+    </button>
+    <button
+      mat-icon-button=""
+      type="button"
+      class="
+        mat-focus-indicator
+        mat-tooltip-trigger
+        mat-paginator-navigation-next
+        mat-icon-button
+        mat-button-base
+      "
+      ng-reflect-message="Próxima página"
+      ng-reflect-disabled="false"
+      ng-reflect-position="above"
+      aria-label="Próxima página"
+      (click)="navigationPageClick('next')"
+    >
+      <span class="mat-button-wrapper"
+        ><svg viewBox="0 0 24 24" focusable="false" class="mat-paginator-icon">
+          <path
+            d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+          ></path></svg></span
+      ><span
+        matripple=""
+        class="mat-ripple mat-button-ripple mat-button-ripple-round"
+        ng-reflect-disabled="false"
+        ng-reflect-centered="true"
+        ng-reflect-trigger="[object HTMLButtonElement]"
+      ></span
+      ><span class="mat-button-focus-overlay"></span>
+    </button>
+  </div>
+</div>

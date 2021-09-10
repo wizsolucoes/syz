@@ -1,0 +1,25 @@
+<div id="performace-summary">
+  <h2>{{title}}</h2>
+  <div class="main">
+    <div class="list" *ngFor="let item of List">
+      <div class="icon">
+        <mat-icon matSuffix  aria-hidden="false" aria-label="Example home icon">{{item.icon}}</mat-icon>
+      </div>
+      <div class="text">
+        <h3>{{item.title}}</h3>
+        <span>{{item.subTitle}}</span>
+      </div>
+      <div class="resume">
+        <div class="number">{{item.total - item.totalComplet}}</div>
+        <div class="label">{{item.nameType}} <br /> restantes</div>
+      </div>
+      <div class="grafic">
+        <p><strong>{{calcPercent(item.total, item.totalComplet)}}%</strong> tratados</p>
+        <div class="progress"><span [ngStyle]="{width: calcPercent(item.total, item.totalComplet) + '%'}" ></span></div>
+      </div>
+    </div>
+    <div class="list" *ngIf="!List || !List.length">
+      <p>{{msgErroList}}</p>
+    </div>
+  </div>
+</div>

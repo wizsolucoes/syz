@@ -1,0 +1,88 @@
+<app-component-page
+  [title]="'Carousel de Cards'"
+  [description]="Description"
+  [selector]="'ng-syz-cards-carousel'"
+  importCode="import { NgSyzCardsCarouselModule } from '@wizsolucoes/ng-syz';"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+>
+  <br />
+  <h2>Carousel Cards</h2>
+
+  <app-code-example
+    [htmlCode]="config01.htmlExampleCode"
+    [tsCode]="config01.tsCode"
+  >
+    <ng-syz-cards-carousel
+      [config]="dataConfig01"
+      [slides]="dataSlides01"
+    ></ng-syz-cards-carousel>
+  </app-code-example>
+
+  <h2>Exemplo com Auto Play</h2>
+
+  <app-code-example
+    [htmlCode]="config01.htmlExampleCode"
+    [tsCode]="config01.tsCode"
+  >
+    <ng-syz-cards-carousel
+      [config]="dataConfig02"
+      [slides]="dataSlides02"
+    ></ng-syz-cards-carousel>
+  </app-code-example>
+
+  <h2>Cor de fundo do Card</h2>
+
+  <ul class="listExplique">
+    <li>
+      Controle as cores dos cards controlando o array de slides!
+      <pre class="block ng-star-inserted"><code>{{"slides: [
+        {
+          title: 'Conexão Conseg',
+          colorCard: '#ffffff',
+          itens: [...]
+        },
+        ...
+      ]"}}</code></pre>
+    </li>
+  </ul>
+
+  <app-code-example
+    [htmlCode]="config03.htmlExampleCode"
+    [tsCode]="config03.tsCode"
+  >
+    <ng-syz-cards-carousel
+      [config]="dataConfig03"
+      [slides]="dataSlides03"
+    ></ng-syz-cards-carousel>
+  </app-code-example>
+
+  <h2>Cor do Título, botões e texto</h2>
+
+  <ul class="listExplique">
+    <li>Controle as cores dos botões com as variáveis de ambiente!</li>
+  </ul>
+  <pre class="block ng-star-inserted">
+    <code>{{
+        "
+        --text-color: #60a3c3;
+        --title-color: #1aa0bf;
+        --primary-color: #00aa9b;
+        --bg-card-color: #94feff;
+        "
+      }}</code>
+  </pre>
+
+  <div class="exemploCor">
+    <app-code-example
+      [htmlCode]="config01.htmlExampleCode"
+      [tsCode]="config01.tsCode"
+      [cssCode]="config01.cssCode"
+    >
+      <ng-syz-cards-carousel
+        [slides]="dataSlides01"
+        [config]="dataConfig01"
+      ></ng-syz-cards-carousel>
+    </app-code-example>
+  </div>
+</app-component-page>

@@ -1,0 +1,42 @@
+.app-code-example-container {
+  border: 1px solid lightgrey;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 32px;
+}
+
+
+h3, h4 {
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-column-name {
+  min-width: 48px;
+}
+
+.app-component-page-tab-content {
+  padding-top: 8px;
+}
+
+.app-components-selector-box {
+  display: flex;
+  align-items:center;
+
+  p {
+    margin: 0;
+  }
+
+  pre.block {
+    margin-top: 0;
+    margin-left: 5px;
+  }
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  white-space: pre-line;
+}

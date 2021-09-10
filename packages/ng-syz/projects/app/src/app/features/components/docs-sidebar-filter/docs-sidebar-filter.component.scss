@@ -1,0 +1,17 @@
+.exemplo1 {
+  ng-syz-sidebar-filter {
+    --accent-color: darkorange;
+  }
+}
+
+.exemplo2 {
+  ng-syz-sidebar-filter {
+    --accent-color: #903ba5;
+    --card-color: #9cfac1;
+  }
+}
+
+.title {
+  font-size: large;
+  font-weight: bold;
+}

@@ -1,0 +1,52 @@
+<app-component-page
+  [title]="'Barra de progresso de desempenho'"
+  [description]="'Componente para visão de metas'"
+  [selector]="'ng-syz-achievements-progress-bar'"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+  [importCode]="importCode"
+>
+  <app-code-example [htmlCode]="htmlExampleCode1" [tsCode]="tsExampleCode1">
+    <div class="">
+      <ng-syz-achievements-progress-bar
+        (verifyToggleLeftIsSelectedEvent)="
+          toggleButtonLeftIsSelectedEvent($event)
+        "
+        [data]="mockData1"
+      >
+      </ng-syz-achievements-progress-bar>
+    </div>
+  </app-code-example>
+
+  <p>Exemplo com dados diferentes:</p>
+
+  <app-code-example [htmlCode]="htmlExampleCode2" [tsCode]="tsExampleCode2">
+    <div class="">
+      <ng-syz-achievements-progress-bar
+        (verifyToggleLeftIsSelectedEvent)="
+          toggleButtonLeftIsSelectedEvent($event)
+        "
+        [data]="mockData2"
+      >
+      </ng-syz-achievements-progress-bar>
+    </div>
+  </app-code-example>
+
+  <p>Exemplo com cor diferente:</p>
+
+  <app-code-example
+    [htmlCode]="htmlExampleCode3"
+    [tsCode]="tsExampleCode2"
+    [cssCode]="example3Css"
+  >
+    <div class="change-color">
+      <ng-syz-achievements-progress-bar
+        (verifyToggleLeftIsSelectedEvent)="
+          toggleButtonLeftIsSelectedEvent($event)
+        "
+        [data]="mockData2"
+      >
+      </ng-syz-achievements-progress-bar>
+    </div>
+  </app-code-example>
+</app-component-page>

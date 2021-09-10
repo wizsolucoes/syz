@@ -4,7 +4,7 @@
 
 <mat-sidenav-container>
   <mat-sidenav mode="side" opened>
-    <mat-nav-list *ngFor="let item of navItems">
+    <mat-nav-list *ngFor="let item of orderedList">
       <a mat-list-item [routerLink]="item.route" routerLinkActive="active">
         {{ item.displayName }}
       </a>

@@ -1,0 +1,61 @@
+<app-component-page
+  [title]="'Resultado de simulação'"
+  [selector]="'ng-syz-simulation-result'"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+  [importCode]="importCode"
+  [description]="description"
+>
+  <span class="title">Exemplo 1</span>
+  <app-code-example [htmlCode]="htmlExampleCode1" [tsCode]="tsExampleCode1">
+    <div class="exemplo1">
+      <ng-syz-simulation-result
+        [cards]="cardsExemplo1"
+        [valor]="valorExemplo1"
+        [modalidades]="modalidadesExemplo1"
+        [ajudaModalidades]="ajudaModalidadesExemplo1"
+        [condicoes]="condicoesExemplo1"
+        (enviarCardSelecionado)="enviarCardSelecionado($event)"
+        (enviarModalidadeSelecionada)="enviarModalidadeSelecionada($event)"
+      ></ng-syz-simulation-result>
+    </div>
+  </app-code-example>
+
+  <span class="title">Exemplo 2</span>
+  <app-code-example
+    [htmlCode]="htmlExampleCode2"
+    [tsCode]="tsExampleCode2"
+    [cssCode]="cssExample2Code"
+  >
+    <div class="exemplo2">
+      <ng-syz-simulation-result
+        [cards]="cardsExemplo2"
+        [valor]="valorExemplo2"
+        [modalidades]="modalidadesExemplo2"
+        [ajudaModalidades]="ajudaModalidadesExemplo2"
+        [condicoes]="condicoesExemplo2"
+        (enviarCardSelecionado)="enviarCardSelecionado($event)"
+        (enviarModalidadeSelecionada)="enviarModalidadeSelecionada($event)"
+      ></ng-syz-simulation-result>
+    </div>
+  </app-code-example>
+
+  <span class="title">Exemplo 3</span>
+  <app-code-example
+    [htmlCode]="htmlExampleCode3"
+    [tsCode]="tsExampleCode3"
+    [cssCode]="cssExample3Code"
+  >
+    <div class="exemplo3">
+      <ng-syz-simulation-result
+        [cards]="cardsExemplo3"
+        [valor]="valorExemplo3"
+        [modalidades]="modalidadesExemplo3"
+        [ajudaModalidades]="ajudaModalidadesExemplo3"
+        [condicoes]="condicoesExemplo3"
+        (enviarCardSelecionado)="enviarCardSelecionado($event)"
+        (enviarModalidadeSelecionada)="enviarModalidadeSelecionada($event)"
+      ></ng-syz-simulation-result>
+    </div>
+  </app-code-example>
+</app-component-page>

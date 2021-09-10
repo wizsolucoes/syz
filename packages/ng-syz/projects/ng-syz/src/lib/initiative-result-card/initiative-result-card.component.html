@@ -1,0 +1,61 @@
+<div id="wiz-initiative-result-card" [ngStyle]="{ background: backgroundCard }">
+  <h3 *ngIf="name">{{ name }}</h3>
+  <div class="container" [ngStyle]="{ maxWidth: maxWidth + 'px' }">
+    <div class="content-left">
+      <img [src]="image?.url" alt="{{ image?.alt }}" />
+    </div>
+    <div class="content-right">
+      <div class="content-text">
+        <h2 class="title" [ngStyle]="{ color: titleColor }">{{ title }}</h2>
+        <p class="subtitle" [ngStyle]="{ color: descriptionColor }">
+          {{ description }}
+        </p>
+      </div>
+      <div class="content-items">
+        <button *ngIf="type === 'button'" (click)="submitActionButton()">
+          {{ labelButton }}
+        </button>
+        <ng-container *ngIf="type === 'cards'">
+          <div
+            class="card"
+            *ngFor="let item of cards"
+            [ngStyle]="{ borderColor: item.color }"
+          >
+            <div class="icon">
+              <mat-icon
+                [ngStyle]="{ color: item.color }"
+                matSuffix
+                aria-hidden="false"
+                aria-label="Example home icon"
+                >{{ item.icon }}</mat-icon
+              >
+              <span class="bg" [ngStyle]="{ background: item.color }"></span>
+            </div>
+            <p>Incentivo financeiro</p>
+            <span>R$ 910</span>
+            <div
+              class="direction"
+              [ngClass]="
+                item.variable.direction === 'up'
+                  ? 'direction-up'
+                  : item.variable.direction === 'down'
+                  ? 'direction-down'
+                  : ''
+              "
+              *ngIf="item.variable"
+            >
+              {{ item.variable.value }}
+              <mat-icon
+                *ngIf="item.variable.direction"
+                matSuffix
+                aria-hidden="false"
+                aria-label="Example home icon"
+                >keyboard_backspace</mat-icon
+              >
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

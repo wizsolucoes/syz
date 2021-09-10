@@ -1,0 +1,28 @@
+<app-component-page
+  [title]="'Linha de tempo de status'"
+  [description]="'Componente de status-timeline'"
+  [selector]="'ng-syz-status-timeline'"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+  [importCode]="importCode"
+>
+  <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
+    <ng-syz-status-timeline
+      [data]="data"
+      [futureData]="futureData"
+      [title]="'Detalhes do andamento'"
+      [isReverse]="false"
+    >
+    </ng-syz-status-timeline>
+  </app-code-example>
+
+  <app-code-example [htmlCode]="htmlExampleCode" [tsCode]="tsExampleCode">
+    <ng-syz-status-timeline
+      [data]="data"
+      [futureData]="futureData"
+      [title]="'Detalhes do andamento - Modo invertido'"
+      [isReverse]="true"
+    >
+    </ng-syz-status-timeline>
+  </app-code-example>
+</app-component-page>

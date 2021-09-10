@@ -1,0 +1,92 @@
+.all-content {
+  display: flex;
+  flex-direction: column;
+
+  .title-status-timeline {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    color: var(--syz-status-timeline-primary-color-text, #2c2c2c);
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .status-timeline {
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-auto-flow: dense;
+
+    .line {
+      grid-column: 1;
+      position: relative;
+
+      .mark {
+        display: flex;
+        justify-content: center;
+        .simbol {
+          position: relative;
+          z-index: 1;
+          height: 34px;
+          width: 34px;
+          background-color: var(--syz-status-timeline-color-simbol, #ff9100);
+          border-radius: 50%;
+        }
+
+        .future-simbol {
+          background-color: var(--syz-status-timeline-color-simbol, #e2e2e2);
+        }
+      }
+    }
+
+    // effect that allow a border in center of div
+    .line::after {
+      content: '';
+      position: absolute;
+      border-left: var(--syz-status-timeline-size-line, 2px)
+        var(--syz-status-timeline-style-line, solid)
+        var(--syz-status-timeline-color-line, #c4c4c4);
+      z-index: 0;
+      bottom: 0;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    .future-line::after {
+      border-left-style: dotted;
+    }
+
+    .item {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      padding: var(--syz-status-timeline-padding-item, 0px 40px 40px 32px);
+      word-break: break-all;
+
+      .title-item {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 26px;
+        color: #2c2c2c;
+      }
+
+      .subtitle-item {
+        color: var(--syz-status-timeline-primary-color-text, #2c2c2c);
+      }
+
+      .details {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .status-timeline-reverse {
+    grid-template-columns: auto 80px;
+    .line {
+      grid-column: 2;
+    }
+    .item {
+      grid-column: 1;
+    }
+  }
+}

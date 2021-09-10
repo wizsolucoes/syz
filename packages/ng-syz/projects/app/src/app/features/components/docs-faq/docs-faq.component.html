@@ -1,0 +1,34 @@
+<app-component-page
+  [title]="'FAQ'"
+  [description]="'Componente para perguntas frequentes.'"
+  [importCode]="importCode"
+  [selector]="'ng-syz-faq'"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+>
+  <app-code-example
+    [htmlCode]="htmlExampleCode1"
+    [tsCode]="tsExampleCode1"
+    [cssCode]="cssExampleCode1"
+  >
+    <p>Exemplo inicial</p>
+    <div class="buttons-section">
+      <button (click)="showToggle()">Mostrar Ícone</button>
+      <button (click)="firstExpanded()">Primeiro expandido</button>
+      <button (click)="multiExpanded()">Multiplos expandidos</button>
+      <button (click)="showCustomColor()">Mudar a cor</button>
+    </div>
+    <div [ngClass]="{ 'custom-color': showCustomColorTest }">
+      <ng-syz-faq
+        (categorySelectedEvent)="categorySelected($event)"
+        [dataCategory]="mockDataCategorys"
+        [dataContentCategorySelected]="mockContentCategorySelected"
+        [simpleDescription]="simpleDescriptionTest"
+        [showToggle]="showToggleTest"
+        [firstExpanded]="firstExpandedTest"
+        [multiExpanded]="multiExpandedTest"
+      >
+      </ng-syz-faq>
+    </div>
+  </app-code-example>
+</app-component-page>
