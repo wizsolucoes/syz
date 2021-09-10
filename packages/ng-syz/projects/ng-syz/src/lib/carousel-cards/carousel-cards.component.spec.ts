@@ -12,7 +12,8 @@ describe('NgSyzCarouselCardsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [NgSyzCarouselCardsComponent],
-      imports: [NgxMaskModule.forRoot(), RouterModule]}).compileComponents();
+      imports: [NgxMaskModule.forRoot(), RouterModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -31,7 +32,6 @@ describe('NgSyzCarouselCardsComponent', () => {
     expect(component.config).toBeTruthy();
   });
 
-
   it('should return array', () => {
     const showItensExample = {
       title: 'Conexão Conseg',
@@ -41,17 +41,16 @@ describe('NgSyzCarouselCardsComponent', () => {
           text: 'Teste link',
           router: '/components/login-with-carousel-flow',
           target: '_self',
-        }
-      ]
+        },
+      ],
     };
     const showItens = component.showItens(showItensExample[0]);
     expect(showItens).toBeTruthy();
   });
-  
+
   it('should function showMore', () => {
     const i = 0;
     const showMoreExample = component.showMore(i);
     expect(showMoreExample).toEqual(showMoreExample);
   });
-
 });

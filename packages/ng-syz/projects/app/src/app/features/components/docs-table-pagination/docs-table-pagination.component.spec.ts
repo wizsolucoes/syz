@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NgSyzTablePaginationModule } from '@wizsolucoes/ng-syz';
+import { SharedModule } from '../../../shared/shared.module';
 
 import { DocsTablePaginationComponent } from './docs-table-pagination.component';
 
@@ -10,9 +11,9 @@ xdescribe('DocsTablePaginationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Component, DocsTablePaginationComponent, MatSnackBarModule ]
-    })
-    .compileComponents();
+      declarations: [DocsTablePaginationComponent],
+      imports: [NgSyzTablePaginationModule, SharedModule, NoopAnimationsModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

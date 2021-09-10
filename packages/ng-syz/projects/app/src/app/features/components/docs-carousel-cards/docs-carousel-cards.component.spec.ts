@@ -5,7 +5,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NgSyzCarouselCardsModule } from '@wizsolucoes/ng-syz';
 import { SharedModule } from '../../../shared/shared.module';
 
-
 import { DocsCarouselCardsComponent } from './docs-carousel-cards.component';
 
 describe('DocsCarouselCardsComponent', () => {
@@ -14,10 +13,15 @@ describe('DocsCarouselCardsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NgSyzCarouselCardsModule, SharedModule, BrowserAnimationsModule, MatSnackBarModule, RouterTestingModule],
+      imports: [
+        NgSyzCarouselCardsModule,
+        SharedModule,
+        BrowserAnimationsModule,
+        MatSnackBarModule,
+        RouterTestingModule,
+      ],
       declarations: [DocsCarouselCardsComponent],
-    })
-    .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

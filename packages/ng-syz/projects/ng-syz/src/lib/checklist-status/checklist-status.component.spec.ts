@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { NgSyzCheckListStatusComponent } from './checklist-status.component';
 
 describe('NgSyzCheckListStatusComponent', () => {
@@ -9,7 +10,7 @@ describe('NgSyzCheckListStatusComponent', () => {
     waitForAsync(async () => {
       await TestBed.configureTestingModule({
         declarations: [NgSyzCheckListStatusComponent],
-        imports: [],
+        imports: [RouterTestingModule],
       }).compileComponents();
     })
   );

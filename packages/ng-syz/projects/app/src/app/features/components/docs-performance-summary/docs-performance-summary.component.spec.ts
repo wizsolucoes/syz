@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NgSyzPerformanceSummaryModule } from 'projects/ng-syz/src/public-api';
+import { SharedModule } from '../../../shared/shared.module';
 import { DocsPerformanceSummaryComponent } from './docs-performance-summary.component';
 
 describe('DocsPerformanceSummaryComponent', () => {
@@ -8,9 +10,13 @@ describe('DocsPerformanceSummaryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocsPerformanceSummaryComponent ]
-    })
-    .compileComponents();
+      declarations: [DocsPerformanceSummaryComponent],
+      imports: [
+        NgSyzPerformanceSummaryModule,
+        SharedModule,
+        NoopAnimationsModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NgSyzCardResultInitiativeModule } from '@wizsolucoes/ng-syz';
+import { SharedModule } from '../../../shared/shared.module';
 import { DocsCardResultInitiativeComponent } from './docs-card-result-initiative.component';
 
 describe('DocsCardResultInitiativeComponent', () => {
@@ -8,9 +10,13 @@ describe('DocsCardResultInitiativeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocsCardResultInitiativeComponent ]
-    })
-    .compileComponents();
+      declarations: [DocsCardResultInitiativeComponent],
+      imports: [
+        NgSyzCardResultInitiativeModule,
+        SharedModule,
+        NoopAnimationsModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
