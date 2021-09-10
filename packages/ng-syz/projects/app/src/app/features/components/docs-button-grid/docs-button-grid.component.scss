@@ -1,0 +1,29 @@
+.exemplo1 {
+  ng-syz-button-grid {
+    --cor-texto: #fff;
+    --cor-texto-hover: black;
+    --cor-borda: #fff;
+    --cor-fundo: #fd5725;
+    --cor-fundo-contraste: #fd7524;
+  }
+}
+
+.exemplo2 {
+  ng-syz-button-grid {
+    --cor-texto: yellow;
+    --cor-texto-hover: black;
+    --cor-borda: yellow;
+    --cor-fundo: #005ca9;
+    --cor-fundo-contraste: #005ca9;
+  }
+}
+
+.exemplo3 {
+  ng-syz-button-grid {
+    --cor-texto: white;
+    --cor-texto-hover: black;
+    --cor-borda: white;
+    --cor-fundo: #fcdb5a;
+    --cor-fundo-contraste: #f8da61;
+  }
+}

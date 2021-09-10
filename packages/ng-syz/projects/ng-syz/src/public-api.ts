@@ -28,5 +28,16 @@ export * from './lib/timeline/timeline.component';
 
 export * from './lib/achievements-progress-bar/achievements-progress-bar.module';
 export * from './lib/achievements-progress-bar/achievements-progress-bar.component';
+export * from './lib/resultado-simulacao/resultado-simulacao.module';
+export * from './lib/resultado-simulacao/resultado-simulacao.component';
+
+export * from './lib/button-grid/button-grid.module';
+export * from './lib/button-grid/button-grid.component';
+
+export * from './lib/redefinicao-senha/redefinicao-senha.module';
+export * from './lib/redefinicao-senha/redefinicao-senha.component';
+
+export * from './lib/filtro/filtro.module';
+export * from './lib/filtro/filtro.component';
 
 export * from './lib/models';

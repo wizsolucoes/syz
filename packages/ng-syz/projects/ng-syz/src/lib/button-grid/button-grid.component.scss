@@ -1,0 +1,119 @@
+$cor-fundo: var(--cor-fundo);
+$cor-fundo-contraste: var(--cor-fundo-contraste);
+$cor-texto: var(--cor-texto);
+$cor-borda: var(--cor-borda);
+$cor-texto-hover: var(--cor-texto-hover);
+
+#CultureType {
+  background: linear-gradient(180deg, $cor-fundo 0%, $cor-fundo-contraste 100%);
+  height: 100%;
+  padding-bottom: 400px;
+  .content-wrapper {
+    width: 840px;
+    margin: auto;
+    text-align: center;
+  }
+
+  h1 {
+    padding-top: 120px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 32px;
+  }
+  h2 {
+    color: #fff;
+  }
+  p {
+    padding-bottom: 50px;
+    color: #fff;
+  }
+
+  .types-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      min-width: 235px;
+      max-width: 235px;
+      min-height: 210px;
+      display: block;
+      margin: 15px;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid $cor-borda;
+      border-radius: 5px;
+      -webkit-transition: all 500ms ease;
+      -moz-transition: all 500ms ease;
+      -ms-transition: all 500ms ease;
+      -o-transition: all 500ms ease;
+      transition: all 500ms ease;
+      &:hover {
+        background-color: rgba(216, 216, 216, 0.76);
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -ms-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease;
+        .type {
+          i {
+            font-size: 70px;
+            -webkit-transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+          }
+          h4 {
+            color: $cor-texto-hover;
+          }
+          hr {
+            background-color: $cor-texto-hover;
+          }
+        }
+      }
+
+      &.disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        background-color: rgb(1, 1, 1, 0.4);
+      }
+    }
+
+    .type {
+      padding: 30px 30px 10px;
+
+      img {
+        width: 50px;
+      }
+
+      i {
+        font-size: 70px;
+        padding-top: 20px;
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -ms-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease;
+      }
+      h4 {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        color: $cor-texto;
+      }
+      hr {
+        margin-top: 50px;
+        display: block;
+        width: 50px;
+        border: 0;
+        height: 1px;
+        background: #fff;
+      }
+    }
+
+    .separador {
+      border-bottom: 1px solid white;
+      margin-top: 15px;
+    }
+  }
+}

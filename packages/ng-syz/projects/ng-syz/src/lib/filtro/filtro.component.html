@@ -1,0 +1,25 @@
+<section class="filter" [formGroup]="form">
+  <div *ngFor="let filter of componentFilters" class="filter--unit">
+    <span class="filter--unit--title">{{filter.field}}</span>
+    <div class="checkbox-search">
+      <mat-form-field *ngIf="filter.value.min === null || filter.value.min === undefined" appearance="outline">
+        <input data-test="input" matInput (keyup)="filterCheckBox($event, filter.field)" placeholder="digite para filtrar">
+      </mat-form-field>
+    </div>
+    <div
+      [ngClass]="{'filter--unit--values': true, 'filter-slider': filter.value.min !== null && filter.value.min !== undefined}"
+      data-test="filter">
+      <mat-slider class="filter--unit--values--slider"
+        *ngIf="filter.value.min !== null && filter.value.min !== undefined" [min]="filter.value.min"
+        [formControlName]="filter.field" thumbLabel="true" [max]="filter.value.max" [value]="filter.value.value"
+        [step]="filter.value.step"></mat-slider>
+      <ng-container *ngIf="filter.value.min === null || filter.value.min === undefined">
+        <ng-container *ngFor="let value of filter.value.values">
+          <p *ngIf="value.show">
+            <mat-checkbox data-test="checkbox" [formControlName]="filter.field + '.' + value.value">{{value.value}}</mat-checkbox>
+          </p>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</section>

@@ -51,5 +51,50 @@ export interface NgSyzAchievementsProgressBar {
   goalProgress: number;
   goalProgressInPercentage: number;
   goalProgressDescription: string;
-  itensDescriptionBelow: [{title: string, subtitle: string}];
+  itensDescriptionBelow: [{ title: string; subtitle: string }];
+}
+
+export interface NgSyzResultadoSimulacaoCard {
+  camposCard: NgSyzResultadoSimulacaoCamposCard[];
+  selecionado: string;
+}
+
+export interface NgSyzResultadoSimulacaoCamposCard {
+  campo: string;
+  valor: string;
+}
+
+export interface NgSyzResultadoSimulacaoCondicao {
+  condicao: string;
+  valor: string;
+  ajuda: string;
+}
+
+export interface NgSyzButton {
+  text: string;
+  route?: string;
+  iconClass?: string;
+  imgPath?: string;
+  disabled?: boolean;
+}
+
+export interface NgSyzRegraSenha {
+  text: string;
+  icon: string;
+}
+
+export interface Filter {
+  field: string;
+  value: FilterSlider | FilterCheckbox;
+}
+
+export interface FilterSlider {
+  min: number;
+  max: number;
+  step: number;
+  value: number;
+}
+
+export interface FilterCheckbox {
+  values: string[];
 }

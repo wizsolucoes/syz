@@ -33,6 +33,22 @@ export class ComponentsComponent {
     {
       displayName: 'Visão de metas',
       route: 'achievements-progress-bar',
-    }
+    },
+    {
+      displayName: 'Resultado de simulação',
+      route: 'resultado-simulacao',
+    },
+    {
+      displayName: 'Grid de botões',
+      route: 'button-grid',
+    },
+    {
+      displayName: 'Filtro dinâmico',
+      route: 'filter',
+    },
+    {
+      displayName: 'Redefinição de senha',
+      route: 'redefinicao-senha',
+    },
   ];
 }
