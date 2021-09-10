@@ -23,6 +23,18 @@ export class ComponentsComponent {
       route: 'login-with-cards-flow',
     },
     {
+      displayName: 'Faq',
+      route: 'faq',
+    },
+    {
+      displayName: 'Timeline',
+      route: 'timeline',
+    },
+    {
+      displayName: 'Visão de metas',
+      route: 'achievements-progress-bar',
+    },
+    {
       displayName: 'Resultado de simulação',
       route: 'resultado-simulacao',
     },

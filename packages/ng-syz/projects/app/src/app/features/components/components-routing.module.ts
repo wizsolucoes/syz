@@ -43,6 +43,25 @@ const routes: Routes = [
           ).then((m) => m.DocsLoginWithCardsFlowModule),
       },
       {
+        path: 'faq',
+        loadChildren: () =>
+          import('./docs-faq/docs-faq.module').then((m) => m.DocsFaqModule),
+      },
+      {
+        path: 'timeline',
+        loadChildren: () =>
+          import('./docs-timeline/docs-timeline.module').then(
+            (m) => m.DocsTimelineModule
+          ),
+      },
+      {
+        path: 'achievements-progress-bar',
+        loadChildren: () =>
+          import(
+            './docs-achievements-progress-bar/docs-achievements-progress-bar.module'
+          ).then((m) => m.DocsAchievementsProgressBarModule),
+      },
+      {
         path: 'resultado-simulacao',
         loadChildren: () =>
           import(

@@ -34,6 +34,26 @@ export interface NgSyzResetPasswordCredentials {
   email: string;
 }
 
+export interface NgSyzTimeline {
+  title: string;
+  subtitle: string;
+  description: string;
+  colorStatus: string;
+}
+
+export interface NgSyzAchievementsProgressBar {
+  title: string;
+  labelToggleLeft: string;
+  labelToggleRight: string;
+  actualProgress: number;
+  actualProgressInPercentage: number;
+  actualProgressDescription: string;
+  goalProgress: number;
+  goalProgressInPercentage: number;
+  goalProgressDescription: string;
+  itensDescriptionBelow: [{ title: string; subtitle: string }];
+}
+
 export interface NgSyzResultadoSimulacaoCard {
   camposCard: NgSyzResultadoSimulacaoCamposCard[];
   selecionado: string;
