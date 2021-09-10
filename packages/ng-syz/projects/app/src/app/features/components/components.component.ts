@@ -22,5 +22,21 @@ export class ComponentsComponent {
       displayName: 'Fluxo de login com cards',
       route: 'login-with-cards-flow',
     },
+    {
+      displayName: 'Resultado de simulação',
+      route: 'resultado-simulacao',
+    },
+    {
+      displayName: 'Grid de botões',
+      route: 'button-grid',
+    },
+    {
+      displayName: 'Filtro dinâmico',
+      route: 'filter',
+    },
+    {
+      displayName: 'Redefinição de senha',
+      route: 'redefinicao-senha',
+    },
   ];
 }

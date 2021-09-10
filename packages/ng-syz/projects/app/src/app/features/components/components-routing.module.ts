@@ -42,6 +42,34 @@ const routes: Routes = [
             './docs-login-with-cards-flow/docs-login-with-cards-flow.module'
           ).then((m) => m.DocsLoginWithCardsFlowModule),
       },
+      {
+        path: 'resultado-simulacao',
+        loadChildren: () =>
+          import(
+            './docs-resultado-simulacao/docs-resultado-simulacao.module'
+          ).then((m) => m.DocsResultadoSimulacaoModule),
+      },
+      {
+        path: 'button-grid',
+        loadChildren: () =>
+          import('./docs-button-grid/docs-button-grid.module').then(
+            (m) => m.DocsButtonGridModule
+          ),
+      },
+      {
+        path: 'redefinicao-senha',
+        loadChildren: () =>
+          import('./docs-redefinicao-senha/docs-redefinicao-senha.module').then(
+            (m) => m.DocsRedefinicaoSenhaModule
+          ),
+      },
+      {
+        path: 'filter',
+        loadChildren: () =>
+          import('./docs-filtro/docs-filtro.module').then(
+            (m) => m.DocsFiltroModule
+          ),
+      },
     ],
   },
   {
