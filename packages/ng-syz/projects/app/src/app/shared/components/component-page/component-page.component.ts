@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatTabChangeEvent } from '@angular/material/tabs';
 import { ComponentProps } from '../../models/component-props.interface';
 
 @Component({
@@ -6,25 +7,28 @@ import { ComponentProps } from '../../models/component-props.interface';
   templateUrl: './component-page.component.html',
   styleUrls: ['./component-page.component.scss'],
 })
-export class ComponentPageComponent implements OnInit {
+export class ComponentPageComponent {
   @Input() title = '// TODO: Informar `title`';
+
   @Input() description = '// TODO: Informar `description`';
+
   @Input() selector = '// TODO: Informar `selector`';
+
   @Input() importCode = '// TODO: Informar `importCode`';
+
   @Input() componentProps: ComponentProps[] = [
     { name: 'Nenhuma propriedade', description: '' },
   ];
+
   @Input() componentCSSVariables: ComponentProps[] = [
     { name: 'Nenhum variável CSS', description: '' },
   ];
 
   displayedColumns: string[] = ['name', 'description'];
 
-  visibled = false;
+  isNgContentVisible = false;
 
-  ngOnInit(): void {}
-
-  showContent(event): void{
-    this.visibled = event.tab.textLabel === 'EXEMPLOS' ? true : false;
+  showContent(event: MatTabChangeEvent): void {
+    this.isNgContentVisible = event.tab.textLabel === 'EXEMPLOS' ? true : false;
   }
 }
