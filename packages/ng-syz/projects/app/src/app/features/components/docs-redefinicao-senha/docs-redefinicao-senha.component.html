@@ -1,0 +1,48 @@
+<app-component-page
+  [title]="'Redefinição de senha'"
+  [description]="'Redefinição de senha'"
+  [selector]="'ng-syz-redefinicao-senha'"
+  [componentProps]="componentProps"
+  [componentCSSVariables]="componentCSSVariables"
+  [importCode]="importCode"
+>
+  <!-- Exmple 1 -->
+  <app-code-example
+    [htmlCode]="htmlExemplo1"
+    [tsCode]="tsExemplo1"
+    [cssCode]="cssExemplo1"
+  >
+    <div class="exemplo1">
+      <ng-syz-redefinicao-senha
+        [emailDestinatarioCodigo]="emailDestinatarioCodigoExemplo1"
+        [caractereEspecial]="caractereEspecialExemplo1"
+        [qtdeCaracteresSenha]="qtdeCaracteresSenhaExemplo1"
+        [textoBotaoSolicitarCodigo]="textoBotaoSolicitarCodigoExemplo1"
+        [textoCampoInserirCodigo]="textoCampoInserirCodigoExemplo1"
+        [regras]="regrasExemplo1"
+        (solicitarCodigo)="solicitarCodigo($event)"
+        (alterarSenha)="alterarSenha($event)"
+      ></ng-syz-redefinicao-senha>
+    </div>
+  </app-code-example>
+
+  <strong>Exemplo 2 - Textos/regras parametrizadas </strong>
+  <app-code-example
+    [htmlCode]="htmlExemplo2"
+    [tsCode]="tsExemplo2"
+    [cssCode]="cssExemplo2"
+  >
+    <div class="exemplo2">
+      <ng-syz-redefinicao-senha
+        [emailDestinatarioCodigo]="emailDestinatarioCodigoExemplo2"
+        [qtdeCaracteresSenha]="qtdeCaracteresSenhaExemplo2"
+        [textoBotaoSolicitarCodigo]="textoBotaoSolicitarCodigoExemplo2"
+        [textoCampoInserirCodigo]="textoCampoInserirCodigoExemplo2"
+        [regras]="regrasExemplo2"
+        (solicitarCodigo)="solicitarCodigo($event)"
+        (alterarSenha)="alterarSenha($event)"
+      ></ng-syz-redefinicao-senha>
+    </div>
+  </app-code-example>
+  <!-- End examples -->
+</app-component-page>

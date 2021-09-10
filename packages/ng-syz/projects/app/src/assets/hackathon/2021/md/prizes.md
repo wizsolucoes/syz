@@ -29,7 +29,7 @@ Premiação para a dupla que desenvolver o componente **mais utilizado nos proje
 
 ### Selo escolha do público
 
-Após todas as apresentações teremos uma **votação para eleger o componente favorito do público** e o vencedor receberá um **cartão Touch Card** com o valor de **R$200***.
+Após todas as apresentações teremos uma **votação para eleger os componentes favoritos do público**.
 
 <br>
 
