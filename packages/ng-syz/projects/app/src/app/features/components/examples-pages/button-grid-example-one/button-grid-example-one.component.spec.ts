@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { NgSyzButtonGridModule } from '@wizsolucoes/ng-syz';
 import { ButtonGridExampleOneComponent } from './button-grid-example-one.component';
 
 describe('ButtonGridExampleOneComponent', () => {
@@ -8,9 +9,9 @@ describe('ButtonGridExampleOneComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ButtonGridExampleOneComponent ]
-    })
-    .compileComponents();
+      declarations: [ButtonGridExampleOneComponent],
+      imports: [NgSyzButtonGridModule, RouterTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
