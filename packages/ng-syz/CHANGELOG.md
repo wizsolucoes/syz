@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/wizsolucoes/syz/compare/ng-syz@0.7.4...ng-syz@0.8.0) (2021-09-23)
+
+
+### Features
+
+* integrar novos componentes ([bec477a](https://github.com/wizsolucoes/syz/commit/bec477a1bfe0fa432d1f6a8f83f5f2ca5e388f29)), closes [#52](https://github.com/wizsolucoes/syz/issues/52) [#53](https://github.com/wizsolucoes/syz/issues/53)
+
+
+
+
+
 ## [0.7.4](https://github.com/wizsolucoes/syz/compare/ng-syz@0.7.3...ng-syz@0.7.4) (2021-09-06)
 
 **Note:** Version bump only for package ng-syz
