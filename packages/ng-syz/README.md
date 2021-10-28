@@ -188,7 +188,7 @@ Para validar que está tudo ok, importa o módulo do componente no módulo da do
 
 1. Pare o `ng build ng-syz --watch` e o `ng serve app`
 2. Execute `ng build ng-syz --watch` novamente e `ng serve app` (Isso é necessário para rebuildar a biblioteca com o módulo e componente novo)
-3. importe o módulo do componente no módulo da documentação e acrescente o elemtno ao template
+3. importe o módulo do componente no módulo da documentação e acrescente o elemento ao template
 
 Exemplo:
 ```ts
@@ -257,7 +257,7 @@ Exemplo:
 </app-component-page>
 ```
 
-- Veja os parêmtros dos componentes `<app-component-page>` e `<app-code-example>` neste exemplo completo:
+- Veja os parâmetros dos componentes `<app-component-page>` e `<app-code-example>` neste exemplo completo:
 ```html
 <app-component-page
   [title]="'Busca por CPF/CNPJ'"
