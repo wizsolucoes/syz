@@ -25,6 +25,7 @@ main {
   height: 100%;
   min-height: 100vh;
   background-color: lightgray;
+  padding-top: 56px;
 }
 
 .mat-toolbar-row,
@@ -46,42 +47,5 @@ main {
     margin-right: 8px;
     height: 26px;
     width: 26px;
-  }
-}
-
-// Hacathon banner
-
-.hackathon-banner {
-  position: relative;
-  padding-top: 56px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(
-      90deg,
-      rgba(53, 92, 125, 0.8),
-      rgba(192, 108, 132, 0.5)
-    ),
-    url('/assets/hackasyz-hero-background.png');
-  background-size: cover;
-  background-position: bottom;
-
-  & .text {
-    color: white;
-    z-index: 1;
-    text-align: center;
-
-    & .title {
-      font-family: 'Squada One', cursive;
-      font-size: 36px;
-      margin-bottom: 24px;
-    }
-
-    & .subtitle {
-      margin-top: 4px;
-      font-size: 18px;
-      font-family: 'Oswald', sans-serif;
-    }
   }
 }
