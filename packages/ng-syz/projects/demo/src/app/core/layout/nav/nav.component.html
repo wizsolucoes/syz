@@ -1,0 +1,19 @@
+<mat-toolbar color="accent" data-test="mat-toolbar" *ngIf="showNav">
+  <div class="navbar-brand">
+    <a class="navbar-item" routerLink="home">
+      <img [src]="logoUrl" alt="logo" data-test="logo-img" />
+    </a>
+  </div>
+
+  <a mat-button routerLink="sales" data-test="sales-link"> Vendas </a>
+
+  <a mat-button routerLink="documentation" data-test="documentation-link">
+    Documentação
+  </a>
+
+  <span class="navbar-spacer"></span>
+  <button mat-button (click)="logOut()" (keyup)="logOut()">
+    Logout
+    <span class="material-icons"> logout </span>
+  </button>
+</mat-toolbar>

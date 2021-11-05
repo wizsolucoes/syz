@@ -1,0 +1,12 @@
+.navbar-spacer {
+  flex: 1 1 auto;
+}
+
+.navbar-brand {
+  margin-right: 20px;
+
+  .navbar-item {
+    display: flex;
+    align-items: center;
+  }
+}
