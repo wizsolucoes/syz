@@ -53,4 +53,13 @@ export * from './lib/password-reset-card/password-reset-card.component';
 export * from './lib/sidebar-filter/sidebar-filter.module';
 export * from './lib/sidebar-filter/sidebar-filter.component';
 
+export * from './lib/tour/tour.module';
+export * from './lib/tour/tour.component';
+export * from './lib/tour/models/orientation';
+export * from './lib/tour/models/orientationConfiguration';
+export * from './lib/tour/models/tour';
+export * from './lib/tour/models/tourStep';
+export * from './lib/tour/services/tour.service';
+export * from './lib/tour/services/window.service';
+
 export * from './lib/models';

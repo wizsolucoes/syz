@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { NgSyzTourModule } from 'projects/ng-syz/src/public-api';
 
 @NgModule({
   declarations: [AppComponent],
@@ -11,6 +12,7 @@ import { CoreModule } from './core/core.module';
 
     // Application
     CoreModule,
+    NgSyzTourModule
   ],
   providers: [],
   bootstrap: [AppComponent],

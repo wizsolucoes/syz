@@ -1,0 +1,274 @@
+$tour-zindex: 1081 !default;
+$tour-white-color: #ffffff !default;
+$tour-text-color: #231f1f !default;
+$tour-next-button-color: #ff9100 !default;
+$tour-next-button-hover: #f06901 !default;
+$tour-back-button-color: #ffad42 !default;
+$tour-next-text-color: #ffffff !default;
+$tour-next-text-hover: #ffffff !default;
+$tour-skip-link-color: #5e5e5e !default;
+$tour-shadow-color: #4c4c4c !default;
+
+body.tour-open {
+  overflow: hidden;
+}
+
+@mixin tour-triangle($direction, $color: currentColor, $size: 1rem) {
+  @if not index(top right bottom left, $direction) {
+    @error 'Direction must be either `top`, `right`, `bottom` or `left`.';
+  }
+
+  $opposite-direction: top;
+
+  @if $direction==top {
+    $opposite-direction: bottom;
+  }
+
+  @if $direction==bottom {
+    $opposite-direction: top;
+  }
+
+  @if $direction==right {
+    $opposite-direction: left;
+  }
+
+  @if $direction==left {
+    $opposite-direction: right;
+  }
+
+  width: 0;
+  height: 0;
+  content: '';
+  z-index: 2;
+  border-#{$opposite-direction}: $size solid $color;
+  $perpendicular-borders: $size solid transparent;
+
+  @if $direction==top or $direction==bottom {
+    border-left: $perpendicular-borders;
+    border-right: $perpendicular-borders;
+  } @else if $direction==right or $direction==left {
+    border-bottom: $perpendicular-borders;
+    border-top: $perpendicular-borders;
+  }
+}
+
+.tour-block {
+  color: $tour-text-color;
+  background-color: $tour-white-color;
+  box-shadow: 0 0.4rem 0.6rem $tour-shadow-color;
+
+  .tour-title {
+    font-weight: bold !important;
+    padding-bottom: 20px;
+  }
+
+  .tour-content {
+    min-height: 80px;
+    padding-bottom: 30px;
+    font-size: 15px;
+  }
+
+  .tour-buttons {
+    overflow: hidden; // clearfix
+  }
+}
+
+.guided-tour-user-input-mask {
+  z-index: $tour-zindex;
+}
+
+.guided-tour-spotlight-overlay {
+  z-index: $tour-zindex + 1;
+}
+
+.tour-step {
+  z-index: $tour-zindex + 4;
+
+  &.tour-bottom,
+  &.tour-bottom-right,
+  &.tour-bottom-left {
+    .tour-arrow::before {
+      @include tour-triangle(top, $tour-white-color);
+    }
+  }
+
+  &.tour-top,
+  &.tour-top-right,
+  &.tour-top-left {
+    .tour-arrow::before {
+      @include tour-triangle(bottom, $tour-white-color);
+    }
+  }
+
+  &.tour-left {
+    .tour-arrow::before {
+      @include tour-triangle(right, $tour-white-color);
+    }
+  }
+
+  &.tour-right {
+    .tour-arrow::before {
+      @include tour-triangle(left, $tour-white-color);
+    }
+  }
+
+  .tour-block {
+    color: $tour-text-color;
+    background-color: $tour-white-color;
+    box-shadow: 0 0.4rem 0.6rem $tour-shadow-color;
+  }
+
+  .tour-buttons {
+    display: flex;
+
+    .tour-buttons-spacer {
+      flex: 1;
+    }
+  }
+}
+
+.guided-tour-user-input-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  max-height: 100vh;
+  text-align: center;
+  opacity: 0;
+}
+
+.guided-tour-spotlight-overlay {
+  position: fixed;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7), 0 0 1.5rem rgba(0, 0, 0, 0.5);
+}
+
+.tour-step {
+  position: fixed;
+
+  &.page-tour-step {
+    max-width: 400px;
+    width: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.tour-bottom,
+  &.tour-bottom-right,
+  &.tour-bottom-left {
+    .tour-arrow::before {
+      position: absolute;
+    }
+
+    .tour-block {
+      margin-top: 10px;
+    }
+  }
+
+  &.tour-top,
+  &.tour-top-right,
+  &.tour-top-left {
+    margin-bottom: 10px;
+
+    .tour-arrow::before {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .tour-block {
+      margin-bottom: 10px;
+    }
+  }
+
+  &.tour-bottom,
+  &.tour-top {
+    .tour-arrow::before {
+      transform: translateX(-50%);
+      left: 50%;
+    }
+  }
+
+  &.tour-bottom-right,
+  &.tour-top-right {
+    .tour-arrow::before {
+      transform: translateX(-100%);
+      left: calc(100% - 5px);
+    }
+  }
+
+  &.tour-bottom-left,
+  &.tour-top-left {
+    .tour-arrow::before {
+      left: 5px;
+    }
+  }
+
+  &.tour-left {
+    .tour-arrow::before {
+      position: absolute;
+      left: 100%;
+      transform: translateX(-100%);
+      top: 5px;
+    }
+
+    .tour-block {
+      margin-right: 10px;
+    }
+  }
+
+  &.tour-right {
+    .tour-arrow::before {
+      position: absolute;
+      left: 0;
+      top: 5px;
+    }
+
+    .tour-block {
+      margin-left: 10px;
+    }
+  }
+
+  .tour-block {
+    padding: 15px 25px;
+  }
+
+  .tour-progress-indicator {
+    padding-bottom: 15px;
+  }
+
+  .tour-title {
+    font-weight: bold !important;
+    padding-bottom: 20px;
+  }
+
+  h3.tour-title {
+    font-size: 20px;
+  }
+
+  h2.tour-title {
+    font-size: 30px;
+  }
+
+  .tour-content {
+    min-height: 80px;
+    padding-bottom: 30px;
+    font-size: 15px;
+  }
+}
+
+.img-avatar {
+  z-index: $tour-zindex + 2;
+  position: fixed;
+  background-color: $tour-white-color;
+  border-radius: 50%;
+
+  &.img-avatar-center {
+    display: none;
+  }
+}
+
+.tour-buttons {
+  overflow: hidden; // clearfix
+}

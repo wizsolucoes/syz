@@ -70,6 +70,10 @@ export class ComponentsComponent {
       displayName: 'Redefinição de senha',
       route: 'password-reset-card',
     },
+    {
+      displayName: 'Tour',
+      route: 'tour',
+    },
   ];
 
   get orderedList(): NavItem[] {
