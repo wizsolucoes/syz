@@ -124,6 +124,11 @@ const routes: Routes = [
             (m) => m.DocsFiltroModule
           ),
       },
+      {
+        path: 'tour',
+        loadChildren: () =>
+          import('./docs-tour/docs-tour.module').then((m) => m.DocsTourModule),
+      },
     ],
   },
   {
