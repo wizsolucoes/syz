@@ -1,4 +1,5 @@
 // theme.scss
+@use '~@angular/material' as mat;
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap');
@@ -16,14 +17,14 @@
 }
 
 // mat-typography-level(size, line-height, font-weight)
-$wiz-typography: mat-typography-config(
+$wiz-typography: mat.define-typography-config(
   $font-family: 'Roboto, Heebo, sans-serif',
 );
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core($wiz-typography);
+@include mat.core($wiz-typography);
 
 // Typography Colors
 $wiz-dark-text: #50555a;
@@ -172,15 +173,15 @@ $alert-error: #ff3535;
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$theming-material-components-primary: mat-palette($wiz-orange, 500);
-$theming-material-components-accent: mat-palette($wiz-blue, 500);
+$theming-material-components-primary: mat.define-palette($wiz-orange, 500);
+$theming-material-components-accent: mat.define-palette($wiz-blue, 500);
 
 // The warn palette is optional (defaults to red).
-$theming-material-components-warn: mat-palette($mat-red, 500);
+$theming-material-components-warn: mat.define-palette(mat.$red-palette, 500);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$theming-material-components-theme: mat-light-theme(
+$theming-material-components-theme: mat.define-light-theme(
   $theming-material-components-primary,
   $theming-material-components-accent,
   $theming-material-components-warn
@@ -189,4 +190,4 @@ $theming-material-components-theme: mat-light-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($theming-material-components-theme);
+@include mat.all-component-themes($theming-material-components-theme);
