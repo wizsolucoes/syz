@@ -1,10 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
+import { SharedTestingModule } from 'projects/app/src/testing/modules/shared-testing/shared-testing.module';
 import { NgSyzPasswordResetCardModule } from 'projects/ng-syz/src/public-api';
-import { SharedModule } from '../../../shared/shared.module';
-
 import { DocsSimulationResultComponent } from './docs-password-reset-card.component';
 
 describe('DocsSimulationResultComponent', () => {
@@ -17,9 +14,7 @@ describe('DocsSimulationResultComponent', () => {
       imports: [
         CommonModule,
         NgSyzPasswordResetCardModule,
-        RouterTestingModule,
-        SharedModule,
-        NoopAnimationsModule,
+        SharedTestingModule,
       ],
     }).compileComponents();
   });

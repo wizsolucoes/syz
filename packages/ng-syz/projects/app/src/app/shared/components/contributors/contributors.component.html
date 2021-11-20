@@ -1,0 +1,13 @@
+<div class="vertical-divider"></div>
+
+<h3>Contribuidores</h3>
+
+<img
+  *ngFor="let contributor of contributors"
+  data-test="contributor"
+  [src]="contributor.avatarUrl"
+  [alt]="contributor.username"
+  [matTooltip]="contributor.username"
+  [matTooltipPosition]="'above'"
+  class="avatar"
+/>
