@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DocsFaqComponent } from './docs-faq.component';
 import { NgSyzFaqModule } from '@wizsolucoes/ng-syz';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from '../../../shared/shared.module';
+import { SharedTestingModule } from 'projects/app/src/testing/modules/shared-testing/shared-testing.module';
+import { DocsFaqComponent } from './docs-faq.component';
 
 describe('DocsFaqComponent', () => {
   let component: DocsFaqComponent;
@@ -10,14 +9,9 @@ describe('DocsFaqComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocsFaqComponent ],
-      imports: [
-        NgSyzFaqModule,
-        NoopAnimationsModule,
-        SharedModule
-      ],
-    })
-    .compileComponents();
+      declarations: [DocsFaqComponent],
+      imports: [NgSyzFaqModule, SharedTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

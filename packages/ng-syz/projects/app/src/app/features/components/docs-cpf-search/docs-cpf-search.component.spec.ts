@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSyzCpfSearchModule } from '@wizsolucoes/ng-syz';
-import { SharedModule } from '../../../shared/shared.module';
+import { SharedTestingModule } from 'projects/app/src/testing/modules/shared-testing/shared-testing.module';
 import { DocsCpfSearchComponent } from './docs-cpf-search.component';
 
 describe('DocsCpfSearchComponent', () => {
@@ -15,12 +14,7 @@ describe('DocsCpfSearchComponent', () => {
     mockSnackBar = jasmine.createSpyObj('MatSnackBar', ['open']);
 
     await TestBed.configureTestingModule({
-      imports: [
-        MatSnackBarModule,
-        NgSyzCpfSearchModule,
-        SharedModule,
-        NoopAnimationsModule,
-      ],
+      imports: [MatSnackBarModule, NgSyzCpfSearchModule, SharedTestingModule],
       declarations: [DocsCpfSearchComponent],
       providers: [{ provide: MatSnackBar, useValue: mockSnackBar }],
     }).compileComponents();

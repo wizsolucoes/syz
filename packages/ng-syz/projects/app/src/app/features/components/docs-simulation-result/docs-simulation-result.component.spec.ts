@@ -1,8 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedTestingModule } from 'projects/app/src/testing/modules/shared-testing/shared-testing.module';
 import { NgSyzSimulationResultModule } from 'projects/ng-syz/src/public-api';
-import { SharedModule } from '../../../shared/shared.module';
-
 import { DocsSimulationResultComponent } from './docs-simulation-result.component';
 
 describe('DocsSimulationResultComponent', () => {
@@ -13,11 +11,7 @@ describe('DocsSimulationResultComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [DocsSimulationResultComponent],
-      imports: [
-        SharedModule,
-        NoopAnimationsModule,
-        NgSyzSimulationResultModule,
-      ],
+      imports: [SharedTestingModule, NgSyzSimulationResultModule],
     }).compileComponents();
   });
 

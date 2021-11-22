@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSyzPersonInfoModule } from '@wizsolucoes/ng-syz';
-import { SharedModule } from '../../../shared/shared.module';
+import { SharedTestingModule } from 'projects/app/src/testing/modules/shared-testing/shared-testing.module';
 import { DocsPersonInfoComponent } from './docs-person-info.component';
 
 describe('DocsPersonInfoComponent', () => {
@@ -10,7 +9,7 @@ describe('DocsPersonInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NgSyzPersonInfoModule, SharedModule, NoopAnimationsModule],
+      imports: [NgSyzPersonInfoModule, SharedTestingModule],
       declarations: [DocsPersonInfoComponent],
     }).compileComponents();
   });
