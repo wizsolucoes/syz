@@ -30,6 +30,7 @@ export class DocsAchievementsProgressBarComponent {
     ],
   };
 
+  // example data2
   public mockData2 = {
     title: 'Seu desempenho',
     labelToggleLeft: 'Toggle left',
