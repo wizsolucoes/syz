@@ -10,6 +10,7 @@ import {
   styleUrls: ['./docs-cards-carousel.component.scss'],
 })
 export class DocsCarouselCardsComponent implements OnInit {
+  // Exemplo
   config01 = {
     htmlExampleCode: `
       <ng-syz-cards-carousel
