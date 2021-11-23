@@ -7,7 +7,7 @@ import { ComponentProps, NgSyzPerformanceSummaryList } from '../../../shared/mod
   styleUrls: ['./docs-performance-summary.component.scss']
 })
 export class DocsPerformanceSummaryComponent implements OnInit {
-
+  // Example
   dataList: NgSyzPerformanceSummaryList[] = [
     {
       icon: 'home',

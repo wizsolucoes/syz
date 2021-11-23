@@ -7,7 +7,7 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   styleUrls: ['./docs-checklist-status.component.scss']
 })
 export class DocsChecklistStatusComponent implements OnInit {
-
+  // Example
   config = {
     title: 'Metas do dia',
     textButton: 'Saiba mais',

@@ -199,3 +199,4 @@ export class NgSyzDataTableComponent implements AfterViewInit {
     return row[this.tableInfo.rowOrder[IRow]];
   }
 }
+// finish
