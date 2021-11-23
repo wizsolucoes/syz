@@ -19,7 +19,7 @@ export class DocsSimulationResultComponent implements OnInit {
 
   importCode = `import { NgSyzSimulationResultModule } from '@wizsolucoes/ng-syz';`;
 
-  // exemplo 1
+  // exemplo 01
   htmlExampleCode1: string;
   tsExampleCode1: string;
   ajudaModalidadesExemplo1 = 'Ajuda Exemplo 1';

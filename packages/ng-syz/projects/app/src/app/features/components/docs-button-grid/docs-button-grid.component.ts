@@ -8,6 +8,7 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   styleUrls: ['./docs-button-grid.component.scss'],
 })
 export class DocsButtonGridComponent implements OnInit {
+  // Exemplo
   tituloExemplo1 = 'Tipo de Seguro';
   subtituloExemplo1 = 'Seguros disponíveis';
 
