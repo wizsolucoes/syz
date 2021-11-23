@@ -26,6 +26,7 @@ export class DocsFaqComponent implements OnInit {
 
   public mockContentCategorySelected: any;
 
+  // mock data
   public mockData = [
     {
       id: 1,

@@ -64,6 +64,7 @@ export class DocsTimelineComponent {
   </ng-syz-status-timeline>
   `;
 
+  // ts example
   tsExampleCode = `
   public data: NgSyzStatusTimelineEntry[] = [
     {
