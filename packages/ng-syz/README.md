@@ -54,9 +54,9 @@ Uma biblioteca angular com os componentes do design system SYZ e uma aplicação
 
 #### 1. Clone o monorepositório
 ```bash
-git clone git@github.com:wizsolucoes/syz.git
+git clone git@github.com:wizsolucoes/syz.git #shh
 # OU
-git clone https://github.com/wizsolucoes/syz.git
+git clone https://github.com/wizsolucoes/syz.git #https
 ```
 #### 2. Entre na pasta deste projeto do ng-syz
 ```bash
