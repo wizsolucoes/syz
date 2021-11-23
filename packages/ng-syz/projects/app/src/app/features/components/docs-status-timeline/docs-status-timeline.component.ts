@@ -53,6 +53,7 @@ export class DocsTimelineComponent {
     },
   ];
 
+  // html example
   htmlExampleCode = `
   <ng-syz-status-timeline
     [data]="data"
