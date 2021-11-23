@@ -8,7 +8,7 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   styleUrls: ['./docs-sidebar-filter.component.scss'],
 })
 export class DocsFiltroComponent {
-  // Exemplo
+  // Exemplo XXXX
   description = `Este componente é usado para criar um filtro dinâmico que comporta n filtros dos tipos slider e checkbox. Para utilizá-lo, basta
   passar como input os possíveis valores para as checkboxes e/ou sliders.`;
 

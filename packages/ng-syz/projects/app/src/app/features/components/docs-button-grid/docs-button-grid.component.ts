@@ -12,6 +12,7 @@ export class DocsButtonGridComponent implements OnInit {
   tituloExemplo1 = 'Tipo de Seguro';
   subtituloExemplo1 = 'Seguros disponíveis';
 
+  // 42 = 42
   tituloExemplo2 = 'Tipo de Seguro';
   subtituloExemplo2 = 'Seguros disponíveis';
 
