@@ -9,6 +9,7 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
 export class DocsAchievementsProgressBarComponent {
   importCode = `import { NgSyzAchievementsProgressBarModule } from '@wizsolucoes/ng-syz';`;
 
+  // example data1
   public mockData1 = {
     title: 'Seu desempenho',
     labelToggleLeft: 'Diário',
