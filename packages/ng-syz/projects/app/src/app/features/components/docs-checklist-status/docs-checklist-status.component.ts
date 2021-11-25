@@ -14,7 +14,8 @@ export class DocsChecklistStatusComponent implements OnInit {
     router: 'https://www.ibccoaching.com.br/portal/metas-e-objetivos/importancia-estabelecer-metas-diarias-para-ser-mais-produtivo/',
     target: '_blank'
   };
-
+  
+    // Example data
   dataComponent = [
     {
       text: 'Tratar 30 leads de habitacional sem seguro residencial.',
