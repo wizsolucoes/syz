@@ -17,7 +17,8 @@ export class DocsDataTableComponent implements OnInit {
     currentPage: 2,
     totalItens: 200,
   };
-
+  
+  // exemplo tableInfo
   tableInfo = {
     tableDescription: 'Cadastro de empresas',
     header: [

@@ -58,6 +58,7 @@ export class DocsCarouselCardsComponent implements OnInit {
     effect: 'slide',
   };
 
+  // exemplo data slide 01
   dataSlides01: NgSyzCardsCarouselSliders[] = [
     {
       title: 'Conexão Conseg',
