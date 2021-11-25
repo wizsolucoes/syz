@@ -27,6 +27,7 @@ export class DocsPerformanceSummaryComponent implements OnInit {
     },
   ];
 
+  // Descrição
   Description = 'Componente exibir lista de desempenho, sendo possível estilizar cores e alterar ícones. Recebe uma lista de itens. \n \n Para cada lista, pode-se controlar os ícones e valores! \n\n';
 
   componentProps: ComponentProps[] = [
