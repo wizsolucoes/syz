@@ -1,6 +1,6 @@
 {
   "name": "ng-syz",
-  "version": "0.10.3",
+  "version": "0.10.4",
   "scripts": {
     "ng": "ng",
     "app": "ng serve app",
