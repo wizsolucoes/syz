@@ -17,7 +17,8 @@ export class DocsCardResultInitiativeComponent implements OnInit {
     url: '/assets/docs-initiative-result-card/IconCelphone.png',
     alt: 'Ícone',
   };
-
+  
+  // data Cards
   cards = [
     {
       icon: 'wallpaper',
