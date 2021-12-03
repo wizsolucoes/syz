@@ -58,4 +58,24 @@
       ></ng-syz-simulation-result>
     </div>
   </app-code-example>
+
+  <span class="title">Exemplo 4</span>
+  <app-code-example
+    [htmlCode]="htmlExampleCode4"
+    [tsCode]="tsExampleCode4"
+    [cssCode]="cssExample3Code"
+  >
+    <div class="exemplo3">
+      <ng-syz-simulation-result
+        [cards]="cardsExemplo4"
+        [valor]="valorExemplo4"
+        [modalidades]="modalidadesExemplo4"
+        [ajudaModalidades]="ajudaModalidadesExemplo4"
+        [condicoes]="condicoesExemplo4"
+        [mostrarModalidades]="false"
+        (enviarCardSelecionado)="enviarCardSelecionado($event)"
+        (enviarModalidadeSelecionada)="enviarModalidadeSelecionada($event)"
+      ></ng-syz-simulation-result>
+    </div>
+  </app-code-example>
 </app-component-page>

@@ -1,12 +1,17 @@
 <article class="simulation-result">
   <section class="resultado-info">
     <div class="resultado-info--valor">
-      <span class="resultado-info--valor--moeda">R$</span
-      ><span class="resultado-info--valor--valor" data-test="valor">{{
-        (valor | currency: 'BRL').replace('R$&nbsp;', '')
-      }}</span>
+      <span class="info--titulo">
+        Valor disponivel para antecipação
+      </span>
+      <div>
+        <span class="resultado-info--valor--moeda">R$</span
+          ><span class="resultado-info--valor--valor" data-test="valor">{{
+            (valor | currency: 'BRL').replace('R$&nbsp;', '')
+          }}</span>
+      </div>
     </div>
-    <div class="resultado-info--modalidade">
+    <div class="resultado-info--modalidade" *ngIf="mostrarModalidades" >
       <span class="info--titulo">Modalidade</span>
       <div class="resultado-info--modalidade--buttons">
         <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
@@ -85,8 +90,12 @@
             primeiro: j === 0
           }"
           data-test="card-valor"
+          *ngIf="campo.valor && !(card.selecionado === campo.campo && card.editavel)"
           >{{ campo.valor }}</span
         >
+        <div class="resultado-cards--card--row--campo--input-wrapper" *ngIf=" card.selecionado === campo.campo && card.editavel">
+          <input data-test="editable-input" prefix="R$" mask="separator" thousandSeparator="." class='resultado-cards--card--row--campo--input'   [(ngModel)]="campo.valor" (change)="valorEditavelChange($event.target.value)"> 
+        </div>
       </div>
     </div>
   </section>

@@ -350,6 +350,54 @@ export class DocsSimulationResultComponent implements OnInit {
     },
   ];
 
+  // exemplo 4
+  htmlExampleCode4: string;
+  tsExampleCode4: string;
+  ajudaModalidadesExemplo4 = 'Ajuda Exemplo 1';
+  cardsExemplo4: NgSyzSimulationResultCard[] = [
+    {
+      camposCard: [
+        {
+          campo: '1° parcela',
+          valor: null,
+        },
+        {
+          campo: 'Aniversário',
+          valor: '01/04/2022',
+        },
+        {
+          campo: 'Disponivel',
+          valor: 'R$ 3.452,83',
+        },
+        {
+          campo: 'valor a antecipar',
+          valor: '22.120,69',
+        },
+      ],
+      selecionado: 'valor a antecipar',
+      editavel: true
+    }
+  ];
+  valorExemplo4 = 2500000;
+  modalidadesExemplo4 = ['Price', 'SAC', 'SACRE'];
+  condicoesExemplo4: NgSyzSimulationResultCondicao[] = [
+    {
+      condicao: 'CESH',
+      valor: '10,21%',
+      ajuda: 'Ajuda CESH',
+    },
+    {
+      condicao: 'CET',
+      valor: '15,35%',
+      ajuda: 'Ajuda CET',
+    },
+    {
+      condicao: 'Valor bruto',
+      valor: 'R$ 260.250,00',
+      ajuda: 'Ajuda Valor Bruto',
+    },
+  ];
+
   componentProps: ComponentProps[] = [
     {
       name: `@Input() cards: NgSyzSimulationResultCard[]`,

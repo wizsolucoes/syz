@@ -108,6 +108,7 @@ export interface NgSyzAchievementsProgressBar {
 export interface NgSyzSimulationResultCard {
   camposCard: NgSyzSimulationResultCamposCard[];
   selecionado: string;
+  editavel?:boolean;
 }
 
 export interface NgSyzSimulationResultCamposCard {

@@ -6,6 +6,8 @@ import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { FormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 registerLocaleData(ptBr);
 
@@ -16,6 +18,8 @@ registerLocaleData(ptBr);
     MatButtonToggleModule,
     MatIconModule,
     MatTooltipModule,
+    FormsModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   exports: [NgSyzSimulationResultComponent],

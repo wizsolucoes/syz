@@ -7,6 +7,7 @@ import { registerLocaleData } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 
 import { NgSyzSimulationResultComponent } from './simulation-result.component';
+import { FormsModule } from '@angular/forms';
 
 describe('NgSyzSimulationResultComponent', () => {
   let component: NgSyzSimulationResultComponent;
@@ -17,7 +18,7 @@ describe('NgSyzSimulationResultComponent', () => {
     registerLocaleData(ptBr);
     await TestBed.configureTestingModule({
       declarations: [NgSyzSimulationResultComponent],
-      imports: [MatButtonToggleModule, MatIconModule, MatTooltipModule],
+      imports: [MatButtonToggleModule, MatIconModule, MatTooltipModule, FormsModule],
       providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
     }).compileComponents();
   });
@@ -151,6 +152,80 @@ describe('NgSyzSimulationResultComponent', () => {
     expect(modalidadeButtons[1].textContent).toBe(component.modalidades[1]);
     expect(modalidadeButtons[2].textContent).toBe(component.modalidades[2]);
   });
+
+  describe('should display editable input' , ()=>{
+    it('should show input', ()=>{
+      //given
+      component.cards = [
+        {
+          camposCard: [
+            {
+              campo: '1° parcela',
+              valor: null,
+            },
+            {
+              campo: 'Aniversário',
+              valor: '01/04/2022',
+            },
+            {
+              campo: 'Disponivel',
+              valor: 'R$ 3.452,83',
+            },
+            {
+              campo: 'valor a antecipar',
+              valor: '22.120,69',
+            },
+          ],
+          selecionado: 'valor a antecipar',
+          editavel: true
+        }
+      ];
+      //when
+      fixture.detectChanges();
+      const input: HTMLElement = template.querySelectorAll(
+        '[data-test="editable-input"]'
+      )[0] as HTMLElement;
+      //then
+      expect(input.getAttribute('ng-reflect-model')).toBe('22.120,69');
+    });
+    it('should emit when value change' , ()=>{
+      //given
+      component.cards = [
+        {
+          camposCard: [
+            {
+              campo: '1° parcela',
+              valor: null,
+            },
+            {
+              campo: 'Aniversário',
+              valor: '01/04/2022',
+            },
+            {
+              campo: 'Disponivel',
+              valor: 'R$ 3.452,83',
+            },
+            {
+              campo: 'valor a antecipar',
+              valor: '22.120,69',
+            },
+          ],
+          selecionado: 'valor a antecipar',
+          editavel: true
+        }
+      ];
+      //when
+      fixture.detectChanges();
+      const input: HTMLElement = template.querySelectorAll(
+        '[data-test="editable-input"]'
+      )[0] as HTMLElement;
+      input.dispatchEvent(new Event("change",{bubbles:true,cancelable: false}));
+      fixture.detectChanges();
+      //then
+      console.log(input)
+      expect(component.enviarValorEditavel.emit).toHaveBeenCalled();
+    });
+  })
 
   describe('should display cards data', () => {
     it('should display components cards', () => {

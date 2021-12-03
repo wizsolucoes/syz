@@ -9,6 +9,8 @@ $selected-button: var(--selected-button, #dc7700);
   width: 850px;
 }
 
+
+
 .resultado-info {
   align-items: flex-start;
   display: flex;
@@ -108,6 +110,28 @@ $selected-button: var(--selected-button, #dc7700);
       .resultado-cards--card--row--campo--valor {
         color: #fff;
       }
+
+    }
+    .resultado-cards--card--row--campo--input{
+      width: 9em;
+      padding: 6px;
+      padding-right: 24px;
+      font-size: 12px;
+      font-weight: 700;
+      
+    }
+    .resultado-cards--card--row--campo--input-wrapper {
+      display:inline-block;
+      position: relative
+    }
+    .resultado-cards--card--row--campo--input-wrapper:after {
+      font-family: "Material Icons";
+      content: '\e3c9';
+      position: absolute;
+      right: 10px;
+      color: $selected-card ;
+      top: 4px;
+      margin-left: 6px;
     }
 
     &--row {

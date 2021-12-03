@@ -15,8 +15,10 @@ export class NgSyzSimulationResultComponent {
   @Input() valor: number;
   @Input() modalidades: string[];
   @Input() condicoes: NgSyzSimulationResultCondicao[];
+  @Input() mostrarModalidades: boolean = true;
   @Output() enviarCardSelecionado = new EventEmitter(true);
   @Output() enviarModalidadeSelecionada = new EventEmitter(true);
+  @Output() enviarValorEditavel = new EventEmitter(true);
   cardIdSelecionadoAnteriormente: string;
 
   selecionarCard(index, idLetter): void {
@@ -33,5 +35,8 @@ export class NgSyzSimulationResultComponent {
 
   selecionarModalidade(modalidade): void {
     this.enviarModalidadeSelecionada.emit(modalidade);
+  }
+  valorEditavelChange(text): void{
+    this.enviarValorEditavel.emit(text);
   }
 }
