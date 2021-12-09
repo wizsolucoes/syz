@@ -276,4 +276,37 @@ describe('NgSyzSimulationResultComponent', () => {
       expect(cardRows[3].classList).toContain('card-selecionado');
     });
   });
+  fdescribe('Should display editable input', ()=>{
+    it('should display input', () =>{
+      //given
+      component.cards = [
+        {
+          camposCard: [
+            {
+              campo: '1° parcela',
+              valor: null,
+            },
+            {
+              campo: 'Aniversário',
+              valor: '01/04/2022',
+            },
+            {
+              campo: 'Disponivel',
+              valor: 'R$ 3.452,83',
+            },
+            {
+              campo: 'valor a antecipar',
+              valor: '22.120,69',
+            },
+          ],
+          selecionado: 'valor a antecipar',
+          editavel: true
+        }
+      ];
+      const input = template.querySelectorAll('[data-test="editable-input"]');
+
+      //then
+      expect(input).toBeTruthy()
+    });
+  })
 });

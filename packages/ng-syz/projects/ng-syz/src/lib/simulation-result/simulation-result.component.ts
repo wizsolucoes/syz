@@ -14,6 +14,7 @@ export class NgSyzSimulationResultComponent {
   @Input() cards: NgSyzSimulationResultCard[];
   @Input() valor: number;
   @Input() modalidades: string[];
+  @Input() tituloValor: string;
   @Input() condicoes: NgSyzSimulationResultCondicao[];
   @Input() mostrarModalidades: boolean = true;
   @Output() enviarCardSelecionado = new EventEmitter(true);

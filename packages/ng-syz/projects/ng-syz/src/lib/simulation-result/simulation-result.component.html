@@ -1,8 +1,8 @@
 <article class="simulation-result">
   <section class="resultado-info">
     <div class="resultado-info--valor">
-      <span class="info--titulo">
-        Valor disponivel para antecipação
+      <span class="info--titulo" *ngIf="tituloValor">
+        {{tituloValor}}
       </span>
       <div>
         <span class="resultado-info--valor--moeda">R$</span
