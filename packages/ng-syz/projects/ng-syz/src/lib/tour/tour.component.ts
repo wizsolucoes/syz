@@ -88,50 +88,18 @@ export class NgSyzTourComponent implements AfterViewInit, OnDestroy {
     this.updateStepLocation();
     setTimeout(() => {
       if (!this.isTourOnScreen()) {
-        if (this.selectedElementRect && this.isBottom()) {
-          const topPosition =
-            this.windowService.nativeWindow.scrollY +
-            this.selectedElementRect.top -
-            this.topOfPageAdjustment -
-            (this.currentTourStep.scrollAdjustment
-              ? this.currentTourStep.scrollAdjustment
-              : 0) +
-            this.getStepScreenAdjustment();
-          try {
-            this.windowService.nativeWindow.scrollTo({
-              left: null,
-              top: topPosition,
-              behavior: 'smooth',
-            });
-          } catch (err) {
-            if (err instanceof TypeError) {
-              this.windowService.nativeWindow.scroll(0, topPosition);
-            } else {
-              throw err;
-            }
-          }
-        } else {
-          const topPosition =
-            this.windowService.nativeWindow.scrollY +
-            this.selectedElementRect.top +
-            this.selectedElementRect.height -
-            this.windowService.nativeWindow.innerHeight +
-            (this.currentTourStep.scrollAdjustment
-              ? this.currentTourStep.scrollAdjustment
-              : 0) -
-            this.getStepScreenAdjustment();
-          try {
-            this.windowService.nativeWindow.scrollTo({
-              left: null,
-              top: topPosition,
-              behavior: 'smooth',
-            });
-          } catch (err) {
-            if (err instanceof TypeError) {
-              this.windowService.nativeWindow.scroll(0, topPosition);
-            } else {
-              throw err;
-            }
+        const topPosition = this.getStepScreenAdjustment();
+        try {
+          this.windowService.nativeWindow.scrollTo({
+            left: null,
+            top: topPosition,
+            behavior: 'smooth',
+          });
+        } catch (err) {
+          if (err instanceof TypeError) {
+            this.windowService.nativeWindow.scroll(0, topPosition);
+          } else {
+            throw err;
           }
         }
       }
@@ -158,33 +126,24 @@ export class NgSyzTourComponent implements AfterViewInit, OnDestroy {
   }
 
   private getStepScreenAdjustment(): number {
-    if (
-      this.currentTourStep.orientation === Orientation.Left ||
-      this.currentTourStep.orientation === Orientation.Right
-    ) {
-      return 0;
+    let positionElementSelected = 0;
+    let selector = this.currentTourStep?.selector;
+    let elementSelector = this.dom.getElementsByClassName( selector.substring(selector.indexOf(".") + 1))?.item(0);
+
+    if(elementSelector['offsetTop']) {
+      positionElementSelected = elementSelector['offsetTop']
+      positionElementSelected -= this.topOfPageAdjustment;
+
+      if (this.isTop()) {
+        const tourStepHeight = typeof this.tourStep.nativeElement.getBoundingClientRect === 'function' ? this.tourStep.nativeElement.getBoundingClientRect().height : 0;
+        positionElementSelected -= tourStepHeight;
+      }
+
+      const scrollAdjustment = this.currentTourStep.scrollAdjustment ? this.currentTourStep.scrollAdjustment : 0;
+      positionElementSelected += scrollAdjustment;
     }
 
-    const scrollAdjustment = this.currentTourStep.scrollAdjustment
-      ? this.currentTourStep.scrollAdjustment
-      : 0;
-    const tourStepHeight =
-      typeof this.tourStep.nativeElement.getBoundingClientRect === 'function'
-        ? this.tourStep.nativeElement.getBoundingClientRect().height
-        : 0;
-    const elementHeight =
-      this.selectedElementRect.height + scrollAdjustment + tourStepHeight;
-
-    if (
-      this.windowService.nativeWindow.innerHeight - this.topOfPageAdjustment <
-      elementHeight
-    ) {
-      return (
-        elementHeight -
-        (this.windowService.nativeWindow.innerHeight - this.topOfPageAdjustment)
-      );
-    }
-    return 0;
+    return positionElementSelected;
   }
 
   private isTourOnScreen(): boolean {
@@ -241,6 +200,15 @@ export class NgSyzTourComponent implements AfterViewInit, OnDestroy {
       (this.currentTourStep.orientation === Orientation.Bottom ||
         this.currentTourStep.orientation === Orientation.BottomLeft ||
         this.currentTourStep.orientation === Orientation.BottomRight)
+    );
+  }
+
+  private isTop(): boolean {
+    return (
+      this.currentTourStep.orientation &&
+      (this.currentTourStep.orientation === Orientation.Top ||
+        this.currentTourStep.orientation === Orientation.TopLeft ||
+        this.currentTourStep.orientation === Orientation.TopRight)
     );
   }
 
