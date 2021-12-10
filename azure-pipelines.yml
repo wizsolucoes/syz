@@ -203,6 +203,10 @@ stages:
           - checkout: site
 
           # Build components
+          - task: NodeTool@0
+            displayName: 'Use Node 14'
+            inputs:
+              versionSpec: '14.x'
           - task: Npm@1
             displayName: 'Install dependencies'
             inputs:
@@ -284,6 +288,10 @@ stages:
               workingDirectory: $(MonoRepoDirectory)
 
           # Build and test components
+          - task: NodeTool@0
+            displayName: 'Use Node 14'
+            inputs:
+              versionSpec: '14.x'
           - task: Npm@1
             displayName: 'Install dependencies'
             inputs:
