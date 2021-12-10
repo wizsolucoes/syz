@@ -127,15 +127,16 @@ export class NgSyzTourComponent implements AfterViewInit, OnDestroy {
 
   private getStepScreenAdjustment(): number {
     let positionElementSelected = 0;
-    let selector = this.currentTourStep?.selector;
-    let elementSelector = this.dom.getElementsByClassName( selector.substring(selector.indexOf(".") + 1))?.item(0);
 
-    if(elementSelector['offsetTop']) {
-      positionElementSelected = elementSelector['offsetTop']
+    const elementSelector = this.dom.querySelector<HTMLElement>(this.currentTourStep.selector);
+
+    if (elementSelector !== null) {
+      positionElementSelected = elementSelector.offsetTop;
       positionElementSelected -= this.topOfPageAdjustment;
 
       if (this.isTop()) {
-        const tourStepHeight = typeof this.tourStep.nativeElement.getBoundingClientRect === 'function' ? this.tourStep.nativeElement.getBoundingClientRect().height : 0;
+        const tourStepHeight = typeof this.tourStep.nativeElement.getBoundingClientRect === 'function' ?
+          this.tourStep.nativeElement.getBoundingClientRect().height : 0;
         positionElementSelected -= tourStepHeight;
       }
 
