@@ -10,6 +10,7 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
 export class DocsSimulationResultComponent implements OnInit {
   importCode = `import { NgSyzPasswordResetCardModule } from '@wizsolucoes/ng-syz';`;
 
+  // Exemplo whatever
   componentProps: ComponentProps[] = [
     {
       name: '@Input() qtdeCaracteresSenha:int',

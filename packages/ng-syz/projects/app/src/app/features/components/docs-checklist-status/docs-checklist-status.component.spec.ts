@@ -1,8 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
 import { NgSyzCheckListStatusModule } from '@wizsolucoes/ng-syz';
-import { SharedModule } from '../../../shared/shared.module';
+import { SharedTestingModule } from 'projects/app/src/testing/modules/shared-testing/shared-testing.module';
 import { DocsChecklistStatusComponent } from './docs-checklist-status.component';
 
 describe('DocsChecklistStatusComponent', () => {
@@ -12,12 +10,7 @@ describe('DocsChecklistStatusComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [DocsChecklistStatusComponent],
-      imports: [
-        NgSyzCheckListStatusModule,
-        SharedModule,
-        RouterTestingModule,
-        NoopAnimationsModule,
-      ],
+      imports: [NgSyzCheckListStatusModule, SharedTestingModule],
     }).compileComponents();
   });
 

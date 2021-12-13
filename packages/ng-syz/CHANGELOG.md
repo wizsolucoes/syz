@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.5](https://github.com/wizsolucoes/syz/compare/ng-syz@0.10.4...ng-syz@0.10.5) (2021-12-10)
+
+**Note:** Version bump only for package ng-syz
+
+
+
+
+
+## [0.10.4](https://github.com/wizsolucoes/syz/compare/ng-syz@0.10.3...ng-syz@0.10.4) (2021-11-25)
+
+**Note:** Version bump only for package ng-syz
+
+
+
+
+
+## [0.10.3](https://github.com/wizsolucoes/syz/compare/ng-syz@0.10.2...ng-syz@0.10.3) (2021-11-23)
+
+**Note:** Version bump only for package ng-syz
+
+
+
+
+
+## [0.10.2](https://github.com/wizsolucoes/syz/compare/ng-syz@0.10.1...ng-syz@0.10.2) (2021-11-23)
+
+**Note:** Version bump only for package ng-syz
+
+
+
+
+
+## [0.10.1](https://github.com/wizsolucoes/syz/compare/ng-syz@0.10.0...ng-syz@0.10.1) (2021-11-22)
+
+**Note:** Version bump only for package ng-syz
+
+
+
+
+
+# [0.10.0](https://github.com/wizsolucoes/syz/compare/ng-syz@0.9.1...ng-syz@0.10.0) (2021-11-22)
+
+
+### Features
+
+* **ng-syz:** implement get component contributors ([3f140fb](https://github.com/wizsolucoes/syz/commit/3f140fb444cdc678b8d07e1c6f3112352213f13a))
+
+
+
+
+
+## [0.9.1](https://github.com/wizsolucoes/syz/compare/ng-syz@0.9.0...ng-syz@0.9.1) (2021-11-19)
+
+**Note:** Version bump only for package ng-syz
+
+
+
+
+
 # [0.9.0](https://github.com/wizsolucoes/syz/compare/ng-syz@0.8.1...ng-syz@0.9.0) (2021-11-16)
 
 

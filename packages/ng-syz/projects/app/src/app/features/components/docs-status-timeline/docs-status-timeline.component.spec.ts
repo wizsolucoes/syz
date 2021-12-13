@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from '../../../shared/shared.module';
-import { DocsTimelineComponent } from './docs-status-timeline.component';
 import { NgSyzStatusTimelineModule } from '@wizsolucoes/ng-syz';
+import { SharedTestingModule } from 'projects/app/src/testing/modules/shared-testing/shared-testing.module';
+import { DocsTimelineComponent } from './docs-status-timeline.component';
 
 describe('DocsTimelineComponent', () => {
   let component: DocsTimelineComponent;
@@ -10,7 +9,7 @@ describe('DocsTimelineComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SharedModule, NoopAnimationsModule, NgSyzStatusTimelineModule],
+      imports: [SharedTestingModule, NgSyzStatusTimelineModule],
       declarations: [DocsTimelineComponent],
     }).compileComponents();
   });

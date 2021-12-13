@@ -1,9 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DocsAchievementsProgressBarComponent } from './docs-achievements-progress-bar.component';
 import { NgSyzAchievementsProgressBarModule } from '@wizsolucoes/ng-syz';
-import { SharedModule } from '../../../shared/shared.module';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
+import { SharedTestingModule } from 'projects/app/src/testing/modules/shared-testing/shared-testing.module';
+import { DocsAchievementsProgressBarComponent } from './docs-achievements-progress-bar.component';
 
 describe('DocsAchievementsProgressBarComponent', () => {
   let component: DocsAchievementsProgressBarComponent;
@@ -11,10 +9,9 @@ describe('DocsAchievementsProgressBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ NgSyzAchievementsProgressBarModule, SharedModule, NoopAnimationsModule ],
-      declarations: [ DocsAchievementsProgressBarComponent ]
-    })
-    .compileComponents();
+      imports: [NgSyzAchievementsProgressBarModule, SharedTestingModule],
+      declarations: [DocsAchievementsProgressBarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

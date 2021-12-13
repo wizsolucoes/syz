@@ -319,6 +319,16 @@ export class DocsTourComponent implements OnInit {
     skipCallback: this.skipMethod,
     tourStep: [
       {
+        title: 'Bem vindo ao Tour Wiz',
+        content: `Olá você está iniciando o component tour da wiz.`,
+        useHighlightPadding: true,
+        skipButtonText: 'Pular',
+        doneButtonText: 'Concluído',
+        nextButtonText: 'Avançar',
+        closeButtonText: 'Fechar',
+        backButtonText: 'Voltar',
+      },
+      {
         title: 'Cabeçalho da página',
         selector: '.step1',
         content: `Este é o cabeçalho da página da web macado no primeiro step.`,

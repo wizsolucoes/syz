@@ -7,6 +7,7 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   styleUrls: ['./docs-initiative-result-card.component.scss'],
 })
 export class DocsCardResultInitiativeComponent implements OnInit {
+  // Example
   image: NgSyzInitiativeResultCardImage = {
     url: '/assets/docs-initiative-result-card/image.png',
     alt: 'Ícone',
@@ -16,7 +17,8 @@ export class DocsCardResultInitiativeComponent implements OnInit {
     url: '/assets/docs-initiative-result-card/IconCelphone.png',
     alt: 'Ícone',
   };
-
+  
+  // data Cards
   cards = [
     {
       icon: 'wallpaper',

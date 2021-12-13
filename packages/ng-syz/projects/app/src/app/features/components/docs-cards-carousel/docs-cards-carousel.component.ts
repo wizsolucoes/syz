@@ -10,6 +10,7 @@ import {
   styleUrls: ['./docs-cards-carousel.component.scss'],
 })
 export class DocsCarouselCardsComponent implements OnInit {
+  // Exemplo
   config01 = {
     htmlExampleCode: `
       <ng-syz-cards-carousel
@@ -57,6 +58,7 @@ export class DocsCarouselCardsComponent implements OnInit {
     effect: 'slide',
   };
 
+  // exemplo data slide 01
   dataSlides01: NgSyzCardsCarouselSliders[] = [
     {
       title: 'Conexão Conseg',

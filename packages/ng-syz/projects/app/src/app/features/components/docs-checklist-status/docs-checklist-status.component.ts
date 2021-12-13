@@ -7,14 +7,15 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   styleUrls: ['./docs-checklist-status.component.scss']
 })
 export class DocsChecklistStatusComponent implements OnInit {
-
+  // Example
   config = {
     title: 'Metas do dia',
     textButton: 'Saiba mais',
     router: 'https://www.ibccoaching.com.br/portal/metas-e-objetivos/importancia-estabelecer-metas-diarias-para-ser-mais-produtivo/',
     target: '_blank'
   };
-
+  
+    // Example data
   dataComponent = [
     {
       text: 'Tratar 30 leads de habitacional sem seguro residencial.',

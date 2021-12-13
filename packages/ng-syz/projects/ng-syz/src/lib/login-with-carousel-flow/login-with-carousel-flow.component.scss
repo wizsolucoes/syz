@@ -1,8 +1,7 @@
-@import "./theme/_variables";
+@import './theme/_variables';
 
 //// SPACINGS ////
-@import "./theme/_spacing";
-
+@import './theme/_spacing';
 
 //// MIXINS ////
 @import './theme/_mixins';
@@ -73,10 +72,7 @@
 }
 
 .slide-bg-color {
-  background-color: var(
-    --syz-login-with-carousel-slide-background-color,
-    gray
-  );
+  background-color: var(--syz-login-with-carousel-slide-background-color, gray);
 }
 
 @media all and (max-width: 766px) {
@@ -120,34 +116,34 @@
   align-items: center;
   justify-content: center;
   .slide-item {
-      width: 90%;
-      height: 100%;
-      max-height: 740px;
-      color: #ffff;
-      text-align: center;
-      .img-container {
-          img {
-              width: 100%;
-              margin-bottom: $content-gap + 1.5;
-          }
-          .badge-soon {
-              @include centerer;
-              padding: $content-gap / 2 $content-gap;
-              font-size: $font-size-base - 0.15;
-              background: var(--syz-login-with-carousel-button-color, orange);
-              @include border-radius(20px);
-          }
+    width: 90%;
+    height: 100%;
+    max-height: 740px;
+    color: #ffff;
+    text-align: center;
+    .img-container {
+      img {
+        width: 100%;
+        margin-bottom: $content-gap + 1.5;
       }
-      h1 {
-          font-weight: 900;
-          margin-bottom: $content-gap - 0.65;
+      .badge-soon {
+        @include centerer;
+        padding: $content-gap * 0.5 $content-gap;
+        font-size: $font-size-base - 0.15;
+        background: var(--syz-login-with-carousel-button-color, orange);
+        @include border-radius(20px);
       }
-      h2 {
-          margin: 0;
-          font-size: $font-size-base + 0.5;
-          font-weight: 400;
-          margin-bottom: 100px;
-      }
+    }
+    h1 {
+      font-weight: 900;
+      margin-bottom: $content-gap - 0.65;
+    }
+    h2 {
+      margin: 0;
+      font-size: $font-size-base + 0.5;
+      font-weight: 400;
+      margin-bottom: 100px;
+    }
   }
 }
 
@@ -183,49 +179,52 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
   .btn.clear {
-      &.txt-left {
-          padding-left: $content-gap * 2;
-          text-align: center;
-      }
+    &.txt-left {
+      padding-left: $content-gap * 2;
+      text-align: center;
+    }
   }
   .container-fluid {
-      padding-right: 0;
-      padding-left: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
   .wrapper {
-      padding: $content-gap * 2;
-      .logo-conseg {
-          width: 75%;
-      }
+    padding: $content-gap * 2;
+    .logo-conseg {
+      width: 75%;
+    }
   }
   .slide-container {
-      padding: $content-gap 0 0 $content-gap;
-      .slide-item {
-          width: 100%;
-          height: 380px;
-          .img-container {
-              // max-height: 200px;
-              img {
-                  margin-bottom: $content-gap;
-              }
-              .badge-soon {
-                  top: 53.5%;
-                  padding: $content-gap - 0.65 $content-gap;
-                  font-size: $font-size-base - 0.45;
-              }
-          }
-          h1 {
-              // margin-bottom: 0;
-              font-size: $font-size-base + 0.5;
-          }
-          h2 {
-              font-size: $font-size-base - 0.05;
-          }
+    padding: $content-gap 0 0 $content-gap;
+    .slide-item {
+      width: 100%;
+      height: 380px;
+      .img-container {
+        // max-height: 200px;
+        img {
+          margin-bottom: $content-gap;
+        }
+        .badge-soon {
+          top: 53.5%;
+          padding: $content-gap - 0.65 $content-gap;
+          font-size: $font-size-base - 0.45;
+        }
       }
+      h1 {
+        // margin-bottom: 0;
+        font-size: $font-size-base + 0.5;
+      }
+      h2 {
+        font-size: $font-size-base - 0.05;
+      }
+    }
   }
 }
 
-::ng-deep.swiper.s-wrapper .swiper-pagination .swiper-pagination-handle .swiper-pagination-bullet {
+::ng-deep.swiper.s-wrapper
+  .swiper-pagination
+  .swiper-pagination-handle
+  .swiper-pagination-bullet {
   display: inline-block;
   margin: 0;
   pointer-events: none;

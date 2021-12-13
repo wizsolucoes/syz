@@ -53,6 +53,7 @@ export class DocsTimelineComponent {
     },
   ];
 
+  // html example
   htmlExampleCode = `
   <ng-syz-status-timeline
     [data]="data"
@@ -63,6 +64,7 @@ export class DocsTimelineComponent {
   </ng-syz-status-timeline>
   `;
 
+  // ts example
   tsExampleCode = `
   public data: NgSyzStatusTimelineEntry[] = [
     {

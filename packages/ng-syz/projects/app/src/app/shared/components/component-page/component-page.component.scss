@@ -1,4 +1,5 @@
-h3, h4 {
+h3,
+h4 {
   margin-top: 32px;
   margin-bottom: 8px;
 }
@@ -14,14 +15,14 @@ table {
 .app-component-page-tab-content {
   padding-top: 8px;
 
-  p{
+  p {
     white-space: pre-line;
   }
 }
 
 .app-components-selector-box {
   display: flex;
-  align-items:center;
+  align-items: center;
 
   p {
     margin: 0;
@@ -33,16 +34,8 @@ table {
   }
 }
 
-th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
   white-space: pre-line;
-}
-
-
-
-.showRenderNgContent{
-  opacity: 1;
-}
-
-.hideRenderNgContent{
-  opacity: 0;
 }

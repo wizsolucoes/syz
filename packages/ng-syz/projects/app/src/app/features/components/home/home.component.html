@@ -1,6 +1,46 @@
 <h2>Como usar o ng-syz</h2>
 
-<h3>Instalar NgSyz</h3>
+<h3>1. Instalar as dependências de pares</h3>
+
+<h4>
+  Para aplicações geradas com o
+  <a
+    href="https://github.com/wizsolucoes/angular-starter-schematic"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Starter Angular da Wiz:
+  </a>
+</h4>
+
+<pre class="block">
+  <code>
+  npm i swiper@6.8.4 # Precisa ser versão 6
+
+  npm i ngx-swiper-wrapper
+  </code>
+</pre>
+
+<br />
+
+<h4>
+  Para aplicações que <strong>não foram</strong> geradas com o Starter Angular
+  da Wiz:
+</h4>
+
+<pre class="block">
+  <code>
+  ng add @angular/material
+
+  npm i ngx-mask
+
+  npm i swiper@6.8.4 # Precisa ser versão 6
+
+  npm i ngx-swiper-wrapper
+  </code>
+</pre>
+
+<h3>2. Instalar NgSyz</h3>
 
 <pre class="block">
   <code>
@@ -8,14 +48,14 @@
   </code>
 </pre>
 
-<h3>Mostrar um componente</h3>
+<h3>3. Mostrar um componente</h3>
 
 <p>
   Vamos mostrar o componente de busca por cpf ou cnpj, como exemplo, para
   verificar que a biblioteca está configurada corretamente.
 </p>
 
-<p>Faça o import do módulo <strong>NgSyzCpfSearchModule</strong>.</p>
+<p>3.a. Faça o import do módulo <strong>NgSyzCpfSearchModule</strong>.</p>
 
 <pre class="block">
   <code>{{ importCode }}</code>
@@ -23,7 +63,9 @@
 
 <br />
 
-<p>Adicione o seletor <strong>ng-syz-cpf-search</strong> a um arquivo html.</p>
+<p>
+  3.b. Adicione o seletor <strong>ng-syz-cpf-search</strong> a um arquivo html.
+</p>
 
 <pre class="block">
   <code>{{ addSelectorCode }}</code>

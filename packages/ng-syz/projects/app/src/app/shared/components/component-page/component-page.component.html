@@ -85,8 +85,11 @@
   </mat-tab>
 </mat-tab-group>
 
-<div
-  [class]="isNgContentVisible ? 'showRenderNgContent' : 'hideRenderNgContent'"
->
+<div *ngIf="isNgContentVisible">
   <ng-content></ng-content>
 </div>
+
+<app-contributors
+  *ngIf="contributors.length"
+  [contributors]="contributors"
+></app-contributors>

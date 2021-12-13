@@ -15,6 +15,7 @@ export class DocsFaqComponent implements OnInit {
   public multiExpandedTest: boolean;
   public showCustomColorTest: boolean;
 
+  // example data
   public mockDataCategorys = [
     { id: 1, title: 'Categoria 1' },
     { id: 2, title: 'Categoria 2' },
@@ -25,6 +26,7 @@ export class DocsFaqComponent implements OnInit {
 
   public mockContentCategorySelected: any;
 
+  // mock data
   public mockData = [
     {
       id: 1,

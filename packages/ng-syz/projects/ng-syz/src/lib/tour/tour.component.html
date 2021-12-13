@@ -17,6 +17,7 @@
   *ngIf="currentTourStep"
   class="tour-step"
   [class]="'tour-' + currentTourStep.orientation"
+  [ngClass]="{'page-tour-step': !currentTourStep.selector}"
   [style.top.px]="
     currentTourStep.selector && selectedElementRect ? topPosition() : null
   "

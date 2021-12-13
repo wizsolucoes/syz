@@ -1,10 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { DocsTourComponent } from './docs-tour.component';
 import { NgSyzTourModule } from '@wizsolucoes/ng-syz';
+import { SharedTestingModule } from 'projects/app/src/testing/modules/shared-testing/shared-testing.module';
 import { TourService } from 'projects/ng-syz/src/lib/tour/services/tour.service';
-import { SharedModule } from '../../../shared/shared.module';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { DocsTourComponent } from './docs-tour.component';
 
 describe('DocsTourComponent', () => {
   let component: DocsTourComponent;
@@ -12,19 +10,13 @@ describe('DocsTourComponent', () => {
   let mockTourService: jasmine.SpyObj<TourService>;
 
   beforeEach(async () => {
-
-    mockTourService = jasmine.createSpyObj('TourService', [
-      'startTour'
-    ]);
+    mockTourService = jasmine.createSpyObj('TourService', ['startTour']);
 
     await TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, NgSyzTourModule, SharedModule, NoopAnimationsModule ],
-      declarations: [ DocsTourComponent ],
-      providers: [
-        { provide: TourService, useValue: mockTourService },
-      ],
-    })
-    .compileComponents();
+      imports: [NgSyzTourModule, SharedTestingModule],
+      declarations: [DocsTourComponent],
+      providers: [{ provide: TourService, useValue: mockTourService }],
+    }).compileComponents();
   });
 
   beforeEach(() => {
