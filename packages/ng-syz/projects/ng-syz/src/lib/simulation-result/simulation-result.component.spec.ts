@@ -276,7 +276,7 @@ describe('NgSyzSimulationResultComponent', () => {
       expect(cardRows[3].classList).toContain('card-selecionado');
     });
   });
-  fdescribe('Should display editable input', ()=>{
+  describe('Should display editable input', ()=>{
     it('should display input', () =>{
       //given
       component.cards = [
