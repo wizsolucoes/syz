@@ -26,10 +26,11 @@ export class NgSyzTourComponent implements AfterViewInit, OnDestroy {
   @Input() public topOfPageAdjustment = 0;
   @Input() public minimalTourStepWidth = 200;
 
-  tourStepWidth = 300;
+  tourStepWidth = 400;
   highlightPadding = 4;
   imgAvatarWidth = 120;
   imgAvatarHeight = 120;
+  borderRadius = 0;
   skipButtonText = 'Pular';
   doneButtonText = 'Concluído';
   nextButtonText = 'Avançar';

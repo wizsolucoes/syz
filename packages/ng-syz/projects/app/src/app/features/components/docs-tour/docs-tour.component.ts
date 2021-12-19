@@ -342,6 +342,7 @@ export class DocsTourComponent implements OnInit {
         imgAvatar: true,
         imgAvatarUrl: '/assets/img/wauto-mini.png',
         imgAvatarAlt: 'testando alt avatar',
+        borderRadius: 100,
       },
       {
         title: '<u>A wizconseg</u>',

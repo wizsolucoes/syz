@@ -17,7 +17,7 @@
   *ngIf="currentTourStep"
   class="tour-step"
   [class]="'tour-' + currentTourStep.orientation"
-  [ngClass]="{'page-tour-step': !currentTourStep.selector}"
+  [ngClass]="{ 'page-tour-step': !currentTourStep.selector }"
   [style.top.px]="
     currentTourStep.selector && selectedElementRect ? topPosition() : null
   "
@@ -35,103 +35,114 @@
 >
   <div *ngIf="currentTourStep.selector" class="tour-arrow"></div>
 
-  <img
-    *ngIf="currentTourStep?.imgAvatar"
-    class="img-avatar"
-    [class]="'img-avatar-' + currentTourStep.orientation"
-    [src]="currentTourStep?.imgAvatarUrl"
-    [alt]="currentTourStep?.imgAvatarAlt"
-    [style.width.px]="
-      currentTourStep?.imgAvatarWidth
-        ? currentTourStep?.imgAvatarWidth
-        : imgAvatarWidth
-    "
-    [style.height.px]="
-      currentTourStep?.imgAvatarHeight
-        ? currentTourStep?.imgAvatarHeight
-        : imgAvatarHeight
-    "
-    [style.left.px]="
-      currentTourStep.selector && selectedElementRect
-        ? leftPositionAvatar()
-        : null
-    "
-    [style.top.px]="
-      currentTourStep.selector && selectedElementRect
-        ? topPositionAvatar()
-        : null
-    "
-  />
-
   <div class="tour-block">
-    <div class="tour-title" [innerHTML]="currentTourStep?.title"></div>
-    <div class="tour-content" [innerHTML]="currentTourStep?.content"></div>
-    <div class="tour-buttons">
-      <button
-        mat-button
-        *ngIf="!tourService.onResizeMessage()"
-        (click)="tourService.skipTour()"
-      >
-        {{
-          currentTourStep?.skipButtonText
-            ? currentTourStep?.skipButtonText
-            : skipButtonText
-        }}
-      </button>
+    <div
+      [ngClass]="{ 'd-flex align-items-center justify-content-between': currentTourStep?.imgAvatar }"
+    >
+      <div>
+        <img
+          *ngIf="currentTourStep?.imgAvatar"
+          class="img-avatar"
+          [src]="currentTourStep?.imgAvatarUrl"
+          [alt]="currentTourStep?.imgAvatarAlt"
+          [style.width.px]="
+            currentTourStep?.imgAvatarWidth
+              ? currentTourStep?.imgAvatarWidth
+              : imgAvatarWidth
+          "
+          [style.height.px]="
+            currentTourStep?.imgAvatarHeight
+              ? currentTourStep?.imgAvatarHeight
+              : imgAvatarHeight
+          "
+          [style.left.px]="
+            currentTourStep.selector && selectedElementRect
+              ? leftPositionAvatar()
+              : null
+          "
+          [style.top.px]="
+            currentTourStep.selector && selectedElementRect
+              ? topPositionAvatar()
+              : null
+          "
+          [style.border-radius.px]="
+            currentTourStep?.borderRadius
+              ? currentTourStep?.borderRadius
+              : borderRadius
+          "
+        />
+      </div>
+      <div>
+        <div class="tour-title" [innerHTML]="currentTourStep?.title"></div>
+        <div class="tour-content" [innerHTML]="currentTourStep?.content"></div>
+        <div class="tour-buttons">
+          <button
+            mat-button
+            *ngIf="!tourService.onResizeMessage()"
+            (click)="tourService.skipTour()"
+          >
+            {{
+              currentTourStep?.skipButtonText
+                ? currentTourStep?.skipButtonText
+                : skipButtonText
+            }}
+          </button>
 
-      <div class="tour-buttons-spacer"></div>
+          <div class="tour-buttons-spacer"></div>
 
-      <button
-        mat-button
-        color="primary"
-        *ngIf="!tourService.onFirstStep() && !tourService.onResizeMessage()"
-        (click)="tourService.backStep()"
-      >
-        {{
-          currentTourStep?.backButtonText
-            ? currentTourStep?.backButtonText
-            : backButtonText
-        }}
-      </button>
+          <button
+            mat-button
+            color="primary"
+            *ngIf="!tourService.onFirstStep() && !tourService.onResizeMessage()"
+            (click)="tourService.backStep()"
+          >
+            {{
+              currentTourStep?.backButtonText
+                ? currentTourStep?.backButtonText
+                : backButtonText
+            }}
+          </button>
 
-      <button
-        mat-flat-button
-        color="primary"
-        *ngIf="!tourService.onLastStep() && !tourService.onResizeMessage()"
-        (click)="tourService.nextStep()"
-      >
-        {{
-          currentTourStep?.nextButtonText
-            ? currentTourStep?.nextButtonText
-            : nextButtonText
-        }}
-      </button>
+          <button
+            mat-flat-button
+            color="primary"
+            *ngIf="!tourService.onLastStep() && !tourService.onResizeMessage()"
+            (click)="tourService.nextStep()"
+          >
+            {{
+              currentTourStep?.nextButtonText
+                ? currentTourStep?.nextButtonText
+                : nextButtonText
+            }}
+          </button>
 
-      <button
-        mat-flat-button
-        color="primary"
-        *ngIf="tourService.onLastStep()"
-        (click)="tourService.nextStep()"
-      >
-        {{
-          currentTourStep?.doneButtonText
-            ? currentTourStep?.doneButtonText
-            : doneButtonText
-        }}
-      </button>
+          <button
+            mat-flat-button
+            color="primary"
+            *ngIf="tourService.onLastStep()"
+            (click)="tourService.nextStep()"
+          >
+            {{
+              currentTourStep?.doneButtonText
+                ? currentTourStep?.doneButtonText
+                : doneButtonText
+            }}
+          </button>
 
-      <button
-        mat-flat-button
-        color="primary"
-        *ngIf="tourService.onResizeMessage()"
-        (click)="tourService.resetTour()"
-      >
-        {{
-          currentTourStep?.closeButtonText
-            ? currentTourStep?.closeButtonText
-            : closeButtonText
-        }}
-      </button>
+          <button
+            mat-flat-button
+            color="primary"
+            *ngIf="tourService.onResizeMessage()"
+            (click)="tourService.resetTour()"
+          >
+            {{
+              currentTourStep?.closeButtonText
+                ? currentTourStep?.closeButtonText
+                : closeButtonText
+            }}
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
