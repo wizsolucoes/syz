@@ -231,7 +231,7 @@ body.tour-open {
   }
 
   .tour-block {
-    padding: 15px 25px;
+    padding: 16px;
   }
 
   .tour-progress-indicator {
@@ -260,9 +260,9 @@ body.tour-open {
 
 .img-avatar {
   z-index: $tour-zindex + 2;
-  position: fixed;
+  // position: fixed;
   background-color: $tour-white-color;
-  border-radius: 50%;
+  border-radius: 0;
 
   &.img-avatar-center {
     display: none;
@@ -271,4 +271,16 @@ body.tour-open {
 
 .tour-buttons {
   overflow: hidden; // clearfix
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
 }

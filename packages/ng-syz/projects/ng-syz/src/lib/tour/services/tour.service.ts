@@ -21,6 +21,7 @@ export class TourService {
   isOnFirstStep = true;
   isOnLastStep = true;
   isOnResizeMessage = false;
+  tourStarted = false;
 
   constructor(
     @Inject(DOCUMENT) private readonly dom: Document,
@@ -37,6 +38,7 @@ export class TourService {
     this.tour = cloneDeep(tour);
     this.tour.tourStep = this.tour.tourStep.filter(step => !step.skipStep);
     this.tourStepIndex = 0;
+    this.tourStarted = true;
     this.setFirstAndLastStep();
 
     if (this.tour.tourStep.length > 0 && this.validateScreenWidth()) {
@@ -87,6 +89,7 @@ export class TourService {
     if (this.tour.skipCallback) {
         this.tour.skipCallback(this.tourStepIndex);
     }
+    this.tourStarted = false;
     this.resetTour();
   }
 
@@ -217,6 +220,7 @@ export class TourService {
 
   /** Ação chamada ao completar tour */
   public completeTourCallBack(): void {
+    this.tourStarted = false;
     if (this.tour.completeCallback) { this.tour.completeCallback(); }
   }
 

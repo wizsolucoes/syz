@@ -52,4 +52,6 @@ export interface TourStep {
   imgAvatarWidth?: number;
   /** Altura imagem avatar */
   imgAvatarHeight?: number;
+  /** Border radius imagem avatar */
+  borderRadius?: number;
 }
