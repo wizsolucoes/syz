@@ -74,6 +74,10 @@ export class ComponentsComponent {
       displayName: 'Tour',
       route: 'tour',
     },
+    {
+      displayName: 'Visualização de Documentos',
+      route: 'see-docs',
+    },
   ];
 
   get orderedList(): NavItem[] {

@@ -129,6 +129,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./docs-tour/docs-tour.module').then((m) => m.DocsTourModule),
       },
+      {
+        path: 'see-docs',
+        loadChildren: () =>
+          import('./docs-see-docs/docs-see-docs.module.module').then((m) => m.DocsSeeDocsModule),
+      },
     ],
   },
   {
