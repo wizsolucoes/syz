@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Orientation, Tour, TourService } from 'projects/ng-syz/src/public-api';
 import { ComponentProps } from '../../../shared/models/component-props.interface';
 
@@ -7,7 +7,7 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   templateUrl: './docs-tour.component.html',
   styleUrls: ['./docs-tour.component.scss'],
 })
-export class DocsTourComponent implements OnInit {
+export class DocsTourComponent {
   importCode = `import { NgSyzTourModule } from '@wizsolucoes/ng-syz';`;
 
   componentProps: ComponentProps[] = [
@@ -401,8 +401,6 @@ export class DocsTourComponent implements OnInit {
   };
 
   constructor(private readonly tourService: TourService) {}
-
-  ngOnInit(): void {}
 
   startTour(): void {
     this.tourService.startTour(this.tourTeste);

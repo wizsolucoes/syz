@@ -1,12 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ng-syz-checklist-status',
   templateUrl: './checklist-status.component.html',
   styleUrls: ['./checklist-status.component.scss'],
 })
-export class NgSyzCheckListStatusComponent implements OnInit {
-
+export class NgSyzCheckListStatusComponent {
   @Input() list = [];
   @Input() config = {
     title: 'Metas do sita',
@@ -14,9 +13,4 @@ export class NgSyzCheckListStatusComponent implements OnInit {
     router: 'Saiba mais',
     target: '_self',
   };
-
-  constructor() {}
-
-  ngOnInit(): void {}
-
 }

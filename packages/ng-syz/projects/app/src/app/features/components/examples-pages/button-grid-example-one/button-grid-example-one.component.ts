@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgSyzButton } from 'projects/ng-syz/src/lib/models';
 
 @Component({
@@ -6,7 +6,7 @@ import { NgSyzButton } from 'projects/ng-syz/src/lib/models';
   templateUrl: './button-grid-example-one.component.html',
   styleUrls: ['./button-grid-example-one.component.scss'],
 })
-export class ButtonGridExampleOneComponent implements OnInit {
+export class ButtonGridExampleOneComponent {
   tituloExemplo1 = 'Tipo de Seguro';
   subtituloExemplo1 = 'Seguros disponíveis';
   buttons: NgSyzButton[] = [
@@ -57,8 +57,4 @@ export class ButtonGridExampleOneComponent implements OnInit {
       route: '/components/button-grid',
     },
   ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

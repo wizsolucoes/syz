@@ -27,7 +27,7 @@
       </mat-form-field>
       <mat-form-field
         appearance="outline"
-        *ngIf="searchFormGroup.value.selectedTypeOfSearch == 'cnpj'"
+        *ngIf="searchFormGroup.value.selectedTypeOfSearch === 'cnpj'"
       >
         <mat-label>Digite o número do CNPJ</mat-label>
         <input

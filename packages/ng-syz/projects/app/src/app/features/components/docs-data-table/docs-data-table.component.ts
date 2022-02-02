@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ComponentProps } from '../../../shared/models/component-props.interface';
 
@@ -7,7 +7,7 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   templateUrl: './docs-data-table.component.html',
   styleUrls: ['./docs-data-table.component.scss'],
 })
-export class DocsDataTableComponent implements OnInit {
+export class DocsDataTableComponent {
   serverSide = false;
   showPaginator = true;
 
@@ -17,7 +17,7 @@ export class DocsDataTableComponent implements OnInit {
     currentPage: 2,
     totalItens: 200,
   };
-  
+
   // exemplo tableInfo
   tableInfo = {
     tableDescription: 'Cadastro de empresas',
@@ -356,8 +356,6 @@ export class DocsDataTableComponent implements OnInit {
   ];
 
   constructor(private snackBar: MatSnackBar) {}
-
-  ngOnInit(): void {}
 
   changePerPage(value): void {
     this.snackBar.open(value, 'Fechar');
