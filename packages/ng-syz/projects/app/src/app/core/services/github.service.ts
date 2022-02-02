@@ -20,12 +20,13 @@ export class GithubService {
   constructor(private httpClient: HttpClient) {}
 
   getContributors(selector: string): Observable<Contributor[]> {
+    const baseUrl =
+      'https://api.github.com/repos/wizsolucoes/syz/commits?path=packages/ng-syz/projects';
+
     return forkJoin([
+      this.httpClient.get(`${baseUrl}/ng-syz/src/lib/${selector}`),
       this.httpClient.get(
-        `https://api.github.com/repos/wizsolucoes/syz/commits?path=packages/ng-syz/projects/ng-syz/src/lib/${selector}`
-      ),
-      this.httpClient.get(
-        `https://api.github.com/repos/wizsolucoes/syz/commits?path=packages/ng-syz/projects/app/src/app/features/components/docs-${selector}`
+        `${baseUrl}/app/src/app/features/components/docs-${selector}`
       ),
     ]).pipe(
       map((commits: any[]) => {
