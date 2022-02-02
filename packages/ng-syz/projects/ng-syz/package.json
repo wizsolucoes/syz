@@ -10,9 +10,9 @@
     "test": "echo please test workspace"
   },
   "peerDependencies": {
-    "@angular/cdk": "^12.2.13",
-    "@angular/material": "^12.2.13",
-    "ngx-mask": "^12.0.0",
+    "@angular/cdk": "^13.2.0",
+    "@angular/material": "^13.2.0",
+    "ngx-mask": "^13.0.1",
     "ngx-swiper-wrapper": "^10.0.0",
     "swiper": "^6.8.4"
   },
