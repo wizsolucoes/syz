@@ -312,11 +312,10 @@ ng g m features/components/examples-pages/login-flow-example-one --route login-f
 
 ```bash
 # Faça um build de produção
-ng build ng-syz --prod
+npm run build:lib:prod
 
 # Entre na pasta do build gerado
-cd dist/ng-syz
-
+cd projects/ng-syz/build
 # Gere tarball eg. wizsolucoes-ng-syz-1.0.1.tgz
 npm pack
 ```
