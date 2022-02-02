@@ -26,7 +26,9 @@
               "projects/app/src/favicon.ico",
               "projects/app/src/assets"
             ],
-            "styles": ["projects/app/src/styles.scss"],
+            "styles": [
+              "projects/app/src/styles.scss"
+            ],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -94,19 +96,19 @@
               "projects/app/src/favicon.ico",
               "projects/app/src/assets"
             ],
-            "styles": ["projects/app/src/styles.scss"],
+            "styles": [
+              "projects/app/src/styles.scss"
+            ],
             "scripts": []
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/app/tsconfig.app.json",
-              "projects/app/tsconfig.spec.json",
-              "projects/app/e2e/tsconfig.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "projects/app/**/*.ts",
+              "projects/app/**/*.html"
+            ]
           }
         },
         "e2e": {
@@ -155,17 +157,19 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ng-syz/tsconfig.lib.json",
-              "projects/ng-syz/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "projects/ng-syz/**/*.ts",
+              "projects/ng-syz/**/*.html"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "app"
+  "defaultProject": "app",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
