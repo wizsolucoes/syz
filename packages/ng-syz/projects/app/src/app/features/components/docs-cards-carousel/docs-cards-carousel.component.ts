@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   ComponentProps,
-  NgSyzCardsCarouselSliders,
   NgSyzCardsCarouselConfig,
+  NgSyzCardsCarouselSliders,
 } from '../../../shared/models/component-props.interface';
 @Component({
   selector: 'app-docs-cards-carousel',
   templateUrl: './docs-cards-carousel.component.html',
   styleUrls: ['./docs-cards-carousel.component.scss'],
 })
-export class DocsCarouselCardsComponent implements OnInit {
+export class DocsCarouselCardsComponent {
   // Exemplo
   config01 = {
     htmlExampleCode: `
@@ -571,8 +571,4 @@ slides: [
       description: 'Cor de fundo de todo componente',
     },
   ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

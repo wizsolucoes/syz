@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgSyzInitiativeResultCardImage } from '@wizsolucoes/ng-syz';
 import { ComponentProps } from '../../../shared/models/component-props.interface';
 @Component({
@@ -6,7 +6,7 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   templateUrl: './docs-initiative-result-card.component.html',
   styleUrls: ['./docs-initiative-result-card.component.scss'],
 })
-export class DocsCardResultInitiativeComponent implements OnInit {
+export class DocsCardResultInitiativeComponent {
   // Example
   image: NgSyzInitiativeResultCardImage = {
     url: '/assets/docs-initiative-result-card/image.png',
@@ -17,7 +17,7 @@ export class DocsCardResultInitiativeComponent implements OnInit {
     url: '/assets/docs-initiative-result-card/IconCelphone.png',
     alt: 'Ícone',
   };
-  
+
   // data Cards
   cards = [
     {
@@ -210,10 +210,6 @@ export class DocsCardResultInitiativeComponent implements OnInit {
       description: 'Cor vermelha da seta para baixo do card menor',
     },
   ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   myFunction(): void {
     console.log('clicou');

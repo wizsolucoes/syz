@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgSyzButton } from 'projects/ng-syz/src/lib/models';
 import { ComponentProps } from '../../../shared/models/component-props.interface';
 
@@ -7,7 +7,7 @@ import { ComponentProps } from '../../../shared/models/component-props.interface
   templateUrl: './docs-button-grid.component.html',
   styleUrls: ['./docs-button-grid.component.scss'],
 })
-export class DocsButtonGridComponent implements OnInit {
+export class DocsButtonGridComponent {
   // Exemplo
   tituloExemplo1 = 'Tipo de Seguro';
   subtituloExemplo1 = 'Seguros disponíveis';
@@ -334,8 +334,4 @@ export class DocsButtonGridComponent implements OnInit {
       description: 'Cor de contrate do fundo do componente.',
     },
   ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ComponentProps } from '../../../shared/models/component-props.interface';
 
 @Component({
   selector: 'app-docs-checklist-status',
   templateUrl: './docs-checklist-status.component.html',
-  styleUrls: ['./docs-checklist-status.component.scss']
+  styleUrls: ['./docs-checklist-status.component.scss'],
 })
-export class DocsChecklistStatusComponent implements OnInit {
+export class DocsChecklistStatusComponent {
   // Example
   config = {
     title: 'Metas do dia',
     textButton: 'Saiba mais',
-    router: 'https://www.ibccoaching.com.br/portal/metas-e-objetivos/importancia-estabelecer-metas-diarias-para-ser-mais-produtivo/',
-    target: '_blank'
+    router:
+      'https://www.ibccoaching.com.br/portal/metas-e-objetivos/importancia-estabelecer-metas-diarias-para-ser-mais-produtivo/',
+    target: '_blank',
   };
-  
-    // Example data
+
+  // Example data
   dataComponent = [
     {
       text: 'Tratar 30 leads de habitacional sem seguro residencial.',
@@ -31,7 +32,8 @@ export class DocsChecklistStatusComponent implements OnInit {
     },
   ];
 
-  Description = 'Componente exibir lista de status, sendo possível estilizar cores e controlar os itens ativos. Recebe uma lista de itens. \n \n';
+  Description =
+    'Componente exibir lista de status, sendo possível estilizar cores e controlar os itens ativos. Recebe uma lista de itens. \n \n';
 
   componentProps: ComponentProps[] = [
     {
@@ -55,36 +57,36 @@ export class DocsChecklistStatusComponent implements OnInit {
         router: 'Saiba mais',
         target: '_self',
       };
-      `
-    }
+      `,
+    },
   ];
 
   componentCSSVariables: ComponentProps[] = [
     {
       name: `--maxWidth`,
       description: `tamanho máximo do componente.
-      valor default: 400px`
+      valor default: 400px`,
     },
     {
       name: `--color-title`,
-      description: 'Cores do Título principal do card'
+      description: 'Cores do Título principal do card',
     },
     {
       name: `--bg-card`,
-      description: 'Cor do fundo dos itens (inativos).'
+      description: 'Cor do fundo dos itens (inativos).',
     },
     {
       name: `--color-text`,
-      description: 'Cor dos textos (inativos).'
+      description: 'Cor dos textos (inativos).',
     },
     {
       name: `--bg-card-active`,
-      description: 'Cor do fundo dos itens (ativos).'
+      description: 'Cor do fundo dos itens (ativos).',
     },
     {
       name: `--color-text-active`,
-      description: 'Cor dos textos (ativos).'
-    }
+      description: 'Cor dos textos (ativos).',
+    },
   ];
 
   codeExemple01 = {
@@ -117,12 +119,6 @@ export class DocsChecklistStatusComponent implements OnInit {
     --color-text: pink;
     --bg-card-active: orange;
     --color-text-active: black;
-    `
+    `,
   };
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
