@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.7](https://github.com/wizsolucoes/syz/compare/ng-syz@0.10.6...ng-syz@0.10.7) (2022-02-03)
+
+**Note:** Version bump only for package ng-syz
+
+
+
+
+
 ## [0.10.6](https://github.com/wizsolucoes/syz/compare/ng-syz@0.10.5...ng-syz@0.10.6) (2021-12-20)
 
 **Note:** Version bump only for package ng-syz
