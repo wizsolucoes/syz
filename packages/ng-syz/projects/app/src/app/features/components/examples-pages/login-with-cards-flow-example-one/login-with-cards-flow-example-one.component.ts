@@ -5,6 +5,7 @@ import {
   NgSyzResetPasswordCredentials,
   NgSyzSignUpCredentials,
 } from '@wizsolucoes/ng-syz';
+import { environment } from 'projects/app/src/environments/environment';
 
 @Component({
   selector: 'app-login-with-cards-flow-example-one',
@@ -42,6 +43,10 @@ export class LoginWithCardsFlowExampleOneComponent {
     },
   ];
 
+  disableSubmitButton: boolean = true;
+
+  reCaptchaKey: string = environment.reCaptcha.siteKey;
+
   constructor(private snackBar: MatSnackBar) {}
 
   onLoginButtonClick(value: NgSyzLoginCredentials): void {
@@ -70,5 +75,9 @@ export class LoginWithCardsFlowExampleOneComponent {
        email: ${value.email}`,
       'Fechar'
     );
+  }
+
+  onCaptchaResolved(resolutionToken: string) {
+    this.disableSubmitButton = !resolutionToken;
   }
 }

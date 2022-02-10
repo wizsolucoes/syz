@@ -11,6 +11,7 @@ describe('LoginWithCardsFlowExampleOneComponent', () => {
   let component: LoginWithCardsFlowExampleOneComponent;
   let fixture: ComponentFixture<LoginWithCardsFlowExampleOneComponent>;
   let mockSnackBar: jasmine.SpyObj<MatSnackBar>;
+  let template: HTMLElement;
 
   beforeEach(async () => {
     mockSnackBar = jasmine.createSpyObj('MatSnackBar', ['open']);
@@ -30,10 +31,49 @@ describe('LoginWithCardsFlowExampleOneComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginWithCardsFlowExampleOneComponent);
     component = fixture.componentInstance;
+    template = fixture.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('onCaptchaResolved', () => {
+    it('should set disableSubmitButton to false', () => {
+      // Given
+      component.disableSubmitButton = true;
+
+      // When
+      component.onCaptchaResolved('any');
+
+      // Then
+      expect(component.disableSubmitButton).toBeFalse();
+    });
+  });
+
+  describe('UI integration tests', () => {
+    describe('ng-syz-login-with-cards-flow', () => {
+      let element: HTMLElement;
+
+      beforeEach(() => {
+        element = template.querySelector('ng-syz-login-with-cards-flow');
+      });
+
+      it('should be created', () => {
+        expect(element).toBeTruthy();
+      });
+
+      it("should invoke onCaptchaResolved on 'captchaResolved' event", () => {
+        // Given
+        spyOn(component, 'onCaptchaResolved');
+
+        // When
+        element.dispatchEvent(new Event('captchaResolved'));
+
+        // Then
+        expect(component.onCaptchaResolved).toHaveBeenCalled();
+      });
+    });
   });
 });

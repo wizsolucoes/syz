@@ -54,12 +54,21 @@
                 required
               />
             </mat-form-field>
+
+            <re-captcha
+              (resolved)="emitCaptchaResolution($event)"
+              [siteKey]="reCaptchaKey"
+              data-test="captcha-element"
+            ></re-captcha>
+
             <button
               mat-raised-button
               color="accent"
               class="btn-default"
               type="button"
-              [disabled]="loginFormGroup.invalid || isSubmitting"
+              [disabled]="
+                loginFormGroup.invalid || isSubmitting || disableSubmitButton
+              "
               (click)="loginUser()"
             >
               Entrar
@@ -160,12 +169,19 @@
                 />
               </mat-form-field>
             </div>
+
+            <re-captcha
+              (resolved)="emitCaptchaResolution($event)"
+              [siteKey]="reCaptchaKey"
+              data-test="captcha-element"
+            ></re-captcha>
+
             <button
               mat-raised-button
               color="accent"
               class="btn-default"
               type="button"
-              [disabled]="isSubmitting"
+              [disabled]="isSubmitting || disableSubmitButton"
               (click)="resetPassword()"
             >
               <mat-spinner [diameter]="30" *ngIf="isSubmitting"></mat-spinner>
@@ -173,6 +189,7 @@
             </button>
           </form>
         </div>
+
         <!-- SIGN UP FORM -->
         <div *ngIf="currentForm === 'signUpForm'">
           <button
@@ -279,12 +296,20 @@
               </mat-error>
             </mat-form-field>
 
+            <re-captcha
+              (resolved)="emitCaptchaResolution($event)"
+              [siteKey]="reCaptchaKey"
+              data-test="captcha-element"
+            ></re-captcha>
+
             <button
               mat-raised-button
               color="accent"
               class="btn-default"
               type="button"
-              [disabled]="signUpForm.invalid || isSubmitting"
+              [disabled]="
+                signUpForm.invalid || isSubmitting || disableSubmitButton
+              "
               (click)="signUpUser()"
             >
               <mat-spinner [diameter]="30" *ngIf="isSubmitting"></mat-spinner>

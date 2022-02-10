@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 // External
 import { NgxMaskModule } from 'ngx-mask';
+import { RecaptchaModule } from "ng-recaptcha";
 
 @NgModule({
   declarations: [NgSyzLoginWithCardsFlowComponent],
@@ -29,6 +30,7 @@ import { NgxMaskModule } from 'ngx-mask';
     MatIconModule,
     MatProgressSpinnerModule,
     NgxMaskModule.forRoot(),
+    RecaptchaModule,
   ],
   exports: [NgSyzLoginWithCardsFlowComponent],
 })
