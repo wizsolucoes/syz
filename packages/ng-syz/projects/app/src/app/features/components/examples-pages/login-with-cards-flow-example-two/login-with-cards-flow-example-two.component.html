@@ -5,7 +5,10 @@
   [title]="'TÍTULO'"
   [subtitle]="'Adicione um subtítulo aqui.'"
   [cards]="cards"
+  [reCaptchaKey]="reCaptchaKey"
+  [disableSubmitButton]="disableSubmitButton"
   (loginButtonClick)="onLoginButtonClick($event)"
   (signUpButtonClick)="onSignUpButtonClick($event)"
   (resetPasswordButtonClick)="onResetPasswordButtonClick($event)"
+  (captchaResolved)="onCaptchaResolved($event)"
 ></ng-syz-login-with-cards-flow>

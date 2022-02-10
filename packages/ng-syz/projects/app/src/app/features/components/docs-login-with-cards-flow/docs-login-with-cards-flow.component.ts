@@ -22,9 +22,12 @@ export class DocsLoginWithCardsFlowComponent {
     [title]="'COTAGRO'"
     [subtitle]="'Facilita solicitação e contratação de seguro agro.'"
     [cards]="cards"
+    [disableSubmitButton]="disableSubmitButton"
+    [reCaptchaKey]="reCaptchaKey"
     (loginButtonClick)="onLoginButtonClick($event)"
     (signUpButtonClick)="onSignUpButtonClick($event)"
     (resetPasswordButtonClick)="onResetPasswordButtonClick($event)"
+    (captchaResolved)="onCaptchaResolved($event)"
   ></ng-syz-login-with-cards-flow>
   `;
 
@@ -36,9 +39,12 @@ export class DocsLoginWithCardsFlowComponent {
     [title]="'TÍTULO'"
     [subtitle]="'Adicione um subtítulo aqui.'"
     [cards]="cards"
+    [disableSubmitButton]="disableSubmitButton"
+    [reCaptchaKey]="reCaptchaKey"
     (loginButtonClick)="onLoginButtonClick($event)"
     (signUpButtonClick)="onSignUpButtonClick($event)"
     (resetPasswordButtonClick)="onResetPasswordButtonClick($event)"
+    (captchaResolved)="onCaptchaResolved($event)"
   ></ng-syz-login-with-cards-flow>
   `;
 
@@ -59,7 +65,8 @@ export class DocsLoginWithCardsFlowComponent {
 
   // EXEMPLOS - TS
 
-  tsExampleCode = `bgLogin =
+  tsExampleCode = `
+  bgLogin =
   "background-image: url('https://res.cloudinary.com/dexabcezh/image/upload/v1625252921/bg-login_l82sqp.jpg');";
 
   partnerLogo = {
@@ -71,6 +78,10 @@ export class DocsLoginWithCardsFlowComponent {
     img: 'https://res.cloudinary.com/dexabcezh/image/upload/v1625252983/Wiz_Corporate-white_uuuy6n.svg',
     imgAlt: 'Wiz Corporate Logo',
   };
+
+  disableSubmitButton: boolean = true;
+
+  reCaptchaKey: string = environment.reCaptcha.siteKey;z
 
   cards = [
     {
@@ -97,6 +108,7 @@ export class DocsLoginWithCardsFlowComponent {
       'Fechar'
     );
   }
+
   onSignUpButtonClick(value: NgSyzSignUpCredentials): void {
     this.snackBar.open(
       \`Nome: $\{value.name}
@@ -108,13 +120,19 @@ export class DocsLoginWithCardsFlowComponent {
       'Fechar'
     );
   }
+
   onResetPasswordButtonClick(value: NgSyzResetPasswordCredentials): void {
     this.snackBar.open(
       \`cpf: $\{value.cpf}
        email: $\{value.email}\`,
       'Fechar'
     );
-  }`;
+  }
+
+  onCaptchaResolved(resolutionToken: string) {
+    this.disableSubmitButton = !resolutionToken;
+  }
+  `;
 
   // API
 
@@ -161,6 +179,14 @@ export class DocsLoginWithCardsFlowComponent {
       description: `String com caminha para a página de resetar a senha`,
     },
     {
+      name: `@Input() reCaptchaKey: string;`,
+      description: `String com a chave pública do reCAPTCHA`,
+    },
+    {
+      name: `@Input() disableSubmitButton: boolean;`,
+      description: `Booleano qur força a desabilitação dos botões do submeter. Útil para liberar o clique do botão após tratamento do CAPTCHA.`,
+    },
+    {
       name: `@Output() loginButtonClick: EventEmitter<NgSyzLoginCredentials>`,
       description: `Evento emitido com o objeto NgSyzLoginCredentials quando o usuário clica no botão 'entrar' do formulário de login.
       NgSyzLoginCredentials { username: string; password: string; }`,
@@ -180,6 +206,10 @@ export class DocsLoginWithCardsFlowComponent {
       description: `Evento emitido com o objeto NgSyzResetPasswordCredentials quando o usuário clica no botão 'enviar' do formulário de redefinir senha.
       NgSyzResetPasswordCredentials { cpf: string;
         email: string; }`,
+    },
+    {
+      name: `@Output() captchaResolved: EventEmitter<string>`,
+      description: `Evento emitido com o token da resolução do reCAPTCHA`,
     },
   ];
 

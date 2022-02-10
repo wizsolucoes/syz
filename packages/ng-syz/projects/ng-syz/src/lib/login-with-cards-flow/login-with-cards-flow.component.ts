@@ -28,6 +28,8 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
   @Input() cards: NgSyzLoginCard[];
   @Input() signUpPath: string;
   @Input() forgotPasswordPath: string;
+  @Input() reCaptchaKey: string;
+  @Input() disableSubmitButton: boolean = true;
 
   @Output() loginButtonClick: EventEmitter<NgSyzLoginCredentials> =
     new EventEmitter();
@@ -35,6 +37,8 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
     new EventEmitter();
   @Output()
   resetPasswordButtonClick: EventEmitter<NgSyzResetPasswordCredentials> = new EventEmitter();
+  @Output()
+  captchaResolved: EventEmitter<string> = new EventEmitter();
 
   loginFormGroup: FormGroup;
   signUpForm: FormGroup;
@@ -121,6 +125,10 @@ export class NgSyzLoginWithCardsFlowComponent implements OnInit {
       cpf: this.passwordResetForm.get('cpf').value,
       email: this.passwordResetForm.get('email').value,
     });
+  }
+
+  emitCaptchaResolution(resolutionToken: string): void {
+    this.captchaResolved.emit(resolutionToken);
   }
 
   // VALIDATORS
