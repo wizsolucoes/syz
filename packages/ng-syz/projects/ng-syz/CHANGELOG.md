@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.1.0](https://github.com/wizsolucoes/syz/compare/@wizsolucoes/ng-syz@13.0.1...@wizsolucoes/ng-syz@13.1.0) (2022-03-07)
+
+
+### Features
+
+* add recaptcha to login flows ([cb25279](https://github.com/wizsolucoes/syz/commit/cb252792a5dde23ac0046bd025ccb99609854edd))
+
+
+
+
+
 ## [13.0.1](https://github.com/wizsolucoes/syz/compare/@wizsolucoes/ng-syz@0.7.4...@wizsolucoes/ng-syz@13.0.1) (2022-02-03)
 
 **Note:** Version bump only for package @wizsolucoes/ng-syz
