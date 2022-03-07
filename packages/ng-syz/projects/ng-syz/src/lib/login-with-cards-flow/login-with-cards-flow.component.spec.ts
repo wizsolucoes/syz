@@ -6,11 +6,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { RecaptchaModule } from 'ng-recaptcha';
 import { NgSyzLoginWithCardsFlowComponent } from './login-with-cards-flow.component';
 
 describe('NgSyzLoginWithCardsFlowComponent', () => {
   let component: NgSyzLoginWithCardsFlowComponent;
   let fixture: ComponentFixture<NgSyzLoginWithCardsFlowComponent>;
+  let template: HTMLElement;
 
   beforeEach(
     waitForAsync(() => {
@@ -25,6 +27,7 @@ describe('NgSyzLoginWithCardsFlowComponent', () => {
           FormsModule,
           ReactiveFormsModule,
           NoopAnimationsModule,
+          RecaptchaModule,
         ],
       }).compileComponents();
     })
@@ -33,6 +36,7 @@ describe('NgSyzLoginWithCardsFlowComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NgSyzLoginWithCardsFlowComponent);
     component = fixture.componentInstance;
+    template = fixture.nativeElement;
     fixture.detectChanges();
   });
 
@@ -200,6 +204,49 @@ describe('NgSyzLoginWithCardsFlowComponent', () => {
       expect(component.resetPasswordButtonClick.emit).toHaveBeenCalledWith(
         NgSyzResetPasswordCredentials
       );
+    });
+  });
+
+  describe('emitCaptchaResolution', () => {
+    it('shouuld emit a captchaResolved event', () => {
+      // Given
+      const resolutionToken = 'any';
+      spyOn(component.captchaResolved, 'emit');
+
+      // When
+      component.emitCaptchaResolution(resolutionToken);
+
+      // Then
+      expect(component.captchaResolved.emit).toHaveBeenCalledWith(
+        resolutionToken
+      );
+    });
+  });
+
+  describe('UI integration tests', () => {
+    describe('re-captcha element', () => {
+      let reCaptchaElement: HTMLElement;
+
+      beforeEach(() => {
+        reCaptchaElement = template.querySelector(
+          '[data-test="captcha-element"]'
+        );
+      });
+
+      it('should exist', () => {
+        expect(reCaptchaElement).toBeTruthy();
+      });
+
+      it('should call emitCaptchaResolution on resolved event', () => {
+        // Given
+        spyOn(component, 'emitCaptchaResolution');
+
+        // When
+        reCaptchaElement.dispatchEvent(new Event('resolved'));
+
+        // Then
+        expect(component.emitCaptchaResolution).toHaveBeenCalled();
+      });
     });
   });
 });
